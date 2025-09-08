@@ -35,6 +35,8 @@
   <!-- Material Icons -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <!-- bootstrap Icons-->
+  <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
       <!-- KLaro cookie consent -->
@@ -51,51 +53,52 @@
   <!-- End Simple Web Analytics -->
 </head>
 
-<body class="g-sidenav-show  bg-gray-100">
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2"
+<body class="g-sidenav-show" data-bs-theme="dark">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
     id="sidenav-main">
     <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+      <i class="fas fa-times p-3 cursor-pointer opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand px-4 py-3 m-0" href="/pages/dashboard " target="_blank">
-        <img src="../assets/img/favicon/favicon-96x96.png" class="navbar-brand-img" width="26" height="26"
+      <a class="navbar-brand px-4 py-3 m-0" href="/" target="_blank">
+        <img src="/assets/img/favicon/favicon-96x96.png" class="navbar-brand-img" width="26" height="26"
           alt="main_logo">
-        <span class="ms-1 text-sm text-dark">MythiStone</span>
+        <span class="ms-1 text-sm text-body-emphasis">MythiStone</span>
       </a>
     </div>
     <hr class="horizontal dark mt-0 mb-2">
-        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+
+    <div class="collapse navbar-collapse w-auto pb-5" id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active text-dark" href="/pages/dashboard">
-            <i class="material-symbols-rounded opacity-5">dashboard</i>
-            <span class="nav-link-text ms-1">Dashboard</span>
+          <a class="nav-link active bg-gradient-dark text-white" href="/pages/dashboard">
+            <i class="material-symbols-rounded text-white opacity-5">dashboard</i>
+            <span class="nav-link-text text-white ms-1">Dashboard</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark" href="/pages/routes">
-            <i class="material-symbols-rounded opacity-5">Route</i>
-            <span class="nav-link-text ms-1">Routes</span>
+          <a class="nav-link " href="/pages/routes">
+            <i class="material-symbols-rounded text-body-emphasis opacity-5">Route</i>
+            <span class="nav-link-text text-body-emphasis ms-1">Routes</span>
           </a>
         </li>
+
         <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-5">Classes</h6>
+          <h6 class="ps-4 ms-2 text-uppercase text-xs text-body-emphasis font-weight-bolder opacity-5">Classes</h6>
         </li>
+
         <div class="accordion" id="specNavAccordion">
           
           
           <div class="accordion-item bg-transparent border-0">
-            <!-- Accordion header / button -->
             <h2 class="accordion-header" id="heading-Tank">
-              <button class="nav-link text-dark collapsed" type="button" data-bs-toggle="collapse"
+              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapse-Tank" aria-expanded="false" aria-controls="collapse-Tank">
                 
-                <i class="material-symbols-rounded opacity-5">shield</i>
-                <span class="nav-link-text ms-1">Tank</span>
+                <i class="material-symbols-rounded text-body-emphasis opacity-5">shield</i>
+                <span class="nav-link-text text-body-emphasis ms-1">Tank</span>
               </button>
             </h2>
 
-            <!-- Accordion body: list of specs -->
             <div id="collapse-Tank" class="accordion-collapse collapse" aria-labelledby="heading-Tank"
               data-bs-parent="#specNavAccordion">
               <div class="accordion-body px-0 py-1">
@@ -104,7 +107,7 @@
                   <li class="nav-item">
                     <a href="/classes/Tank/Blood_Death Knight"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135770.jpg" class="img-fluid" alt="Blood Death Knight Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(196, 30, 58)" >
@@ -116,7 +119,7 @@
                   <li class="nav-item">
                     <a href="/classes/Tank/Brewmaster_Monk"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/608951.jpg" class="img-fluid" alt="Brewmaster Monk Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(0, 255, 152)" >
@@ -128,7 +131,7 @@
                   <li class="nav-item">
                     <a href="/classes/Tank/Guardian_Druid"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/132276.jpg" class="img-fluid" alt="Guardian Druid Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 124, 10)" >
@@ -140,7 +143,7 @@
                   <li class="nav-item">
                     <a href="/classes/Tank/Protection_Paladin"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/236264.jpg" class="img-fluid" alt="Protection Paladin Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(244, 140, 186)" >
@@ -152,7 +155,7 @@
                   <li class="nav-item">
                     <a href="/classes/Tank/Protection_Warrior"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/132341.jpg" class="img-fluid" alt="Protection Warrior Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(198, 155, 109)" >
@@ -164,7 +167,7 @@
                   <li class="nav-item">
                     <a href="/classes/Tank/Vengeance_Demon Hunter"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/1247265.jpg" class="img-fluid" alt="Vengeance Demon Hunter Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(163, 48, 201)" >
@@ -180,17 +183,15 @@
           
           
           <div class="accordion-item bg-transparent border-0">
-            <!-- Accordion header / button -->
             <h2 class="accordion-header" id="heading-Healer">
-              <button class="nav-link text-dark collapsed" type="button" data-bs-toggle="collapse"
+              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapse-Healer" aria-expanded="false" aria-controls="collapse-Healer">
                 
-                <i class="material-symbols-rounded opacity-5">health_cross</i>
-                <span class="nav-link-text ms-1">Healer</span>
+                <i class="material-symbols-rounded text-body-emphasis opacity-5">health_cross</i>
+                <span class="nav-link-text text-body-emphasis ms-1">Healer</span>
               </button>
             </h2>
 
-            <!-- Accordion body: list of specs -->
             <div id="collapse-Healer" class="accordion-collapse collapse" aria-labelledby="heading-Healer"
               data-bs-parent="#specNavAccordion">
               <div class="accordion-body px-0 py-1">
@@ -199,7 +200,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Discipline_Priest"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135940.jpg" class="img-fluid" alt="Discipline Priest Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 255, 255)" >
@@ -211,7 +212,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Holy_Paladin"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135920.jpg" class="img-fluid" alt="Holy Paladin Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(244, 140, 186)" >
@@ -223,7 +224,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Holy_Priest"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/237542.jpg" class="img-fluid" alt="Holy Priest Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 255, 255)" >
@@ -235,7 +236,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Mistweaver_Monk"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/608952.jpg" class="img-fluid" alt="Mistweaver Monk Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(0, 255, 152)" >
@@ -247,7 +248,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Preservation_Evoker"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/4511812.jpg" class="img-fluid" alt="Preservation Evoker Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(51, 147, 127)" >
@@ -259,7 +260,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Restoration_Druid"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136041.jpg" class="img-fluid" alt="Restoration Druid Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 124, 10)" >
@@ -271,7 +272,7 @@
                   <li class="nav-item">
                     <a href="/classes/Healer/Restoration_Shaman"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136052.jpg" class="img-fluid" alt="Restoration Shaman Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(0, 112, 221)" >
@@ -287,17 +288,15 @@
           
           
           <div class="accordion-item bg-transparent border-0">
-            <!-- Accordion header / button -->
             <h2 class="accordion-header" id="heading-Dps">
-              <button class="nav-link text-dark collapsed" type="button" data-bs-toggle="collapse"
+              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#collapse-Dps" aria-expanded="false" aria-controls="collapse-Dps">
                 
-                <i class="material-symbols-rounded opacity-5">swords</i>
-                <span class="nav-link-text ms-1">Dps</span>
+                <i class="material-symbols-rounded text-body-emphasis opacity-5">swords</i>
+                <span class="nav-link-text text-body-emphasis ms-1">Dps</span>
               </button>
             </h2>
 
-            <!-- Accordion body: list of specs -->
             <div id="collapse-Dps" class="accordion-collapse collapse" aria-labelledby="heading-Dps"
               data-bs-parent="#specNavAccordion">
               <div class="accordion-body px-0 py-1">
@@ -306,7 +305,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Affliction_Warlock"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136145.jpg" class="img-fluid" alt="Affliction Warlock Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(135, 136, 238)" >
@@ -318,7 +317,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Arcane_Mage"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135932.jpg" class="img-fluid" alt="Arcane Mage Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(63, 199, 235)" >
@@ -330,7 +329,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Arms_Warrior"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/132355.jpg" class="img-fluid" alt="Arms Warrior Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(198, 155, 109)" >
@@ -342,7 +341,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Assassination_Rogue"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/236270.jpg" class="img-fluid" alt="Assassination Rogue Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 244, 104)" >
@@ -354,7 +353,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Augmentation_Evoker"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/5198700.jpg" class="img-fluid" alt="Augmentation Evoker Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(51, 147, 127)" >
@@ -366,7 +365,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Balance_Druid"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136096.jpg" class="img-fluid" alt="Balance Druid Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 124, 10)" >
@@ -378,7 +377,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Beast Mastery_Hunter"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/461112.jpg" class="img-fluid" alt="Beast Mastery Hunter Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(170, 211, 114)" >
@@ -390,7 +389,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Demonology_Warlock"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136172.jpg" class="img-fluid" alt="Demonology Warlock Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(135, 136, 238)" >
@@ -402,7 +401,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Destruction_Warlock"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136186.jpg" class="img-fluid" alt="Destruction Warlock Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(135, 136, 238)" >
@@ -414,7 +413,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Devastation_Evoker"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/4511811.jpg" class="img-fluid" alt="Devastation Evoker Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(51, 147, 127)" >
@@ -426,7 +425,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Elemental_Shaman"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136048.jpg" class="img-fluid" alt="Elemental Shaman Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(0, 112, 221)" >
@@ -438,7 +437,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Enhancement_Shaman"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/237581.jpg" class="img-fluid" alt="Enhancement Shaman Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(0, 112, 221)" >
@@ -450,7 +449,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Feral_Druid"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/132115.jpg" class="img-fluid" alt="Feral Druid Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 124, 10)" >
@@ -462,7 +461,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Fire_Mage"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135810.jpg" class="img-fluid" alt="Fire Mage Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(63, 199, 235)" >
@@ -474,7 +473,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Frost_Death Knight"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135773.jpg" class="img-fluid" alt="Frost Death Knight Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(196, 30, 58)" >
@@ -486,7 +485,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Frost_Mage"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135846.jpg" class="img-fluid" alt="Frost Mage Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(63, 199, 235)" >
@@ -498,7 +497,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Fury_Warrior"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/132347.jpg" class="img-fluid" alt="Fury Warrior Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(198, 155, 109)" >
@@ -510,7 +509,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Havoc_Demon Hunter"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/1247264.jpg" class="img-fluid" alt="Havoc Demon Hunter Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(163, 48, 201)" >
@@ -522,7 +521,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Marksmanship_Hunter"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/236179.jpg" class="img-fluid" alt="Marksmanship Hunter Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(170, 211, 114)" >
@@ -534,7 +533,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Outlaw_Rogue"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/236286.jpg" class="img-fluid" alt="Outlaw Rogue Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 244, 104)" >
@@ -546,7 +545,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Retribution_Paladin"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135873.jpg" class="img-fluid" alt="Retribution Paladin Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(244, 140, 186)" >
@@ -558,7 +557,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Shadow_Priest"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/136207.jpg" class="img-fluid" alt="Shadow Priest Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 255, 255)" >
@@ -570,7 +569,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Subtlety_Rogue"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/132320.jpg" class="img-fluid" alt="Subtlety Rogue Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(255, 244, 104)" >
@@ -582,7 +581,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Survival_Hunter"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/461113.jpg" class="img-fluid" alt="Survival Hunter Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(170, 211, 114)" >
@@ -594,7 +593,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Unholy_Death Knight"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/135775.jpg" class="img-fluid" alt="Unholy Death Knight Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(196, 30, 58)" >
@@ -606,7 +605,7 @@
                   <li class="nav-item">
                     <a href="/classes/Dps/Windwalker_Monk"
                       class="nav-link d-flex align-items-center
-                         text-dark">
+                       ">
                       <img width="24" src="/data/icons/608953.jpg" class="img-fluid" alt="Windwalker Monk Icon">
                       <span class="nav-link-text ms-2" 
                         style="color: rgb(0, 255, 152)" >
@@ -621,21 +620,44 @@
           </div>
           
         </div>
+
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-5">Other Pages</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark">
+          <a class="nav-link">
             <i class="material-symbols-rounded opacity-5">Upcoming</i>
             <span class="nav-link-text ms-1">Coming Soon</span>
           </a>
         </li>
       </ul>
     </div>
-    <div class="sidenav-footer position-absolute w-100 bottom-0 ">
+
+    <div class="sidenav-footer position-absolute bottom-0 start-0 end-0 shadow border-top py-3"
+      role="contentinfo">
       <div class="mx-3">
-        <a class="btn btn-outline mt-4 w-100" href="https://discord.com/invite/v3gYmYamGJ" type="button">Join the
-          discord</a>
+        <div class="w-100 text-center">
+          <a class="btn btn-outline-emphasis w-100 mb-2" href="https://www.patreon.com/c/Jodsderechte">Support the Site
+            Development</a>
+          <a class="btn btn-outline-emphasis w-100 mb-2" href="https://discord.com/invite/v3gYmYamGJ">Give Feedback on
+            Discord</a>
+
+          <h6 class="mt-3">Share on Socials!</h6>
+          <div class="d-inline-flex gap-2">
+            <a href="https://twitter.com/intent/tweet?text=Check%20@Mythistone%20WoW%20M%20Plus%20Meta&amp;url=https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
+              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.MythiStone.github.io"
+              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://bsky.app/intent/compose?text=Check%20@mythistone.bsky.social%20WoW%20M%20Plus%20Meta%20https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
+              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky">
+              <i class="bi bi-bluesky"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </aside>
@@ -646,8 +668,8 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-body-emphasis" href="javascript:;">Pages</a></li>
+            <li class="breadcrumb-item text-sm text-body-emphasis active" aria-current="page">Dashboard</li>
           </ol>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
@@ -1071,7 +1093,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1757327479.884737>Last Update: </p>
+                              data-timestamp=1757349125.959147>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1095,7 +1117,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1757327479.884737>Last Update: </p>
+                              data-timestamp=1757349125.959147>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1125,7 +1147,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1757327479.884737>Last Update: </p>
+                  data-timestamp=1757349125.959147>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1145,7 +1167,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1757327479.884737>Last Update: </p>
+                  data-timestamp=1757349125.959147>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1169,7 +1191,7 @@
                 <div class="d-flex">
                   <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                   <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1757327479.884737>Last Update: </p>
+                    data-timestamp=1757349125.959147>Last Update: </p>
                 </div>
                 <a class="mb-0 text-sm" style="cursor: pointer;" data-bs-toggle="modal"
                   data-bs-target="#performanceModal">See How It’s
@@ -1192,7 +1214,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1757327479.884737>Last Update: </p>
+                  data-timestamp=1757349125.959147>Last Update: </p>
               </div>
             </div>
           </div>
@@ -1656,7 +1678,7 @@
           <p>Config the Ui</p>
         </div>
         <div class="float-end mt-4">
-          <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+          <button class="btn btn-link p-0 fixed-plugin-close-button">
             <i class="material-symbols-rounded">clear</i>
           </button>
         </div>
@@ -1697,23 +1719,8 @@
         <div class="mt-2 d-flex">
           <h6 class="mb-0">Light / Dark</h6>
           <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" >
           </div>
-        </div>
-        <hr class="horizontal dark my-sm-4">
-        <a class="btn btn-outline-dark w-100" href="https://discord.com/invite/v3gYmYamGJ">Give Feedback on Discord</a>
-        <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/MythiStone/mythistone.github.io" data-icon="octicon-star" data-size="large"
-            data-show-count="true" aria-label="Star MythiStone on GitHub">Star</a>
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          <a href="https://twitter.com/intent/tweet?text=Check%20Mythistone%20WoW%20M%20Plus%20Meta&amp;url=https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
-            class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.MythiStone.github.io"
-            class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
         </div>
       </div>
     </div>
@@ -2187,8 +2194,8 @@
         .getContext("2d");
 
       // these come straight from your Python
-      const periodLabels = ["Week:2 Day: 1", "Week:2 Day: 2", "Week:2 Day: 3", "Week:2 Day: 4", "Week:2 Day: 5", "Week:2 Day: 6", "Week:2 Day: 7", "Week:3 Day: 1", "Week:3 Day: 2", "Week:3 Day: 3", "Week:3 Day: 4", "Week:3 Day: 5", "Week:3 Day: 6", "Week:3 Day: 7", "Week:4 Day: 1", "Week:4 Day: 2", "Week:4 Day: 3", "Week:4 Day: 4", "Week:4 Day: 5", "Week:4 Day: 6", "Week:4 Day: 7", "Week:5 Day: 1", "Week:5 Day: 2", "Week:5 Day: 3", "Week:5 Day: 4", "Week:5 Day: 5", "Week:5 Day: 6"];
-    const periodDatasets = [{'label': 'Total', 'data': [75602, 55587, 48171, 43340, 36054, 22299, 4860, 72605, 77498, 74795, 72215, 66698, 56120, 37933, 52392, 38944, 38086, 37127, 31781, 26681, 17708, 37824, 22092, 17263, 19003, 18826, 6984], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [13609, 10237, 9590, 9286, 8422, 5617, 1344, 10766, 11454, 12244, 12806, 12930, 11514, 8478, 8725, 6464, 6468, 6738, 5925, 5127, 3668, 5343, 3486, 2920, 3218, 3398, 1395], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [26145, 22761, 21808, 20235, 17369, 10801, 2279, 36684, 39849, 39598, 38653, 36205, 30457, 20619, 25466, 20983, 20833, 20583, 17453, 14471, 9316, 17484, 11592, 9926, 10989, 10443, 3534], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [30939, 20642, 15774, 13100, 9785, 5648, 1179, 24091, 25075, 21975, 19811, 16754, 13578, 8474, 16820, 10737, 10162, 9302, 7957, 6692, 4412, 13288, 6397, 4089, 4469, 4600, 1914], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [4909, 1947, 999, 719, 478, 233, 58, 1064, 1120, 978, 945, 809, 571, 362, 1381, 760, 623, 504, 446, 391, 312, 1709, 617, 328, 327, 385, 141], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
+      const periodLabels = ["Week:2 Day: 1", "Week:2 Day: 2", "Week:2 Day: 3", "Week:2 Day: 4", "Week:2 Day: 5", "Week:2 Day: 6", "Week:2 Day: 7", "Week:3 Day: 1", "Week:3 Day: 2", "Week:3 Day: 3", "Week:3 Day: 4", "Week:3 Day: 5", "Week:3 Day: 6", "Week:3 Day: 7", "Week:4 Day: 1", "Week:4 Day: 2", "Week:4 Day: 3", "Week:4 Day: 4", "Week:4 Day: 5", "Week:4 Day: 6", "Week:4 Day: 7", "Week:5 Day: 1", "Week:5 Day: 2", "Week:5 Day: 3", "Week:5 Day: 4", "Week:5 Day: 5", "Week:5 Day: 6", "Week:5 Day: 7"];
+    const periodDatasets = [{'label': 'Total', 'data': [75602, 55587, 48171, 43340, 36054, 22299, 4860, 72605, 77498, 74795, 72215, 66698, 56120, 37933, 52392, 38944, 38086, 37127, 31781, 26681, 17708, 43157, 28772, 24358, 27008, 27720, 14458, 2], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [13609, 10237, 9590, 9286, 8422, 5617, 1344, 10766, 11454, 12244, 12806, 12930, 11514, 8478, 8725, 6464, 6468, 6738, 5925, 5127, 3668, 6266, 4632, 4167, 4634, 4960, 2753, 0], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [26145, 22761, 21808, 20235, 17369, 10801, 2279, 36684, 39849, 39598, 38653, 36205, 30457, 20619, 25466, 20983, 20833, 20583, 17453, 14471, 9316, 20002, 14957, 13404, 15015, 14935, 7235, 2], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [30939, 20642, 15774, 13100, 9785, 5648, 1179, 24091, 25075, 21975, 19811, 16754, 13578, 8474, 16820, 10737, 10162, 9302, 7957, 6692, 4412, 15065, 8440, 6314, 6866, 7262, 4166, 0], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [4909, 1947, 999, 719, 478, 233, 58, 1064, 1120, 978, 945, 809, 571, 362, 1381, 760, 623, 504, 446, 391, 312, 1824, 743, 473, 493, 563, 304, 0], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
 
     new Chart(ctx_keys_per_week, {
       type: "line",
@@ -2248,11 +2255,11 @@
         .getContext("2d");
 
       // Injected by Jinja:
-      const dungeonLabels = ["HOA", "PSF", "STRT", "GMBT", "EDA", "FLOOD", "ARAK", "DAWN"];
-    const dungeonFullNames = ["Halls of Atonement", "Priory of the Sacred Flame", "Tazavesh: Streets of Wonder", "Tazavesh: So\u0027leah\u0027s Gambit", "Eco-Dome Al\u0027dani", "Operation: Floodgate", "Ara-Kara, City of Echoes", "The Dawnbreaker"];
-    const iconUrls = ["/data/icons/halls-of-atonement-small.jpg", "/data/icons/priory-of-the-sacred-flame-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/eco-dome-aldani-small.jpg", "/data/icons/operation-floodgate-small.jpg", "/data/icons/ara-kara-city-of-echoes-small.jpg", "/data/icons/the-dawnbreaker-small.jpg"];
-    const totalCounts = [148156, 143140, 142391, 142138, 142029, 141701, 138529, 137811];
-    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [38430, 21809, 24674, 20967, 15781, 25562, 35237, 23679], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [80466, 70974, 78081, 52381, 63919, 75445, 74797, 75300], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [28283, 46691, 38933, 60225, 57027, 39006, 27284, 37476], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [977, 3666, 703, 8565, 5302, 1688, 1211, 1356], "label": "+3", "order": 0, "stack": "Stack 0"}];
+      const dungeonLabels = ["HOA", "PSF", "EDA", "STRT", "FLOOD", "GMBT", "ARAK", "DAWN"];
+    const dungeonFullNames = ["Halls of Atonement", "Priory of the Sacred Flame", "Eco-Dome Al\u0027dani", "Tazavesh: Streets of Wonder", "Operation: Floodgate", "Tazavesh: So\u0027leah\u0027s Gambit", "Ara-Kara, City of Echoes", "The Dawnbreaker"];
+    const iconUrls = ["/data/icons/halls-of-atonement-small.jpg", "/data/icons/priory-of-the-sacred-flame-small.jpg", "/data/icons/eco-dome-aldani-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/operation-floodgate-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/ara-kara-city-of-echoes-small.jpg", "/data/icons/the-dawnbreaker-small.jpg"];
+    const totalCounts = [154065, 148783, 148165, 147984, 147410, 147332, 144018, 143466];
+    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [40000, 22833, 16452, 25350, 26670, 21565, 36641, 24632], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [83659, 73797, 66575, 81133, 78388, 54316, 77838, 78341], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [29399, 48384, 59622, 40765, 40616, 62513, 28293, 39074], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [1007, 3769, 5516, 736, 1736, 8938, 1246, 1419], "label": "+3", "order": 0, "stack": "Stack 0"}];
 
     // Kick off loading each icon
     const iconPromises = iconUrls.map(src =>
@@ -2428,7 +2435,7 @@
 
       // ← injected server‑side
       const keyLevels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-    const datasets = [{"data": [13.6, 12.4, 13.3, 12.7, 12.0, 12.3, 13.0, 14.1, 13.3, 13.8, 13.6, 12.1, 10.9, 10.1, 8.6, 7.1, 4.5, 5.0, 0.0], "label": "Halls of Atonement", "rawCounts": [7168, 1846, 4010, 3210, 6356, 9068, 10698, 11234, 40616, 19512, 17642, 9616, 4653, 1901, 508, 106, 11, 1, 0]}, {"data": [13.2, 13.7, 13.1, 12.5, 12.7, 12.5, 13.4, 12.9, 12.9, 12.6, 12.7, 12.0, 10.3, 9.0, 7.1, 5.9, 2.9, 5.0, 0.0], "label": "Priory of the Sacred Flame", "rawCounts": [6990, 2027, 3961, 3155, 6718, 9214, 11055, 10231, 39409, 17769, 16450, 9536, 4399, 1711, 418, 89, 7, 1, 0]}, {"data": [12.4, 11.7, 12.3, 13.2, 12.9, 13.7, 12.8, 11.8, 12.5, 12.2, 12.0, 12.5, 13.4, 13.9, 14.6, 15.4, 18.5, 10.0, 33.3], "label": "Tazavesh: Streets of Wonder", "rawCounts": [6561, 1741, 3703, 3322, 6838, 10045, 10568, 9357, 38118, 17187, 15528, 9942, 5705, 2632, 865, 231, 45, 2, 1]}, {"data": [12.2, 12.8, 12.0, 11.9, 13.2, 13.1, 12.6, 11.5, 12.3, 11.9, 12.1, 12.8, 14.5, 16.3, 18.9, 21.0, 28.0, 40.0, 33.3], "label": "Tazavesh: So\u0027leah\u0027s Gambit", "rawCounts": [6437, 1893, 3616, 2994, 6985, 9648, 10342, 9186, 37500, 16814, 15716, 10230, 6182, 3083, 1121, 314, 68, 8, 1]}, {"data": [13.4, 13.2, 11.9, 12.0, 10.2, 10.6, 11.5, 13.7, 11.3, 14.2, 12.7, 13.7, 15.7, 15.6, 17.3, 16.0, 17.7, 25.0, 33.3], "label": "Eco-Dome Al\u0027dani", "rawCounts": [7078, 1961, 3607, 3020, 5385, 7825, 9461, 10870, 34467, 19940, 16519, 10945, 6690, 2948, 1025, 239, 43, 5, 1]}, {"data": [10.5, 10.7, 11.7, 12.9, 12.9, 12.6, 12.2, 12.3, 13.0, 12.6, 12.9, 12.8, 11.6, 10.5, 8.2, 8.2, 5.8, 0.0, 0.0], "label": "Operation: Floodgate", "rawCounts": [5531, 1587, 3539, 3254, 6825, 9307, 10025, 9761, 39687, 17694, 16722, 10199, 4962, 1985, 486, 123, 14, 0, 0]}, {"data": [13.1, 13.4, 13.2, 12.6, 13.9, 12.9, 12.3, 12.1, 12.7, 10.8, 11.8, 11.3, 10.8, 11.3, 11.5, 12.3, 11.1, 5.0, 0.0], "label": "Ara-Kara, City of Echoes", "rawCounts": [6932, 1984, 3999, 3181, 7387, 9518, 10161, 9602, 38659, 15156, 15334, 8984, 4613, 2128, 679, 184, 27, 1, 0]}, {"data": [11.6, 12.1, 12.5, 12.2, 12.2, 12.2, 12.1, 11.7, 11.9, 11.9, 12.3, 12.8, 12.9, 13.4, 13.9, 14.1, 11.5, 10.0, 0.0], "label": "The Dawnbreaker", "rawCounts": [6149, 1795, 3771, 3083, 6474, 8961, 9998, 9350, 36200, 16823, 15927, 10181, 5506, 2525, 827, 211, 28, 2, 0]}];
+    const datasets = [{"data": [13.5, 12.4, 13.2, 12.7, 12.0, 12.3, 13.0, 14.0, 13.3, 13.9, 13.6, 12.2, 11.0, 10.1, 8.7, 7.4, 4.6, 5.0, 0.0], "label": "Halls of Atonement", "rawCounts": [7332, 1893, 4070, 3277, 6517, 9235, 10892, 11384, 42369, 20461, 18705, 10295, 4953, 2009, 542, 118, 12, 1, 0]}, {"data": [13.3, 13.8, 13.2, 12.5, 12.7, 12.6, 13.4, 12.9, 12.9, 12.6, 12.6, 12.0, 10.3, 9.0, 7.1, 6.0, 2.7, 5.0, 0.0], "label": "Priory of the Sacred Flame", "rawCounts": [7177, 2105, 4052, 3226, 6863, 9482, 11285, 10454, 41142, 18548, 17310, 10150, 4645, 1799, 442, 95, 7, 1, 0]}, {"data": [13.6, 13.3, 12.0, 12.0, 10.2, 10.7, 11.5, 13.6, 11.3, 14.2, 12.8, 13.7, 15.6, 15.5, 17.1, 15.4, 19.2, 25.0, 33.3], "label": "Eco-Dome Al\u0027dani", "rawCounts": [7343, 2021, 3704, 3093, 5539, 8046, 9634, 11065, 36165, 20978, 17602, 11524, 7007, 3077, 1066, 245, 50, 5, 1]}, {"data": [12.3, 11.7, 12.2, 13.1, 12.9, 13.5, 12.8, 11.8, 12.5, 12.2, 12.1, 12.6, 13.4, 13.9, 14.6, 15.5, 18.8, 10.0, 33.3], "label": "Tazavesh: Streets of Wonder", "rawCounts": [6681, 1781, 3758, 3383, 6953, 10195, 10716, 9536, 39805, 18028, 16546, 10584, 6041, 2765, 914, 246, 49, 2, 1]}, {"data": [10.5, 10.7, 11.7, 12.9, 12.9, 12.7, 12.2, 12.3, 13.0, 12.6, 12.9, 12.7, 11.5, 10.4, 8.1, 8.1, 5.4, 0.0, 0.0], "label": "Operation: Floodgate", "rawCounts": [5709, 1627, 3617, 3320, 6960, 9552, 10239, 9964, 41557, 18586, 17668, 10723, 5172, 2065, 509, 128, 14, 0, 0]}, {"data": [12.0, 12.7, 11.9, 11.9, 13.1, 13.0, 12.5, 11.5, 12.3, 11.9, 12.0, 12.8, 14.4, 16.4, 18.8, 21.0, 27.6, 40.0, 33.3], "label": "Tazavesh: So\u0027leah\u0027s Gambit", "rawCounts": [6517, 1927, 3663, 3052, 7095, 9805, 10514, 9350, 39121, 17565, 16539, 10826, 6504, 3263, 1176, 334, 72, 8, 1]}, {"data": [13.1, 13.4, 13.2, 12.6, 13.9, 13.0, 12.4, 12.1, 12.7, 10.7, 11.7, 11.3, 10.9, 11.3, 11.5, 12.6, 10.3, 5.0, 0.0], "label": "Ara-Kara, City of Echoes", "rawCounts": [7072, 2033, 4078, 3247, 7545, 9803, 10416, 9792, 40594, 15718, 16085, 9540, 4904, 2242, 721, 200, 27, 1, 0]}, {"data": [11.6, 12.1, 12.5, 12.2, 12.2, 12.2, 12.2, 11.8, 11.9, 11.9, 12.3, 12.7, 12.9, 13.4, 14.0, 14.0, 11.5, 10.0, 0.0], "label": "The Dawnbreaker", "rawCounts": [6307, 1839, 3850, 3152, 6621, 9210, 10234, 9543, 37983, 17598, 16833, 10666, 5833, 2665, 877, 223, 30, 2, 0]}];
 
     new Chart(ctx, {
       type: 'bar',
@@ -2528,7 +2535,6 @@
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.js"></script>
   <script>
-    darkMode(document.querySelector('#dark-version'));
     sidebarColor(document.querySelector('#defaultColor'));
     document.querySelector('#defaultSidebarType').classList.add('active');
     sidebarType(document.querySelector('#defaultSidebarType'));
