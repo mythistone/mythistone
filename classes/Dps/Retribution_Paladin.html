@@ -21,16 +21,38 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="MythiStone" />
+<link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+<!-- Fonts and icons -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+<!-- Nucleo Icons -->
+<link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+<link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+<!-- Material Icons -->
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+<!-- CSS Files -->
+<link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<!-- bootstrap Icons-->
+<link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
+<!-- Klaro cookie consent -->
+<script defer type="text/javascript" src="/assets/js/plugins/cookie-config.js"></script>
+<script defer type="text/javascript" src="/assets/js/plugins/klaro.js"></script>
+<link href="/assets/css/klaro.css" rel="stylesheet" />
+<!-- Simple Web Analytics -->
+<script type="text/plain" data-hostname="mythistone.github.io" data-type="application/javascript"
+    data-name="simple-analytics" data-src='https://scripts.simpleanalyticscdn.com/latest.js'></script>
   <!-- Primary SEO -->
   <title>Retribution Paladin Mythic+ Build & Gear Guide - MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Retribution Paladin, with top talents, gear, enchants, gems, Embelishments & more—based on 1.5 M runs. Updated 11/09/2025, 06:37:21.">
+    content="Discover the most popular Mythic+ build for Retribution Paladin, with top talents, gear, enchants, gems, Embelishments & more—based on 1.5 M runs. Updated 11/09/2025, 20:38:27.">
   <link rel="canonical" href="https://mythistone.github.io/classes/Dps/Retribution_Paladin">
 
   <!-- Robots -->
@@ -97,688 +119,636 @@
     "url": "https://mythistone.github.io"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "11/09/2025, 06:37:21"
+  "dateModified": "11/09/2025, 20:38:27"
 }
-</script>
-
-  <!-- KLaro cookie consent -->
-  <script defer type="text/javascript" src="/assets/js/plugins/klaro-config.js"></script>
-  <script defer type="text/javascript" src="/assets/js/plugins/klaro.js"></script>
-  <link href="/assets/css/klaro.css" rel="stylesheet" />
-  <!-- Simple Web Analytics -->
-  <script type="text/plain" data-hostname="mythistone.github.io" data-type="application/javascript"
-    data-name="simple-analytics" data-src='https://scripts.simpleanalyticscdn.com/latest.js'></script>
-  <!-- End Simple Web Analytics -->
-
-
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
-  <!-- Nucleo Icons -->
-  <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- bootstrap Icons-->
-  <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
-  <!-- Material Icons -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <!-- CSS Files -->
-  <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
+  </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show" data-bs-theme="dark">
 
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
-    id="sidenav-main">
-    <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-        aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand px-4 py-3 m-0" href="/" target="_blank">
-        <img src="/assets/img/favicon/favicon-96x96.png" class="navbar-brand-img" width="26" height="26"
-          alt="main_logo">
-        <span class="ms-1 text-sm text-body-emphasis">MythiStone</span>
-      </a>
-    </div>
-    <hr class="horizontal dark mt-0 mb-2">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2" id="sidenav-main">
+  <div class="sidenav-header">
+    <i class="fas fa-times p-3 cursor-pointer opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+      aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand px-4 py-3 m-0" href="/" target="_blank">
+      <img src="/assets/img/favicon/favicon-96x96.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+      <span class="ms-1 text-sm text-body-emphasis">MythiStone</span>
+    </a>
+  </div>
+  <hr class="horizontal dark mt-0 mb-2">
 
-    <div class="collapse navbar-collapse w-auto pb-5" id="sidenav-collapse-main">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="/pages/dashboard">
-            <i class="material-symbols-rounded text-white opacity-5">dashboard</i>
-            <span class="nav-link-text text-white ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/pages/routes">
-            <i class="material-symbols-rounded text-body-emphasis opacity-5">Route</i>
-            <span class="nav-link-text text-body-emphasis ms-1">Routes</span>
-          </a>
-        </li>
+  <div class="collapse navbar-collapse w-auto pb-5" id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link "
+          href="/pages/dashboard">
+          <i
+            class="material-symbols-rounded text-body-emphasis opacity-5">dashboard</i>
+          <span
+            class="nav-link-text text-body-emphasis ms-1">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "
+          href="/pages/routes">
+          <i
+            class="material-symbols-rounded text-body-emphasis opacity-5">Route</i>
+          <span
+            class="nav-link-text text-body-emphasis ms-1">Routes</span>
+        </a>
+      </li>
 
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-body-emphasis font-weight-bolder opacity-5">Classes</h6>
-        </li>
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs text-body-emphasis font-weight-bolder opacity-5">Classes</h6>
+      </li>
 
-        <div class="accordion" id="specNavAccordion">
-          
-          
-          <div class="accordion-item bg-transparent border-0">
-            <h2 class="accordion-header" id="heading-Tank">
-              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-Tank" aria-expanded="false" aria-controls="collapse-Tank">
+      <div class="accordion" id="specNavAccordion">
+        
+        
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="heading-Tank">
+            <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-Tank" aria-expanded="false" aria-controls="collapse-Tank">
+              
+              <i class="material-symbols-rounded text-body-emphasis opacity-5">shield</i>
+              <span class="nav-link-text text-body-emphasis ms-1">Tank</span>
+            </button>
+          </h2>
+
+          <div id="collapse-Tank" class="accordion-collapse collapse" aria-labelledby="heading-Tank"
+            data-bs-parent="#specNavAccordion">
+            <div class="accordion-body px-0 py-1">
+              <ul class="nav flex-column">
                 
-                <i class="material-symbols-rounded text-body-emphasis opacity-5">shield</i>
-                <span class="nav-link-text text-body-emphasis ms-1">Tank</span>
-              </button>
-            </h2>
-
-            <div id="collapse-Tank" class="accordion-collapse collapse" aria-labelledby="heading-Tank"
-              data-bs-parent="#specNavAccordion">
-              <div class="accordion-body px-0 py-1">
-                <ul class="nav flex-column">
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Blood_Death Knight"
-                      class="nav-link d-flex align-items-center
+                <li class="nav-item">
+                  <a href="/classes/Tank/Blood_Death Knight" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/135770.jpg" class="img-fluid" alt="Blood Death Knight Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(196, 30, 58)" >
-                        Blood Death Knight
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Brewmaster_Monk"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/135770.jpg" class="img-fluid" alt="Blood Death Knight Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(196, 30, 58)" >
+                      Blood Death Knight
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Brewmaster_Monk" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/608951.jpg" class="img-fluid" alt="Brewmaster Monk Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 255, 152)" >
-                        Brewmaster Monk
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Guardian_Druid"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/608951.jpg" class="img-fluid" alt="Brewmaster Monk Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 255, 152)" >
+                      Brewmaster Monk
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Guardian_Druid" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/132276.jpg" class="img-fluid" alt="Guardian Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Guardian Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Protection_Paladin"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/132276.jpg" class="img-fluid" alt="Guardian Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Guardian Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Protection_Paladin" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/236264.jpg" class="img-fluid" alt="Protection Paladin Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(244, 140, 186)" >
-                        Protection Paladin
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Protection_Warrior"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/236264.jpg" class="img-fluid" alt="Protection Paladin Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(244, 140, 186)" >
+                      Protection Paladin
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Protection_Warrior" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/132341.jpg" class="img-fluid" alt="Protection Warrior Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(198, 155, 109)" >
-                        Protection Warrior
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Vengeance_Demon Hunter"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/132341.jpg" class="img-fluid" alt="Protection Warrior Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(198, 155, 109)" >
+                      Protection Warrior
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Vengeance_Demon Hunter" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/1247265.jpg" class="img-fluid" alt="Vengeance Demon Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(163, 48, 201)" >
-                        Vengeance Demon Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                </ul>
-              </div>
+                    <img width="24" src="/data/icons/1247265.jpg" class="img-fluid" alt="Vengeance Demon Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(163, 48, 201)" >
+                      Vengeance Demon Hunter
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
             </div>
           </div>
-          
-          
-          <div class="accordion-item bg-transparent border-0">
-            <h2 class="accordion-header" id="heading-Healer">
-              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-Healer" aria-expanded="false" aria-controls="collapse-Healer">
-                
-                <i class="material-symbols-rounded text-body-emphasis opacity-5">health_cross</i>
-                <span class="nav-link-text text-body-emphasis ms-1">Healer</span>
-              </button>
-            </h2>
-
-            <div id="collapse-Healer" class="accordion-collapse collapse" aria-labelledby="heading-Healer"
-              data-bs-parent="#specNavAccordion">
-              <div class="accordion-body px-0 py-1">
-                <ul class="nav flex-column">
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Discipline_Priest"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135940.jpg" class="img-fluid" alt="Discipline Priest Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 255, 255)" >
-                        Discipline Priest
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Holy_Paladin"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135920.jpg" class="img-fluid" alt="Holy Paladin Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(244, 140, 186)" >
-                        Holy Paladin
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Holy_Priest"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/237542.jpg" class="img-fluid" alt="Holy Priest Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 255, 255)" >
-                        Holy Priest
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Mistweaver_Monk"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/608952.jpg" class="img-fluid" alt="Mistweaver Monk Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 255, 152)" >
-                        Mistweaver Monk
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Preservation_Evoker"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/4511812.jpg" class="img-fluid" alt="Preservation Evoker Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(51, 147, 127)" >
-                        Preservation Evoker
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Restoration_Druid"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136041.jpg" class="img-fluid" alt="Restoration Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Restoration Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Restoration_Shaman"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136052.jpg" class="img-fluid" alt="Restoration Shaman Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 112, 221)" >
-                        Restoration Shaman
-                      </span>
-                    </a>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="accordion-item bg-transparent border-0">
-            <h2 class="accordion-header" id="heading-Dps">
-              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-Dps" aria-expanded="false" aria-controls="collapse-Dps">
-                
-                <i class="material-symbols-rounded text-body-emphasis opacity-5">swords</i>
-                <span class="nav-link-text text-body-emphasis ms-1">Dps</span>
-              </button>
-            </h2>
-
-            <div id="collapse-Dps" class="accordion-collapse collapse" aria-labelledby="heading-Dps"
-              data-bs-parent="#specNavAccordion">
-              <div class="accordion-body px-0 py-1">
-                <ul class="nav flex-column">
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Affliction_Warlock"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136145.jpg" class="img-fluid" alt="Affliction Warlock Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(135, 136, 238)" >
-                        Affliction Warlock
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Arcane_Mage"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135932.jpg" class="img-fluid" alt="Arcane Mage Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(63, 199, 235)" >
-                        Arcane Mage
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Arms_Warrior"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132355.jpg" class="img-fluid" alt="Arms Warrior Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(198, 155, 109)" >
-                        Arms Warrior
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Assassination_Rogue"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/236270.jpg" class="img-fluid" alt="Assassination Rogue Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 244, 104)" >
-                        Assassination Rogue
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Augmentation_Evoker"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/5198700.jpg" class="img-fluid" alt="Augmentation Evoker Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(51, 147, 127)" >
-                        Augmentation Evoker
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Balance_Druid"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136096.jpg" class="img-fluid" alt="Balance Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Balance Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Beast Mastery_Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/461112.jpg" class="img-fluid" alt="Beast Mastery Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(170, 211, 114)" >
-                        Beast Mastery Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Demonology_Warlock"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136172.jpg" class="img-fluid" alt="Demonology Warlock Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(135, 136, 238)" >
-                        Demonology Warlock
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Destruction_Warlock"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136186.jpg" class="img-fluid" alt="Destruction Warlock Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(135, 136, 238)" >
-                        Destruction Warlock
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Devastation_Evoker"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/4511811.jpg" class="img-fluid" alt="Devastation Evoker Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(51, 147, 127)" >
-                        Devastation Evoker
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Elemental_Shaman"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136048.jpg" class="img-fluid" alt="Elemental Shaman Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 112, 221)" >
-                        Elemental Shaman
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Enhancement_Shaman"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/237581.jpg" class="img-fluid" alt="Enhancement Shaman Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 112, 221)" >
-                        Enhancement Shaman
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Feral_Druid"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132115.jpg" class="img-fluid" alt="Feral Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Feral Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Fire_Mage"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135810.jpg" class="img-fluid" alt="Fire Mage Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(63, 199, 235)" >
-                        Fire Mage
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Frost_Death Knight"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135773.jpg" class="img-fluid" alt="Frost Death Knight Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(196, 30, 58)" >
-                        Frost Death Knight
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Frost_Mage"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135846.jpg" class="img-fluid" alt="Frost Mage Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(63, 199, 235)" >
-                        Frost Mage
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Fury_Warrior"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132347.jpg" class="img-fluid" alt="Fury Warrior Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(198, 155, 109)" >
-                        Fury Warrior
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Havoc_Demon Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/1247264.jpg" class="img-fluid" alt="Havoc Demon Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(163, 48, 201)" >
-                        Havoc Demon Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Marksmanship_Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/236179.jpg" class="img-fluid" alt="Marksmanship Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(170, 211, 114)" >
-                        Marksmanship Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Outlaw_Rogue"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/236286.jpg" class="img-fluid" alt="Outlaw Rogue Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 244, 104)" >
-                        Outlaw Rogue
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Retribution_Paladin"
-                      class="nav-link d-flex align-items-center
-                       active bg-gradient-dark text-white">
-                      <img width="24" src="/data/icons/135873.jpg" class="img-fluid" alt="Retribution Paladin Icon">
-                      <span class="nav-link-text ms-2" >
-                        Retribution Paladin
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Shadow_Priest"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136207.jpg" class="img-fluid" alt="Shadow Priest Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 255, 255)" >
-                        Shadow Priest
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Subtlety_Rogue"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132320.jpg" class="img-fluid" alt="Subtlety Rogue Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 244, 104)" >
-                        Subtlety Rogue
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Survival_Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/461113.jpg" class="img-fluid" alt="Survival Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(170, 211, 114)" >
-                        Survival Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Unholy_Death Knight"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135775.jpg" class="img-fluid" alt="Unholy Death Knight Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(196, 30, 58)" >
-                        Unholy Death Knight
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Windwalker_Monk"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/608953.jpg" class="img-fluid" alt="Windwalker Monk Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 255, 152)" >
-                        Windwalker Monk
-                      </span>
-                    </a>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
         </div>
+        
+        
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="heading-Healer">
+            <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-Healer" aria-expanded="false" aria-controls="collapse-Healer">
+              
+              <i class="material-symbols-rounded text-body-emphasis opacity-5">health_cross</i>
+              <span class="nav-link-text text-body-emphasis ms-1">Healer</span>
+            </button>
+          </h2>
 
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-5">Other Pages</h6>
+          <div id="collapse-Healer" class="accordion-collapse collapse" aria-labelledby="heading-Healer"
+            data-bs-parent="#specNavAccordion">
+            <div class="accordion-body px-0 py-1">
+              <ul class="nav flex-column">
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Discipline_Priest" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135940.jpg" class="img-fluid" alt="Discipline Priest Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 255, 255)" >
+                      Discipline Priest
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Holy_Paladin" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135920.jpg" class="img-fluid" alt="Holy Paladin Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(244, 140, 186)" >
+                      Holy Paladin
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Holy_Priest" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/237542.jpg" class="img-fluid" alt="Holy Priest Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 255, 255)" >
+                      Holy Priest
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Mistweaver_Monk" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/608952.jpg" class="img-fluid" alt="Mistweaver Monk Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 255, 152)" >
+                      Mistweaver Monk
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Preservation_Evoker" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/4511812.jpg" class="img-fluid" alt="Preservation Evoker Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(51, 147, 127)" >
+                      Preservation Evoker
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Restoration_Druid" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136041.jpg" class="img-fluid" alt="Restoration Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Restoration Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Restoration_Shaman" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136052.jpg" class="img-fluid" alt="Restoration Shaman Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 112, 221)" >
+                      Restoration Shaman
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="heading-Dps">
+            <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-Dps" aria-expanded="false" aria-controls="collapse-Dps">
+              
+              <i class="material-symbols-rounded text-body-emphasis opacity-5">swords</i>
+              <span class="nav-link-text text-body-emphasis ms-1">Dps</span>
+            </button>
+          </h2>
+
+          <div id="collapse-Dps" class="accordion-collapse collapse" aria-labelledby="heading-Dps"
+            data-bs-parent="#specNavAccordion">
+            <div class="accordion-body px-0 py-1">
+              <ul class="nav flex-column">
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Affliction_Warlock" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136145.jpg" class="img-fluid" alt="Affliction Warlock Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(135, 136, 238)" >
+                      Affliction Warlock
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Arcane_Mage" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135932.jpg" class="img-fluid" alt="Arcane Mage Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(63, 199, 235)" >
+                      Arcane Mage
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Arms_Warrior" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132355.jpg" class="img-fluid" alt="Arms Warrior Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(198, 155, 109)" >
+                      Arms Warrior
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Assassination_Rogue" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/236270.jpg" class="img-fluid" alt="Assassination Rogue Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 244, 104)" >
+                      Assassination Rogue
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Augmentation_Evoker" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/5198700.jpg" class="img-fluid" alt="Augmentation Evoker Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(51, 147, 127)" >
+                      Augmentation Evoker
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Balance_Druid" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136096.jpg" class="img-fluid" alt="Balance Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Balance Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Beast Mastery_Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/461112.jpg" class="img-fluid" alt="Beast Mastery Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(170, 211, 114)" >
+                      Beast Mastery Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Demonology_Warlock" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136172.jpg" class="img-fluid" alt="Demonology Warlock Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(135, 136, 238)" >
+                      Demonology Warlock
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Destruction_Warlock" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136186.jpg" class="img-fluid" alt="Destruction Warlock Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(135, 136, 238)" >
+                      Destruction Warlock
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Devastation_Evoker" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/4511811.jpg" class="img-fluid" alt="Devastation Evoker Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(51, 147, 127)" >
+                      Devastation Evoker
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Elemental_Shaman" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136048.jpg" class="img-fluid" alt="Elemental Shaman Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 112, 221)" >
+                      Elemental Shaman
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Enhancement_Shaman" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/237581.jpg" class="img-fluid" alt="Enhancement Shaman Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 112, 221)" >
+                      Enhancement Shaman
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Feral_Druid" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132115.jpg" class="img-fluid" alt="Feral Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Feral Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Fire_Mage" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135810.jpg" class="img-fluid" alt="Fire Mage Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(63, 199, 235)" >
+                      Fire Mage
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Frost_Death Knight" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135773.jpg" class="img-fluid" alt="Frost Death Knight Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(196, 30, 58)" >
+                      Frost Death Knight
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Frost_Mage" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135846.jpg" class="img-fluid" alt="Frost Mage Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(63, 199, 235)" >
+                      Frost Mage
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Fury_Warrior" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132347.jpg" class="img-fluid" alt="Fury Warrior Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(198, 155, 109)" >
+                      Fury Warrior
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Havoc_Demon Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/1247264.jpg" class="img-fluid" alt="Havoc Demon Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(163, 48, 201)" >
+                      Havoc Demon Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Marksmanship_Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/236179.jpg" class="img-fluid" alt="Marksmanship Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(170, 211, 114)" >
+                      Marksmanship Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Outlaw_Rogue" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/236286.jpg" class="img-fluid" alt="Outlaw Rogue Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 244, 104)" >
+                      Outlaw Rogue
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Retribution_Paladin" class="nav-link d-flex align-items-center
+                       active bg-gradient-dark text-white">
+                    <img width="24" src="/data/icons/135873.jpg" class="img-fluid" alt="Retribution Paladin Icon">
+                    <span class="nav-link-text ms-2" >
+                      Retribution Paladin
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Shadow_Priest" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136207.jpg" class="img-fluid" alt="Shadow Priest Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 255, 255)" >
+                      Shadow Priest
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Subtlety_Rogue" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132320.jpg" class="img-fluid" alt="Subtlety Rogue Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 244, 104)" >
+                      Subtlety Rogue
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Survival_Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/461113.jpg" class="img-fluid" alt="Survival Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(170, 211, 114)" >
+                      Survival Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Unholy_Death Knight" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135775.jpg" class="img-fluid" alt="Unholy Death Knight Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(196, 30, 58)" >
+                      Unholy Death Knight
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Windwalker_Monk" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/608953.jpg" class="img-fluid" alt="Windwalker Monk Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 255, 152)" >
+                      Windwalker Monk
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-5">Other Pages</h6>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <i class="material-symbols-rounded text-body-emphasis opacity-5">Upcoming</i>
+          <span class="nav-link-text text-body-emphasis ms-1">Coming Soon</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidenav-footer position-absolute bottom-0 start-0 end-0 shadow border-top py-3" role="contentinfo">
+    <div class="mx-3">
+      <div class="w-100 text-center">
+        <a class="btn btn-outline-emphasis w-100 mb-2" href="https://www.patreon.com/c/Jodsderechte">Support the Site
+          Development</a>
+        <a class="btn btn-outline-emphasis w-100 mb-2" href="https://discord.com/invite/v3gYmYamGJ">Give Feedback on
+          Discord</a>
+
+        <h6 class="mt-3">Share on Socials!</h6>
+        <div class="d-inline-flex gap-2">
+          <a href="https://twitter.com/intent/tweet?text=Check%20@Mythistone%20WoW%20M%20Plus%20Meta&amp;url=https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
+            class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.MythiStone.github.io"
+            class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://bsky.app/intent/compose?text=Check%20@mythistone.bsky.social%20WoW%20M%20Plus%20Meta%20https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
+            class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky">
+            <i class="bi bi-bluesky"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        
+        
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        
+        
+        
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        
+        
+        
+        <li class="breadcrumb-item text-sm text-body-emphasis active" aria-current="page">Retribution Paladin</li>
+        
+        
+      </ol>
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        <div class="input-group input-group-outline">
+          <label class="form-label">Type here...</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <ul class="navbar-nav d-flex align-items-center  justify-content-end">
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="material-symbols-rounded text-body-emphasis opacity-5">Upcoming</i>
-            <span class="nav-link-text text-body-emphasis ms-1">Coming Soon</span>
+        <li class="nav-item px-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0">
+            <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
           </a>
         </li>
       </ul>
     </div>
-
-    <div class="sidenav-footer position-absolute bottom-0 start-0 end-0 shadow border-top py-3"
-      role="contentinfo">
-      <div class="mx-3">
-        <div class="w-100 text-center">
-          <a class="btn btn-outline-emphasis w-100 mb-2" href="https://www.patreon.com/c/Jodsderechte">Support the Site
-            Development</a>
-          <a class="btn btn-outline-emphasis w-100 mb-2" href="https://discord.com/invite/v3gYmYamGJ">Give Feedback on
-            Discord</a>
-
-          <h6 class="mt-3">Share on Socials!</h6>
-          <div class="d-inline-flex gap-2">
-            <a href="https://twitter.com/intent/tweet?text=Check%20@Mythistone%20WoW%20M%20Plus%20Meta&amp;url=https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
-              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
-              <i class="bi bi-twitter-x"></i>
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.MythiStone.github.io"
-              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://bsky.app/intent/compose?text=Check%20@mythistone.bsky.social%20WoW%20M%20Plus%20Meta%20https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
-              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky">
-              <i class="bi bi-bluesky"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </aside>
-
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur"
-      data-scroll="true">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm text-body"><a class="opacity-5" href="javascript:;">Classes</a></li>
-            <li class="breadcrumb-item text-sm text-body"><a class="opacity-5" href="javascript:;">Dps</a></li>
-            <li class="breadcrumb-item text-sm text-body-emphasis active" aria-current="page">
-              Retribution Paladin</li>
-          </ol>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group input-group-outline">
-              <label class="form-label">Type here...</label>
-              <input type="text" class="form-control">
-            </div>
-          </div>
-          <ul class="navbar-nav d-flex align-items-center  justify-content-end">
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body-emphasis p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body-emphasis p-0">
-                <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+  </div>
+</nav>
     <!-- End Navbar -->
+    <!-- Notifications -->
     
-    
-
+    <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span style="color: rgb(244, 140, 186)">Retribution Paladin </span> Mythic + build</h6>
         <div class="row justify-content-center text-start gx-4 align-items-stretch text-body-emphasis">
@@ -802,8 +772,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="373.4 K seen in 1.5 M total runs">Overall
-                  Played: 25.56%</h4>
+                  title="385.3 K seen in 1.5 M total runs">Overall
+                  Played: 26.11%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -813,7 +783,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1757572641.472804>Last Update:</span>
+                    data-timestamp=1757623107.931125>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -870,7 +840,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1757572641.472804>Last Update</span>
+                    data-timestamp=1757623107.931125>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1046,7 +1016,7 @@
             <div class="badge stat-strength py-1 px-2">STRENGTH</div>
 
             
-            <div class="h5 mb-0">97.1 K</div>
+            <div class="h5 mb-0">97.4 K</div>
             
           </div>
         </div>
@@ -1079,10 +1049,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 31 K, avg: 16.4 K"
+              title="min: 0, max: 31.8 K, avg: 16.5 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 31 K, avg: 16.4 K">
-              32.72%
+              aria-label="min 0, max 31.8 K, avg: 16.5 K">
+              32.88%
             </div>
             
           </div>
@@ -1119,7 +1089,7 @@
               title="min: 0, max: 33.6 K, avg: 16 K"
               tabindex="0" role="button"
               aria-label="min 0, max 33.6 K, avg: 16 K">
-              46.65%
+              46.74%
             </div>
             
           </div>
@@ -1156,7 +1126,7 @@
               title="min: 0, max: 33.3 K, avg: 15.6 K"
               tabindex="0" role="button"
               aria-label="min 0, max 33.3 K, avg: 15.6 K">
-              70.53%
+              70.59%
             </div>
             
           </div>
@@ -1190,10 +1160,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 25.6 K, avg: 2.6 K"
+              title="min: 0, max: 26.7 K, avg: 2.5 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 25.6 K, avg: 2.6 K">
-              3.29%
+              aria-label="min 0, max 26.7 K, avg: 2.5 K">
+              3.27%
             </div>
             
           </div>
@@ -1229,7 +1199,7 @@
             <div class="badge stat-health py-1 px-2">health</div>
 
             
-            <div class="h5 mb-0">14.5 M</div>
+            <div class="h5 mb-0">14.6 M</div>
             
           </div>
         </div>
@@ -1256,7 +1226,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">726.6 K</div>
+            <div class="h5 mb-0">729.6 K</div>
             
           </div>
         </div>
@@ -1293,7 +1263,7 @@
               title="min: 0, max: 6.4 K, avg: 1.4 K"
               tabindex="0" role="button"
               aria-label="min 0, max 6.4 K, avg: 1.4 K">
-              2.57%
+              2.58%
             </div>
             
           </div>
@@ -1327,9 +1297,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 9.3 K, avg: 823"
+              title="min: 0, max: 9.3 K, avg: 831"
               tabindex="0" role="button"
-              aria-label="min 0, max 9.3 K, avg: 823">
+              aria-label="min 0, max 9.3 K, avg: 831">
               0.81%
             </div>
             
@@ -1363,7 +1333,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">541</div>
+            <div class="h5 mb-0">546</div>
             
           </div>
         </div>
@@ -1825,8 +1795,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243044?bonus=1501:6652:10255:10354:12239:12293:12921&spec=70&ench=7933"
-      data-wowhead="bonus=1501:6652:10255:10354:12239:12293:12921&spec=70&ench=7933"
+      href="https://www.wowhead.com/item=243044?bonus=1514:6652:10255:10354:12239:12297:12921&spec=70&ench=7933"
+      data-wowhead="bonus=1514:6652:10255:10354:12239:12297:12921&spec=70&ench=7933"
       >
       <img src="/data/icons/inv_helm_plate_raiddeathknightethereal_d_01.png" />
     </a>
@@ -1834,8 +1804,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243044?bonus=1501:6652:10255:10354:12239:12293:12921&spec=70&ench=7933"
-      data-wowhead="bonus=1501:6652:10255:10354:12239:12293:12921&spec=70&ench=7933"
+      href="https://www.wowhead.com/item=243044?bonus=1514:6652:10255:10354:12239:12297:12921&spec=70&ench=7933"
+      data-wowhead="bonus=1514:6652:10255:10354:12239:12297:12921&spec=70&ench=7933"
       data-wh-rename-link="true" >
       <p class="mb-1">Feasting Fiend&#39;s Barbute</p>
     </a>
@@ -3723,8 +3693,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222817?bonus=8793:8902:8960:9627:9633:10421:11303:12040:12043&spec=70&ench=7403"
-      data-wowhead="bonus=8793:8902:8960:9627:9633:10421:11303:12040:12043&spec=70&ench=7403"
+      href="https://www.wowhead.com/item=222817?bonus=8790:8902:8960:9627:9633:10421:11303:12040:12043:12373&spec=70&ench=7403"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11303:12040:12043:12373&spec=70&ench=7403"
       >
       <img src="/data/icons/inv_cloth_outdoorarathor_d_01_cape.png" />
     </a>
@@ -3732,8 +3702,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222817?bonus=8793:8902:8960:9627:9633:10421:11303:12040:12043&spec=70&ench=7403"
-      data-wowhead="bonus=8793:8902:8960:9627:9633:10421:11303:12040:12043&spec=70&ench=7403"
+      href="https://www.wowhead.com/item=222817?bonus=8790:8902:8960:9627:9633:10421:11303:12040:12043:12373&spec=70&ench=7403"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11303:12040:12043:12373&spec=70&ench=7403"
       data-wh-rename-link="true" >
       <p class="mb-1">Consecrated Cloak</p>
     </a>
@@ -4116,15 +4086,15 @@
 
 <div  class="row align-items-center border
             
-            border-quality-4
+              border-quality-3
             
             my-2 mx-2
             ">
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221109?bonus=3141:6652:10255:10383:10390:11964:11985&spec=70&ench=7403"
-      data-wowhead="bonus=3141:6652:10255:10383:10390:11964:11985&spec=70&ench=7403"
+      href="https://www.wowhead.com/item=221109?bonus=&spec=70"
+      data-wowhead="bonus=&spec=70"
       >
       <img src="/data/icons/inv_leather_earthendungeon_c_01_cape.png" />
     </a>
@@ -4132,30 +4102,14 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221109?bonus=3141:6652:10255:10383:10390:11964:11985&spec=70&ench=7403"
-      data-wowhead="bonus=3141:6652:10255:10383:10390:11964:11985&spec=70&ench=7403"
+      href="https://www.wowhead.com/item=221109?bonus=&spec=70"
+      data-wowhead="bonus=&spec=70"
       data-wh-rename-link="true" >
       <p class="mb-1">Candlebearer&#39;s Shroud</p>
     </a>
     <div class="d-flex align-items-center gap-1 flex-nowrap">
       
       
-      
-      <a target="_blank"
-        href="https://www.wowhead.com/item=223731&spec=70" >
-        <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
-          
-          <!-- Base icon -->
-          <img src="/data/icons/inv_misc_enchantedscroll.png" alt=""
-            class="position-absolute top-0 start-0 border border-quality-3 "
-            style="width:100%; height:100%; object-fit:contain;">
-          
-          <!-- Overlay icon -->
-          <img src="/data/icons/crafting-quality-3.png" alt=""
-            class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
-          
-        </div>
-      </a>
       
       
     </div>
@@ -4785,8 +4739,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=211030?bonus=3270:6652:10255:12239:12293&spec=70&ench=7364"
-      data-wowhead="bonus=3270:6652:10255:12239:12293&spec=70&ench=7364"
+      href="https://www.wowhead.com/item=211030?bonus=3283:6652:10255:12239:12297&spec=70&ench=7364"
+      data-wowhead="bonus=3283:6652:10255:12239:12297&spec=70&ench=7364"
       >
       <img src="/data/icons/inv_chest_plate_undergroundquest_b_01.png" />
     </a>
@@ -4794,8 +4748,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=211030?bonus=3270:6652:10255:12239:12293&spec=70&ench=7364"
-      data-wowhead="bonus=3270:6652:10255:12239:12293&spec=70&ench=7364"
+      href="https://www.wowhead.com/item=211030?bonus=3283:6652:10255:12239:12297&spec=70&ench=7364"
+      data-wowhead="bonus=3283:6652:10255:12239:12297&spec=70&ench=7364"
       data-wh-rename-link="true" >
       <p class="mb-1">Secret-Dredger&#39;s Breastplate</p>
     </a>
@@ -5803,8 +5757,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237620?bonus=1514:6652:10255:10390:12230:12353:12675&spec=70"
-      data-wowhead="bonus=1514:6652:10255:10390:12230:12353:12675&spec=70&pcs=237617:237618:237619:237620:237622"
+      href="https://www.wowhead.com/item=237620?bonus=1533:6652:10255:10390:12230:12361:12675&spec=70"
+      data-wowhead="bonus=1533:6652:10255:10390:12230:12361:12675&spec=70&pcs=237617:237618:237619:237620:237622"
       onclick="event.preventDefault();" >
       <img src="/data/icons/inv_plate_raidpaladinethereal_d_01_glove.png" />
     </a>
@@ -5812,8 +5766,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237620?bonus=1514:6652:10255:10390:12230:12353:12675&spec=70"
-      data-wowhead="bonus=1514:6652:10255:10390:12230:12353:12675&spec=70&pcs=237617:237618:237619:237620:237622"
+      href="https://www.wowhead.com/item=237620?bonus=1533:6652:10255:10390:12230:12361:12675&spec=70"
+      data-wowhead="bonus=1533:6652:10255:10390:12230:12361:12675&spec=70&pcs=237617:237618:237619:237620:237622"
       data-wh-rename-link="true" onclick="event.preventDefault();" >
       <p class="mb-1">Protectors of the Lucent Battalion</p>
     </a>
@@ -6771,8 +6725,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243045?bonus=1511:6652:10255:10354:12239:12296:12921&spec=70"
-      data-wowhead="bonus=1511:6652:10255:10354:12239:12296:12921&spec=70"
+      href="https://www.wowhead.com/item=243045?bonus=1514:6652:10255:10354:12239:12297:12921&spec=70"
+      data-wowhead="bonus=1514:6652:10255:10354:12239:12297:12921&spec=70"
       >
       <img src="/data/icons/inv_plate_raidpaladinethereal_d_01_belt.png" />
     </a>
@@ -6780,8 +6734,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243045?bonus=1511:6652:10255:10354:12239:12296:12921&spec=70"
-      data-wowhead="bonus=1511:6652:10255:10354:12239:12296:12921&spec=70"
+      href="https://www.wowhead.com/item=243045?bonus=1514:6652:10255:10354:12239:12297:12921&spec=70"
+      data-wowhead="bonus=1514:6652:10255:10354:12239:12297:12921&spec=70"
       data-wh-rename-link="true" >
       <p class="mb-1">Bygone Wastelander&#39;s Girdle</p>
     </a>
@@ -7335,8 +7289,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=211033?bonus=3270:6652:10255:12239:12293&spec=70&ench=7601"
-      data-wowhead="bonus=3270:6652:10255:12239:12293&spec=70&ench=7601"
+      href="https://www.wowhead.com/item=211033?bonus=3283:6652:10255:12239:12353&spec=70&ench=7601"
+      data-wowhead="bonus=3283:6652:10255:12239:12353&spec=70&ench=7601"
       >
       <img src="/data/icons/inv_pant_plate_undergroundquest_b_01.png" />
     </a>
@@ -7344,8 +7298,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=211033?bonus=3270:6652:10255:12239:12293&spec=70&ench=7601"
-      data-wowhead="bonus=3270:6652:10255:12239:12293&spec=70&ench=7601"
+      href="https://www.wowhead.com/item=211033?bonus=3283:6652:10255:12239:12353&spec=70&ench=7601"
+      data-wowhead="bonus=3283:6652:10255:12239:12353&spec=70&ench=7601"
       data-wh-rename-link="true" >
       <p class="mb-1">Secret-Dredger&#39;s Legguards</p>
     </a>
@@ -10927,8 +10881,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
-      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
+      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
       >
       <img src="/data/icons/inv_shield_1h_arathoroutdoor_d_01.png" />
     </a>
@@ -10936,8 +10890,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
-      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
+      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
       data-wh-rename-link="true" >
       <p class="mb-1">Everforged Defender</p>
     </a>
@@ -11313,8 +11267,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221045?bonus=3163:6652:10255:10383:10390:12372&spec=70"
-      data-wowhead="bonus=3163:6652:10255:10383:10390:12372&spec=70"
+      href="https://www.wowhead.com/item=221045?bonus=3176:6652:10255:10383:10390:12376&spec=70"
+      data-wowhead="bonus=3176:6652:10255:10383:10390:12376&spec=70"
       >
       <img src="/data/icons/inv_shield_1h_earthendungeon_c_02.png" />
     </a>
@@ -11322,8 +11276,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221045?bonus=3163:6652:10255:10383:10390:12372&spec=70"
-      data-wowhead="bonus=3163:6652:10255:10383:10390:12372&spec=70"
+      href="https://www.wowhead.com/item=221045?bonus=3176:6652:10255:10383:10390:12376&spec=70"
+      data-wowhead="bonus=3176:6652:10255:10383:10390:12376&spec=70"
       data-wh-rename-link="true" >
       <p class="mb-1">Galebreaker Bulwark</p>
     </a>
@@ -11473,8 +11427,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
-      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
+      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
       onclick="event.preventDefault();" >
       <img src="/data/icons/inv_shield_1h_arathoroutdoor_d_01.png" />
     </a>
@@ -11482,8 +11436,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
-      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=70"
+      href="https://www.wowhead.com/item=222432?bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11303:12050:12053&spec=70"
       data-wh-rename-link="true" onclick="event.preventDefault();" >
       <p class="mb-1">Everforged Defender</p>
     </a>
@@ -11865,8 +11819,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221045?bonus=3163:6652:10255:10383:10390:12372&spec=70"
-      data-wowhead="bonus=3163:6652:10255:10383:10390:12372&spec=70"
+      href="https://www.wowhead.com/item=221045?bonus=3176:6652:10255:10383:10390:12376&spec=70"
+      data-wowhead="bonus=3176:6652:10255:10383:10390:12376&spec=70"
       >
       <img src="/data/icons/inv_shield_1h_earthendungeon_c_02.png" />
     </a>
@@ -11874,8 +11828,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221045?bonus=3163:6652:10255:10383:10390:12372&spec=70"
-      data-wowhead="bonus=3163:6652:10255:10383:10390:12372&spec=70"
+      href="https://www.wowhead.com/item=221045?bonus=3176:6652:10255:10383:10390:12376&spec=70"
+      data-wowhead="bonus=3176:6652:10255:10383:10390:12376&spec=70"
       data-wh-rename-link="true" >
       <p class="mb-1">Galebreaker Bulwark</p>
     </a>
@@ -18727,7 +18681,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="215116 out of 882631 gems" class="mb-0">
+                                  title="226316 out of 926902 gems" class="mb-0">
                                    24 % </p>
                               </div>
                             </div>
@@ -18788,7 +18742,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="134750 out of 882631 gems" class="mb-0">
+                                  title="142457 out of 926902 gems" class="mb-0">
                                    15 % </p>
                               </div>
                             </div>
@@ -18849,7 +18803,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="101136 out of 882631 gems" class="mb-0">
+                                  title="104996 out of 926902 gems" class="mb-0">
                                    11 % </p>
                               </div>
                             </div>
@@ -18903,7 +18857,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="90724 out of 882631 gems" class="mb-0">
+                                  title="95594 out of 926902 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18964,7 +18918,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="81008 out of 882631 gems" class="mb-0">
+                                  title="85524 out of 926902 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -19025,7 +18979,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="72394 out of 882631 gems" class="mb-0">
+                                  title="75133 out of 926902 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -19086,7 +19040,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="62289 out of 882631 gems" class="mb-0">
+                                  title="65146 out of 926902 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -19124,7 +19078,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="59406 out of 882631 gems" class="mb-0">
+                                  title="62992 out of 926902 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -19162,7 +19116,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="45596 out of 882631 gems" class="mb-0">
+                                  title="47759 out of 926902 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -19216,7 +19170,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="20212 out of 882631 gems" class="mb-0">
+                                  title="20985 out of 926902 gems" class="mb-0">
                                    2 % </p>
                               </div>
                             </div>
@@ -20005,9 +19959,9 @@
                   <div class="accordion mx-2" id="missiveAccordion">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingMissive">
-                        <button class="accordion-button collapsed fw-semibold text-center w-100"
-                          type="button" data-bs-toggle="collapse" data-bs-target="#collapseMissive"
-                          aria-expanded="false" aria-controls="collapseMissive">
+                        <button class="accordion-button collapsed fw-semibold text-center w-100" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#collapseMissive" aria-expanded="false"
+                          aria-controls="collapseMissive">
                           Missive Details
                         </button>
                       </h2>
@@ -20334,42 +20288,43 @@
 
 
 
-        <footer class="footer py-4">
-          <div class="container-fluid">
-            <div class="row align-items-center justify-content-lg-between">
-              <div class="col-lg-6 mb-lg-0 mb-4">
-                <div class="copyright text-center text-sm text-muted text-lg-start">
-                  ©
-                  <script>
-                    document.write(new Date().getFullYear())
-                  </script>,
-                  made with Material-dashboard by
-                  <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"> Creative Tim</a>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                  <li class="nav-item">
-                    <a href="/" class="nav-link text-muted" target="_blank">MythiStone</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/pages/privacy" class="nav-link text-muted" target="_blank">Privacy</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/pages/impressum" class="nav-link text-muted" target="_blank">Impressum</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
+      <footer class="footer py-4  ">
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+                <div class="copyright text-center text-sm text-muted text-lg-start">
+                    ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>,
+                    made by <a href="https://linktr.ee/jodsderechte" class="font-weight-bold" target="_blank">Jods</a>
+                    with <a href="https://www.creative-tim.com/product/material-dashboard" class="font-weight-bold"
+                        target="_blank">Material-dashboard</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link text-muted" target="_blank">MythiStone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/privacy" class="nav-link text-muted" target="_blank">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/impressum" class="nav-link text-muted" target="_blank">Impressum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
   </main>
   <div class="modal fade" id="talentModal" tabindex="-1" aria-labelledby="talentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-lg modal-dialog-centered">
@@ -20410,8 +20365,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-templar.png" alt="Templar"
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
-                        <small class="text-danger">
-                          -0.06%
+                        <small class="text-success">
+                          0.04%
                         </small>
                       </a>
                     </div>
@@ -20422,8 +20377,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-heraldofthesun.png" alt="Herald of the Sun"
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
-                        <small class="text-success">
-                          0.06%
+                        <small class="text-danger">
+                          -0.04%
                         </small>
                       </a>
                     </div>
@@ -20588,17 +20543,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=439760?spec=70"
+                              href="https://www.wowhead.com/spell=431551?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-378-Hero" aria-expanded="false"
                               aria-controls="gainCol-378-Hero">
-                              <img src="/data/icons/spell_holy_rune.png" alt=""
+                              <img src="/data/icons/ability_paladin_intercession.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Aurora">
-                                Aurora
+                              <span class="flex-grow-1 text-truncate" title="Wrathful Descent">
+                                Wrathful Descent
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.06%
+                                +0.04%
                               </span>
                             </a>
                             
@@ -20614,13 +20569,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=445200?spec=70"
+                                href="https://www.wowhead.com/spell=431687?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
+                                <img src="/data/icons/ability_paladin_toweroflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Blessing of An&#39;she</span>
+                                <span class="ms-2">Higher Calling</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -20628,13 +20583,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431413?spec=70"
+                                href="https://www.wowhead.com/spell=431730?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
+                                <img src="/data/icons/inv_plate_raidpaladinprimalist_d_01_cape.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sun Sear</span>
+                                <span class="ms-2">Sacrosanct Crusade</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -20653,17 +20608,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=431551?spec=70"
+                              href="https://www.wowhead.com/spell=439760?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-378-Hero" aria-expanded="false"
                               aria-controls="lossCol-378-Hero">
-                              <img src="/data/icons/ability_paladin_intercession.png" alt=""
+                              <img src="/data/icons/spell_holy_rune.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Wrathful Descent">
-                                Wrathful Descent
+                              <span class="flex-grow-1 text-truncate" title="Aurora">
+                                Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.06%
+                                -0.04%
                               </span>
                             </a>
                             
@@ -20677,26 +20632,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431687?spec=70"
+                                href="https://www.wowhead.com/spell=445200?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_toweroflight.png" alt=""
+                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Higher Calling</span>
+                                <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.04%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431730?spec=70"
+                                href="https://www.wowhead.com/spell=431413?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_plate_raidpaladinprimalist_d_01_cape.png" alt=""
+                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sacrosanct Crusade</span>
+                                <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -20735,7 +20690,7 @@
                                 Empyrean Legacy
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.86%
+                                +0.34%
                               </span>
                             </a>
                             
@@ -20751,13 +20706,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=402971?spec=70"
+                                href="https://www.wowhead.com/spell=403010?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
+                                <img src="/data/icons/achievement_bg_trueavshutout.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Jurisdiction</span>
+                                <span class="ms-2">Blessed Champion</span>
                                 <span class="ms-auto text-success">
-                                  +0.82%
+                                  +0.34%
                                 </span>
                               </a>
                               
@@ -20771,7 +20726,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Arbiter</span>
                                 <span class="ms-auto text-success">
-                                  +0.75%
+                                  +0.34%
                                 </span>
                               </a>
                               
@@ -20800,7 +20755,7 @@
                                 Searing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.33%
+                                -0.51%
                               </span>
                             </a>
                             
@@ -20820,20 +20775,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Hammer</span>
                                 <span class="ms-auto text-danger">
-                                  -0.51%
+                                  -0.42%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=405289?spec=70"
+                                href="https://www.wowhead.com/spell=406940?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_fire_sealoffire.png" alt=""
+                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Burning Crusade</span>
+                                <span class="ms-2">Executioner&#39;s Will</span>
                                 <span class="ms-auto text-danger">
-                                  -0.35%
+                                  -0.18%
                                 </span>
                               </a>
                               
@@ -20881,8 +20836,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-templar.png" alt="Templar"
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
-                        <small class="text-danger">
-                          -0.03%
+                        <small class="text-success">
+                          0.04%
                         </small>
                       </a>
                     </div>
@@ -20893,8 +20848,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-heraldofthesun.png" alt="Herald of the Sun"
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
-                        <small class="text-success">
-                          0.03%
+                        <small class="text-danger">
+                          -0.04%
                         </small>
                       </a>
                     </div>
@@ -21059,17 +21014,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=439760?spec=70"
+                              href="https://www.wowhead.com/spell=431551?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-391-Hero" aria-expanded="false"
                               aria-controls="gainCol-391-Hero">
-                              <img src="/data/icons/spell_holy_rune.png" alt=""
+                              <img src="/data/icons/ability_paladin_intercession.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Aurora">
-                                Aurora
+                              <span class="flex-grow-1 text-truncate" title="Wrathful Descent">
+                                Wrathful Descent
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.03%
+                                +0.04%
                               </span>
                             </a>
                             
@@ -21085,13 +21040,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=445200?spec=70"
+                                href="https://www.wowhead.com/spell=431687?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
+                                <img src="/data/icons/ability_paladin_toweroflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Blessing of An&#39;she</span>
+                                <span class="ms-2">Higher Calling</span>
                                 <span class="ms-auto text-success">
-                                  +0.03%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -21099,13 +21054,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431413?spec=70"
+                                href="https://www.wowhead.com/spell=431730?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
+                                <img src="/data/icons/inv_plate_raidpaladinprimalist_d_01_cape.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sun Sear</span>
+                                <span class="ms-2">Sacrosanct Crusade</span>
                                 <span class="ms-auto text-success">
-                                  +0.03%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -21124,17 +21079,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=431551?spec=70"
+                              href="https://www.wowhead.com/spell=439760?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-391-Hero" aria-expanded="false"
                               aria-controls="lossCol-391-Hero">
-                              <img src="/data/icons/ability_paladin_intercession.png" alt=""
+                              <img src="/data/icons/spell_holy_rune.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Wrathful Descent">
-                                Wrathful Descent
+                              <span class="flex-grow-1 text-truncate" title="Aurora">
+                                Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.03%
+                                -0.04%
                               </span>
                             </a>
                             
@@ -21148,26 +21103,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431687?spec=70"
+                                href="https://www.wowhead.com/spell=445200?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_toweroflight.png" alt=""
+                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Higher Calling</span>
+                                <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-danger">
-                                  -0.03%
+                                  -0.04%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431730?spec=70"
+                                href="https://www.wowhead.com/spell=431413?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_plate_raidpaladinprimalist_d_01_cape.png" alt=""
+                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sacrosanct Crusade</span>
+                                <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-danger">
-                                  -0.03%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -21206,7 +21161,7 @@
                                 Divine Arbiter
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.78%
+                                +1.48%
                               </span>
                             </a>
                             
@@ -21222,13 +21177,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387170?spec=70"
+                                href="https://www.wowhead.com/spell=402971?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/item_holyspark.png" alt=""
+                                <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Empyrean Legacy</span>
+                                <span class="ms-2">Jurisdiction</span>
                                 <span class="ms-auto text-success">
-                                  +0.58%
+                                  +1.06%
                                 </span>
                               </a>
                               
@@ -21236,13 +21191,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=402971?spec=70"
+                                href="https://www.wowhead.com/spell=406940?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
+                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Jurisdiction</span>
+                                <span class="ms-2">Executioner&#39;s Will</span>
                                 <span class="ms-auto text-success">
-                                  +0.33%
+                                  +1.05%
                                 </span>
                               </a>
                               
@@ -21271,7 +21226,7 @@
                                 Searing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.98%
+                                -1.48%
                               </span>
                             </a>
                             
@@ -21291,7 +21246,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burning Crusade</span>
                                 <span class="ms-auto text-danger">
-                                  -0.62%
+                                  -1.37%
                                 </span>
                               </a>
                               
@@ -21304,7 +21259,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessed Champion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.27%
+                                  -0.83%
                                 </span>
                               </a>
                               
@@ -21353,7 +21308,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
                         <small class="text-success">
-                          0.15%
+                          0.16%
                         </small>
                       </a>
                     </div>
@@ -21365,7 +21320,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-danger">
-                          -0.15%
+                          -0.16%
                         </small>
                       </a>
                     </div>
@@ -21677,7 +21632,7 @@
                                 Divine Arbiter
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.34%
+                                +1.56%
                               </span>
                             </a>
                             
@@ -21693,13 +21648,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=198034?spec=70"
+                                href="https://www.wowhead.com/spell=407067?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/classicon_paladin.png" alt=""
+                                <img src="/data/icons/spell_holy_borrowedtime.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Divine Hammer</span>
+                                <span class="ms-2">Rush of Light</span>
                                 <span class="ms-auto text-success">
-                                  +0.62%
+                                  +0.76%
                                 </span>
                               </a>
                               
@@ -21713,7 +21668,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Executioner&#39;s Will</span>
                                 <span class="ms-auto text-success">
-                                  +0.32%
+                                  +0.73%
                                 </span>
                               </a>
                               
@@ -21742,7 +21697,7 @@
                                 Searing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.68%
+                                -2.13%
                               </span>
                             </a>
                             
@@ -21762,7 +21717,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burning Crusade</span>
                                 <span class="ms-auto text-danger">
-                                  -0.52%
+                                  -0.96%
                                 </span>
                               </a>
                               
@@ -21775,7 +21730,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessed Champion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.79%
                                 </span>
                               </a>
                               
@@ -21824,7 +21779,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
                         <small class="text-danger">
-                          -0.12%
+                          -0.21%
                         </small>
                       </a>
                     </div>
@@ -21836,7 +21791,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.12%
+                          0.21%
                         </small>
                       </a>
                     </div>
@@ -22011,7 +21966,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.13%
+                                +0.23%
                               </span>
                             </a>
                             
@@ -22033,7 +21988,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.13%
+                                  +0.23%
                                 </span>
                               </a>
                               
@@ -22047,7 +22002,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.13%
+                                  +0.23%
                                 </span>
                               </a>
                               
@@ -22076,7 +22031,7 @@
                                 Wrathful Descent
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.13%
+                                -0.23%
                               </span>
                             </a>
                             
@@ -22096,7 +22051,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Higher Calling</span>
                                 <span class="ms-auto text-danger">
-                                  -0.13%
+                                  -0.23%
                                 </span>
                               </a>
                               
@@ -22109,7 +22064,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sacrosanct Crusade</span>
                                 <span class="ms-auto text-danger">
-                                  -0.13%
+                                  -0.23%
                                 </span>
                               </a>
                               
@@ -22138,17 +22093,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=404306?spec=70"
+                              href="https://www.wowhead.com/spell=402971?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-499-Spec" aria-expanded="false"
                               aria-controls="gainCol-499-Spec">
-                              <img src="/data/icons/spell_holy_eyeforaneye.png" alt=""
+                              <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Divine Arbiter">
-                                Divine Arbiter
+                              <span class="flex-grow-1 text-truncate" title="Jurisdiction">
+                                Jurisdiction
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.57%
+                                +0.95%
                               </span>
                             </a>
                             
@@ -22164,13 +22119,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=402971?spec=70"
+                                href="https://www.wowhead.com/spell=404306?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
+                                <img src="/data/icons/spell_holy_eyeforaneye.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Jurisdiction</span>
+                                <span class="ms-2">Divine Arbiter</span>
                                 <span class="ms-auto text-success">
-                                  +0.54%
+                                  +0.52%
                                 </span>
                               </a>
                               
@@ -22178,13 +22133,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=406940?spec=70"
+                                href="https://www.wowhead.com/spell=403010?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
+                                <img src="/data/icons/achievement_bg_trueavshutout.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Executioner&#39;s Will</span>
+                                <span class="ms-2">Blessed Champion</span>
                                 <span class="ms-auto text-success">
-                                  +0.24%
+                                  +0.14%
                                 </span>
                               </a>
                               
@@ -22213,7 +22168,7 @@
                                 Burning Crusade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.61%
+                                -0.58%
                               </span>
                             </a>
                             
@@ -22227,26 +22182,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387170?spec=70"
+                                href="https://www.wowhead.com/spell=198034?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/item_holyspark.png" alt=""
+                                <img src="/data/icons/classicon_paladin.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Empyrean Legacy</span>
+                                <span class="ms-2">Divine Hammer</span>
                                 <span class="ms-auto text-danger">
-                                  -0.41%
+                                  -0.32%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=403975?spec=70"
+                                href="https://www.wowhead.com/spell=404540?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_helmet_plate_raidpaladin_j_01.png" alt=""
+                                <img src="/data/icons/spell_fire_felflamering_red.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Inquisitor&#39;s Ire</span>
+                                <span class="ms-2">Searing Light</span>
                                 <span class="ms-auto text-danger">
-                                  -0.22%
+                                  -0.27%
                                 </span>
                               </a>
                               
@@ -22294,8 +22249,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-templar.png" alt="Templar"
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
-                        <small class="text-success">
-                          0.03%
+                        <small class="text-danger">
+                          -0.02%
                         </small>
                       </a>
                     </div>
@@ -22306,8 +22261,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-heraldofthesun.png" alt="Herald of the Sun"
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
-                        <small class="text-danger">
-                          -0.03%
+                        <small class="text-success">
+                          0.02%
                         </small>
                       </a>
                     </div>
@@ -22472,14 +22427,14 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=431551?spec=70"
+                              href="https://www.wowhead.com/spell=439760?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-503-Hero" aria-expanded="false"
                               aria-controls="gainCol-503-Hero">
-                              <img src="/data/icons/ability_paladin_intercession.png" alt=""
+                              <img src="/data/icons/spell_holy_rune.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Wrathful Descent">
-                                Wrathful Descent
+                              <span class="flex-grow-1 text-truncate" title="Aurora">
+                                Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
                                 +0.03%
@@ -22498,11 +22453,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431687?spec=70"
+                                href="https://www.wowhead.com/spell=445200?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_toweroflight.png" alt=""
+                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Higher Calling</span>
+                                <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
                                   +0.03%
                                 </span>
@@ -22512,11 +22467,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431730?spec=70"
+                                href="https://www.wowhead.com/spell=431413?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_plate_raidpaladinprimalist_d_01_cape.png" alt=""
+                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sacrosanct Crusade</span>
+                                <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
                                   +0.03%
                                 </span>
@@ -22537,14 +22492,14 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=439760?spec=70"
+                              href="https://www.wowhead.com/spell=431551?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-503-Hero" aria-expanded="false"
                               aria-controls="lossCol-503-Hero">
-                              <img src="/data/icons/spell_holy_rune.png" alt=""
+                              <img src="/data/icons/ability_paladin_intercession.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Aurora">
-                                Aurora
+                              <span class="flex-grow-1 text-truncate" title="Wrathful Descent">
+                                Wrathful Descent
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
                                 -0.03%
@@ -22561,11 +22516,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=445200?spec=70"
+                                href="https://www.wowhead.com/spell=431687?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
+                                <img src="/data/icons/ability_paladin_toweroflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Blessing of An&#39;she</span>
+                                <span class="ms-2">Higher Calling</span>
                                 <span class="ms-auto text-danger">
                                   -0.03%
                                 </span>
@@ -22574,11 +22529,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431413?spec=70"
+                                href="https://www.wowhead.com/spell=431730?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
+                                <img src="/data/icons/inv_plate_raidpaladinprimalist_d_01_cape.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sun Sear</span>
+                                <span class="ms-2">Sacrosanct Crusade</span>
                                 <span class="ms-auto text-danger">
                                   -0.03%
                                 </span>
@@ -22609,17 +22564,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=404540?spec=70"
+                              href="https://www.wowhead.com/spell=405289?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-503-Spec" aria-expanded="false"
                               aria-controls="gainCol-503-Spec">
-                              <img src="/data/icons/spell_fire_felflamering_red.png" alt=""
+                              <img src="/data/icons/spell_fire_sealoffire.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Searing Light">
-                                Searing Light
+                              <span class="flex-grow-1 text-truncate" title="Burning Crusade">
+                                Burning Crusade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.93%
+                                +1.28%
                               </span>
                             </a>
                             
@@ -22635,13 +22590,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=405289?spec=70"
+                                href="https://www.wowhead.com/spell=404540?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_fire_sealoffire.png" alt=""
+                                <img src="/data/icons/spell_fire_felflamering_red.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Burning Crusade</span>
+                                <span class="ms-2">Searing Light</span>
                                 <span class="ms-auto text-success">
-                                  +0.58%
+                                  +1.15%
                                 </span>
                               </a>
                               
@@ -22649,13 +22604,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=403509?spec=70"
+                                href="https://www.wowhead.com/spell=403975?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_weaponmastery.png" alt=""
+                                <img src="/data/icons/inv_helmet_plate_raidpaladin_j_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Zealot&#39;s Fervor</span>
+                                <span class="ms-2">Inquisitor&#39;s Ire</span>
                                 <span class="ms-auto text-success">
-                                  +0.1%
+                                  +0.58%
                                 </span>
                               </a>
                               
@@ -22674,17 +22629,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=387170?spec=70"
+                              href="https://www.wowhead.com/spell=402971?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-503-Spec" aria-expanded="false"
                               aria-controls="lossCol-503-Spec">
-                              <img src="/data/icons/item_holyspark.png" alt=""
+                              <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Empyrean Legacy">
-                                Empyrean Legacy
+                              <span class="flex-grow-1 text-truncate" title="Jurisdiction">
+                                Jurisdiction
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.87%
+                                -1.11%
                               </span>
                             </a>
                             
@@ -22698,13 +22653,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=402971?spec=70"
+                                href="https://www.wowhead.com/spell=406940?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
+                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Jurisdiction</span>
+                                <span class="ms-2">Executioner&#39;s Will</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.87%
                                 </span>
                               </a>
                               
@@ -22717,7 +22672,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Arbiter</span>
                                 <span class="ms-auto text-danger">
-                                  -0.41%
+                                  -0.81%
                                 </span>
                               </a>
                               
@@ -22766,7 +22721,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
                         <small class="text-success">
-                          0.15%
+                          0.16%
                         </small>
                       </a>
                     </div>
@@ -22778,7 +22733,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-danger">
-                          -0.15%
+                          -0.16%
                         </small>
                       </a>
                     </div>
@@ -23090,7 +23045,7 @@
                                 Searing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.81%
+                                +1.31%
                               </span>
                             </a>
                             
@@ -23106,13 +23061,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=403010?spec=70"
+                                href="https://www.wowhead.com/spell=405289?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/achievement_bg_trueavshutout.png" alt=""
+                                <img src="/data/icons/spell_fire_sealoffire.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Blessed Champion</span>
+                                <span class="ms-2">Burning Crusade</span>
                                 <span class="ms-auto text-success">
-                                  +0.55%
+                                  +0.63%
                                 </span>
                               </a>
                               
@@ -23120,13 +23075,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=405289?spec=70"
+                                href="https://www.wowhead.com/spell=198034?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_fire_sealoffire.png" alt=""
+                                <img src="/data/icons/classicon_paladin.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Burning Crusade</span>
+                                <span class="ms-2">Divine Hammer</span>
                                 <span class="ms-auto text-success">
-                                  +0.48%
+                                  +0.17%
                                 </span>
                               </a>
                               
@@ -23155,7 +23110,7 @@
                                 Divine Arbiter
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.11%
+                                -1.17%
                               </span>
                             </a>
                             
@@ -23175,20 +23130,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Jurisdiction</span>
                                 <span class="ms-auto text-danger">
-                                  -0.35%
+                                  -0.32%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=407067?spec=70"
+                                href="https://www.wowhead.com/spell=387170?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_borrowedtime.png" alt=""
+                                <img src="/data/icons/item_holyspark.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Rush of Light</span>
+                                <span class="ms-2">Empyrean Legacy</span>
                                 <span class="ms-auto text-danger">
-                                  -0.32%
+                                  -0.29%
                                 </span>
                               </a>
                               
@@ -23237,7 +23192,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
                         <small class="text-danger">
-                          -0.04%
+                          -0.06%
                         </small>
                       </a>
                     </div>
@@ -23249,7 +23204,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.04%
+                          0.06%
                         </small>
                       </a>
                     </div>
@@ -23424,7 +23379,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.04%
+                                +0.06%
                               </span>
                             </a>
                             
@@ -23446,7 +23401,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.04%
+                                  +0.06%
                                 </span>
                               </a>
                               
@@ -23460,7 +23415,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.04%
+                                  +0.06%
                                 </span>
                               </a>
                               
@@ -23489,7 +23444,7 @@
                                 Wrathful Descent
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.04%
+                                -0.06%
                               </span>
                             </a>
                             
@@ -23509,7 +23464,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Higher Calling</span>
                                 <span class="ms-auto text-danger">
-                                  -0.04%
+                                  -0.06%
                                 </span>
                               </a>
                               
@@ -23522,7 +23477,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sacrosanct Crusade</span>
                                 <span class="ms-auto text-danger">
-                                  -0.04%
+                                  -0.06%
                                 </span>
                               </a>
                               
@@ -23561,7 +23516,7 @@
                                 Searing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.58%
+                                +1.41%
                               </span>
                             </a>
                             
@@ -23583,7 +23538,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burning Crusade</span>
                                 <span class="ms-auto text-success">
-                                  +0.98%
+                                  +1.21%
                                 </span>
                               </a>
                               
@@ -23597,7 +23552,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Inquisitor&#39;s Ire</span>
                                 <span class="ms-auto text-success">
-                                  +0.61%
+                                  +0.78%
                                 </span>
                               </a>
                               
@@ -23626,7 +23581,7 @@
                                 Divine Arbiter
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.37%
+                                -1.53%
                               </span>
                             </a>
                             
@@ -23646,7 +23601,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Jurisdiction</span>
                                 <span class="ms-auto text-danger">
-                                  -1.25%
+                                  -1.42%
                                 </span>
                               </a>
                               
@@ -23659,7 +23614,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Vanguard&#39;s Momentum</span>
                                 <span class="ms-auto text-danger">
-                                  -0.87%
+                                  -0.9%
                                 </span>
                               </a>
                               
@@ -23708,7 +23663,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Templar</small><br />
                         <small class="text-danger">
-                          -0.03%
+                          -0.06%
                         </small>
                       </a>
                     </div>
@@ -23720,7 +23675,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.03%
+                          0.06%
                         </small>
                       </a>
                     </div>
@@ -23895,7 +23850,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.03%
+                                +0.06%
                               </span>
                             </a>
                             
@@ -23917,7 +23872,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.03%
+                                  +0.06%
                                 </span>
                               </a>
                               
@@ -23931,7 +23886,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.03%
+                                  +0.06%
                                 </span>
                               </a>
                               
@@ -23960,7 +23915,7 @@
                                 Wrathful Descent
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.03%
+                                -0.06%
                               </span>
                             </a>
                             
@@ -23980,7 +23935,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Higher Calling</span>
                                 <span class="ms-auto text-danger">
-                                  -0.03%
+                                  -0.06%
                                 </span>
                               </a>
                               
@@ -23993,7 +23948,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sacrosanct Crusade</span>
                                 <span class="ms-auto text-danger">
-                                  -0.03%
+                                  -0.06%
                                 </span>
                               </a>
                               
@@ -24022,17 +23977,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=383314?spec=70"
+                              href="https://www.wowhead.com/spell=404540?spec=70"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-542-Spec" aria-expanded="false"
                               aria-controls="gainCol-542-Spec">
-                              <img src="/data/icons/ability_paladin_speedoflight.png" alt=""
+                              <img src="/data/icons/spell_fire_felflamering_red.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Vanguard&#39;s Momentum">
-                                Vanguard&#39;s Momentum
+                              <span class="flex-grow-1 text-truncate" title="Searing Light">
+                                Searing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.89%
+                                +1.11%
                               </span>
                             </a>
                             
@@ -24048,13 +24003,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=404540?spec=70"
+                                href="https://www.wowhead.com/spell=383314?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/spell_fire_felflamering_red.png" alt=""
+                                <img src="/data/icons/ability_paladin_speedoflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Searing Light</span>
+                                <span class="ms-2">Vanguard&#39;s Momentum</span>
                                 <span class="ms-auto text-success">
-                                  +0.79%
+                                  +0.6%
                                 </span>
                               </a>
                               
@@ -24068,7 +24023,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burning Crusade</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.4%
                                 </span>
                               </a>
                               
@@ -24097,7 +24052,7 @@
                                 Divine Arbiter
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.86%
+                                -0.99%
                               </span>
                             </a>
                             
@@ -24111,26 +24066,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=403975?spec=70"
+                                href="https://www.wowhead.com/spell=403509?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/inv_helmet_plate_raidpaladin_j_01.png" alt=""
+                                <img src="/data/icons/spell_holy_weaponmastery.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Inquisitor&#39;s Ire</span>
+                                <span class="ms-2">Zealot&#39;s Fervor</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.27%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=326732?spec=70"
+                                href="https://www.wowhead.com/spell=402971?spec=70"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_sheathoflight.png" alt=""
+                                <img src="/data/icons/ability_paladin_longarmofthelaw.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Empyrean Power</span>
+                                <span class="ms-2">Jurisdiction</span>
                                 <span class="ms-auto text-danger">
-                                  -0.32%
+                                  -0.23%
                                 </span>
                               </a>
                               
@@ -24191,9 +24146,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       29:55.984
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1756593403></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1756593403></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -24322,9 +24276,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       29:31.673
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1756481794></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1756481794></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -24453,9 +24406,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       31:35.999
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1756488447></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1756488447></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -24584,9 +24536,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       32:34.455
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1756051563></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1756051563></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -24715,9 +24666,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       32:20.914
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1757194976></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1757194976></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -24846,9 +24796,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       28:01.449
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1756509856></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1756509856></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -24977,9 +24926,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       33:17.170
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1756558713></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1756558713></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -25108,9 +25056,8 @@
                     <span class="badge bg-dark bg-opacity-50 rounded px-2 mr-1">
                       30:59.132
                     </span>
-                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1"
-                      data-bs-toggle="tooltip" data-bs-placement="top"
-                      data-timestamp=1757025379></span>
+                    <span class="timestamp badge bg-dark bg-opacity-50 rounded px-2 ml-1" data-bs-toggle="tooltip"
+                      data-bs-placement="top" data-timestamp=1757025379></span>
                   </div>
                   <div class="flex-fill text-end">
                     <div class="d-inline-flex align-items-center">
@@ -25229,143 +25176,109 @@
     </div>
   </div>
   <div class="fixed-plugin">
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">UI Configurator</h5>
-          <p>Config the Ui</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link p-0 fixed-plugin-close-button">
-            <i class="material-symbols-rounded">clear</i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
+  <div class="card shadow-lg">
+    <div class="card-header pb-0 pt-3">
+      <div class="float-start">
+        <h5 class="mt-3 mb-0">UI Configurator</h5>
+        <p>Config the Ui</p>
       </div>
-      <hr class="horizontal dark my-1">
-      <div class="card-body pt-sm-3 pt-0">
-        <!-- Sidebar Backgrounds -->
-        <div>
-          <h6 class="mb-0">Sidebar Colors</h6>
+      <div class="float-end mt-4">
+        <button class="btn btn-link p-0 fixed-plugin-close-button">
+          <i class="material-symbols-rounded">clear</i>
+        </button>
+      </div>
+      <!-- End Toggle Button -->
+    </div>
+    <hr class="horizontal dark my-1">
+    <div class="card-body pt-sm-3 pt-0">
+      <!-- Sidebar Backgrounds -->
+      <div>
+        <h6 class="mb-0">Sidebar Colors</h6>
+      </div>
+      <a href="javascript:void(0)" class="switch-trigger background-color">
+        <div class="badge-colors my-2 text-start">
+          <span class="badge filter bg-gradient-primary" data-color="primary" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-dark active" data-color="dark" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-danger" id="defaultColor" data-color="danger"
+            onclick="sidebarColor(this)"></span>
         </div>
-        <a href="javascript:void(0)" class="switch-trigger background-color">
-          <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-dark active" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-danger" id="defaultColor" data-color="danger"
-              onclick="sidebarColor(this)"></span>
-          </div>
-        </a>
-        <!-- Sidenav Type -->
-        <div class="mt-3">
-          <h6 class="mb-0">Sidenav Type</h6>
-          <p class="text-sm">Choose between different sidenav types.</p>
-        </div>
-        <div class="d-flex">
-          <button class="btn bg-gradient-dark px-3 mb-2" data-class="bg-gradient-dark"
-            onclick="sidebarType(this)">Dark</button>
-          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" id="defaultSidebarType" data-class="bg-transparent"
-            onclick="sidebarType(this)">Transparent</button>
-          <button class="btn bg-gradient-dark px-3 mb-2  active ms-2" data-class="bg-white"
-            onclick="sidebarType(this)">White</button>
-        </div>
-        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        <hr class="horizontal dark my-3">
-        <div class="mt-2 d-flex">
-          <h6 class="mb-0">Light / Dark</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" >
-          </div>
+      </a>
+      <!-- Sidenav Type -->
+      <hr class="horizontal dark my-3">
+      <div class="mt-2 d-flex">
+        <h6 class="mb-0">Light / Dark</h6>
+        <div class="form-check form-switch ps-0 ms-auto my-auto">
+          <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version">
         </div>
       </div>
     </div>
   </div>
+</div>
   <!--   Core JS Files   -->
-  <script src="/assets/js/core/popper.min.js"></script>
-  <script src="/assets/js/core/bootstrap.min.js"></script>
-  <script>
+  <!--   Core JS Files   -->
+<script src="/assets/js/core/popper.min.js"></script>
+<script src="/assets/js/core/jquery.min.js"></script>
+<script src="/assets/js/core/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/bootstrap-select.min.js"></script>
+
+<!-- Material Dashboard JS -->
+<script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-
-    function timeAgo(unixTsSeconds) {
-      const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-      const now = Date.now() / 1000;
-      const diff = now - unixTsSeconds;
-
-      const units = [
-        { name: 'year', secs: 60 * 60 * 24 * 365 },
-        { name: 'month', secs: 60 * 60 * 24 * 30 },
-        { name: 'day', secs: 60 * 60 * 24 },
-        { name: 'hour', secs: 60 * 60 },
-        { name: 'minute', secs: 60 },
-        { name: 'second', secs: 1 },
-      ];
-
-      for (const { name, secs } of units) {
-        const delta = Math.floor(diff / secs);
-        if (Math.abs(delta) >= 1) {
-          return rtf.format(-delta, name);
+        var options = {
+            damping: '0.5'
         }
-      }
-      return 'just now';
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    function timeAgo(unixTsSeconds) {
+        const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+        const now = Date.now() / 1000;
+        const diff = now - unixTsSeconds;
+
+        const units = [
+            { name: 'year', secs: 60 * 60 * 24 * 365 },
+            { name: 'month', secs: 60 * 60 * 24 * 30 },
+            { name: 'day', secs: 60 * 60 * 24 },
+            { name: 'hour', secs: 60 * 60 },
+            { name: 'minute', secs: 60 },
+            { name: 'second', secs: 1 },
+        ];
+
+        for (const { name, secs } of units) {
+            const delta = Math.floor(diff / secs);
+            if (Math.abs(delta) >= 1) {
+                return rtf.format(-delta, name);
+            }
+        }
+        return 'just now';
     }
 
+    function formatDuration(ms) {
+        const minutes = Math.floor(ms / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
+        const milliseconds = ms % 1000;
+
+        const mm = String(minutes).padStart(2, '0');
+        const ss = String(seconds).padStart(2, '0');
+        const mmm = String(milliseconds).padStart(3, '0');
+
+        return `${mm}:${ss}.${mmm}`;
+    }
     //initialize timestamps
     document.querySelectorAll('.timestamp').forEach(function (el) {
-      const timestamp = el.getAttribute('data-timestamp');
-      el.textContent = `${el.textContent} ${timeAgo(Number(timestamp))}`;
-      el.setAttribute('title', new Date(Number(timestamp) * 1000).toLocaleString());
+        const timestamp = el.getAttribute('data-timestamp');
+        el.textContent = `${el.textContent} ${timeAgo(Number(timestamp))}`;
+        el.setAttribute('title', new Date(Number(timestamp) * 1000).toLocaleString());
     });
-
-    //initialize bootstrap tooltips for extra info
-    document.addEventListener('DOMContentLoaded', function () {
-      var triggers = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-      triggers.forEach(function (el) {
-        new bootstrap.Tooltip(el)
-      })
-    });
-    const whTooltips = {
-      colorLinks: false,
-      iconizeLinks: false,
-      renameLinks: false,
-    };
-    (function () {
-      const copyBtn = document.getElementById('copyBtn');
-      const btnText = document.getElementById('btnText');
-      // Your predefined text:
-      const toCopy = btnText.getAttribute('data-loadout') || '';
-      const text = btnText.getAttribute('data-text')
-
-      copyBtn.addEventListener('click', async () => {
-        try {
-          await navigator.clipboard.writeText(toCopy);
-          // Show success state
-          btnText.textContent = 'Copied!';
-          copyBtn.classList.replace('btn-primary', 'btn-success');
-          setTimeout(() => {
-            btnText.textContent = text;
-            copyBtn.classList.replace('btn-success', 'btn-primary');
-          }, 2000);
-        } catch (err) {
-          console.error('Copy failed', err);
-          btnText.textContent = 'Error';
-          copyBtn.classList.replace('btn-primary', 'btn-danger');
-          setTimeout(() => {
-            btnText.textContent = text;
-            copyBtn.classList.replace('btn-danger', 'btn-primary');
-          }, 2000);
-        }
-      });
-    })();
-  </script>
+</script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/assets/js/material-dashboard.js"></script>
+<script>
+    sidebarColor(document.querySelector('#defaultColor'));
+</script>
   <script>
     (function () {
       const wrapper = document.getElementById('sim-iframe-wrapper');
@@ -25395,6 +25308,9 @@
 
       function refreshTalentEmbed() {
         const src = buildSrc();
+        if (!hasRaidbotsConsent()) {
+          return;
+        }
 
         // If we already created and own the iframe, just update its src (and avoid replacing)
         if (iframe && iframe.dataset && iframe.dataset.ownIframe === '1') {
@@ -25443,10 +25359,13 @@
       function hasRaidbotsConsent() {
         try {
           const mgr = safeGetManager();
-          if (mgr && typeof mgr.getConsent === 'function') return !!mgr.getConsent('raidbots');
+          if (window.klaro && typeof klaro.getManager === 'function') {
+            const mgr = klaro.getManager();
+            if (mgr && typeof mgr.getConsent === 'function') return !!mgr.getConsent('raidbots') || !!mgr.states.raidbots;
+          }
           // fallback: klaro.consents may exist
           if (window.klaro && klaro.consents && Object.prototype.hasOwnProperty.call(klaro.consents, 'raidbots')) {
-            return !!klaro.consents.raidbots;
+            return !!klaro.consents.raidbots || !!mgr.states.raidbots;
           }
         } catch (e) { }
         return false;
@@ -25529,20 +25448,20 @@
 
       const raw = [
         
-    190851
+    196536
       , 
     
-    104702
+    108760
       , 
     
-    6859
+    7291
       , 
     
-    70975
+    72705
       
     
 ];
-    const total = 373387;
+    const total = 385292;
     const pcts = raw.map(c => c / total * 100);
     const baseColors = ['#FF0000', '#1eff00', '#a335ee', '#ff8000'];
 
@@ -25797,13 +25716,6 @@
       });
 
     })();
-  </script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="/assets/js/material-dashboard.js"></script>
-  <script>
-    sidebarColor(document.querySelector('#defaultColor'));
-    document.querySelector('#defaultSidebarType').classList.add('active');
-    sidebarType(document.querySelector('#defaultSidebarType'));
   </script>
 
 </body>

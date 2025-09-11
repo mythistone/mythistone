@@ -16,689 +16,659 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="MythiStone" />
-  <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
   <title>
     WoW Stats - MythiStone
   </title>
-  <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
-  <!-- Nucleo Icons -->
-  <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
-  <!-- Material Icons -->
-  <link rel="stylesheet"
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="MythiStone" />
+<link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+
+<!-- Fonts and icons -->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
+<!-- Nucleo Icons -->
+<link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+<link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
+<!-- Material Icons -->
+<link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-  <!-- bootstrap Icons-->
-  <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
-      <!-- KLaro cookie consent -->
-  <script defer type="text/javascript" src="/assets/js/plugins/klaro-config.js"></script>
-  <script defer type="text/javascript" src="/assets/js/plugins/klaro.js"></script>
-  <link href="/assets/css/klaro.css" rel="stylesheet" />
-  <!-- Simple Web Analytics -->
-   <script 
-    type="text/plain"
-    data-hostname="mythistone.github.io"
-    data-type="application/javascript"
-    data-name="simple-analytics"
-    data-src='https://scripts.simpleanalyticscdn.com/latest.js'></script>
-  <!-- End Simple Web Analytics -->
+<!-- CSS Files -->
+<link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<!-- bootstrap Icons-->
+<link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
+<!-- Klaro cookie consent -->
+<script defer type="text/javascript" src="/assets/js/plugins/cookie-config.js"></script>
+<script defer type="text/javascript" src="/assets/js/plugins/klaro.js"></script>
+<link href="/assets/css/klaro.css" rel="stylesheet" />
+<!-- Simple Web Analytics -->
+<script type="text/plain" data-hostname="mythistone.github.io" data-type="application/javascript"
+    data-name="simple-analytics" data-src='https://scripts.simpleanalyticscdn.com/latest.js'></script>
 </head>
 
 <body class="g-sidenav-show" data-bs-theme="dark">
-  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 bg-white my-2"
-    id="sidenav-main">
-    <div class="sidenav-header">
-      <i class="fas fa-times p-3 cursor-pointer opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
-        aria-hidden="true" id="iconSidenav"></i>
-      <a class="navbar-brand px-4 py-3 m-0" href="/" target="_blank">
-        <img src="/assets/img/favicon/favicon-96x96.png" class="navbar-brand-img" width="26" height="26"
-          alt="main_logo">
-        <span class="ms-1 text-sm text-body-emphasis">MythiStone</span>
-      </a>
-    </div>
-    <hr class="horizontal dark mt-0 mb-2">
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2" id="sidenav-main">
+  <div class="sidenav-header">
+    <i class="fas fa-times p-3 cursor-pointer opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
+      aria-hidden="true" id="iconSidenav"></i>
+    <a class="navbar-brand px-4 py-3 m-0" href="/" target="_blank">
+      <img src="/assets/img/favicon/favicon-96x96.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
+      <span class="ms-1 text-sm text-body-emphasis">MythiStone</span>
+    </a>
+  </div>
+  <hr class="horizontal dark mt-0 mb-2">
 
-    <div class="collapse navbar-collapse w-auto pb-5" id="sidenav-collapse-main">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active bg-gradient-dark text-white" href="/pages/dashboard">
-            <i class="material-symbols-rounded text-white opacity-5">dashboard</i>
-            <span class="nav-link-text text-white ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/pages/routes">
-            <i class="material-symbols-rounded text-body-emphasis opacity-5">Route</i>
-            <span class="nav-link-text text-body-emphasis ms-1">Routes</span>
-          </a>
-        </li>
+  <div class="collapse navbar-collapse w-auto pb-5" id="sidenav-collapse-main">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link "
+          href="/pages/dashboard">
+          <i
+            class="material-symbols-rounded text-body-emphasis opacity-5">dashboard</i>
+          <span
+            class="nav-link-text text-body-emphasis ms-1">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "
+          href="/pages/routes">
+          <i
+            class="material-symbols-rounded text-body-emphasis opacity-5">Route</i>
+          <span
+            class="nav-link-text text-body-emphasis ms-1">Routes</span>
+        </a>
+      </li>
 
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs text-body-emphasis font-weight-bolder opacity-5">Classes</h6>
-        </li>
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs text-body-emphasis font-weight-bolder opacity-5">Classes</h6>
+      </li>
 
-        <div class="accordion" id="specNavAccordion">
-          
-          
-          <div class="accordion-item bg-transparent border-0">
-            <h2 class="accordion-header" id="heading-Tank">
-              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-Tank" aria-expanded="false" aria-controls="collapse-Tank">
+      <div class="accordion" id="specNavAccordion">
+        
+        
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="heading-Tank">
+            <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-Tank" aria-expanded="false" aria-controls="collapse-Tank">
+              
+              <i class="material-symbols-rounded text-body-emphasis opacity-5">shield</i>
+              <span class="nav-link-text text-body-emphasis ms-1">Tank</span>
+            </button>
+          </h2>
+
+          <div id="collapse-Tank" class="accordion-collapse collapse" aria-labelledby="heading-Tank"
+            data-bs-parent="#specNavAccordion">
+            <div class="accordion-body px-0 py-1">
+              <ul class="nav flex-column">
                 
-                <i class="material-symbols-rounded text-body-emphasis opacity-5">shield</i>
-                <span class="nav-link-text text-body-emphasis ms-1">Tank</span>
-              </button>
-            </h2>
-
-            <div id="collapse-Tank" class="accordion-collapse collapse" aria-labelledby="heading-Tank"
-              data-bs-parent="#specNavAccordion">
-              <div class="accordion-body px-0 py-1">
-                <ul class="nav flex-column">
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Blood_Death Knight"
-                      class="nav-link d-flex align-items-center
+                <li class="nav-item">
+                  <a href="/classes/Tank/Blood_Death Knight" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/135770.jpg" class="img-fluid" alt="Blood Death Knight Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(196, 30, 58)" >
-                        Blood Death Knight
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Brewmaster_Monk"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/135770.jpg" class="img-fluid" alt="Blood Death Knight Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(196, 30, 58)" >
+                      Blood Death Knight
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Brewmaster_Monk" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/608951.jpg" class="img-fluid" alt="Brewmaster Monk Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 255, 152)" >
-                        Brewmaster Monk
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Guardian_Druid"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/608951.jpg" class="img-fluid" alt="Brewmaster Monk Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 255, 152)" >
+                      Brewmaster Monk
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Guardian_Druid" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/132276.jpg" class="img-fluid" alt="Guardian Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Guardian Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Protection_Paladin"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/132276.jpg" class="img-fluid" alt="Guardian Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Guardian Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Protection_Paladin" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/236264.jpg" class="img-fluid" alt="Protection Paladin Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(244, 140, 186)" >
-                        Protection Paladin
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Protection_Warrior"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/236264.jpg" class="img-fluid" alt="Protection Paladin Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(244, 140, 186)" >
+                      Protection Paladin
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Protection_Warrior" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/132341.jpg" class="img-fluid" alt="Protection Warrior Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(198, 155, 109)" >
-                        Protection Warrior
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Tank/Vengeance_Demon Hunter"
-                      class="nav-link d-flex align-items-center
+                    <img width="24" src="/data/icons/132341.jpg" class="img-fluid" alt="Protection Warrior Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(198, 155, 109)" >
+                      Protection Warrior
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Tank/Vengeance_Demon Hunter" class="nav-link d-flex align-items-center
                        ">
-                      <img width="24" src="/data/icons/1247265.jpg" class="img-fluid" alt="Vengeance Demon Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(163, 48, 201)" >
-                        Vengeance Demon Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                </ul>
-              </div>
+                    <img width="24" src="/data/icons/1247265.jpg" class="img-fluid" alt="Vengeance Demon Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(163, 48, 201)" >
+                      Vengeance Demon Hunter
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
             </div>
           </div>
-          
-          
-          <div class="accordion-item bg-transparent border-0">
-            <h2 class="accordion-header" id="heading-Healer">
-              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-Healer" aria-expanded="false" aria-controls="collapse-Healer">
-                
-                <i class="material-symbols-rounded text-body-emphasis opacity-5">health_cross</i>
-                <span class="nav-link-text text-body-emphasis ms-1">Healer</span>
-              </button>
-            </h2>
-
-            <div id="collapse-Healer" class="accordion-collapse collapse" aria-labelledby="heading-Healer"
-              data-bs-parent="#specNavAccordion">
-              <div class="accordion-body px-0 py-1">
-                <ul class="nav flex-column">
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Discipline_Priest"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135940.jpg" class="img-fluid" alt="Discipline Priest Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 255, 255)" >
-                        Discipline Priest
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Holy_Paladin"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135920.jpg" class="img-fluid" alt="Holy Paladin Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(244, 140, 186)" >
-                        Holy Paladin
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Holy_Priest"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/237542.jpg" class="img-fluid" alt="Holy Priest Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 255, 255)" >
-                        Holy Priest
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Mistweaver_Monk"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/608952.jpg" class="img-fluid" alt="Mistweaver Monk Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 255, 152)" >
-                        Mistweaver Monk
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Preservation_Evoker"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/4511812.jpg" class="img-fluid" alt="Preservation Evoker Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(51, 147, 127)" >
-                        Preservation Evoker
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Restoration_Druid"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136041.jpg" class="img-fluid" alt="Restoration Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Restoration Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Healer/Restoration_Shaman"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136052.jpg" class="img-fluid" alt="Restoration Shaman Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 112, 221)" >
-                        Restoration Shaman
-                      </span>
-                    </a>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          
-          <div class="accordion-item bg-transparent border-0">
-            <h2 class="accordion-header" id="heading-Dps">
-              <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapse-Dps" aria-expanded="false" aria-controls="collapse-Dps">
-                
-                <i class="material-symbols-rounded text-body-emphasis opacity-5">swords</i>
-                <span class="nav-link-text text-body-emphasis ms-1">Dps</span>
-              </button>
-            </h2>
-
-            <div id="collapse-Dps" class="accordion-collapse collapse" aria-labelledby="heading-Dps"
-              data-bs-parent="#specNavAccordion">
-              <div class="accordion-body px-0 py-1">
-                <ul class="nav flex-column">
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Affliction_Warlock"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136145.jpg" class="img-fluid" alt="Affliction Warlock Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(135, 136, 238)" >
-                        Affliction Warlock
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Arcane_Mage"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135932.jpg" class="img-fluid" alt="Arcane Mage Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(63, 199, 235)" >
-                        Arcane Mage
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Arms_Warrior"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132355.jpg" class="img-fluid" alt="Arms Warrior Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(198, 155, 109)" >
-                        Arms Warrior
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Assassination_Rogue"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/236270.jpg" class="img-fluid" alt="Assassination Rogue Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 244, 104)" >
-                        Assassination Rogue
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Augmentation_Evoker"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/5198700.jpg" class="img-fluid" alt="Augmentation Evoker Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(51, 147, 127)" >
-                        Augmentation Evoker
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Balance_Druid"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136096.jpg" class="img-fluid" alt="Balance Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Balance Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Beast Mastery_Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/461112.jpg" class="img-fluid" alt="Beast Mastery Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(170, 211, 114)" >
-                        Beast Mastery Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Demonology_Warlock"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136172.jpg" class="img-fluid" alt="Demonology Warlock Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(135, 136, 238)" >
-                        Demonology Warlock
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Destruction_Warlock"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136186.jpg" class="img-fluid" alt="Destruction Warlock Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(135, 136, 238)" >
-                        Destruction Warlock
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Devastation_Evoker"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/4511811.jpg" class="img-fluid" alt="Devastation Evoker Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(51, 147, 127)" >
-                        Devastation Evoker
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Elemental_Shaman"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136048.jpg" class="img-fluid" alt="Elemental Shaman Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 112, 221)" >
-                        Elemental Shaman
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Enhancement_Shaman"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/237581.jpg" class="img-fluid" alt="Enhancement Shaman Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 112, 221)" >
-                        Enhancement Shaman
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Feral_Druid"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132115.jpg" class="img-fluid" alt="Feral Druid Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 124, 10)" >
-                        Feral Druid
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Fire_Mage"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135810.jpg" class="img-fluid" alt="Fire Mage Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(63, 199, 235)" >
-                        Fire Mage
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Frost_Death Knight"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135773.jpg" class="img-fluid" alt="Frost Death Knight Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(196, 30, 58)" >
-                        Frost Death Knight
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Frost_Mage"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135846.jpg" class="img-fluid" alt="Frost Mage Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(63, 199, 235)" >
-                        Frost Mage
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Fury_Warrior"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132347.jpg" class="img-fluid" alt="Fury Warrior Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(198, 155, 109)" >
-                        Fury Warrior
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Havoc_Demon Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/1247264.jpg" class="img-fluid" alt="Havoc Demon Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(163, 48, 201)" >
-                        Havoc Demon Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Marksmanship_Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/236179.jpg" class="img-fluid" alt="Marksmanship Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(170, 211, 114)" >
-                        Marksmanship Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Outlaw_Rogue"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/236286.jpg" class="img-fluid" alt="Outlaw Rogue Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 244, 104)" >
-                        Outlaw Rogue
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Retribution_Paladin"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135873.jpg" class="img-fluid" alt="Retribution Paladin Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(244, 140, 186)" >
-                        Retribution Paladin
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Shadow_Priest"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/136207.jpg" class="img-fluid" alt="Shadow Priest Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 255, 255)" >
-                        Shadow Priest
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Subtlety_Rogue"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/132320.jpg" class="img-fluid" alt="Subtlety Rogue Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(255, 244, 104)" >
-                        Subtlety Rogue
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Survival_Hunter"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/461113.jpg" class="img-fluid" alt="Survival Hunter Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(170, 211, 114)" >
-                        Survival Hunter
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Unholy_Death Knight"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/135775.jpg" class="img-fluid" alt="Unholy Death Knight Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(196, 30, 58)" >
-                        Unholy Death Knight
-                      </span>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item">
-                    <a href="/classes/Dps/Windwalker_Monk"
-                      class="nav-link d-flex align-items-center
-                       ">
-                      <img width="24" src="/data/icons/608953.jpg" class="img-fluid" alt="Windwalker Monk Icon">
-                      <span class="nav-link-text ms-2" 
-                        style="color: rgb(0, 255, 152)" >
-                        Windwalker Monk
-                      </span>
-                    </a>
-                  </li>
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
         </div>
+        
+        
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="heading-Healer">
+            <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-Healer" aria-expanded="false" aria-controls="collapse-Healer">
+              
+              <i class="material-symbols-rounded text-body-emphasis opacity-5">health_cross</i>
+              <span class="nav-link-text text-body-emphasis ms-1">Healer</span>
+            </button>
+          </h2>
 
-        <li class="nav-item mt-3">
-          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-5">Other Pages</h6>
+          <div id="collapse-Healer" class="accordion-collapse collapse" aria-labelledby="heading-Healer"
+            data-bs-parent="#specNavAccordion">
+            <div class="accordion-body px-0 py-1">
+              <ul class="nav flex-column">
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Discipline_Priest" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135940.jpg" class="img-fluid" alt="Discipline Priest Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 255, 255)" >
+                      Discipline Priest
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Holy_Paladin" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135920.jpg" class="img-fluid" alt="Holy Paladin Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(244, 140, 186)" >
+                      Holy Paladin
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Holy_Priest" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/237542.jpg" class="img-fluid" alt="Holy Priest Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 255, 255)" >
+                      Holy Priest
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Mistweaver_Monk" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/608952.jpg" class="img-fluid" alt="Mistweaver Monk Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 255, 152)" >
+                      Mistweaver Monk
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Preservation_Evoker" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/4511812.jpg" class="img-fluid" alt="Preservation Evoker Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(51, 147, 127)" >
+                      Preservation Evoker
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Restoration_Druid" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136041.jpg" class="img-fluid" alt="Restoration Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Restoration Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Healer/Restoration_Shaman" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136052.jpg" class="img-fluid" alt="Restoration Shaman Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 112, 221)" >
+                      Restoration Shaman
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="accordion-item bg-transparent border-0">
+          <h2 class="accordion-header" id="heading-Dps">
+            <button class="nav-link collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse-Dps" aria-expanded="false" aria-controls="collapse-Dps">
+              
+              <i class="material-symbols-rounded text-body-emphasis opacity-5">swords</i>
+              <span class="nav-link-text text-body-emphasis ms-1">Dps</span>
+            </button>
+          </h2>
+
+          <div id="collapse-Dps" class="accordion-collapse collapse" aria-labelledby="heading-Dps"
+            data-bs-parent="#specNavAccordion">
+            <div class="accordion-body px-0 py-1">
+              <ul class="nav flex-column">
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Affliction_Warlock" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136145.jpg" class="img-fluid" alt="Affliction Warlock Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(135, 136, 238)" >
+                      Affliction Warlock
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Arcane_Mage" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135932.jpg" class="img-fluid" alt="Arcane Mage Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(63, 199, 235)" >
+                      Arcane Mage
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Arms_Warrior" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132355.jpg" class="img-fluid" alt="Arms Warrior Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(198, 155, 109)" >
+                      Arms Warrior
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Assassination_Rogue" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/236270.jpg" class="img-fluid" alt="Assassination Rogue Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 244, 104)" >
+                      Assassination Rogue
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Augmentation_Evoker" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/5198700.jpg" class="img-fluid" alt="Augmentation Evoker Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(51, 147, 127)" >
+                      Augmentation Evoker
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Balance_Druid" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136096.jpg" class="img-fluid" alt="Balance Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Balance Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Beast Mastery_Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/461112.jpg" class="img-fluid" alt="Beast Mastery Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(170, 211, 114)" >
+                      Beast Mastery Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Demonology_Warlock" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136172.jpg" class="img-fluid" alt="Demonology Warlock Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(135, 136, 238)" >
+                      Demonology Warlock
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Destruction_Warlock" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136186.jpg" class="img-fluid" alt="Destruction Warlock Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(135, 136, 238)" >
+                      Destruction Warlock
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Devastation_Evoker" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/4511811.jpg" class="img-fluid" alt="Devastation Evoker Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(51, 147, 127)" >
+                      Devastation Evoker
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Elemental_Shaman" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136048.jpg" class="img-fluid" alt="Elemental Shaman Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 112, 221)" >
+                      Elemental Shaman
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Enhancement_Shaman" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/237581.jpg" class="img-fluid" alt="Enhancement Shaman Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 112, 221)" >
+                      Enhancement Shaman
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Feral_Druid" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132115.jpg" class="img-fluid" alt="Feral Druid Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 124, 10)" >
+                      Feral Druid
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Fire_Mage" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135810.jpg" class="img-fluid" alt="Fire Mage Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(63, 199, 235)" >
+                      Fire Mage
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Frost_Death Knight" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135773.jpg" class="img-fluid" alt="Frost Death Knight Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(196, 30, 58)" >
+                      Frost Death Knight
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Frost_Mage" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135846.jpg" class="img-fluid" alt="Frost Mage Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(63, 199, 235)" >
+                      Frost Mage
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Fury_Warrior" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132347.jpg" class="img-fluid" alt="Fury Warrior Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(198, 155, 109)" >
+                      Fury Warrior
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Havoc_Demon Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/1247264.jpg" class="img-fluid" alt="Havoc Demon Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(163, 48, 201)" >
+                      Havoc Demon Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Marksmanship_Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/236179.jpg" class="img-fluid" alt="Marksmanship Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(170, 211, 114)" >
+                      Marksmanship Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Outlaw_Rogue" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/236286.jpg" class="img-fluid" alt="Outlaw Rogue Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 244, 104)" >
+                      Outlaw Rogue
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Retribution_Paladin" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135873.jpg" class="img-fluid" alt="Retribution Paladin Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(244, 140, 186)" >
+                      Retribution Paladin
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Shadow_Priest" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/136207.jpg" class="img-fluid" alt="Shadow Priest Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 255, 255)" >
+                      Shadow Priest
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Subtlety_Rogue" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/132320.jpg" class="img-fluid" alt="Subtlety Rogue Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(255, 244, 104)" >
+                      Subtlety Rogue
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Survival_Hunter" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/461113.jpg" class="img-fluid" alt="Survival Hunter Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(170, 211, 114)" >
+                      Survival Hunter
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Unholy_Death Knight" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/135775.jpg" class="img-fluid" alt="Unholy Death Knight Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(196, 30, 58)" >
+                      Unholy Death Knight
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="/classes/Dps/Windwalker_Monk" class="nav-link d-flex align-items-center
+                       ">
+                    <img width="24" src="/data/icons/608953.jpg" class="img-fluid" alt="Windwalker Monk Icon">
+                    <span class="nav-link-text ms-2" 
+                      style="color: rgb(0, 255, 152)" >
+                      Windwalker Monk
+                    </span>
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <li class="nav-item mt-3">
+        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-5">Other Pages</h6>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <i class="material-symbols-rounded text-body-emphasis opacity-5">Upcoming</i>
+          <span class="nav-link-text text-body-emphasis ms-1">Coming Soon</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="sidenav-footer position-absolute bottom-0 start-0 end-0 shadow border-top py-3" role="contentinfo">
+    <div class="mx-3">
+      <div class="w-100 text-center">
+        <a class="btn btn-outline-emphasis w-100 mb-2" href="https://www.patreon.com/c/Jodsderechte">Support the Site
+          Development</a>
+        <a class="btn btn-outline-emphasis w-100 mb-2" href="https://discord.com/invite/v3gYmYamGJ">Give Feedback on
+          Discord</a>
+
+        <h6 class="mt-3">Share on Socials!</h6>
+        <div class="d-inline-flex gap-2">
+          <a href="https://twitter.com/intent/tweet?text=Check%20@Mythistone%20WoW%20M%20Plus%20Meta&amp;url=https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
+            class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.MythiStone.github.io"
+            class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://bsky.app/intent/compose?text=Check%20@mythistone.bsky.social%20WoW%20M%20Plus%20Meta%20https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
+            class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky">
+            <i class="bi bi-bluesky"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+        
+        
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Pages">Pages</a></li>
+        
+        
+        
+        <li class="breadcrumb-item text-sm text-body-emphasis active" aria-current="page">Dashboard</li>
+        
+        
+      </ol>
+    </nav>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        <div class="input-group input-group-outline">
+          <label class="form-label">Type here...</label>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <ul class="navbar-nav d-flex align-items-center  justify-content-end">
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+              <i class="sidenav-toggler-line"></i>
+            </div>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link">
-            <i class="material-symbols-rounded text-body-emphasis opacity-5">Upcoming</i>
-            <span class="nav-link-text text-body-emphasis ms-1">Coming Soon</span>
+        <li class="nav-item px-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-body p-0">
+            <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
           </a>
         </li>
       </ul>
     </div>
-
-    <div class="sidenav-footer position-absolute bottom-0 start-0 end-0 shadow border-top py-3"
-      role="contentinfo">
-      <div class="mx-3">
-        <div class="w-100 text-center">
-          <a class="btn btn-outline-emphasis w-100 mb-2" href="https://www.patreon.com/c/Jodsderechte">Support the Site
-            Development</a>
-          <a class="btn btn-outline-emphasis w-100 mb-2" href="https://discord.com/invite/v3gYmYamGJ">Give Feedback on
-            Discord</a>
-
-          <h6 class="mt-3">Share on Socials!</h6>
-          <div class="d-inline-flex gap-2">
-            <a href="https://twitter.com/intent/tweet?text=Check%20@Mythistone%20WoW%20M%20Plus%20Meta&amp;url=https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
-              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on X">
-              <i class="bi bi-twitter-x"></i>
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.MythiStone.github.io"
-              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Facebook">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://bsky.app/intent/compose?text=Check%20@mythistone.bsky.social%20WoW%20M%20Plus%20Meta%20https%3A%2F%2Fwww.MythiStone.github.io%2FWoW"
-              class="btn btn-primary mb-0" target="_blank" rel="noopener noreferrer" aria-label="Share on Bluesky">
-              <i class="bi bi-bluesky"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </aside>
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    <!-- Navbar -->
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur"
-      data-scroll="true">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-body-emphasis" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-body-emphasis active" aria-current="page">Dashboard</li>
-          </ol>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group input-group-outline">
-              <label class="form-label">Type here...</label>
-              <input type="text" class="form-control">
-            </div>
-          </div>
-          <ul class="navbar-nav d-flex align-items-center  justify-content-end">
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                  <i class="sidenav-toggler-line"></i>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0">
-                <i class="material-symbols-rounded fixed-plugin-button-nav">settings</i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  </div>
+</nav>
     <!-- End Navbar -->
+    <!-- Notifications -->
+    
+    <!-- End Notifications -->
     <div class="container-fluid py-2">
       <div class="row">
         <div class="ms-3">
@@ -734,12 +704,12 @@
                   </div>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                  <i class="material-symbols-rounded opacity-10">leaderboard</i>
+                  <i class="material-symbols-rounded opacity-10">sprint</i>
                 </div>
               </div>
             </div>
             <div class="card-body ">
-              <h4 class="mb-0" id="fastest-run-value">Cleared in 10:47.649
+              <h4 class="mb-0" id="Shortest-run-value">Cleared in 10:47.649
               </h4>
               <div class="d-flex align-items-center">
                 
@@ -849,12 +819,12 @@
                   </div>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                  <i class="material-symbols-rounded opacity-10">leaderboard</i>
+                  <i class="material-symbols-rounded opacity-10">hourglass_bottom</i>
                 </div>
               </div>
             </div>
             <div class="card-body ">
-              <h4 class="mb-0" id="fastest-run-value">Cleared in 04:32:02.985
+              <h4 class="mb-0" id="Longest-run-value">Cleared in 04:32:02.985
               </h4>
               <div class="d-flex align-items-center">
                 
@@ -969,7 +939,7 @@
               </div>
             </div>
             <div class="card-body ">
-              <h4 class="mb-0" id="fastest-run-value">Cleared in 26:53.613
+              <h4 class="mb-0" id="Highest-run-value">Cleared in 26:53.613
               </h4>
               <div class="d-flex align-items-center">
                 
@@ -1093,7 +1063,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1757572447.452146>Last Update: </p>
+                              data-timestamp=1757622914.607561>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1117,7 +1087,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1757572447.452146>Last Update: </p>
+                              data-timestamp=1757622914.607561>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1147,7 +1117,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1757572447.452146>Last Update: </p>
+                  data-timestamp=1757622914.607561>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1167,7 +1137,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1757572447.452146>Last Update: </p>
+                  data-timestamp=1757622914.607561>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1191,7 +1161,7 @@
                 <div class="d-flex">
                   <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                   <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1757572447.452146>Last Update: </p>
+                    data-timestamp=1757622914.607561>Last Update: </p>
                 </div>
                 <a class="mb-0 text-sm" style="cursor: pointer;" data-bs-toggle="modal"
                   data-bs-target="#performanceModal">See How It’s
@@ -1214,7 +1184,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1757572447.452146>Last Update: </p>
+                  data-timestamp=1757622914.607561>Last Update: </p>
               </div>
             </div>
           </div>
@@ -1634,108 +1604,458 @@
         </div>
       </div>
       <footer class="footer py-4  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
+    <div class="container-fluid">
+        <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with Material-dashboard by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank"> Creative Tim</a>
-              </div>
+                <div class="copyright text-center text-sm text-muted text-lg-start">
+                    ©
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script>,
+                    made by <a href="https://linktr.ee/jodsderechte" class="font-weight-bold" target="_blank">Jods</a>
+                    with <a href="https://www.creative-tim.com/product/material-dashboard" class="font-weight-bold"
+                        target="_blank">Material-dashboard</a>
+                </div>
             </div>
             <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="/" class="nav-link text-muted" target="_blank">MythiStone</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/pages/privacy" class="nav-link text-muted" target="_blank">Privacy</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/pages/impressum" class="nav-link text-muted" target="_blank">Impressum</a>
-                  </li>
-                <li class="nav-item">
-                  <a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-              </ul>
+                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link text-muted" target="_blank">MythiStone</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/privacy" class="nav-link text-muted" target="_blank">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/impressum" class="nav-link text-muted" target="_blank">Impressum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-      </footer>
+    </div>
+</footer>
     </div>
   </main>
   <div class="fixed-plugin">
-    <div class="card shadow-lg">
-      <div class="card-header pb-0 pt-3">
-        <div class="float-start">
-          <h5 class="mt-3 mb-0">UI Configurator</h5>
-          <p>Config the Ui</p>
-        </div>
-        <div class="float-end mt-4">
-          <button class="btn btn-link p-0 fixed-plugin-close-button">
-            <i class="material-symbols-rounded">clear</i>
-          </button>
-        </div>
-        <!-- End Toggle Button -->
+  <div class="card shadow-lg">
+    <div class="card-header pb-0 pt-3">
+      <div class="float-start">
+        <h5 class="mt-3 mb-0">UI Configurator</h5>
+        <p>Config the Ui</p>
       </div>
-      <hr class="horizontal dark my-1">
-      <div class="card-body pt-sm-3 pt-0">
-        <!-- Sidebar Backgrounds -->
-        <div>
-          <h6 class="mb-0">Sidebar Colors</h6>
+      <div class="float-end mt-4">
+        <button class="btn btn-link p-0 fixed-plugin-close-button">
+          <i class="material-symbols-rounded">clear</i>
+        </button>
+      </div>
+      <!-- End Toggle Button -->
+    </div>
+    <hr class="horizontal dark my-1">
+    <div class="card-body pt-sm-3 pt-0">
+      <!-- Sidebar Backgrounds -->
+      <div>
+        <h6 class="mb-0">Sidebar Colors</h6>
+      </div>
+      <a href="javascript:void(0)" class="switch-trigger background-color">
+        <div class="badge-colors my-2 text-start">
+          <span class="badge filter bg-gradient-primary" data-color="primary" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-dark active" data-color="dark" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+          <span class="badge filter bg-gradient-danger" id="defaultColor" data-color="danger"
+            onclick="sidebarColor(this)"></span>
         </div>
-        <a href="javascript:void(0)" class="switch-trigger background-color">
-          <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary" data-color="primary" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-dark active" data-color="dark" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
-            <span class="badge filter bg-gradient-danger" id="defaultColor" data-color="danger"
-              onclick="sidebarColor(this)"></span>
-          </div>
-        </a>
-        <!-- Sidenav Type -->
-        <div class="mt-3">
-          <h6 class="mb-0">Sidenav Type</h6>
-          <p class="text-sm">Choose between different sidenav types.</p>
-        </div>
-        <div class="d-flex">
-          <button class="btn bg-gradient-dark px-3 mb-2" data-class="bg-gradient-dark"
-            onclick="sidebarType(this)">Dark</button>
-          <button class="btn bg-gradient-dark px-3 mb-2 ms-2" id="defaultSidebarType" data-class="bg-transparent"
-            onclick="sidebarType(this)">Transparent</button>
-          <button class="btn bg-gradient-dark px-3 mb-2  active ms-2" data-class="bg-white"
-            onclick="sidebarType(this)">White</button>
-        </div>
-        <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
-        <hr class="horizontal dark my-3">
-        <div class="mt-2 d-flex">
-          <h6 class="mb-0">Light / Dark</h6>
-          <div class="form-check form-switch ps-0 ms-auto my-auto">
-            <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" >
-          </div>
+      </a>
+      <!-- Sidenav Type -->
+      <hr class="horizontal dark my-3">
+      <div class="mt-2 d-flex">
+        <h6 class="mb-0">Light / Dark</h6>
+        <div class="form-check form-switch ps-0 ms-auto my-auto">
+          <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version">
         </div>
       </div>
     </div>
   </div>
+</div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+<script src="/assets/js/core/popper.min.js"></script>
+<script src="/assets/js/core/jquery.min.js"></script>
+<script src="/assets/js/core/bootstrap.min.js"></script>
+<script src="/assets/js/plugins/bootstrap-select.min.js"></script>
+
+<!-- Material Dashboard JS -->
+<script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
+        }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+    function timeAgo(unixTsSeconds) {
+        const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+        const now = Date.now() / 1000;
+        const diff = now - unixTsSeconds;
+
+        const units = [
+            { name: 'year', secs: 60 * 60 * 24 * 365 },
+            { name: 'month', secs: 60 * 60 * 24 * 30 },
+            { name: 'day', secs: 60 * 60 * 24 },
+            { name: 'hour', secs: 60 * 60 },
+            { name: 'minute', secs: 60 },
+            { name: 'second', secs: 1 },
+        ];
+
+        for (const { name, secs } of units) {
+            const delta = Math.floor(diff / secs);
+            if (Math.abs(delta) >= 1) {
+                return rtf.format(-delta, name);
+            }
+        }
+        return 'just now';
+    }
+
+    function formatDuration(ms) {
+        const minutes = Math.floor(ms / 60000);
+        const seconds = Math.floor((ms % 60000) / 1000);
+        const milliseconds = ms % 1000;
+
+        const mm = String(minutes).padStart(2, '0');
+        const ss = String(seconds).padStart(2, '0');
+        const mmm = String(milliseconds).padStart(3, '0');
+
+        return `${mm}:${ss}.${mmm}`;
+    }
+    //initialize timestamps
+    document.querySelectorAll('.timestamp').forEach(function (el) {
+        const timestamp = el.getAttribute('data-timestamp');
+        el.textContent = `${el.textContent} ${timeAgo(Number(timestamp))}`;
+        el.setAttribute('title', new Date(Number(timestamp) * 1000).toLocaleString());
+    });
+</script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+<script src="/assets/js/material-dashboard.js"></script>
+<script>
+    sidebarColor(document.querySelector('#defaultColor'));
+</script>
+  <script src="/assets/js/plugins/chartjs.min.js"></script>
 
   <!-- initialize charts -->
 
-
-
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1744,389 +2064,84 @@
   
   
 
-  
-  
-  
-  
-  
-  
-  
+  <!-- Overall Keys by Spec Chart -->
+  <script>
+    (() => {
+      const labels = ["Restoration", "Frost", "Retribution", "Arcane", "Havoc", "Protection", "Protection", "Restoration", "Vengeance", "Beast Mastery", "Marksmanship", "Discipline", "Elemental", "Destruction", "Fury", "Balance", "Demonology", "Brewmaster", "Shadow", "Guardian", "Assassination", "Frost", "Holy", "Devastation", "Blood", "Windwalker", "Mistweaver", "Feral", "Unholy", "Holy", "Enhancement", "Subtlety", "Preservation", "Survival", "Affliction", "Arms", "Outlaw", "Fire", "Augmentation"];
+    const counts = [508307, 450409, 385292, 346139, 343823, 338017, 316365, 306701, 302796, 267156, 238204, 237068, 209666, 190731, 184250, 176097, 174765, 172713, 167949, 146593, 140158, 136536, 128306, 123055, 121333, 97086, 89580, 85292, 80121, 71842, 69751, 63748, 55654, 45755, 44355, 43115, 42376, 20053, 12116];
+    const barColors = ["rgba(0, 112, 221, 0.8)", "rgba(196, 30, 58, 0.8)", "rgba(244, 140, 186, 0.8)", "rgba(63, 199, 235, 0.8)", "rgba(163, 48, 201, 0.8)", "rgba(198, 155, 109, 0.8)", "rgba(244, 140, 186, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(163, 48, 201, 0.8)", "rgba(170, 211, 114, 0.8)", "rgba(170, 211, 114, 0.8)", "rgba(255, 255, 255, 0.8)", "rgba(0, 112, 221, 0.8)", "rgba(135, 136, 238, 0.8)", "rgba(198, 155, 109, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(135, 136, 238, 0.8)", "rgba(0, 255, 152, 0.8)", "rgba(255, 255, 255, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(255, 244, 104, 0.8)", "rgba(63, 199, 235, 0.8)", "rgba(244, 140, 186, 0.8)", "rgba(51, 147, 127, 0.8)", "rgba(196, 30, 58, 0.8)", "rgba(0, 255, 152, 0.8)", "rgba(0, 255, 152, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(196, 30, 58, 0.8)", "rgba(255, 255, 255, 0.8)", "rgba(0, 112, 221, 0.8)", "rgba(255, 244, 104, 0.8)", "rgba(51, 147, 127, 0.8)", "rgba(170, 211, 114, 0.8)", "rgba(135, 136, 238, 0.8)", "rgba(198, 155, 109, 0.8)", "rgba(255, 244, 104, 0.8)", "rgba(63, 199, 235, 0.8)", "rgba(51, 147, 127, 0.8)"];
+    const iconUrls = ["/data/icons/136052.jpg", "/data/icons/135773.jpg", "/data/icons/135873.jpg", "/data/icons/135932.jpg", "/data/icons/1247264.jpg", "/data/icons/132341.jpg", "/data/icons/236264.jpg", "/data/icons/136041.jpg", "/data/icons/1247265.jpg", "/data/icons/461112.jpg", "/data/icons/236179.jpg", "/data/icons/135940.jpg", "/data/icons/136048.jpg", "/data/icons/136186.jpg", "/data/icons/132347.jpg", "/data/icons/136096.jpg", "/data/icons/136172.jpg", "/data/icons/608951.jpg", "/data/icons/136207.jpg", "/data/icons/132276.jpg", "/data/icons/236270.jpg", "/data/icons/135846.jpg", "/data/icons/135920.jpg", "/data/icons/4511811.jpg", "/data/icons/135770.jpg", "/data/icons/608953.jpg", "/data/icons/608952.jpg", "/data/icons/132115.jpg", "/data/icons/135775.jpg", "/data/icons/237542.jpg", "/data/icons/237581.jpg", "/data/icons/132320.jpg", "/data/icons/4511812.jpg", "/data/icons/461113.jpg", "/data/icons/136145.jpg", "/data/icons/132355.jpg", "/data/icons/236286.jpg", "/data/icons/135810.jpg", "/data/icons/5198700.jpg"];
 
-  
-  
-  
-  
-  
-  
-  
+    const overall_ctx = document.getElementById("chart-overall").getContext("2d");
 
-  
-  
-  
-  
-  
-  
-  
+    // load images once
+    const iconPromises = iconUrls.map(src => new Promise(res => {
+      const img = new Image();
+      img.src = src;
+      img.onload = () => res(img);
+      img.onerror = () => res(null); // fail-safe
+    }));
 
-  
-  
-  
-  
-  
-  
-  
+    const iconPlugin = {
+      id: "iconLabels",
+      afterDraw(chart, args, opts) {
+        if (!opts.enabled) return;
+        const { ctx, chartArea: { bottom }, scales: { x } } = chart;
+        opts.icons.forEach((img, i) => {
+          if (!img) return; // skip failed loads
+          const xPos = x.getPixelForTick(i);
+          ctx.drawImage(img, xPos - opts.size / 2, bottom + opts.offsetY, opts.size, opts.size);
+        });
+      }
+    };
 
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-  
-
-
-<!-- Overall Keys by Spec Chart -->
-<script>
-(() => {
-  const labels = ["Restoration", "Frost", "Retribution", "Arcane", "Havoc", "Protection", "Protection", "Restoration", "Vengeance", "Beast Mastery", "Marksmanship", "Discipline", "Elemental", "Destruction", "Fury", "Balance", "Demonology", "Brewmaster", "Shadow", "Guardian", "Assassination", "Frost", "Holy", "Devastation", "Blood", "Windwalker", "Mistweaver", "Feral", "Unholy", "Holy", "Enhancement", "Subtlety", "Preservation", "Survival", "Affliction", "Arms", "Outlaw", "Fire", "Augmentation"];
-  const counts = [492008, 436319, 373387, 336322, 332931, 326724, 305796, 297998, 295686, 255358, 231562, 230812, 203312, 183304, 176467, 171205, 170639, 167768, 163981, 142051, 137880, 133180, 124270, 119947, 117373, 94323, 86947, 82840, 78205, 69305, 67982, 61089, 53695, 44391, 43564, 42000, 41395, 19410, 11656];
-  const barColors = ["rgba(0, 112, 221, 0.8)", "rgba(196, 30, 58, 0.8)", "rgba(244, 140, 186, 0.8)", "rgba(63, 199, 235, 0.8)", "rgba(163, 48, 201, 0.8)", "rgba(198, 155, 109, 0.8)", "rgba(244, 140, 186, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(163, 48, 201, 0.8)", "rgba(170, 211, 114, 0.8)", "rgba(170, 211, 114, 0.8)", "rgba(255, 255, 255, 0.8)", "rgba(0, 112, 221, 0.8)", "rgba(135, 136, 238, 0.8)", "rgba(198, 155, 109, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(135, 136, 238, 0.8)", "rgba(0, 255, 152, 0.8)", "rgba(255, 255, 255, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(255, 244, 104, 0.8)", "rgba(63, 199, 235, 0.8)", "rgba(244, 140, 186, 0.8)", "rgba(51, 147, 127, 0.8)", "rgba(196, 30, 58, 0.8)", "rgba(0, 255, 152, 0.8)", "rgba(0, 255, 152, 0.8)", "rgba(255, 124, 10, 0.8)", "rgba(196, 30, 58, 0.8)", "rgba(255, 255, 255, 0.8)", "rgba(0, 112, 221, 0.8)", "rgba(255, 244, 104, 0.8)", "rgba(51, 147, 127, 0.8)", "rgba(170, 211, 114, 0.8)", "rgba(135, 136, 238, 0.8)", "rgba(198, 155, 109, 0.8)", "rgba(255, 244, 104, 0.8)", "rgba(63, 199, 235, 0.8)", "rgba(51, 147, 127, 0.8)"];
-  const iconUrls = ["/data/icons/136052.jpg", "/data/icons/135773.jpg", "/data/icons/135873.jpg", "/data/icons/135932.jpg", "/data/icons/1247264.jpg", "/data/icons/132341.jpg", "/data/icons/236264.jpg", "/data/icons/136041.jpg", "/data/icons/1247265.jpg", "/data/icons/461112.jpg", "/data/icons/236179.jpg", "/data/icons/135940.jpg", "/data/icons/136048.jpg", "/data/icons/136186.jpg", "/data/icons/132347.jpg", "/data/icons/136096.jpg", "/data/icons/136172.jpg", "/data/icons/608951.jpg", "/data/icons/136207.jpg", "/data/icons/132276.jpg", "/data/icons/236270.jpg", "/data/icons/135846.jpg", "/data/icons/135920.jpg", "/data/icons/4511811.jpg", "/data/icons/135770.jpg", "/data/icons/608953.jpg", "/data/icons/608952.jpg", "/data/icons/132115.jpg", "/data/icons/135775.jpg", "/data/icons/237542.jpg", "/data/icons/237581.jpg", "/data/icons/132320.jpg", "/data/icons/4511812.jpg", "/data/icons/461113.jpg", "/data/icons/136145.jpg", "/data/icons/132355.jpg", "/data/icons/236286.jpg", "/data/icons/135810.jpg", "/data/icons/5198700.jpg"];
-
-  const overall_ctx = document.getElementById("chart-overall").getContext("2d");
-
-  // load images once
-  const iconPromises = iconUrls.map(src => new Promise(res => {
-    const img = new Image();
-    img.src = src;
-    img.onload = () => res(img);
-    img.onerror = () => res(null); // fail-safe
-  }));
-
-  const iconPlugin = {
-    id: "iconLabels",
-    afterDraw(chart, args, opts) {
-      if (!opts.enabled) return;
-      const { ctx, chartArea: { bottom }, scales: { x } } = chart;
-      opts.icons.forEach((img, i) => {
-        if (!img) return; // skip failed loads
-        const xPos = x.getPixelForTick(i);
-        ctx.drawImage(img, xPos - opts.size / 2, bottom + opts.offsetY, opts.size, opts.size);
-      });
-    }
-  };
-
-  Promise.all(iconPromises).then(icons => {
-    new Chart(overall_ctx, {
-      type: "bar",
-      data: {
-        labels: labels,
-        datasets: [{
-          label: "Keys by spec",
-          tension: 0.4,
-          borderColor: "darkgrey",
-          borderWidth: 1,
-          borderRadius: 4,
-          borderSkipped: false,
-          backgroundColor: barColors,
-          data: counts,
-          barThickness: 'flex'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          iconLabels: {
-            enabled: true,
-            size: 32,
-            offsetY: 4,
-            icons: icons
+    Promise.all(iconPromises).then(icons => {
+      new Chart(overall_ctx, {
+        type: "bar",
+        data: {
+          labels: labels,
+          datasets: [{
+            label: "Keys by spec",
+            tension: 0.4,
+            borderColor: "darkgrey",
+            borderWidth: 1,
+            borderRadius: 4,
+            borderSkipped: false,
+            backgroundColor: barColors,
+            data: counts,
+            barThickness: 'flex'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            iconLabels: {
+              enabled: true,
+              size: 32,
+              offsetY: 4,
+              icons: icons
+            }
+          },
+          layout: { padding: { bottom: (32 + 8 + 4) } },
+          interaction: { intersect: false, mode: 'index' },
+          scales: {
+            y: { grid: { drawBorder: false, display: true, drawOnChartArea: true, drawTicks: false, borderDash: [5, 5], color: '#e5e5e5' }, ticks: { display: false } },
+            x: { grid: { drawBorder: false, display: false, drawOnChartArea: false, drawTicks: false, borderDash: [5, 5] }, ticks: { display: false, color: '#737373', padding: 10, font: { size: 14, lineHeight: 2 } } }
           }
         },
-        layout: { padding: { bottom: (32 + 8 + 4) } },
-        interaction: { intersect: false, mode: 'index' },
-        scales: {
-          y: { grid: { drawBorder:false, display:true, drawOnChartArea:true, drawTicks:false, borderDash:[5,5], color:'#e5e5e5'}, ticks:{display:false} },
-          x: { grid:{drawBorder:false, display:false, drawOnChartArea:false, drawTicks:false, borderDash:[5,5]}, ticks:{display:false, color:'#737373', padding:10, font:{size:14, lineHeight:2}} }
-        }
-      },
-      plugins: [iconPlugin]
+        plugins: [iconPlugin]
+      });
     });
-  });
-})();
-</script>
+}) ();
+  </script>
 
   <!-- Key Level Chart -->
   <script>
     (() => {
       var keylevel_ctx = document.getElementById("chart-keylevel").getContext("2d");
       const keyLevels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-    const datasets = [{"label": "Protection", "data": [4.629, 4.562, 4.65, 4.604, 4.736, 4.62, 4.573, 4.519, 4.764, 4.611, 4.816, 5.13, 5.683, 6.719, 7.827, 8.736, 9.581, 10.27, 13.333], "rawCounts": [10448, 3355, 6299, 5221, 13192, 18146, 19213, 18306, 88379, 39269, 42349, 27639, 18057, 10831, 4405, 1336, 256, 19, 4], "backgroundColor": "rgba(178, 140, 98, 0.8)", "borderWidth": 0}, {"label": "Fury", "data": [2.881, 2.793, 2.732, 2.735, 2.619, 2.618, 2.64, 2.639, 2.613, 2.557, 2.527, 2.588, 2.663, 2.785, 3.04, 3.786, 2.994, 3.243, 0.0], "rawCounts": [6502, 2054, 3701, 3101, 7296, 10285, 11093, 10690, 48477, 21776, 22220, 13944, 8462, 4490, 1711, 579, 80, 6, 0], "backgroundColor": "rgba(198, 155, 109, 0.8)", "borderWidth": 0}, {"label": "Arms", "data": [0.812, 0.802, 0.728, 0.721, 0.688, 0.687, 0.678, 0.604, 0.601, 0.605, 0.601, 0.584, 0.59, 0.543, 0.549, 0.412, 0.262, 0.0, 0.0], "rawCounts": [1833, 590, 986, 817, 1917, 2697, 2848, 2448, 11154, 5151, 5284, 3145, 1875, 876, 309, 63, 7, 0, 0], "backgroundColor": "rgba(218, 170, 120, 0.8)", "borderWidth": 0}, {"label": "Brewmaster", "data": [2.134, 2.106, 2.164, 2.216, 2.305, 2.343, 2.343, 2.444, 2.51, 2.614, 2.619, 2.609, 2.662, 2.651, 2.61, 2.74, 1.759, 2.162, 0.0], "rawCounts": [4816, 1549, 2932, 2513, 6421, 9203, 9845, 9899, 46567, 22264, 23030, 14057, 8459, 4274, 1469, 419, 47, 4, 0], "backgroundColor": "rgba(0, 230, 137, 0.8)", "borderWidth": 0}, {"label": "Windwalker", "data": [1.542, 1.523, 1.492, 1.495, 1.559, 1.554, 1.55, 1.537, 1.525, 1.441, 1.275, 1.105, 0.983, 0.867, 0.817, 0.621, 0.449, 0.0, 0.0], "rawCounts": [3481, 1120, 2021, 1695, 4343, 6104, 6510, 6224, 28295, 12270, 11216, 5955, 3124, 1398, 460, 95, 12, 0, 0], "backgroundColor": "rgba(0, 255, 152, 0.8)", "borderWidth": 0}, {"label": "Mistweaver", "data": [1.791, 1.8, 1.652, 1.666, 1.613, 1.552, 1.459, 1.439, 1.422, 1.285, 1.081, 0.869, 0.7, 0.529, 0.444, 0.347, 0.374, 0.0, 0.0], "rawCounts": [4042, 1324, 2238, 1889, 4492, 6098, 6129, 5830, 26383, 10944, 9509, 4681, 2223, 852, 250, 53, 10, 0, 0], "backgroundColor": "rgba(0, 255, 167, 0.8)", "borderWidth": 0}, {"label": "Restoration", "data": [4.49, 4.603, 4.522, 4.436, 4.498, 4.355, 4.473, 4.58, 4.22, 4.405, 4.472, 4.595, 4.686, 4.873, 4.881, 5.179, 5.913, 5.405, 6.667], "rawCounts": [10135, 3385, 6126, 5030, 12530, 17105, 18792, 18551, 78293, 37517, 39328, 24753, 14889, 7855, 2747, 792, 158, 10, 2], "backgroundColor": "rgba(230, 112, 9, 0.8)", "borderWidth": 0}, {"label": "Balance", "data": [2.49, 2.631, 2.483, 2.596, 2.51, 2.513, 2.557, 2.627, 2.619, 2.613, 2.531, 2.462, 2.369, 2.263, 2.198, 1.824, 1.16, 0.541, 0.0], "rawCounts": [5621, 1935, 3363, 2944, 6993, 9872, 10742, 10642, 48594, 22254, 22261, 13261, 7527, 3648, 1237, 279, 31, 1, 0], "backgroundColor": "rgba(246, 120, 10, 0.8)", "borderWidth": 0}, {"label": "Guardian", "data": [2.527, 2.448, 2.46, 2.49, 2.478, 2.395, 2.379, 2.315, 2.197, 2.222, 1.969, 1.715, 1.363, 1.009, 0.672, 0.739, 1.01, 0.0, 0.0], "rawCounts": [5703, 1800, 3333, 2823, 6903, 9407, 9995, 9375, 40761, 18926, 17314, 9237, 4329, 1627, 378, 113, 27, 0, 0], "backgroundColor": "rgba(255, 128, 10, 0.8)", "borderWidth": 0}, {"label": "Feral", "data": [1.207, 1.141, 1.177, 1.088, 1.227, 1.193, 1.128, 1.11, 1.188, 1.204, 1.288, 1.286, 1.361, 1.583, 2.191, 2.511, 2.32, 2.703, 0.0], "rawCounts": [2725, 839, 1595, 1234, 3419, 4687, 4738, 4497, 22033, 10255, 11331, 6927, 4324, 2552, 1233, 384, 62, 5, 0], "backgroundColor": "rgba(255, 136, 11, 0.8)", "borderWidth": 0}, {"label": "Havoc", "data": [4.507, 4.611, 4.519, 4.529, 4.515, 4.658, 4.466, 4.407, 4.668, 4.722, 5.152, 5.685, 6.247, 7.175, 8.359, 9.606, 9.955, 2.703, 0.0], "rawCounts": [10174, 3391, 6122, 5135, 12578, 18296, 18763, 17851, 86607, 40219, 45307, 30629, 19849, 11566, 4704, 1469, 266, 5, 0], "backgroundColor": "rgba(147, 43, 181, 0.8)", "borderWidth": 0}, {"label": "Vengeance", "data": [3.857, 3.927, 3.994, 4.044, 4.107, 4.355, 4.372, 4.404, 4.36, 4.584, 4.751, 4.789, 4.528, 3.65, 2.363, 1.334, 1.16, 2.162, 0.0], "rawCounts": [8705, 2888, 5410, 4586, 11440, 17106, 18370, 17839, 80884, 39040, 41780, 25800, 14386, 5883, 1330, 204, 31, 4, 0], "backgroundColor": "rgba(179, 53, 221, 0.8)", "borderWidth": 0}, {"label": "Devastation", "data": [1.618, 1.605, 1.602, 1.637, 1.713, 1.722, 1.786, 1.9, 2.048, 1.948, 1.763, 1.488, 1.303, 1.014, 0.697, 0.445, 0.374, 0.541, 0.0], "rawCounts": [3653, 1180, 2170, 1856, 4772, 6763, 7502, 7696, 38000, 16587, 15506, 8016, 4140, 1635, 392, 68, 10, 1, 0], "backgroundColor": "rgba(46, 132, 114, 0.8)", "borderWidth": 0}, {"label": "Preservation", "data": [1.12, 1.099, 0.949, 0.888, 0.897, 0.871, 0.799, 0.816, 0.904, 0.792, 0.696, 0.578, 0.523, 0.431, 0.457, 0.615, 0.711, 0.0, 0.0], "rawCounts": [2527, 808, 1286, 1007, 2498, 3420, 3357, 3306, 16778, 6745, 6125, 3113, 1661, 694, 257, 94, 19, 0, 0], "backgroundColor": "rgba(51, 147, 127, 0.8)", "borderWidth": 0}, {"label": "Augmentation", "data": [0.238, 0.203, 0.19, 0.202, 0.2, 0.18, 0.156, 0.161, 0.183, 0.182, 0.177, 0.133, 0.139, 0.123, 0.073, 0.033, 0.0, 0.0, 0.0], "rawCounts": [538, 149, 258, 229, 556, 707, 657, 653, 3394, 1554, 1557, 717, 442, 199, 41, 5, 0, 0, 0], "backgroundColor": "rgba(56, 162, 140, 0.8)", "borderWidth": 0}, {"label": "Retribution", "data": [5.743, 5.935, 6.046, 6.113, 6.04, 5.832, 5.968, 5.821, 5.507, 5.63, 5.556, 5.51, 4.861, 3.977, 3.015, 1.962, 1.235, 2.162, 0.0], "rawCounts": [12963, 4365, 8190, 6932, 16824, 22907, 25072, 23578, 102174, 47950, 48857, 29686, 15444, 6411, 1697, 300, 33, 4, 0], "backgroundColor": "rgba(220, 126, 167, 0.8)", "borderWidth": 0}, {"label": "Protection", "data": [4.737, 4.876, 4.719, 4.648, 4.613, 4.511, 4.495, 4.43, 4.378, 4.347, 4.487, 4.71, 5.018, 5.479, 6.159, 6.238, 6.4, 5.405, 6.667], "rawCounts": [10691, 3586, 6393, 5270, 12851, 17720, 18883, 17944, 81217, 37026, 39461, 25375, 15944, 8832, 3466, 954, 171, 10, 2], "backgroundColor": "rgba(244, 140, 186, 0.8)", "borderWidth": 0}, {"label": "Holy", "data": [2.358, 2.276, 2.376, 2.369, 2.137, 2.158, 2.125, 2.007, 1.937, 1.912, 1.691, 1.408, 1.113, 0.803, 0.56, 0.353, 0.187, 0.0, 0.0], "rawCounts": [5323, 1674, 3219, 2686, 5952, 8475, 8929, 8130, 35936, 16283, 14875, 7583, 3536, 1295, 315, 54, 5, 0, 0], "backgroundColor": "rgba(255, 154, 205, 0.8)", "borderWidth": 0}, {"label": "Beast Mastery", "data": [4.488, 4.625, 4.585, 4.602, 4.742, 4.609, 4.557, 4.347, 4.171, 3.908, 3.279, 2.659, 1.824, 1.29, 0.912, 0.634, 0.674, 2.162, 0.0], "rawCounts": [10129, 3401, 6211, 5218, 13208, 18104, 19147, 17607, 77383, 33280, 28838, 14325, 5796, 2079, 513, 97, 18, 4, 0], "backgroundColor": "rgba(153, 190, 103, 0.8)", "borderWidth": 0}, {"label": "Marksmanship", "data": [2.992, 2.953, 3.216, 3.222, 3.395, 3.417, 3.553, 3.661, 3.541, 3.578, 3.512, 3.405, 3.259, 2.825, 2.326, 2.034, 1.834, 2.703, 13.333], "rawCounts": [6754, 2172, 4357, 3654, 9458, 13422, 14926, 14829, 65702, 30476, 30881, 18345, 10354, 4554, 1309, 311, 49, 5, 4], "backgroundColor": "rgba(170, 211, 114, 0.8)", "borderWidth": 0}, {"label": "Survival", "data": [0.705, 0.711, 0.692, 0.732, 0.77, 0.693, 0.667, 0.687, 0.653, 0.692, 0.701, 0.644, 0.506, 0.364, 0.327, 0.229, 0.037, 0.0, 0.0], "rawCounts": [1592, 523, 938, 830, 2145, 2721, 2803, 2784, 12120, 5892, 6162, 3468, 1607, 586, 184, 35, 1, 0, 0], "backgroundColor": "rgba(187, 232, 125, 0.8)", "borderWidth": 0}, {"label": "Assassination", "data": [2.122, 2.056, 2.092, 2.087, 2.061, 2.197, 2.237, 2.295, 2.114, 2.167, 1.959, 1.835, 1.717, 1.425, 1.13, 0.772, 0.412, 0.0, 0.0], "rawCounts": [4789, 1512, 2834, 2367, 5741, 8631, 9399, 9295, 39227, 18457, 17225, 9885, 5456, 2297, 636, 118, 11, 0, 0], "backgroundColor": "rgba(230, 220, 94, 0.8)", "borderWidth": 0}, {"label": "Subtlety", "data": [0.685, 0.62, 0.57, 0.55, 0.668, 0.681, 0.593, 0.538, 0.838, 0.806, 1.058, 1.212, 1.56, 2.044, 2.472, 3.348, 3.219, 2.703, 0.0], "rawCounts": [1546, 456, 772, 624, 1861, 2674, 2492, 2178, 15550, 6862, 9301, 6529, 4955, 3295, 1391, 512, 86, 5, 0], "backgroundColor": "rgba(255, 244, 104, 0.8)", "borderWidth": 0}, {"label": "Outlaw", "data": [0.671, 0.659, 0.667, 0.625, 0.617, 0.621, 0.605, 0.604, 0.592, 0.592, 0.621, 0.616, 0.668, 0.677, 0.812, 0.955, 0.749, 1.081, 0.0], "rawCounts": [1515, 485, 903, 709, 1719, 2441, 2541, 2446, 10982, 5040, 5460, 3316, 2121, 1092, 457, 146, 20, 2, 0], "backgroundColor": "rgba(255, 255, 114, 0.8)", "borderWidth": 0}, {"label": "Discipline", "data": [3.257, 3.239, 3.447, 3.553, 3.604, 3.567, 3.683, 3.833, 3.679, 3.802, 3.372, 2.96, 2.371, 1.727, 1.176, 0.634, 0.524, 0.0, 0.0], "rawCounts": [7352, 2382, 4670, 4029, 10038, 14011, 15474, 15526, 68253, 32384, 29656, 15947, 7533, 2784, 662, 97, 14, 0, 0], "backgroundColor": "rgba(230, 230, 230, 0.8)", "borderWidth": 0}, {"label": "Shadow", "data": [2.756, 2.821, 2.75, 2.677, 2.502, 2.574, 2.562, 2.574, 2.569, 2.511, 2.313, 2.144, 1.95, 1.599, 1.345, 1.04, 0.823, 0.541, 0.0], "rawCounts": [6220, 2075, 3726, 3035, 6970, 10111, 10765, 10426, 47660, 21389, 20340, 11551, 6196, 2578, 757, 159, 22, 1, 0], "backgroundColor": "rgba(255, 255, 255, 0.8)", "borderWidth": 0}, {"label": "Holy", "data": [1.85, 1.879, 1.687, 1.718, 1.521, 1.48, 1.351, 1.257, 1.102, 0.954, 0.693, 0.486, 0.329, 0.188, 0.112, 0.046, 0.075, 0.0, 0.0], "rawCounts": [4176, 1382, 2285, 1948, 4237, 5812, 5677, 5091, 20439, 8124, 6095, 2618, 1046, 303, 63, 7, 2, 0, 0], "backgroundColor": "rgba(255, 255, 255, 0.8)", "borderWidth": 0}, {"label": "Frost", "data": [4.646, 4.45, 4.611, 4.777, 5.101, 5.286, 5.246, 5.273, 5.715, 6.031, 7.243, 8.703, 10.514, 12.711, 14.116, 14.778, 15.943, 16.757, 20.0], "rawCounts": [10486, 3273, 6246, 5417, 14209, 20763, 22039, 21358, 106027, 51361, 63691, 46887, 33405, 20490, 7944, 2260, 426, 31, 6], "backgroundColor": "rgba(176, 27, 52, 0.8)", "borderWidth": 0}, {"label": "Blood", "data": [2.38, 2.335, 2.207, 2.207, 2.011, 2.017, 2.031, 2.054, 2.0, 1.743, 1.448, 1.117, 0.793, 0.554, 0.441, 0.314, 0.15, 0.0, 0.0], "rawCounts": [5372, 1717, 2990, 2502, 5603, 7921, 8532, 8319, 37111, 14846, 12730, 6018, 2519, 893, 248, 48, 4, 0, 0], "backgroundColor": "rgba(196, 30, 58, 0.8)", "borderWidth": 0}, {"label": "Unholy", "data": [0.961, 0.961, 1.054, 1.057, 1.107, 1.129, 1.205, 1.302, 1.185, 1.229, 1.202, 1.214, 1.122, 0.815, 0.579, 0.412, 0.374, 0.0, 0.0], "rawCounts": [2168, 707, 1428, 1199, 3084, 4436, 5062, 5272, 21989, 10471, 10573, 6540, 3564, 1313, 326, 63, 10, 0, 0], "backgroundColor": "rgba(216, 33, 64, 0.8)", "borderWidth": 0}, {"label": "Restoration", "data": [5.381, 5.352, 5.55, 5.57, 5.988, 6.258, 6.295, 6.23, 6.932, 6.971, 8.08, 9.174, 10.325, 11.511, 12.44, 12.927, 12.275, 14.595, 13.333], "rawCounts": [12145, 3936, 7518, 6316, 16681, 24579, 26447, 25235, 128605, 59370, 71054, 49424, 32806, 18555, 7001, 1977, 328, 27, 4], "backgroundColor": "rgba(0, 101, 199, 0.8)", "borderWidth": 0}, {"label": "Elemental", "data": [3.313, 3.248, 3.24, 3.237, 3.116, 3.161, 3.08, 3.084, 3.082, 3.046, 2.92, 2.787, 2.718, 2.646, 2.681, 3.263, 4.716, 5.946, 6.667], "rawCounts": [7479, 2389, 4389, 3671, 8680, 12416, 12942, 12491, 57170, 25944, 25681, 15012, 8636, 4265, 1509, 499, 126, 11, 2], "backgroundColor": "rgba(0, 112, 221, 0.8)", "borderWidth": 0}, {"label": "Enhancement", "data": [1.108, 1.104, 1.171, 1.079, 1.053, 1.15, 1.143, 1.059, 1.073, 1.035, 0.92, 0.858, 0.758, 0.671, 0.565, 0.412, 0.15, 0.0, 0.0], "rawCounts": [2500, 812, 1586, 1223, 2934, 4517, 4804, 4290, 19916, 8817, 8088, 4621, 2408, 1081, 318, 63, 4, 0, 0], "backgroundColor": "rgba(0, 123, 243, 0.8)", "borderWidth": 0}, {"label": "Arcane", "data": [3.67, 3.665, 3.85, 3.942, 4.042, 4.099, 4.226, 4.44, 4.739, 4.904, 5.567, 6.092, 6.928, 7.942, 8.3, 8.474, 10.516, 14.595, 20.0], "rawCounts": [8284, 2695, 5216, 4470, 11260, 16102, 17754, 17985, 87916, 41764, 48958, 32822, 22012, 12803, 4671, 1296, 281, 27, 6], "backgroundColor": "rgba(57, 179, 212, 0.8)", "borderWidth": 0}, {"label": "Frost", "data": [3.022, 2.933, 2.889, 2.901, 2.652, 2.578, 2.531, 2.452, 2.043, 1.94, 1.549, 1.267, 0.873, 0.605, 0.444, 0.327, 0.225, 0.0, 0.0], "rawCounts": [6820, 2157, 3914, 3289, 7386, 10126, 10635, 9932, 37896, 16520, 13623, 6827, 2774, 975, 250, 50, 6, 0, 0], "backgroundColor": "rgba(63, 199, 235, 0.8)", "borderWidth": 0}, {"label": "Fire", "data": [0.426, 0.383, 0.324, 0.3, 0.326, 0.316, 0.265, 0.245, 0.303, 0.292, 0.311, 0.241, 0.201, 0.172, 0.098, 0.098, 0.112, 0.0, 0.0], "rawCounts": [961, 282, 439, 340, 907, 1242, 1112, 992, 5620, 2488, 2736, 1301, 639, 278, 55, 15, 3, 0, 0], "backgroundColor": "rgba(69, 219, 255, 0.8)", "borderWidth": 0}, {"label": "Destruction", "data": [3.279, 3.488, 3.259, 3.096, 2.827, 2.641, 2.608, 2.493, 2.605, 2.729, 2.888, 2.813, 2.765, 2.376, 1.987, 1.38, 1.16, 1.622, 0.0], "rawCounts": [7402, 2565, 4415, 3511, 7874, 10374, 10956, 10099, 48332, 23246, 25396, 15156, 8785, 3830, 1118, 211, 31, 3, 0], "backgroundColor": "rgba(122, 122, 214, 0.8)", "borderWidth": 0}, {"label": "Demonology", "data": [2.713, 2.734, 2.829, 2.781, 2.738, 2.679, 2.847, 2.96, 2.749, 2.712, 2.367, 2.064, 1.622, 1.111, 0.673, 0.366, 0.187, 0.0, 0.0], "rawCounts": [6124, 2011, 3832, 3153, 7628, 10523, 11961, 11990, 51004, 23101, 20812, 11117, 5152, 1791, 379, 56, 5, 0, 0], "backgroundColor": "rgba(135, 136, 238, 0.8)", "borderWidth": 0}, {"label": "Affliction", "data": [0.894, 0.842, 0.854, 0.81, 0.701, 0.729, 0.767, 0.85, 0.67, 0.683, 0.545, 0.465, 0.404, 0.273, 0.151, 0.078, 0.0, 0.0, 0.0], "rawCounts": [2019, 619, 1157, 918, 1953, 2862, 3222, 3444, 12434, 5816, 4795, 2504, 1284, 440, 85, 12, 0, 0, 0], "backgroundColor": "rgba(148, 150, 255, 0.8)", "borderWidth": 0}];
+    const datasets = [{"label": "Protection", "data": [4.643, 4.581, 4.669, 4.63, 4.748, 4.635, 4.583, 4.523, 4.778, 4.624, 4.827, 5.135, 5.683, 6.718, 7.875, 8.759, 9.903, 10.222, 15.556], "rawCounts": [10872, 3482, 6512, 5417, 13697, 18779, 19665, 18625, 91200, 40273, 43935, 28759, 18920, 11391, 4724, 1441, 295, 23, 7], "backgroundColor": "rgba(178, 140, 98, 0.8)", "borderWidth": 0}, {"label": "Fury", "data": [2.931, 2.842, 2.794, 2.772, 2.68, 2.651, 2.671, 2.662, 2.643, 2.577, 2.56, 2.617, 2.705, 2.816, 3.072, 3.878, 3.021, 2.667, 0.0], "rawCounts": [6863, 2160, 3896, 3243, 7732, 10739, 11462, 10962, 50438, 22441, 23302, 14655, 9005, 4775, 1843, 638, 90, 6, 0], "backgroundColor": "rgba(198, 155, 109, 0.8)", "borderWidth": 0}, {"label": "Arms", "data": [0.814, 0.807, 0.723, 0.717, 0.689, 0.687, 0.677, 0.61, 0.6, 0.603, 0.595, 0.578, 0.579, 0.527, 0.523, 0.383, 0.235, 0.0, 0.0], "rawCounts": [1905, 613, 1008, 839, 1988, 2785, 2907, 2511, 11444, 5252, 5420, 3237, 1929, 893, 314, 63, 7, 0, 0], "backgroundColor": "rgba(218, 170, 120, 0.8)", "borderWidth": 0}, {"label": "Brewmaster", "data": [2.131, 2.105, 2.155, 2.207, 2.3, 2.334, 2.339, 2.435, 2.507, 2.608, 2.613, 2.61, 2.671, 2.644, 2.574, 2.711, 1.712, 1.778, 0.0], "rawCounts": [4991, 1600, 3005, 2582, 6634, 9457, 10036, 10029, 47844, 22713, 23784, 14617, 8893, 4483, 1544, 446, 51, 4, 0], "backgroundColor": "rgba(0, 230, 137, 0.8)", "borderWidth": 0}, {"label": "Windwalker", "data": [1.541, 1.52, 1.488, 1.484, 1.556, 1.553, 1.547, 1.532, 1.522, 1.44, 1.279, 1.11, 0.983, 0.869, 0.795, 0.632, 0.436, 0.0, 0.0], "rawCounts": [3609, 1155, 2075, 1736, 4488, 6294, 6640, 6310, 29043, 12541, 11640, 6214, 3273, 1474, 477, 104, 13, 0, 0], "backgroundColor": "rgba(0, 255, 152, 0.8)", "borderWidth": 0}, {"label": "Mistweaver", "data": [1.794, 1.791, 1.653, 1.662, 1.612, 1.558, 1.461, 1.437, 1.42, 1.287, 1.083, 0.866, 0.704, 0.536, 0.468, 0.328, 0.369, 0.0, 0.0], "rawCounts": [4201, 1361, 2305, 1945, 4649, 6311, 6271, 5916, 27111, 11208, 9854, 4850, 2344, 908, 281, 54, 11, 0, 0], "backgroundColor": "rgba(0, 255, 167, 0.8)", "borderWidth": 0}, {"label": "Restoration", "data": [4.461, 4.588, 4.522, 4.424, 4.488, 4.342, 4.466, 4.575, 4.213, 4.398, 4.461, 4.585, 4.666, 4.861, 4.874, 5.167, 5.807, 5.778, 4.444], "rawCounts": [10446, 3487, 6307, 5176, 12947, 17593, 19163, 18839, 80412, 38310, 40605, 25679, 15533, 8242, 2924, 850, 173, 13, 2], "backgroundColor": "rgba(230, 112, 9, 0.8)", "borderWidth": 0}, {"label": "Balance", "data": [2.482, 2.618, 2.474, 2.597, 2.496, 2.505, 2.55, 2.626, 2.608, 2.607, 2.525, 2.453, 2.387, 2.277, 2.235, 1.848, 1.544, 0.444, 0.0], "rawCounts": [5811, 1990, 3450, 3039, 7201, 10149, 10941, 10814, 49772, 22706, 22986, 13739, 7946, 3861, 1341, 304, 46, 1, 0], "backgroundColor": "rgba(246, 120, 10, 0.8)", "borderWidth": 0}, {"label": "Guardian", "data": [2.526, 2.441, 2.46, 2.507, 2.474, 2.397, 2.376, 2.317, 2.199, 2.226, 1.977, 1.726, 1.369, 1.019, 0.683, 0.748, 1.041, 0.0, 0.0], "rawCounts": [5914, 1855, 3431, 2933, 7138, 9711, 10196, 9543, 41979, 19389, 17991, 9664, 4558, 1727, 410, 123, 31, 0, 0], "backgroundColor": "rgba(255, 128, 10, 0.8)", "borderWidth": 0}, {"label": "Feral", "data": [1.21, 1.142, 1.169, 1.085, 1.223, 1.199, 1.131, 1.111, 1.185, 1.198, 1.283, 1.286, 1.363, 1.563, 2.137, 2.462, 2.35, 2.222, 0.0], "rawCounts": [2834, 868, 1630, 1270, 3527, 4859, 4855, 4577, 22612, 10437, 11674, 7201, 4536, 2650, 1282, 405, 70, 5, 0], "backgroundColor": "rgba(255, 136, 11, 0.8)", "borderWidth": 0}, {"label": "Havoc", "data": [4.49, 4.577, 4.498, 4.536, 4.525, 4.666, 4.481, 4.417, 4.671, 4.728, 5.157, 5.679, 6.242, 7.151, 8.351, 9.592, 9.701, 4.444, 0.0], "rawCounts": [10514, 3479, 6273, 5307, 13053, 18906, 19229, 18189, 89164, 41176, 46939, 31803, 20779, 12125, 5010, 1578, 289, 10, 0], "backgroundColor": "rgba(147, 43, 181, 0.8)", "borderWidth": 0}, {"label": "Vengeance", "data": [3.843, 3.901, 3.984, 4.009, 4.091, 4.331, 4.355, 4.39, 4.33, 4.56, 4.711, 4.731, 4.478, 3.626, 2.349, 1.362, 1.108, 1.778, 0.0], "rawCounts": [8998, 2965, 5556, 4691, 11801, 17546, 18686, 18077, 82654, 39717, 42882, 26497, 14908, 6148, 1409, 224, 33, 4, 0], "backgroundColor": "rgba(179, 53, 221, 0.8)", "borderWidth": 0}, {"label": "Devastation", "data": [1.601, 1.593, 1.595, 1.627, 1.713, 1.709, 1.78, 1.892, 2.036, 1.944, 1.762, 1.483, 1.299, 1.013, 0.678, 0.45, 0.47, 0.444, 0.0], "rawCounts": [3750, 1211, 2225, 1903, 4943, 6926, 7636, 7790, 38863, 16929, 16036, 8305, 4324, 1718, 407, 74, 14, 1, 0], "backgroundColor": "rgba(46, 132, 114, 0.8)", "borderWidth": 0}, {"label": "Preservation", "data": [1.13, 1.103, 0.96, 0.897, 0.908, 0.881, 0.805, 0.82, 0.91, 0.794, 0.699, 0.581, 0.523, 0.426, 0.448, 0.608, 0.638, 0.0, 0.0], "rawCounts": [2646, 838, 1339, 1050, 2619, 3571, 3453, 3375, 17377, 6917, 6366, 3251, 1741, 723, 269, 100, 19, 0, 0], "backgroundColor": "rgba(51, 147, 127, 0.8)", "borderWidth": 0}, {"label": "Augmentation", "data": [0.24, 0.209, 0.196, 0.199, 0.205, 0.181, 0.158, 0.162, 0.184, 0.184, 0.179, 0.133, 0.141, 0.127, 0.075, 0.043, 0.0, 0.0, 0.0], "rawCounts": [562, 159, 274, 233, 590, 735, 680, 666, 3509, 1600, 1625, 746, 469, 216, 45, 7, 0, 0, 0], "backgroundColor": "rgba(56, 162, 140, 0.8)", "borderWidth": 0}, {"label": "Retribution", "data": [5.716, 5.913, 6.019, 6.103, 6.026, 5.817, 5.96, 5.822, 5.52, 5.642, 5.568, 5.531, 4.893, 3.987, 3.0, 1.975, 1.208, 1.778, 0.0], "rawCounts": [13385, 4494, 8394, 7140, 17384, 23570, 25575, 23975, 105364, 49139, 50682, 30975, 16289, 6761, 1800, 325, 36, 4, 0], "backgroundColor": "rgba(220, 126, 167, 0.8)", "borderWidth": 0}, {"label": "Protection", "data": [4.737, 4.885, 4.708, 4.656, 4.631, 4.522, 4.506, 4.443, 4.391, 4.356, 4.501, 4.733, 5.043, 5.495, 6.154, 6.182, 6.143, 6.222, 4.444], "rawCounts": [11093, 3713, 6566, 5448, 13360, 18320, 19333, 18298, 83804, 37940, 40967, 26509, 16789, 9317, 3692, 1017, 183, 14, 2], "backgroundColor": "rgba(244, 140, 186, 0.8)", "borderWidth": 0}, {"label": "Holy", "data": [2.358, 2.279, 2.381, 2.374, 2.132, 2.157, 2.13, 2.014, 1.943, 1.913, 1.699, 1.418, 1.117, 0.812, 0.55, 0.328, 0.168, 0.0, 0.0], "rawCounts": [5522, 1732, 3321, 2777, 6150, 8741, 9141, 8295, 37079, 16658, 15461, 7944, 3719, 1377, 330, 54, 5, 0, 0], "backgroundColor": "rgba(255, 154, 205, 0.8)", "borderWidth": 0}, {"label": "Beast Mastery", "data": [4.559, 4.654, 4.613, 4.611, 4.782, 4.656, 4.588, 4.374, 4.226, 3.963, 3.36, 2.75, 1.938, 1.394, 1.035, 0.748, 0.739, 1.778, 2.222], "rawCounts": [10676, 3537, 6434, 5395, 13796, 18863, 19688, 18013, 80668, 34521, 30580, 15399, 6451, 2364, 621, 123, 22, 4, 1], "backgroundColor": "rgba(153, 190, 103, 0.8)", "borderWidth": 0}, {"label": "Marksmanship", "data": [3.003, 2.96, 3.222, 3.221, 3.381, 3.41, 3.546, 3.653, 3.538, 3.572, 3.497, 3.39, 3.243, 2.818, 2.337, 2.061, 1.981, 2.667, 13.333], "rawCounts": [7032, 2250, 4493, 3768, 9753, 13815, 15216, 15045, 67523, 31108, 31828, 18984, 10798, 4779, 1402, 339, 59, 6, 6], "backgroundColor": "rgba(170, 211, 114, 0.8)", "borderWidth": 0}, {"label": "Survival", "data": [0.7, 0.708, 0.691, 0.732, 0.77, 0.691, 0.668, 0.688, 0.655, 0.692, 0.698, 0.646, 0.506, 0.368, 0.323, 0.225, 0.034, 0.0, 0.0], "rawCounts": [1639, 538, 964, 857, 2221, 2800, 2867, 2832, 12505, 6024, 6350, 3617, 1685, 624, 194, 37, 1, 0, 0], "backgroundColor": "rgba(187, 232, 125, 0.8)", "borderWidth": 0}, {"label": "Assassination", "data": [2.094, 2.039, 2.075, 2.056, 2.032, 2.164, 2.213, 2.28, 2.085, 2.145, 1.931, 1.805, 1.673, 1.391, 1.1, 0.766, 0.403, 0.0, 0.0], "rawCounts": [4903, 1550, 2894, 2405, 5862, 8768, 9496, 9390, 39805, 18680, 17573, 10107, 5569, 2358, 660, 126, 12, 0, 0], "backgroundColor": "rgba(230, 220, 94, 0.8)", "borderWidth": 0}, {"label": "Subtlety", "data": [0.702, 0.639, 0.583, 0.566, 0.68, 0.694, 0.601, 0.542, 0.848, 0.811, 1.065, 1.219, 1.566, 2.042, 2.475, 3.301, 2.988, 3.556, 0.0], "rawCounts": [1643, 486, 813, 662, 1962, 2811, 2577, 2230, 16179, 7066, 9693, 6826, 5213, 3462, 1485, 543, 89, 8, 0], "backgroundColor": "rgba(255, 244, 104, 0.8)", "borderWidth": 0}, {"label": "Outlaw", "data": [0.663, 0.663, 0.66, 0.616, 0.615, 0.619, 0.599, 0.602, 0.588, 0.587, 0.614, 0.611, 0.662, 0.662, 0.793, 0.966, 0.705, 0.889, 0.0], "rawCounts": [1553, 504, 921, 721, 1775, 2506, 2572, 2480, 11230, 5115, 5593, 3420, 2205, 1123, 476, 159, 21, 2, 0], "backgroundColor": "rgba(255, 255, 114, 0.8)", "borderWidth": 0}, {"label": "Discipline", "data": [3.255, 3.234, 3.43, 3.517, 3.585, 3.543, 3.668, 3.819, 3.67, 3.792, 3.367, 2.958, 2.372, 1.713, 1.165, 0.663, 0.504, 0.0, 0.0], "rawCounts": [7622, 2458, 4783, 4115, 10343, 14356, 15738, 15728, 70057, 33024, 30651, 16567, 7898, 2905, 699, 109, 15, 0, 0], "backgroundColor": "rgba(230, 230, 230, 0.8)", "borderWidth": 0}, {"label": "Shadow", "data": [2.732, 2.779, 2.739, 2.684, 2.492, 2.563, 2.552, 2.566, 2.551, 2.498, 2.3, 2.128, 1.929, 1.586, 1.324, 0.997, 0.806, 0.444, 0.0], "rawCounts": [6398, 2112, 3820, 3140, 7189, 10383, 10952, 10565, 48689, 21756, 20932, 11917, 6423, 2690, 794, 164, 24, 1, 0], "backgroundColor": "rgba(255, 255, 255, 0.8)", "borderWidth": 0}, {"label": "Holy", "data": [1.85, 1.882, 1.691, 1.727, 1.533, 1.483, 1.357, 1.262, 1.111, 0.962, 0.703, 0.492, 0.333, 0.189, 0.113, 0.043, 0.067, 0.0, 0.0], "rawCounts": [4331, 1430, 2359, 2020, 4423, 6009, 5822, 5198, 21206, 8381, 6402, 2756, 1107, 321, 68, 7, 2, 0, 0], "backgroundColor": "rgba(255, 255, 255, 0.8)", "borderWidth": 0}, {"label": "Frost", "data": [4.645, 4.462, 4.637, 4.784, 5.103, 5.308, 5.254, 5.273, 5.712, 6.032, 7.203, 8.671, 10.473, 12.715, 14.177, 14.855, 16.281, 17.333, 20.0], "rawCounts": [10877, 3391, 6467, 5597, 14720, 21507, 22543, 21712, 109022, 52540, 65562, 48562, 34867, 21560, 8505, 2444, 485, 39, 9], "backgroundColor": "rgba(176, 27, 52, 0.8)", "borderWidth": 0}, {"label": "Blood", "data": [2.383, 2.341, 2.218, 2.201, 2.009, 2.024, 2.035, 2.058, 2.005, 1.748, 1.462, 1.135, 0.803, 0.56, 0.437, 0.334, 0.168, 0.0, 0.0], "rawCounts": [5581, 1779, 3094, 2575, 5796, 8199, 8731, 8474, 38274, 15225, 13306, 6356, 2672, 949, 262, 55, 5, 0, 0], "backgroundColor": "rgba(196, 30, 58, 0.8)", "borderWidth": 0}, {"label": "Unholy", "data": [0.957, 0.959, 1.049, 1.053, 1.108, 1.121, 1.193, 1.294, 1.177, 1.221, 1.196, 1.207, 1.12, 0.811, 0.577, 0.419, 0.336, 0.0, 0.0], "rawCounts": [2241, 729, 1463, 1232, 3195, 4540, 5121, 5328, 22466, 10634, 10882, 6760, 3730, 1375, 346, 69, 10, 0, 0], "backgroundColor": "rgba(216, 33, 64, 0.8)", "borderWidth": 0}, {"label": "Restoration", "data": [5.401, 5.373, 5.548, 5.601, 6.001, 6.276, 6.299, 6.237, 6.93, 6.975, 8.075, 9.169, 10.332, 11.522, 12.45, 12.959, 12.521, 14.222, 15.556], "rawCounts": [12647, 4084, 7737, 6553, 17313, 25426, 27028, 25682, 132283, 60755, 73503, 51348, 34398, 19537, 7469, 2132, 373, 32, 7], "backgroundColor": "rgba(0, 101, 199, 0.8)", "borderWidth": 0}, {"label": "Elemental", "data": [3.314, 3.263, 3.238, 3.236, 3.124, 3.163, 3.084, 3.086, 3.085, 3.043, 2.92, 2.784, 2.719, 2.628, 2.679, 3.221, 4.599, 6.667, 4.444], "rawCounts": [7760, 2480, 4516, 3786, 9012, 12815, 13235, 12709, 58879, 26507, 26576, 15593, 9051, 4456, 1607, 530, 137, 15, 2], "backgroundColor": "rgba(0, 112, 221, 0.8)", "borderWidth": 0}, {"label": "Enhancement", "data": [1.095, 1.099, 1.167, 1.08, 1.044, 1.142, 1.138, 1.059, 1.069, 1.032, 0.919, 0.859, 0.751, 0.658, 0.543, 0.389, 0.134, 0.0, 0.0], "rawCounts": [2564, 835, 1627, 1264, 3012, 4625, 4881, 4359, 20408, 8992, 8365, 4809, 2501, 1115, 326, 64, 4, 0, 0], "backgroundColor": "rgba(0, 123, 243, 0.8)", "borderWidth": 0}, {"label": "Arcane", "data": [3.679, 3.659, 3.857, 3.938, 4.04, 4.087, 4.216, 4.419, 4.72, 4.883, 5.552, 6.071, 6.889, 7.946, 8.295, 8.37, 10.305, 13.333, 20.0], "rawCounts": [8615, 2781, 5379, 4607, 11654, 16560, 18091, 18196, 90085, 42534, 50533, 33997, 22935, 13473, 4976, 1377, 307, 30, 9], "backgroundColor": "rgba(57, 179, 212, 0.8)", "borderWidth": 0}, {"label": "Frost", "data": [2.995, 2.922, 2.878, 2.891, 2.635, 2.563, 2.516, 2.442, 2.037, 1.934, 1.542, 1.267, 0.866, 0.599, 0.433, 0.304, 0.201, 0.0, 0.0], "rawCounts": [7013, 2221, 4014, 3382, 7601, 10384, 10794, 10058, 38878, 16844, 14039, 7095, 2882, 1015, 260, 50, 6, 0, 0], "backgroundColor": "rgba(63, 199, 235, 0.8)", "borderWidth": 0}, {"label": "Fire", "data": [0.428, 0.387, 0.325, 0.306, 0.322, 0.318, 0.265, 0.246, 0.304, 0.293, 0.311, 0.24, 0.2, 0.172, 0.102, 0.097, 0.101, 0.0, 0.0], "rawCounts": [1003, 294, 453, 358, 929, 1287, 1137, 1015, 5808, 2556, 2833, 1343, 666, 291, 61, 16, 3, 0, 0], "backgroundColor": "rgba(69, 219, 255, 0.8)", "borderWidth": 0}, {"label": "Destruction", "data": [3.31, 3.521, 3.275, 3.136, 2.853, 2.683, 2.639, 2.521, 2.633, 2.75, 2.911, 2.835, 2.764, 2.384, 1.979, 1.355, 1.108, 1.333, 0.0], "rawCounts": [7750, 2676, 4568, 3669, 8229, 10870, 11322, 10381, 50253, 23952, 26494, 15876, 9203, 4042, 1187, 223, 33, 3, 0], "backgroundColor": "rgba(122, 122, 214, 0.8)", "borderWidth": 0}, {"label": "Demonology", "data": [2.695, 2.72, 2.81, 2.756, 2.711, 2.648, 2.83, 2.948, 2.734, 2.701, 2.359, 2.053, 1.621, 1.105, 0.663, 0.401, 0.168, 0.0, 0.0], "rawCounts": [6311, 2067, 3919, 3224, 7820, 10729, 12142, 12139, 52180, 23522, 21475, 11500, 5395, 1873, 398, 66, 5, 0, 0], "backgroundColor": "rgba(135, 136, 238, 0.8)", "borderWidth": 0}, {"label": "Affliction", "data": [0.89, 0.841, 0.845, 0.803, 0.685, 0.719, 0.76, 0.843, 0.662, 0.677, 0.541, 0.456, 0.394, 0.271, 0.155, 0.073, 0.0, 0.0, 0.0], "rawCounts": [2085, 639, 1179, 940, 1975, 2912, 3261, 3472, 12641, 5897, 4926, 2553, 1311, 459, 93, 12, 0, 0, 0], "backgroundColor": "rgba(148, 150, 255, 0.8)", "borderWidth": 0}];
 
     new Chart(keylevel_ctx, {
       type: "bar",
@@ -2182,7 +2197,7 @@
         }
       }
     });
-       }) ();
+    }) ();
   </script>
   <!-- Keys per Week Chart -->
   <script>
@@ -2193,7 +2208,7 @@
 
       // these come straight from your Python
       const periodLabels = ["Week:2 ", "Week:3 ", "Week:4 ", "Week:5 ", "Week:6 "];
-    const periodDatasets = [{'label': 'Total', 'data': [285913, 457864, 242719, 398083, 73935], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [58105, 80192, 43115, 68866, 9850], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [121398, 242065, 129105, 210064, 31646], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [97067, 129758, 66082, 110034, 28313], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [9343, 5849, 4417, 9119, 4126], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
+    const periodDatasets = [{'label': 'Total', 'data': [285913, 457864, 242719, 398083, 85930], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [58105, 80192, 43115, 68866, 11572], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [121398, 242065, 129105, 210064, 37674], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [97067, 129758, 66082, 110034, 32193], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [9343, 5849, 4417, 9119, 4491], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
 
     new Chart(ctx_keys_per_week, {
       type: "line",
@@ -2243,7 +2258,7 @@
         }
       }
     });
-  }) ();
+}) ();
   </script>
   <!-- Dungeon Popularity Chart -->
   <script>
@@ -2253,11 +2268,11 @@
         .getContext("2d");
 
       // Injected by Jinja:
-      const dungeonLabels = ["HOA", "EDA", "PSF", "STRT", "FLOOD", "GMBT", "DAWN", "ARAK"];
-    const dungeonFullNames = ["Halls of Atonement", "Eco-Dome Al\u0027dani", "Priory of the Sacred Flame", "Tazavesh: Streets of Wonder", "Operation: Floodgate", "Tazavesh: So\u0027leah\u0027s Gambit", "The Dawnbreaker", "Ara-Kara, City of Echoes"];
-    const iconUrls = ["/data/icons/halls-of-atonement-small.jpg", "/data/icons/eco-dome-aldani-small.jpg", "/data/icons/priory-of-the-sacred-flame-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/operation-floodgate-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/the-dawnbreaker-small.jpg", "/data/icons/ara-kara-city-of-echoes-small.jpg"];
-    const totalCounts = [190805, 185301, 183383, 182327, 182104, 181826, 177795, 177054];
-    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [47866, 20574, 28785, 29466, 33336, 25345, 30400, 44562], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [103082, 83813, 91339, 99732, 96753, 67348, 96808, 96197], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [38193, 73583, 58557, 51985, 49797, 76631, 48739, 34743], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [1664, 7331, 4702, 1144, 2218, 12502, 1848, 1552], "label": "+3", "order": 0, "stack": "Stack 0"}];
+      const dungeonLabels = ["HOA", "EDA", "PSF", "STRT", "GMBT", "FLOOD", "DAWN", "ARAK"];
+    const dungeonFullNames = ["Halls of Atonement", "Eco-Dome Al\u0027dani", "Priory of the Sacred Flame", "Tazavesh: Streets of Wonder", "Tazavesh: So\u0027leah\u0027s Gambit", "Operation: Floodgate", "The Dawnbreaker", "Ara-Kara, City of Echoes"];
+    const iconUrls = ["/data/icons/halls-of-atonement-small.jpg", "/data/icons/eco-dome-aldani-small.jpg", "/data/icons/priory-of-the-sacred-flame-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/operation-floodgate-small.jpg", "/data/icons/the-dawnbreaker-small.jpg", "/data/icons/ara-kara-city-of-echoes-small.jpg"];
+    const totalCounts = [192898, 186963, 185546, 184369, 183791, 183728, 179592, 178759];
+    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [48125, 20733, 29096, 29689, 25521, 33643, 30679, 44919], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [104158, 84533, 92350, 100816, 68117, 97551, 97748, 97064], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [38888, 74278, 59327, 52688, 77474, 50286, 49290, 35196], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [1727, 7419, 4773, 1176, 12679, 2248, 1875, 1580], "label": "+3", "order": 0, "stack": "Stack 0"}];
 
     // Kick off loading each icon
     const iconPromises = iconUrls.map(src =>
@@ -2351,7 +2366,7 @@
         plugins: [iconPlugin]
       });
     });
-  }) ();
+}) ();
   </script>
   <!-- Spec Popularity vs Performance Chart -->
   <script>
@@ -2360,7 +2375,7 @@
         .getElementById("chart-popularity-vs-tier")
         .getContext("2d");
 
-      const rawPoints = [{"backgroundColor": "rgba(0,112,221,0.4)", "borderColor": "rgba(0,112,221,0.8)", "iconUrl": "/data/icons/136052.jpg", "label": "Restoration", "x": 13.6616, "y": 492008}, {"backgroundColor": "rgba(196,30,58,0.4)", "borderColor": "rgba(196,30,58,0.8)", "iconUrl": "/data/icons/135773.jpg", "label": "Frost", "x": 13.9991, "y": 436319}, {"backgroundColor": "rgba(244,140,186,0.4)", "borderColor": "rgba(244,140,186,0.8)", "iconUrl": "/data/icons/135873.jpg", "label": "Retribution", "x": 10.499, "y": 373387}, {"backgroundColor": "rgba(198,155,109,0.4)", "borderColor": "rgba(198,155,109,0.8)", "iconUrl": "/data/icons/132341.jpg", "label": "Protection", "x": 12.8163, "y": 326724}, {"backgroundColor": "rgba(63,199,235,0.4)", "borderColor": "rgba(63,199,235,0.8)", "iconUrl": "/data/icons/135932.jpg", "label": "Arcane", "x": 14.0331, "y": 336322}, {"backgroundColor": "rgba(163,48,201,0.4)", "borderColor": "rgba(163,48,201,0.8)", "iconUrl": "/data/icons/1247264.jpg", "label": "Havoc", "x": 13.1975, "y": 332931}, {"backgroundColor": "rgba(244,140,186,0.4)", "borderColor": "rgba(244,140,186,0.8)", "iconUrl": "/data/icons/236264.jpg", "label": "Protection", "x": 11.8619, "y": 305796}, {"backgroundColor": "rgba(163,48,201,0.4)", "borderColor": "rgba(163,48,201,0.8)", "iconUrl": "/data/icons/1247265.jpg", "label": "Vengeance", "x": 11.1792, "y": 295686}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/136041.jpg", "label": "Restoration", "x": 11.2091, "y": 297998}, {"backgroundColor": "rgba(170,211,114,0.4)", "borderColor": "rgba(170,211,114,0.8)", "iconUrl": "/data/icons/461112.jpg", "label": "Beast Mastery", "x": 9.1084, "y": 255358}, {"backgroundColor": "rgba(255,255,255,0.4)", "borderColor": "rgba(255,255,255,0.8)", "iconUrl": "/data/icons/135940.jpg", "label": "Discipline", "x": 10.343, "y": 230812}, {"backgroundColor": "rgba(170,211,114,0.4)", "borderColor": "rgba(170,211,114,0.8)", "iconUrl": "/data/icons/236179.jpg", "label": "Marksmanship", "x": 11.1066, "y": 231562}, {"backgroundColor": "rgba(0,112,221,0.4)", "borderColor": "rgba(0,112,221,0.8)", "iconUrl": "/data/icons/136048.jpg", "label": "Elemental", "x": 11.0999, "y": 203312}, {"backgroundColor": "rgba(135,136,238,0.4)", "borderColor": "rgba(135,136,238,0.8)", "iconUrl": "/data/icons/136172.jpg", "label": "Demonology", "x": 10.1825, "y": 170639}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/136096.jpg", "label": "Balance", "x": 11.507, "y": 171205}, {"backgroundColor": "rgba(198,155,109,0.4)", "borderColor": "rgba(198,155,109,0.8)", "iconUrl": "/data/icons/132347.jpg", "label": "Fury", "x": 11.8553, "y": 176467}, {"backgroundColor": "rgba(135,136,238,0.4)", "borderColor": "rgba(135,136,238,0.8)", "iconUrl": "/data/icons/136186.jpg", "label": "Destruction", "x": 10.9755, "y": 183304}, {"backgroundColor": "rgba(255,255,255,0.4)", "borderColor": "rgba(255,255,255,0.8)", "iconUrl": "/data/icons/136207.jpg", "label": "Shadow", "x": 10.8306, "y": 163981}, {"backgroundColor": "rgba(0,255,152,0.4)", "borderColor": "rgba(0,255,152,0.8)", "iconUrl": "/data/icons/608951.jpg", "label": "Brewmaster", "x": 11.8896, "y": 167768}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/132276.jpg", "label": "Guardian", "x": 9.5347, "y": 142051}, {"backgroundColor": "rgba(255,244,104,0.4)", "borderColor": "rgba(255,244,104,0.8)", "iconUrl": "/data/icons/236270.jpg", "label": "Assassination", "x": 9.9368, "y": 137880}, {"backgroundColor": "rgba(51,147,127,0.4)", "borderColor": "rgba(51,147,127,0.8)", "iconUrl": "/data/icons/4511811.jpg", "label": "Devastation", "x": 10.1862, "y": 119947}, {"backgroundColor": "rgba(63,199,235,0.4)", "borderColor": "rgba(63,199,235,0.8)", "iconUrl": "/data/icons/135846.jpg", "label": "Frost", "x": 8.3712, "y": 133180}, {"backgroundColor": "rgba(196,30,58,0.4)", "borderColor": "rgba(196,30,58,0.8)", "iconUrl": "/data/icons/135770.jpg", "label": "Blood", "x": 9.2967, "y": 117373}, {"backgroundColor": "rgba(244,140,186,0.4)", "borderColor": "rgba(244,140,186,0.8)", "iconUrl": "/data/icons/135920.jpg", "label": "Holy", "x": 9.6418, "y": 124270}, {"backgroundColor": "rgba(0,255,152,0.4)", "borderColor": "rgba(0,255,152,0.8)", "iconUrl": "/data/icons/608953.jpg", "label": "Windwalker", "x": 10.5265, "y": 94323}, {"backgroundColor": "rgba(0,255,152,0.4)", "borderColor": "rgba(0,255,152,0.8)", "iconUrl": "/data/icons/608952.jpg", "label": "Mistweaver", "x": 9.6838, "y": 86947}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/132115.jpg", "label": "Feral", "x": 12.4315, "y": 82840}, {"backgroundColor": "rgba(196,30,58,0.4)", "borderColor": "rgba(196,30,58,0.8)", "iconUrl": "/data/icons/135775.jpg", "label": "Unholy", "x": 10.4692, "y": 78205}, {"backgroundColor": "rgba(255,255,255,0.4)", "borderColor": "rgba(255,255,255,0.8)", "iconUrl": "/data/icons/237542.jpg", "label": "Holy", "x": 7.2471, "y": 69305}, {"backgroundColor": "rgba(0,112,221,0.4)", "borderColor": "rgba(0,112,221,0.8)", "iconUrl": "/data/icons/237581.jpg", "label": "Enhancement", "x": 10.6618, "y": 67982}, {"backgroundColor": "rgba(51,147,127,0.4)", "borderColor": "rgba(51,147,127,0.8)", "iconUrl": "/data/icons/4511812.jpg", "label": "Preservation", "x": 10.5156, "y": 53695}, {"backgroundColor": "rgba(255,244,104,0.4)", "borderColor": "rgba(255,244,104,0.8)", "iconUrl": "/data/icons/132320.jpg", "label": "Subtlety", "x": 15.2685, "y": 61089}, {"backgroundColor": "rgba(135,136,238,0.4)", "borderColor": "rgba(135,136,238,0.8)", "iconUrl": "/data/icons/136145.jpg", "label": "Affliction", "x": 8.9432, "y": 43564}, {"backgroundColor": "rgba(170,211,114,0.4)", "borderColor": "rgba(170,211,114,0.8)", "iconUrl": "/data/icons/461113.jpg", "label": "Survival", "x": 10.8381, "y": 44391}, {"backgroundColor": "rgba(198,155,109,0.4)", "borderColor": "rgba(198,155,109,0.8)", "iconUrl": "/data/icons/132355.jpg", "label": "Arms", "x": 10.5086, "y": 42000}, {"backgroundColor": "rgba(255,244,104,0.4)", "borderColor": "rgba(255,244,104,0.8)", "iconUrl": "/data/icons/236286.jpg", "label": "Outlaw", "x": 11.4176, "y": 41395}, {"backgroundColor": "rgba(63,199,235,0.4)", "borderColor": "rgba(63,199,235,0.8)", "iconUrl": "/data/icons/135810.jpg", "label": "Fire", "x": 11.001, "y": 19410}, {"backgroundColor": "rgba(51,147,127,0.4)", "borderColor": "rgba(51,147,127,0.8)", "iconUrl": "/data/icons/5198700.jpg", "label": "Augmentation", "x": 10.058, "y": 11656}];
+      const rawPoints = [{"backgroundColor": "rgba(0,112,221,0.4)", "borderColor": "rgba(0,112,221,0.8)", "iconUrl": "/data/icons/136052.jpg", "label": "Restoration", "x": 13.7894, "y": 508307}, {"backgroundColor": "rgba(196,30,58,0.4)", "borderColor": "rgba(196,30,58,0.8)", "iconUrl": "/data/icons/135773.jpg", "label": "Frost", "x": 14.1335, "y": 450409}, {"backgroundColor": "rgba(244,140,186,0.4)", "borderColor": "rgba(244,140,186,0.8)", "iconUrl": "/data/icons/135873.jpg", "label": "Retribution", "x": 10.6095, "y": 385292}, {"backgroundColor": "rgba(198,155,109,0.4)", "borderColor": "rgba(198,155,109,0.8)", "iconUrl": "/data/icons/132341.jpg", "label": "Protection", "x": 12.942, "y": 338017}, {"backgroundColor": "rgba(63,199,235,0.4)", "borderColor": "rgba(63,199,235,0.8)", "iconUrl": "/data/icons/135932.jpg", "label": "Arcane", "x": 14.1412, "y": 346139}, {"backgroundColor": "rgba(163,48,201,0.4)", "borderColor": "rgba(163,48,201,0.8)", "iconUrl": "/data/icons/1247264.jpg", "label": "Havoc", "x": 13.3165, "y": 343823}, {"backgroundColor": "rgba(244,140,186,0.4)", "borderColor": "rgba(244,140,186,0.8)", "iconUrl": "/data/icons/236264.jpg", "label": "Protection", "x": 11.996, "y": 316365}, {"backgroundColor": "rgba(163,48,201,0.4)", "borderColor": "rgba(163,48,201,0.8)", "iconUrl": "/data/icons/1247265.jpg", "label": "Vengeance", "x": 11.2392, "y": 302796}, {"backgroundColor": "rgba(170,211,114,0.4)", "borderColor": "rgba(170,211,114,0.8)", "iconUrl": "/data/icons/461112.jpg", "label": "Beast Mastery", "x": 9.3262, "y": 267156}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/136041.jpg", "label": "Restoration", "x": 11.3172, "y": 306701}, {"backgroundColor": "rgba(255,255,255,0.4)", "borderColor": "rgba(255,255,255,0.8)", "iconUrl": "/data/icons/135940.jpg", "label": "Discipline", "x": 10.4301, "y": 237068}, {"backgroundColor": "rgba(170,211,114,0.4)", "borderColor": "rgba(170,211,114,0.8)", "iconUrl": "/data/icons/236179.jpg", "label": "Marksmanship", "x": 11.2018, "y": 238204}, {"backgroundColor": "rgba(0,112,221,0.4)", "borderColor": "rgba(0,112,221,0.8)", "iconUrl": "/data/icons/136048.jpg", "label": "Elemental", "x": 11.1996, "y": 209666}, {"backgroundColor": "rgba(135,136,238,0.4)", "borderColor": "rgba(135,136,238,0.8)", "iconUrl": "/data/icons/136172.jpg", "label": "Demonology", "x": 10.2647, "y": 174765}, {"backgroundColor": "rgba(198,155,109,0.4)", "borderColor": "rgba(198,155,109,0.8)", "iconUrl": "/data/icons/132347.jpg", "label": "Fury", "x": 12.001, "y": 184250}, {"backgroundColor": "rgba(135,136,238,0.4)", "borderColor": "rgba(135,136,238,0.8)", "iconUrl": "/data/icons/136186.jpg", "label": "Destruction", "x": 11.0758, "y": 190731}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/136096.jpg", "label": "Balance", "x": 11.6233, "y": 176097}, {"backgroundColor": "rgba(255,255,255,0.4)", "borderColor": "rgba(255,255,255,0.8)", "iconUrl": "/data/icons/136207.jpg", "label": "Shadow", "x": 10.9027, "y": 167949}, {"backgroundColor": "rgba(0,255,152,0.4)", "borderColor": "rgba(0,255,152,0.8)", "iconUrl": "/data/icons/608951.jpg", "label": "Brewmaster", "x": 11.9961, "y": 172713}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/132276.jpg", "label": "Guardian", "x": 9.6349, "y": 146593}, {"backgroundColor": "rgba(255,244,104,0.4)", "borderColor": "rgba(255,244,104,0.8)", "iconUrl": "/data/icons/236270.jpg", "label": "Assassination", "x": 9.9714, "y": 140158}, {"backgroundColor": "rgba(63,199,235,0.4)", "borderColor": "rgba(63,199,235,0.8)", "iconUrl": "/data/icons/135846.jpg", "label": "Frost", "x": 8.4336, "y": 136536}, {"backgroundColor": "rgba(51,147,127,0.4)", "borderColor": "rgba(51,147,127,0.8)", "iconUrl": "/data/icons/4511811.jpg", "label": "Devastation", "x": 10.2718, "y": 123055}, {"backgroundColor": "rgba(196,30,58,0.4)", "borderColor": "rgba(196,30,58,0.8)", "iconUrl": "/data/icons/135770.jpg", "label": "Blood", "x": 9.4222, "y": 121333}, {"backgroundColor": "rgba(244,140,186,0.4)", "borderColor": "rgba(244,140,186,0.8)", "iconUrl": "/data/icons/135920.jpg", "label": "Holy", "x": 9.7302, "y": 128306}, {"backgroundColor": "rgba(0,255,152,0.4)", "borderColor": "rgba(0,255,152,0.8)", "iconUrl": "/data/icons/608953.jpg", "label": "Windwalker", "x": 10.6178, "y": 97086}, {"backgroundColor": "rgba(0,255,152,0.4)", "borderColor": "rgba(0,255,152,0.8)", "iconUrl": "/data/icons/608952.jpg", "label": "Mistweaver", "x": 9.7758, "y": 89580}, {"backgroundColor": "rgba(255,124,10,0.4)", "borderColor": "rgba(255,124,10,0.8)", "iconUrl": "/data/icons/132115.jpg", "label": "Feral", "x": 12.5295, "y": 85292}, {"backgroundColor": "rgba(196,30,58,0.4)", "borderColor": "rgba(196,30,58,0.8)", "iconUrl": "/data/icons/135775.jpg", "label": "Unholy", "x": 10.5661, "y": 80121}, {"backgroundColor": "rgba(255,255,255,0.4)", "borderColor": "rgba(255,255,255,0.8)", "iconUrl": "/data/icons/237542.jpg", "label": "Holy", "x": 7.3614, "y": 71842}, {"backgroundColor": "rgba(0,112,221,0.4)", "borderColor": "rgba(0,112,221,0.8)", "iconUrl": "/data/icons/237581.jpg", "label": "Enhancement", "x": 10.7155, "y": 69751}, {"backgroundColor": "rgba(51,147,127,0.4)", "borderColor": "rgba(51,147,127,0.8)", "iconUrl": "/data/icons/4511812.jpg", "label": "Preservation", "x": 10.6037, "y": 55654}, {"backgroundColor": "rgba(255,244,104,0.4)", "borderColor": "rgba(255,244,104,0.8)", "iconUrl": "/data/icons/132320.jpg", "label": "Subtlety", "x": 15.3661, "y": 63748}, {"backgroundColor": "rgba(135,136,238,0.4)", "borderColor": "rgba(135,136,238,0.8)", "iconUrl": "/data/icons/136145.jpg", "label": "Affliction", "x": 8.9906, "y": 44355}, {"backgroundColor": "rgba(170,211,114,0.4)", "borderColor": "rgba(170,211,114,0.8)", "iconUrl": "/data/icons/461113.jpg", "label": "Survival", "x": 10.9439, "y": 45755}, {"backgroundColor": "rgba(198,155,109,0.4)", "borderColor": "rgba(198,155,109,0.8)", "iconUrl": "/data/icons/132355.jpg", "label": "Arms", "x": 10.5343, "y": 43115}, {"backgroundColor": "rgba(255,244,104,0.4)", "borderColor": "rgba(255,244,104,0.8)", "iconUrl": "/data/icons/236286.jpg", "label": "Outlaw", "x": 11.4994, "y": 42376}, {"backgroundColor": "rgba(63,199,235,0.4)", "borderColor": "rgba(63,199,235,0.8)", "iconUrl": "/data/icons/135810.jpg", "label": "Fire", "x": 11.0482, "y": 20053}, {"backgroundColor": "rgba(51,147,127,0.4)", "borderColor": "rgba(51,147,127,0.8)", "iconUrl": "/data/icons/5198700.jpg", "label": "Augmentation", "x": 10.1526, "y": 12116}];
     const ICON_SIZE = 20;
     // preload each icon
     const iconPromises = rawPoints.map(p =>
@@ -2433,7 +2448,7 @@
 
       // ← injected server‑side
       const keyLevels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-    const datasets = [{"data": [13.5, 12.7, 13.1, 12.9, 12.0, 12.3, 13.0, 14.0, 13.2, 14.0, 13.8, 12.4, 11.7, 10.5, 9.5, 8.6, 5.1, 10.3, 12.5], "label": "Halls of Atonement", "rawCounts": [8477, 2289, 4665, 3824, 7805, 10946, 12381, 12668, 51725, 24685, 24937, 13800, 7681, 3496, 1117, 275, 29, 4, 1]}, {"data": [13.4, 13.0, 12.0, 12.0, 10.5, 10.8, 11.7, 13.8, 11.6, 14.2, 13.0, 13.6, 15.1, 15.8, 16.6, 15.7, 18.4, 17.9, 25.0], "label": "Eco-Dome Al\u0027dani", "rawCounts": [8457, 2351, 4265, 3546, 6792, 9633, 11095, 12411, 45293, 25124, 23428, 15135, 9914, 5291, 1951, 502, 104, 7, 2]}, {"data": [13.3, 13.6, 13.3, 12.5, 12.8, 12.8, 13.4, 12.8, 12.9, 12.6, 12.6, 12.0, 10.9, 9.2, 7.2, 6.1, 2.8, 5.1, 0.0], "label": "Priory of the Sacred Flame", "rawCounts": [8364, 2463, 4715, 3717, 8293, 11436, 12779, 11588, 50427, 22325, 22751, 13279, 7124, 3061, 849, 194, 16, 2, 0]}, {"data": [12.2, 11.6, 12.0, 12.9, 12.8, 13.4, 12.6, 11.8, 12.5, 12.2, 12.0, 12.5, 12.9, 13.7, 14.5, 15.1, 17.3, 15.4, 25.0], "label": "Tazavesh: Streets of Wonder", "rawCounts": [7695, 2102, 4252, 3831, 8287, 11973, 12023, 10670, 48989, 21656, 21680, 13845, 8456, 4579, 1699, 484, 98, 6, 2]}, {"data": [10.7, 10.9, 11.9, 12.9, 12.8, 12.6, 12.3, 12.2, 12.9, 12.5, 12.8, 12.8, 12.1, 10.4, 8.5, 8.0, 5.3, 0.0, 0.0], "label": "Operation: Floodgate", "rawCounts": [6732, 1964, 4244, 3826, 8310, 11243, 11666, 11043, 50727, 22198, 23180, 14248, 7952, 3488, 998, 255, 30, 0, 0]}, {"data": [12.0, 12.6, 12.0, 11.8, 13.0, 12.9, 12.4, 11.5, 12.3, 11.9, 11.9, 12.7, 13.7, 15.7, 18.5, 20.7, 27.7, 30.8, 37.5], "label": "Tazavesh: So\u0027leah\u0027s Gambit", "rawCounts": [7554, 2270, 4261, 3501, 8428, 11464, 11822, 10396, 48284, 20987, 21554, 14080, 8966, 5251, 2173, 663, 157, 12, 3]}, {"data": [11.8, 12.2, 12.5, 12.3, 12.2, 12.2, 12.2, 11.8, 12.0, 11.9, 12.3, 12.6, 12.6, 13.3, 13.7, 13.7, 12.4, 12.8, 0.0], "label": "The Dawnbreaker", "rawCounts": [7454, 2213, 4442, 3640, 7908, 10863, 11605, 10600, 47097, 20997, 22169, 13956, 8279, 4451, 1607, 439, 70, 5, 0]}, {"data": [13.1, 13.4, 13.3, 12.6, 14.0, 13.0, 12.4, 12.0, 12.6, 10.7, 11.6, 11.4, 11.1, 11.3, 11.5, 12.2, 11.0, 7.7, 0.0], "label": "Ara-Kara, City of Echoes", "rawCounts": [8277, 2417, 4715, 3747, 9077, 11606, 11813, 10815, 49313, 18926, 20908, 12606, 7260, 3766, 1354, 389, 62, 3, 0]}];
+    const datasets = [{"data": [13.5, 12.6, 13.1, 12.9, 12.0, 12.3, 13.0, 14.1, 13.2, 13.9, 13.8, 12.4, 11.7, 10.5, 9.6, 9.0, 6.0, 11.1, 11.1], "label": "Halls of Atonement", "rawCounts": [8547, 2302, 4687, 3851, 7875, 11069, 12469, 12749, 52384, 24842, 25217, 13990, 7834, 3585, 1159, 296, 36, 5, 1]}, {"data": [13.4, 13.0, 12.0, 11.9, 10.4, 10.8, 11.7, 13.8, 11.6, 14.2, 13.0, 13.6, 15.0, 15.7, 16.4, 15.3, 17.6, 15.6, 22.2], "label": "Eco-Dome Al\u0027dani", "rawCounts": [8527, 2368, 4285, 3557, 6839, 9732, 11167, 12480, 45733, 25271, 23720, 15302, 10030, 5356, 1975, 507, 105, 7, 2]}, {"data": [13.3, 13.6, 13.2, 12.6, 12.8, 12.8, 13.4, 12.8, 12.9, 12.7, 12.6, 12.0, 10.9, 9.2, 7.4, 6.2, 3.0, 4.4, 0.0], "label": "Priory of the Sacred Flame", "rawCounts": [8439, 2484, 4742, 3751, 8376, 11528, 12847, 11649, 51040, 22560, 23087, 13514, 7288, 3131, 886, 204, 18, 2, 0]}, {"data": [12.2, 11.7, 11.9, 13.0, 12.8, 13.5, 12.6, 11.9, 12.5, 12.2, 12.0, 12.5, 12.9, 13.7, 14.4, 15.0, 17.6, 15.6, 33.3], "label": "Tazavesh: Streets of Wonder", "rawCounts": [7761, 2134, 4276, 3869, 8376, 12106, 12116, 10757, 49504, 21815, 21976, 14024, 8637, 4676, 1730, 497, 105, 7, 3]}, {"data": [12.0, 12.5, 12.0, 11.8, 13.0, 12.8, 12.4, 11.5, 12.3, 11.9, 12.0, 12.7, 13.7, 15.7, 18.5, 20.7, 26.8, 31.1, 33.3], "label": "Tazavesh: So\u0027leah\u0027s Gambit", "rawCounts": [7598, 2287, 4289, 3523, 8492, 11562, 11878, 10438, 48721, 21219, 21946, 14286, 9127, 5333, 2230, 685, 160, 14, 3]}, {"data": [10.7, 10.9, 12.0, 12.9, 12.8, 12.6, 12.3, 12.2, 12.9, 12.5, 12.8, 12.8, 12.0, 10.4, 8.5, 7.8, 5.0, 0.0, 0.0], "label": "Operation: Floodgate", "rawCounts": [6782, 1979, 4280, 3855, 8388, 11339, 11749, 11106, 51144, 22336, 23501, 14395, 8033, 3534, 1018, 259, 30, 0, 0]}, {"data": [11.8, 12.2, 12.5, 12.3, 12.2, 12.2, 12.2, 11.7, 12.0, 11.9, 12.3, 12.6, 12.6, 13.4, 13.6, 13.7, 12.4, 13.3, 0.0], "label": "The Dawnbreaker", "rawCounts": [7513, 2231, 4477, 3667, 7991, 10962, 11678, 10638, 47584, 21136, 22471, 14138, 8388, 4543, 1641, 454, 74, 6, 0]}, {"data": [13.1, 13.4, 13.3, 12.6, 14.0, 13.0, 12.4, 12.0, 12.6, 10.7, 11.6, 11.3, 11.1, 11.3, 11.6, 12.2, 11.7, 8.9, 0.0], "label": "Ara-Kara, City of Echoes", "rawCounts": [8349, 2442, 4753, 3770, 9158, 11703, 11875, 10850, 49794, 19035, 21144, 12748, 7403, 3855, 1402, 404, 70, 4, 0]}];
 
     new Chart(ctx, {
       type: 'bar',
@@ -2487,55 +2502,6 @@
       }
     });
 }) ();
-  </script>
-
-  <!-- Material Dashboard JS -->
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-    function timeAgo(unixTsSeconds) {
-      const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-      const now = Date.now() / 1000;
-      const diff = now - unixTsSeconds;
-
-      const units = [
-        { name: 'year', secs: 60 * 60 * 24 * 365 },
-        { name: 'month', secs: 60 * 60 * 24 * 30 },
-        { name: 'day', secs: 60 * 60 * 24 },
-        { name: 'hour', secs: 60 * 60 },
-        { name: 'minute', secs: 60 },
-        { name: 'second', secs: 1 },
-      ];
-
-      for (const { name, secs } of units) {
-        const delta = Math.floor(diff / secs);
-        if (Math.abs(delta) >= 1) {
-          return rtf.format(-delta, name);
-        }
-      }
-      return 'just now';
-    }
-
-    //initialize timestamps
-    document.querySelectorAll('.timestamp').forEach(function (el) {
-      const timestamp = el.getAttribute('data-timestamp');
-      el.textContent = `${el.textContent} ${timeAgo(Number(timestamp))}`;
-      el.setAttribute('title', new Date(Number(timestamp) * 1000).toLocaleString());
-    });
-  </script>
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material-dashboard.js"></script>
-  <script>
-    sidebarColor(document.querySelector('#defaultColor'));
-    document.querySelector('#defaultSidebarType').classList.add('active');
-    sidebarType(document.querySelector('#defaultSidebarType'));
   </script>
 </body>
 
