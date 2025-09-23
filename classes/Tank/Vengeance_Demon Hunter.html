@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Vengeance Demon Hunter Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Vengeance Demon Hunter, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:39:30.">
+    content="Discover the most popular Mythic+ build for Vengeance Demon Hunter, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:32:21.">
   <link rel="canonical" href="https://mythistone.com/classes/Tank/Vengeance_Demon Hunter">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Tank/Vengeance_Demon Hunter">
   <meta property="og:title" content="Vengeance Demon Hunter Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Vengeance Demon Hunter Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Vengeance Demon Hunter Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Vengeance icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Vengeance Demon Hunter Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Vengeance Demon Hunter—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Vengeance Demon Hunter—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:39:30"
+  "dateModified": "23/09/2025, 20:32:21"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Tank">Tank</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Tank">Tank</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-DemonHunter-text">Vengeance Demon Hunter </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="435.1 K seen in 2.3 M total runs">Overall
-                  Played: 18.55%</h4>
+                  title="435.1 K seen in 2.4 M total runs">Overall
+                  Played: 17.95%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758613170.811072>Last Update:</span>
+                    data-timestamp=1758659541.696217>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758613170.811072>Last Update</span>
+                    data-timestamp=1758659541.696217>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-agility py-1 px-2">AGILITY</div>
 
             
-            <div class="h5 mb-0">87.4 K</div>
+            <div class="h5 mb-0">87.5 K</div>
             
           </div>
         </div>
@@ -1305,7 +1345,7 @@
               title="min: 0, max: 39.1 K, avg: 19.6 K"
               tabindex="0" role="button"
               aria-label="min 0, max 39.1 K, avg: 19.6 K">
-              29.44%
+              29.45%
             </div>
             
           </div>
@@ -1342,7 +1382,7 @@
               title="min: 0, max: 36.7 K, avg: 18.3 K"
               tabindex="0" role="button"
               aria-label="min 0, max 36.7 K, avg: 18.3 K">
-              36.37%
+              36.41%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 32 K, avg: 7.1 K"
               tabindex="0" role="button"
               aria-label="min 0, max 32 K, avg: 7.1 K">
-              31.79%
+              31.74%
             </div>
             
           </div>
@@ -1416,7 +1456,7 @@
               title="min: 0, max: 28.5 K, avg: 6 K"
               tabindex="0" role="button"
               aria-label="min 0, max 28.5 K, avg: 6 K">
-              7.73%
+              7.75%
             </div>
             
           </div>
@@ -1452,7 +1492,7 @@
             <div class="badge stat-health py-1 px-2">health</div>
 
             
-            <div class="h5 mb-0">22.6 M</div>
+            <div class="h5 mb-0">22.7 M</div>
             
           </div>
         </div>
@@ -1550,9 +1590,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 6.6 K, avg: 621"
+              title="min: 0, max: 6.6 K, avg: 622"
               tabindex="0" role="button"
-              aria-label="min 0, max 6.6 K, avg: 621">
+              aria-label="min 0, max 6.6 K, avg: 622">
               1.14%
             </div>
             
@@ -6815,8 +6855,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=238027?bonus=1524:6652:10255:10356:10844:12239:12358:12921&spec=581"
-      data-wowhead="bonus=1524:6652:10255:10356:10844:12239:12358:12921&spec=581"
+      href="https://www.wowhead.com/item=238027?bonus=1533:6652:10255:10356:10844:12239:12361:12921&spec=581"
+      data-wowhead="bonus=1533:6652:10255:10356:10844:12239:12361:12921&spec=581"
       >
       <img src="/data/icons/inv_belt_leather_raiddemonhunterethereal_d_01.png" />
     </a>
@@ -6824,8 +6864,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=238027?bonus=1524:6652:10255:10356:10844:12239:12358:12921&spec=581"
-      data-wowhead="bonus=1524:6652:10255:10356:10844:12239:12358:12921&spec=581"
+      href="https://www.wowhead.com/item=238027?bonus=1533:6652:10255:10356:10844:12239:12361:12921&spec=581"
+      data-wowhead="bonus=1533:6652:10255:10356:10844:12239:12361:12921&spec=581"
       data-wh-rename-link="true" >
       <p class="mb-1">Harvested Creephide Cord</p>
     </a>
@@ -7395,8 +7435,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=219332?bonus=8790:8902:9627:9633:10421:12050:12053&spec=581&ench=7601"
-      data-wowhead="bonus=8790:8902:9627:9633:10421:12050:12053&spec=581&ench=7601"
+      href="https://www.wowhead.com/item=219332?bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=581&ench=7601"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=581&ench=7601"
       >
       <img src="/data/icons/inv_leather_outdoorarathor_d_01_pant.png" />
     </a>
@@ -7404,12 +7444,30 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=219332?bonus=8790:8902:9627:9633:10421:12050:12053&spec=581&ench=7601"
-      data-wowhead="bonus=8790:8902:9627:9633:10421:12050:12053&spec=581&ench=7601"
+      href="https://www.wowhead.com/item=219332?bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=581&ench=7601"
+      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11109:12050:12053&spec=581&ench=7601"
       data-wh-rename-link="true" >
       <p class="mb-1">Rune-Branded Legwraps</p>
     </a>
     <div class="d-flex align-items-center gap-1 flex-nowrap">
+      
+      <!-- embellishment icon -->
+      <a target="_blank" href="https://www.wowhead.com/item=226024&spec=581" >
+        <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
+          <!-- Base icon -->
+          
+          <img src="/data/icons/inv_inscriptions_darkmoonsigil_purple.png" alt=""
+            class="position-absolute top-0 start-0 border border-quality-3 "
+            style="width:100%; height:100%; object-fit:contain;">
+
+          
+          <!-- Overlay icon -->
+          <img src="/data/icons/crafting-quality-3.png" alt=""
+            class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
+          
+        </div>
+
+      </a>
       
       
       <a target="_blank" href="https://www.wowhead.com/item=222587&spec=581" >
@@ -11604,8 +11662,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=219314?bonus=3196:6652:10255:10383:10390:12353&spec=581"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12353&spec=581"
+      href="https://www.wowhead.com/item=219314?bonus=3202:6652:10255:10383:10390:12355&spec=581"
+      data-wowhead="bonus=3202:6652:10255:10383:10390:12355&spec=581"
       >
       <img src="/data/icons/inv_raid_mercurialegg_red.png" />
     </a>
@@ -11613,8 +11671,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=219314?bonus=3196:6652:10255:10383:10390:12353&spec=581"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12353&spec=581"
+      href="https://www.wowhead.com/item=219314?bonus=3202:6652:10255:10383:10390:12355&spec=581"
+      data-wowhead="bonus=3202:6652:10255:10383:10390:12355&spec=581"
       data-wh-rename-link="true" >
       <p class="mb-1">Ara-Kara Sacbrood</p>
     </a>
@@ -12074,8 +12132,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=219314?bonus=3196:6652:10255:10383:10390:12353&spec=581"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12353&spec=581"
+      href="https://www.wowhead.com/item=219314?bonus=3202:6652:10255:10383:10390:12355&spec=581"
+      data-wowhead="bonus=3202:6652:10255:10383:10390:12355&spec=581"
       >
       <img src="/data/icons/inv_raid_mercurialegg_red.png" />
     </a>
@@ -12083,8 +12141,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=219314?bonus=3196:6652:10255:10383:10390:12353&spec=581"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12353&spec=581"
+      href="https://www.wowhead.com/item=219314?bonus=3202:6652:10255:10383:10390:12355&spec=581"
+      data-wowhead="bonus=3202:6652:10255:10383:10390:12355&spec=581"
       data-wh-rename-link="true" >
       <p class="mb-1">Ara-Kara Sacbrood</p>
     </a>
@@ -18599,7 +18657,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="291220 out of 905086 gems" class="mb-0">
+                                  title="297974 out of 927260 gems" class="mb-0">
                                    32 % </p>
                               </div>
                             </div>
@@ -18660,7 +18718,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="163407 out of 905086 gems" class="mb-0">
+                                  title="167212 out of 927260 gems" class="mb-0">
                                    18 % </p>
                               </div>
                             </div>
@@ -18714,7 +18772,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="89719 out of 905086 gems" class="mb-0">
+                                  title="92096 out of 927260 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18752,7 +18810,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="78244 out of 905086 gems" class="mb-0">
+                                  title="80215 out of 927260 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -18813,7 +18871,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="59693 out of 905086 gems" class="mb-0">
+                                  title="61243 out of 927260 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -18874,7 +18932,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="55129 out of 905086 gems" class="mb-0">
+                                  title="56401 out of 927260 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -18935,7 +18993,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="53420 out of 905086 gems" class="mb-0">
+                                  title="54916 out of 927260 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -18973,7 +19031,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="43512 out of 905086 gems" class="mb-0">
+                                  title="44605 out of 927260 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -19034,7 +19092,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="35814 out of 905086 gems" class="mb-0">
+                                  title="36772 out of 927260 gems" class="mb-0">
                                    4 % </p>
                               </div>
                             </div>
@@ -19095,7 +19153,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="34928 out of 905086 gems" class="mb-0">
+                                  title="35826 out of 927260 gems" class="mb-0">
                                    4 % </p>
                               </div>
                             </div>
@@ -20241,14 +20299,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -20295,7 +20351,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-danger">
-                          -0.45%
+                          -0.38%
                         </small>
                       </a>
                     </div>
@@ -20307,7 +20363,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-success">
-                          0.45%
+                          0.38%
                         </small>
                       </a>
                     </div>
@@ -20482,7 +20538,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.49%
+                                +0.41%
                               </span>
                             </a>
                             
@@ -20504,7 +20560,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-success">
-                                  +0.49%
+                                  +0.41%
                                 </span>
                               </a>
                               
@@ -20518,7 +20574,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-success">
-                                  +0.49%
+                                  +0.41%
                                 </span>
                               </a>
                               
@@ -20547,7 +20603,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.49%
+                                -0.41%
                               </span>
                             </a>
                             
@@ -20567,7 +20623,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.49%
+                                  -0.41%
                                 </span>
                               </a>
                               
@@ -20580,7 +20636,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-danger">
-                                  -0.49%
+                                  -0.41%
                                 </span>
                               </a>
                               
@@ -20619,7 +20675,7 @@
                                 Sigil of Chains
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.89%
+                                +0.97%
                               </span>
                             </a>
                             
@@ -20641,7 +20697,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Last Resort</span>
                                 <span class="ms-auto text-success">
-                                  +0.55%
+                                  +0.58%
                                 </span>
                               </a>
                               
@@ -20649,13 +20705,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389720?spec=581"
+                                href="https://www.wowhead.com/spell=389721?spec=581"
                                 target="_blank">
                                 <img src="/data/icons/ability_demonhunter_demonspikes.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Calcified Spikes</span>
+                                <span class="ms-2">Extended Spikes</span>
                                 <span class="ms-auto text-success">
-                                  +0.34%
+                                  +0.51%
                                 </span>
                               </a>
                               
@@ -20684,7 +20740,7 @@
                                 Perfectly Balanced Glaive
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.59%
+                                -0.61%
                               </span>
                             </a>
                             
@@ -20698,26 +20754,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=247454?spec=581"
-                                target="_blank">
-                                <img src="/data/icons/inv_icon_shadowcouncilorb_purple.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Spirit Bomb</span>
-                                <span class="ms-auto text-danger">
-                                  -0.4%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=391165?spec=581"
                                 target="_blank">
                                 <img src="/data/icons/ability_demonhunter_soulcleave4.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Soul Furnace</span>
                                 <span class="ms-auto text-danger">
-                                  -0.38%
+                                  -0.56%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=389718?spec=581"
+                                target="_blank">
+                                <img src="/data/icons/ability_demonhunter_sigilofinquisition.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Cycle of Binding</span>
+                                <span class="ms-auto text-danger">
+                                  -0.41%
                                 </span>
                               </a>
                               
@@ -20766,7 +20822,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-danger">
-                          -0.28%
+                          -0.34%
                         </small>
                       </a>
                     </div>
@@ -20778,7 +20834,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-success">
-                          0.28%
+                          0.34%
                         </small>
                       </a>
                     </div>
@@ -20953,7 +21009,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.3%
+                                +0.37%
                               </span>
                             </a>
                             
@@ -20975,7 +21031,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.37%
                                 </span>
                               </a>
                               
@@ -20989,7 +21045,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.37%
                                 </span>
                               </a>
                               
@@ -21018,7 +21074,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.3%
+                                -0.37%
                               </span>
                             </a>
                             
@@ -21038,7 +21094,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.3%
+                                  -0.37%
                                 </span>
                               </a>
                               
@@ -21051,7 +21107,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-danger">
-                                  -0.3%
+                                  -0.37%
                                 </span>
                               </a>
                               
@@ -21080,17 +21136,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=389721?spec=581"
+                              href="https://www.wowhead.com/spell=202138?spec=581"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-391-Spec" aria-expanded="false"
                               aria-controls="gainCol-391-Spec">
-                              <img src="/data/icons/ability_demonhunter_demonspikes.png" alt=""
+                              <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Extended Spikes">
-                                Extended Spikes
+                              <span class="flex-grow-1 text-truncate" title="Sigil of Chains">
+                                Sigil of Chains
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.63%
+                                +0.48%
                               </span>
                             </a>
                             
@@ -21106,13 +21162,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=202138?spec=581"
+                                href="https://www.wowhead.com/spell=389721?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_demonspikes.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sigil of Chains</span>
+                                <span class="ms-2">Extended Spikes</span>
                                 <span class="ms-auto text-success">
-                                  +0.54%
+                                  +0.47%
                                 </span>
                               </a>
                               
@@ -21120,13 +21176,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207739?spec=581"
+                                href="https://www.wowhead.com/spell=389220?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/spell_fire_elementaldevastation.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_fierybrand.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Burning Alive</span>
+                                <span class="ms-2">Fiery Demise</span>
                                 <span class="ms-auto text-success">
-                                  +0.51%
+                                  +0.38%
                                 </span>
                               </a>
                               
@@ -21155,7 +21211,7 @@
                                 Spirit Bomb
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.84%
+                                -0.74%
                               </span>
                             </a>
                             
@@ -21175,20 +21231,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Soul Furnace</span>
                                 <span class="ms-auto text-danger">
-                                  -0.83%
+                                  -0.6%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389718?spec=581"
+                                href="https://www.wowhead.com/spell=428603?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/ability_demonhunter_sigilofinquisition.png" alt=""
+                                <img src="/data/icons/inv_helm_suncrown_d_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Cycle of Binding</span>
+                                <span class="ms-2">Ascending Flame</span>
                                 <span class="ms-auto text-danger">
-                                  -0.64%
+                                  -0.44%
                                 </span>
                               </a>
                               
@@ -21237,7 +21293,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-success">
-                          0.08%
+                          0.25%
                         </small>
                       </a>
                     </div>
@@ -21249,7 +21305,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-danger">
-                          -0.08%
+                          -0.25%
                         </small>
                       </a>
                     </div>
@@ -21424,7 +21480,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.1%
+                                +0.28%
                               </span>
                             </a>
                             
@@ -21446,7 +21502,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-success">
-                                  +0.1%
+                                  +0.28%
                                 </span>
                               </a>
                               
@@ -21460,7 +21516,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-success">
-                                  +0.1%
+                                  +0.28%
                                 </span>
                               </a>
                               
@@ -21489,7 +21545,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.1%
+                                -0.28%
                               </span>
                             </a>
                             
@@ -21509,7 +21565,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-danger">
-                                  -0.1%
+                                  -0.28%
                                 </span>
                               </a>
                               
@@ -21522,7 +21578,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.1%
+                                  -0.28%
                                 </span>
                               </a>
                               
@@ -21577,13 +21633,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389711?spec=581"
+                                href="https://www.wowhead.com/spell=202138?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/ability_demonhunter_shatteredsouls.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Soulmonger</span>
+                                <span class="ms-2">Sigil of Chains</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.37%
                                 </span>
                               </a>
                               
@@ -21591,13 +21647,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=428603?spec=581"
+                                href="https://www.wowhead.com/spell=389718?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/inv_helm_suncrown_d_01.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_sigilofinquisition.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Ascending Flame</span>
+                                <span class="ms-2">Cycle of Binding</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.21%
                                 </span>
                               </a>
                               
@@ -21626,7 +21682,7 @@
                                 Chains of Anger
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.45%
+                                -0.67%
                               </span>
                             </a>
                             
@@ -21646,7 +21702,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Darkglare Boon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.43%
+                                  -0.4%
                                 </span>
                               </a>
                               
@@ -21659,7 +21715,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fiery Demise</span>
                                 <span class="ms-auto text-danger">
-                                  -0.41%
+                                  -0.38%
                                 </span>
                               </a>
                               
@@ -21708,7 +21764,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-success">
-                          1.05%
+                          0.83%
                         </small>
                       </a>
                     </div>
@@ -21720,7 +21776,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-danger">
-                          -1.05%
+                          -0.83%
                         </small>
                       </a>
                     </div>
@@ -21895,7 +21951,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.15%
+                                +0.91%
                               </span>
                             </a>
                             
@@ -21917,7 +21973,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-success">
-                                  +1.15%
+                                  +0.91%
                                 </span>
                               </a>
                               
@@ -21931,7 +21987,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-success">
-                                  +1.15%
+                                  +0.91%
                                 </span>
                               </a>
                               
@@ -21960,7 +22016,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.15%
+                                -0.91%
                               </span>
                             </a>
                             
@@ -21980,7 +22036,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-danger">
-                                  -1.15%
+                                  -0.91%
                                 </span>
                               </a>
                               
@@ -21993,7 +22049,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-danger">
-                                  -1.15%
+                                  -0.91%
                                 </span>
                               </a>
                               
@@ -22032,7 +22088,7 @@
                                 Spirit Bomb
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.52%
+                                +1.26%
                               </span>
                             </a>
                             
@@ -22054,7 +22110,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfectly Balanced Glaive</span>
                                 <span class="ms-auto text-success">
-                                  +1.39%
+                                  +1.12%
                                 </span>
                               </a>
                               
@@ -22062,13 +22118,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389708?spec=581"
+                                href="https://www.wowhead.com/spell=391165?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/inv_jewelry_necklace_53.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_soulcleave4.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Darkglare Boon</span>
+                                <span class="ms-2">Soul Furnace</span>
                                 <span class="ms-auto text-success">
-                                  +0.98%
+                                  +0.99%
                                 </span>
                               </a>
                               
@@ -22097,7 +22153,7 @@
                                 Extended Spikes
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.47%
+                                -1.57%
                               </span>
                             </a>
                             
@@ -22117,7 +22173,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sigil of Chains</span>
                                 <span class="ms-auto text-danger">
-                                  -0.77%
+                                  -0.85%
                                 </span>
                               </a>
                               
@@ -22130,7 +22186,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Last Resort</span>
                                 <span class="ms-auto text-danger">
-                                  -0.66%
+                                  -0.62%
                                 </span>
                               </a>
                               
@@ -22179,7 +22235,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-success">
-                          0.07%
+                          0.04%
                         </small>
                       </a>
                     </div>
@@ -22191,7 +22247,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-danger">
-                          -0.07%
+                          -0.04%
                         </small>
                       </a>
                     </div>
@@ -22366,7 +22422,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.08%
+                                +0.05%
                               </span>
                             </a>
                             
@@ -22388,7 +22444,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-success">
-                                  +0.08%
+                                  +0.05%
                                 </span>
                               </a>
                               
@@ -22402,7 +22458,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-success">
-                                  +0.08%
+                                  +0.05%
                                 </span>
                               </a>
                               
@@ -22431,7 +22487,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.08%
+                                -0.05%
                               </span>
                             </a>
                             
@@ -22451,7 +22507,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-danger">
-                                  -0.08%
+                                  -0.05%
                                 </span>
                               </a>
                               
@@ -22464,7 +22520,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.08%
+                                  -0.05%
                                 </span>
                               </a>
                               
@@ -22503,7 +22559,7 @@
                                 Perfectly Balanced Glaive
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.79%
+                                +0.63%
                               </span>
                             </a>
                             
@@ -22525,7 +22581,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spirit Bomb</span>
                                 <span class="ms-auto text-success">
-                                  +0.65%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -22533,13 +22589,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389718?spec=581"
+                                href="https://www.wowhead.com/spell=389711?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/ability_demonhunter_sigilofinquisition.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_shatteredsouls.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Cycle of Binding</span>
+                                <span class="ms-2">Soulmonger</span>
                                 <span class="ms-auto text-success">
-                                  +0.46%
+                                  +0.28%
                                 </span>
                               </a>
                               
@@ -22558,17 +22614,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=343207?spec=581"
+                              href="https://www.wowhead.com/spell=391165?spec=581"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-503-Spec" aria-expanded="false"
                               aria-controls="lossCol-503-Spec">
-                              <img src="/data/icons/ability_demonhunter_soulcleave.png" alt=""
+                              <img src="/data/icons/ability_demonhunter_soulcleave4.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Focused Cleave">
-                                Focused Cleave
+                              <span class="flex-grow-1 text-truncate" title="Soul Furnace">
+                                Soul Furnace
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.39%
+                                -0.45%
                               </span>
                             </a>
                             
@@ -22582,26 +22638,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207387?spec=581"
+                                href="https://www.wowhead.com/spell=343207?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/artifactability_vengeancedemonhunter_painbringer.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_soulcleave.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Painbringer</span>
+                                <span class="ms-2">Focused Cleave</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.38%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389976?spec=581"
+                                href="https://www.wowhead.com/spell=389708?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/inv_icon_shadowcouncilorb_purple.png" alt=""
+                                <img src="/data/icons/inv_jewelry_necklace_53.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Vulnerability</span>
+                                <span class="ms-2">Darkglare Boon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.2%
+                                  -0.36%
                                 </span>
                               </a>
                               
@@ -22837,7 +22893,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.14%
+                                +0.13%
                               </span>
                             </a>
                             
@@ -22859,7 +22915,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -22873,7 +22929,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -22902,7 +22958,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.14%
+                                -0.13%
                               </span>
                             </a>
                             
@@ -22922,7 +22978,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.13%
                                 </span>
                               </a>
                               
@@ -22935,7 +22991,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.13%
                                 </span>
                               </a>
                               
@@ -22974,7 +23030,7 @@
                                 Focused Cleave
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.62%
+                                +0.53%
                               </span>
                             </a>
                             
@@ -22996,7 +23052,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Extended Spikes</span>
                                 <span class="ms-auto text-success">
-                                  +0.4%
+                                  +0.45%
                                 </span>
                               </a>
                               
@@ -23010,7 +23066,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burning Alive</span>
                                 <span class="ms-auto text-success">
-                                  +0.28%
+                                  +0.26%
                                 </span>
                               </a>
                               
@@ -23029,17 +23085,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=389711?spec=581"
+                              href="https://www.wowhead.com/spell=389720?spec=581"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-505-Spec" aria-expanded="false"
                               aria-controls="lossCol-505-Spec">
-                              <img src="/data/icons/ability_demonhunter_shatteredsouls.png" alt=""
+                              <img src="/data/icons/ability_demonhunter_demonspikes.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Soulmonger">
-                                Soulmonger
+                              <span class="flex-grow-1 text-truncate" title="Calcified Spikes">
+                                Calcified Spikes
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.56%
+                                -0.48%
                               </span>
                             </a>
                             
@@ -23053,13 +23109,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389720?spec=581"
+                                href="https://www.wowhead.com/spell=389711?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/ability_demonhunter_demonspikes.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_shatteredsouls.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Calcified Spikes</span>
+                                <span class="ms-2">Soulmonger</span>
                                 <span class="ms-auto text-danger">
-                                  -0.47%
+                                  -0.48%
                                 </span>
                               </a>
                               
@@ -23072,7 +23128,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Painbringer</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.35%
                                 </span>
                               </a>
                               
@@ -23121,7 +23177,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-success">
-                          0.46%
+                          0.36%
                         </small>
                       </a>
                     </div>
@@ -23133,7 +23189,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-danger">
-                          -0.46%
+                          -0.36%
                         </small>
                       </a>
                     </div>
@@ -23308,7 +23364,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.51%
+                                +0.39%
                               </span>
                             </a>
                             
@@ -23330,7 +23386,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-success">
-                                  +0.51%
+                                  +0.39%
                                 </span>
                               </a>
                               
@@ -23344,7 +23400,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-success">
-                                  +0.51%
+                                  +0.39%
                                 </span>
                               </a>
                               
@@ -23373,7 +23429,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.51%
+                                -0.39%
                               </span>
                             </a>
                             
@@ -23393,7 +23449,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-danger">
-                                  -0.51%
+                                  -0.39%
                                 </span>
                               </a>
                               
@@ -23406,7 +23462,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.51%
+                                  -0.39%
                                 </span>
                               </a>
                               
@@ -23445,7 +23501,7 @@
                                 Cycle of Binding
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.4%
+                                +0.41%
                               </span>
                             </a>
                             
@@ -23461,13 +23517,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=389708?spec=581"
+                                href="https://www.wowhead.com/spell=428603?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/inv_jewelry_necklace_53.png" alt=""
+                                <img src="/data/icons/inv_helm_suncrown_d_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Darkglare Boon</span>
+                                <span class="ms-2">Ascending Flame</span>
                                 <span class="ms-auto text-success">
-                                  +0.32%
+                                  +0.3%
                                 </span>
                               </a>
                               
@@ -23475,13 +23531,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391178?spec=581"
+                                href="https://www.wowhead.com/spell=389715?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/spell_fire_felflamering.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Roaring Fire</span>
+                                <span class="ms-2">Chains of Anger</span>
                                 <span class="ms-auto text-success">
-                                  +0.2%
+                                  +0.28%
                                 </span>
                               </a>
                               
@@ -23500,17 +23556,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=202138?spec=581"
+                              href="https://www.wowhead.com/spell=209258?spec=581"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-525-Spec" aria-expanded="false"
                               aria-controls="lossCol-525-Spec">
-                              <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
+                              <img src="/data/icons/inv_glaive_1h_artifactaldorchi_d_06.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Sigil of Chains">
-                                Sigil of Chains
+                              <span class="flex-grow-1 text-truncate" title="Last Resort">
+                                Last Resort
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.49%
+                                -0.46%
                               </span>
                             </a>
                             
@@ -23524,26 +23580,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=209258?spec=581"
+                                href="https://www.wowhead.com/spell=202138?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/inv_glaive_1h_artifactaldorchi_d_06.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Last Resort</span>
+                                <span class="ms-2">Sigil of Chains</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.44%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=218612?spec=581"
+                                href="https://www.wowhead.com/spell=389724?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/spell_warlock_demonicempowerment.png" alt=""
+                                <img src="/data/icons/spell_warlock_summonabyssal.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Feed the Demon</span>
+                                <span class="ms-2">Meteoric Strikes</span>
                                 <span class="ms-auto text-danger">
-                                  -0.31%
+                                  -0.28%
                                 </span>
                               </a>
                               
@@ -23592,7 +23648,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Fel-Scarred</small><br />
                         <small class="text-danger">
-                          -1.08%
+                          -0.87%
                         </small>
                       </a>
                     </div>
@@ -23604,7 +23660,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Aldrachi Reaver</small><br />
                         <small class="text-success">
-                          1.08%
+                          0.87%
                         </small>
                       </a>
                     </div>
@@ -23779,7 +23835,7 @@
                                 Incisive Blade
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.2%
+                                +0.96%
                               </span>
                             </a>
                             
@@ -23801,7 +23857,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Army Unto Oneself</span>
                                 <span class="ms-auto text-success">
-                                  +1.2%
+                                  +0.96%
                                 </span>
                               </a>
                               
@@ -23815,7 +23871,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Wounded Quarry</span>
                                 <span class="ms-auto text-success">
-                                  +1.2%
+                                  +0.96%
                                 </span>
                               </a>
                               
@@ -23844,7 +23900,7 @@
                                 Set Fire to the Pain
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.2%
+                                -0.96%
                               </span>
                             </a>
                             
@@ -23864,7 +23920,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Intensity</span>
                                 <span class="ms-auto text-danger">
-                                  -1.2%
+                                  -0.96%
                                 </span>
                               </a>
                               
@@ -23877,7 +23933,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Student of Suffering</span>
                                 <span class="ms-auto text-danger">
-                                  -1.2%
+                                  -0.96%
                                 </span>
                               </a>
                               
@@ -23906,17 +23962,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=389715?spec=581"
+                              href="https://www.wowhead.com/spell=391165?spec=581"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-542-Spec" aria-expanded="false"
                               aria-controls="gainCol-542-Spec">
-                              <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
+                              <img src="/data/icons/ability_demonhunter_soulcleave4.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Chains of Anger">
-                                Chains of Anger
+                              <span class="flex-grow-1 text-truncate" title="Soul Furnace">
+                                Soul Furnace
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.57%
+                                +0.47%
                               </span>
                             </a>
                             
@@ -23938,7 +23994,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ascending Flame</span>
                                 <span class="ms-auto text-success">
-                                  +0.48%
+                                  +0.43%
                                 </span>
                               </a>
                               
@@ -23946,13 +24002,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=209258?spec=581"
+                                href="https://www.wowhead.com/spell=389715?spec=581"
                                 target="_blank">
-                                <img src="/data/icons/inv_glaive_1h_artifactaldorchi_d_06.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_sigilofchains.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Last Resort</span>
+                                <span class="ms-2">Chains of Anger</span>
                                 <span class="ms-auto text-success">
-                                  +0.44%
+                                  +0.4%
                                 </span>
                               </a>
                               
@@ -23981,7 +24037,7 @@
                                 Spirit Bomb
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.0%
+                                -0.62%
                               </span>
                             </a>
                             
@@ -24001,7 +24057,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfectly Balanced Glaive</span>
                                 <span class="ms-auto text-danger">
-                                  -0.78%
+                                  -0.45%
                                 </span>
                               </a>
                               
@@ -24014,7 +24070,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Focused Cleave</span>
                                 <span class="ms-auto text-danger">
-                                  -0.36%
+                                  -0.41%
                                 </span>
                               </a>
                               
@@ -25184,7 +25240,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -25410,6 +25467,9 @@
 
       const raw = [
         
+    79550
+      , 
+    
     221875
       , 
     
@@ -25417,9 +25477,6 @@
       , 
     
     9807
-      , 
-    
-    79550
       
     
 ];
@@ -25677,6 +25734,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

@@ -39,6 +39,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -52,7 +53,7 @@
 
   <!-- Primary SEO -->
   <meta name="description"
-    content="Interactive Mythic+ dashboard for World of Warcraft. Find spec popularity, keys per week, dungeon popularity, performance vs. popularity and more. Data updated 23/09/2025, 07:08:51.">
+    content="Interactive Mythic+ dashboard for World of Warcraft. Find spec popularity, keys per week, dungeon popularity, performance vs. popularity and more. Data updated 23/09/2025, 20:03:42.">
   <meta name="keywords"
     content="MythiStone, Mythic+, WoW, Dungeon popularity, spec popularity, keys per week, M+ dashboard, WoW stats">
 
@@ -70,7 +71,7 @@
   <meta property="og:url" content="https://mythistone.com/dashboard">
   <meta property="og:title" content="MythiStone - Mythic+ Dashboard: Spec & Dungeon Trends">
   <meta property="og:description"
-    content="Live Mythic+ dashboard: spec popularity, dungeon trends, keys per week and performance scoring (updated 23/09/2025, 07:08:51).">
+    content="Live Mythic+ dashboard: spec popularity, dungeon trends, keys per week and performance scoring (updated 23/09/2025, 20:03:42).">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -112,7 +113,7 @@
             {"@type": "ListItem", "position": 2, "name": "Dashboard", "item": "https://mythistone.com/dashboard"}
           ]
         },
-        "dateModified": "23/09/2025, 07:08:51"
+        "dateModified": "23/09/2025, 20:03:42"
       },
       {
         "@type": "SiteNavigationElement",
@@ -375,7 +376,7 @@
     "url": "https://mythistone.com"
     },
     "datePublished": "01/07/2025",
-    "dateModified": "23/09/2025, 07:08:51"
+    "dateModified": "23/09/2025, 20:03:42"
   }
   </script>
 
@@ -981,10 +982,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1026,7 +1050,7 @@
         
         <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
           <div class="card h-100" style="
-              background-image: url('/data/icons/tazavesh-the-veiled-market-small.jpg');
+              background-image: url('/data/icons/eco-dome-aldani-small.jpg');
               background-size: cover;
               background-position: center;
               background-repeat: no-repeat;
@@ -1038,9 +1062,9 @@
                   <p class="text-sm mb-0 text-capitalize">Shortest Run</p>
                   
                   <div>
-                    <span class="font-weight-bolder h4 text-success">+++3</span>
-                    <span class="font-weight-bolder h4">Tazavesh: So&#39;leah&#39;s Gambit</span>
-                    <span class="font-weight-bolder h4">EU</span>
+                    <span class="font-weight-bolder h4 text-success">+++2</span>
+                    <span class="font-weight-bolder h4">Eco-Dome Al&#39;dani</span>
+                    <span class="font-weight-bolder h4">US</span>
                   </div>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
@@ -1049,7 +1073,7 @@
               </div>
             </div>
             <div class="card-body ">
-              <h4 class="mb-0" id="Shortest-run-value">Cleared in 10:09.245
+              <h4 class="mb-0" id="Shortest-run-value">Cleared in 09:49.574
               </h4>
               <div class="d-flex align-items-center">
                 
@@ -1067,8 +1091,8 @@
                 
                 
                 
-                <img src="/data/icons/1247265.jpg"
-                  alt="Vengeance" title="Vengeance" class="me-1"  />
+                <img src="/data/icons/608951.jpg"
+                  alt="Brewmaster" title="Brewmaster" class="me-1"  />
                 
                 
                 
@@ -1098,20 +1122,20 @@
                 
                 
                 
-                <img src="/data/icons/1247264.jpg"
-                  alt="Havoc" title="Havoc" class="me-1"  />
-                
-                
-                
-                
-                <img src="/data/icons/135932.jpg"
-                  alt="Arcane" title="Arcane" class="me-1"  />
-                
-                
-                
-                
                 <img src="/data/icons/132347.jpg"
                   alt="Fury" title="Fury" class="me-1"  />
+                
+                
+                
+                
+                <img src="/data/icons/135873.jpg"
+                  alt="Retribution" title="Retribution" class="me-1"  />
+                
+                
+                
+                
+                <img src="/data/icons/136096.jpg"
+                  alt="Balance" title="Balance" class="me-1"  />
                 
                 
                 
@@ -1127,7 +1151,7 @@
             <div class="card-footer p-2 ps-3">
               <p class="mb-0 text-sm">
                 <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1758126086.0>Run happened:</span>
+                  data-timestamp=1758592307.0>Run happened:</span>
               </p>
             </div>
           </div>
@@ -1403,7 +1427,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1758611331.309809>Last Update: </p>
+                              data-timestamp=1758657822.859847>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1427,7 +1451,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1758611331.309809>Last Update: </p>
+                              data-timestamp=1758657822.859847>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1457,7 +1481,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1758611331.309809>Last Update: </p>
+                  data-timestamp=1758657822.859847>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1477,7 +1501,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1758611331.309809>Last Update: </p>
+                  data-timestamp=1758657822.859847>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1501,7 +1525,7 @@
                 <div class="d-flex">
                   <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                   <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611331.309809>Last Update: </p>
+                    data-timestamp=1758657822.859847>Last Update: </p>
                 </div>
                 <a class="mb-0 text-sm" style="cursor: pointer;" data-bs-toggle="modal"
                   data-bs-target="#performanceModal">See How It’s
@@ -1524,7 +1548,7 @@
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1758611331.309809>Last Update: </p>
+                  data-timestamp=1758657822.859847>Last Update: </p>
               </div>
             </div>
           </div>
@@ -1970,14 +1994,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -2064,7 +2086,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -2584,7 +2607,7 @@
 
       // these come straight from your Python
       const periodLabels = ["Week:2 ", "Week:3 ", "Week:4 ", "Week:5 ", "Week:6 ", "Week:7 "];
-    const periodDatasets = [{'label': 'Total', 'data': [285913, 457864, 242719, 398083, 458462, 454241], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [58105, 80192, 43115, 68866, 73430, 73701], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [121398, 242065, 129105, 210064, 232872, 219633], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [97067, 129758, 66082, 110034, 137936, 142542], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [9343, 5849, 4417, 9119, 14224, 18365], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
+    const periodDatasets = [{'label': 'Total', 'data': [285913, 457864, 242719, 398083, 458462, 530359], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [58105, 80192, 43115, 68866, 73430, 86040], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [121398, 242065, 129105, 210064, 232872, 255758], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [97067, 129758, 66082, 110034, 137936, 167156], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [9343, 5849, 4417, 9119, 14224, 21405], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
 
     new Chart(ctx_keys_per_week, {
       type: "line",
@@ -2644,11 +2667,11 @@
         .getContext("2d");
 
       // Injected by Jinja:
-      const dungeonLabels = ["HOA", "EDA", "PSF", "STRT", "GMBT", "FLOOD", "DAWN", "ARAK"];
-    const dungeonFullNames = ["Halls of Atonement", "Eco-Dome Al\u0027dani", "Priory of the Sacred Flame", "Tazavesh: Streets of Wonder", "Tazavesh: So\u0027leah\u0027s Gambit", "Operation: Floodgate", "The Dawnbreaker", "Ara-Kara, City of Echoes"];
+      const dungeonLabels = ["HOA", "EDA", "PSF", "GMBT", "STRT", "FLOOD", "DAWN", "ARAK"];
+    const dungeonFullNames = ["Halls of Atonement", "Eco-Dome Al\u0027dani", "Priory of the Sacred Flame", "Tazavesh: So\u0027leah\u0027s Gambit", "Tazavesh: Streets of Wonder", "Operation: Floodgate", "The Dawnbreaker", "Ara-Kara, City of Echoes"];
     const iconUrls = ["/data/icons/halls-of-atonement-small.jpg", "/data/icons/eco-dome-aldani-small.jpg", "/data/icons/priory-of-the-sacred-flame-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/tazavesh-the-veiled-market-small.jpg", "/data/icons/operation-floodgate-small.jpg", "/data/icons/the-dawnbreaker-small.jpg", "/data/icons/ara-kara-city-of-echoes-small.jpg"];
-    const totalCounts = [303859, 300222, 293917, 292448, 292175, 291665, 284806, 284285];
-    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [65396, 34050, 50102, 42999, 37612, 55730, 49711, 69815], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [162756, 136843, 147556, 159927, 109633, 154113, 153502, 153736], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [71196, 116155, 88737, 86934, 120527, 77989, 78097, 57779], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [4511, 13174, 7522, 2588, 24403, 3833, 3496, 2955], "label": "+3", "order": 0, "stack": "Stack 0"}];
+    const totalCounts = [313942, 310563, 303463, 302177, 302136, 301691, 294645, 294085];
+    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [66929, 35298, 52053, 38666, 44157, 57715, 51517, 71966], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [167812, 141487, 152242, 113279, 164840, 159095, 158430, 158779], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [74405, 120006, 91389, 124458, 90411, 80892, 81028, 60239], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [4796, 13772, 7779, 25774, 2728, 3989, 3670, 3101], "label": "+3", "order": 0, "stack": "Stack 0"}];
 
     // Kick off loading each icon
     const iconPromises = iconUrls.map(src =>
@@ -2824,7 +2847,7 @@
 
       // ← injected server‑side
       const keyLevels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
-    const datasets = [{"data": [13.0, 12.5, 12.8, 12.8, 11.8, 12.2, 12.9, 14.0, 12.8, 13.8, 13.5, 12.8, 12.6, 12.5, 12.4, 12.9, 12.4, 14.5, 10.3, 0.0], "label": "Halls of Atonement", "rawCounts": [12505, 3363, 6463, 5343, 11244, 15645, 16124, 15638, 77151, 35574, 43865, 26227, 16902, 10560, 4864, 1825, 465, 93, 8, 0]}, {"data": [13.1, 12.6, 12.0, 12.1, 10.6, 11.0, 11.8, 13.8, 11.9, 14.3, 12.9, 13.5, 14.3, 14.7, 15.4, 14.8, 15.6, 15.2, 19.2, 66.7], "label": "Eco-Dome Al\u0027dani", "rawCounts": [12638, 3405, 6057, 5055, 10113, 14049, 14795, 15510, 71634, 36881, 41934, 27589, 19317, 12384, 6072, 2088, 586, 98, 15, 2]}, {"data": [13.3, 13.9, 13.5, 12.9, 13.1, 13.0, 13.3, 12.9, 12.9, 12.6, 12.7, 12.2, 11.5, 9.9, 8.1, 6.8, 4.9, 2.5, 0.0, 0.0], "label": "Priory of the Sacred Flame", "rawCounts": [12801, 3745, 6789, 5381, 12515, 16603, 16654, 14431, 77855, 32706, 41270, 24999, 15495, 8342, 3169, 960, 186, 16, 0, 0]}, {"data": [12.0, 11.6, 12.0, 12.6, 12.7, 13.3, 12.6, 12.0, 12.6, 12.4, 11.9, 12.4, 12.6, 13.0, 13.5, 14.2, 15.0, 15.9, 25.6, 0.0], "label": "Tazavesh: Streets of Wonder", "rawCounts": [11509, 3122, 6046, 5276, 12136, 17012, 15718, 13412, 75954, 32061, 38840, 25405, 16959, 10998, 5314, 2000, 564, 102, 20, 0]}, {"data": [12.1, 12.6, 11.9, 11.9, 12.8, 12.7, 12.5, 11.6, 12.3, 12.0, 12.0, 12.4, 12.9, 14.2, 16.5, 18.1, 20.6, 23.8, 32.1, 33.3], "label": "Tazavesh: So\u0027leah\u0027s Gambit", "rawCounts": [11671, 3409, 6013, 4977, 12175, 16269, 15587, 12950, 74319, 30979, 39051, 25396, 17400, 11992, 6472, 2559, 777, 153, 25, 1]}, {"data": [11.2, 11.4, 12.0, 12.7, 12.7, 12.6, 12.4, 12.3, 12.9, 12.5, 13.0, 12.8, 12.4, 11.0, 8.7, 7.4, 5.4, 2.3, 0.0, 0.0], "label": "Operation: Floodgate", "rawCounts": [10770, 3069, 6034, 5326, 12141, 16118, 15474, 13771, 77427, 32282, 42292, 26301, 16683, 9293, 3414, 1051, 204, 15, 0, 0]}, {"data": [11.9, 12.3, 12.5, 12.4, 12.3, 12.1, 12.1, 11.7, 12.1, 11.8, 12.1, 12.3, 12.3, 12.9, 13.3, 12.8, 12.4, 11.2, 5.1, 0.0], "label": "The Dawnbreaker", "rawCounts": [11424, 3319, 6294, 5168, 11726, 15522, 15082, 13090, 73156, 30501, 39453, 25088, 16541, 10847, 5247, 1806, 466, 72, 4, 0]}, {"data": [13.5, 13.2, 13.2, 12.7, 14.0, 13.0, 12.4, 11.8, 12.4, 10.7, 11.8, 11.6, 11.4, 11.8, 12.2, 13.0, 13.7, 14.6, 7.7, 0.0], "label": "Ara-Kara, City of Echoes", "rawCounts": [12965, 3575, 6665, 5302, 13323, 16682, 15434, 13243, 74697, 27693, 38500, 23723, 15328, 9926, 4782, 1830, 517, 94, 6, 0]}];
+    const datasets = [{"data": [12.9, 12.4, 12.8, 12.8, 11.8, 12.2, 12.9, 14.0, 12.8, 13.8, 13.5, 12.8, 12.6, 12.5, 12.3, 13.0, 12.3, 13.8, 11.4, 0.0], "label": "Halls of Atonement", "rawCounts": [12773, 3447, 6617, 5470, 11555, 16062, 16474, 15874, 79640, 36613, 45652, 27325, 17751, 11006, 5096, 1972, 508, 97, 10, 0]}, {"data": [13.1, 12.5, 11.9, 12.0, 10.6, 11.0, 11.9, 13.8, 11.9, 14.3, 12.9, 13.5, 14.3, 14.7, 15.4, 14.8, 15.7, 15.5, 18.2, 66.7], "label": "Eco-Dome Al\u0027dani", "rawCounts": [12952, 3475, 6169, 5138, 10338, 14407, 15141, 15731, 74265, 38012, 43697, 28761, 20166, 12921, 6373, 2245, 645, 109, 16, 2]}, {"data": [13.3, 13.8, 13.4, 12.9, 13.1, 13.0, 13.3, 12.9, 12.9, 12.6, 12.7, 12.2, 11.5, 9.9, 8.1, 6.9, 4.8, 2.4, 0.0, 0.0], "label": "Priory of the Sacred Flame", "rawCounts": [13137, 3835, 6932, 5517, 12852, 17048, 16966, 14626, 80555, 33579, 42934, 25995, 16144, 8716, 3364, 1047, 199, 17, 0, 0]}, {"data": [12.1, 12.6, 11.9, 11.9, 12.8, 12.7, 12.5, 11.6, 12.3, 12.0, 12.0, 12.4, 12.9, 14.2, 16.4, 18.1, 20.7, 24.5, 31.8, 33.3], "label": "Tazavesh: So\u0027leah\u0027s Gambit", "rawCounts": [11975, 3511, 6154, 5092, 12488, 16720, 15918, 13145, 76936, 31854, 40698, 26394, 18206, 12520, 6770, 2743, 852, 172, 28, 1]}, {"data": [12.0, 11.6, 12.1, 12.6, 12.7, 13.3, 12.6, 12.0, 12.6, 12.4, 11.9, 12.4, 12.6, 13.0, 13.5, 14.0, 15.1, 15.6, 26.1, 0.0], "label": "Tazavesh: Streets of Wonder", "rawCounts": [11830, 3212, 6231, 5419, 12453, 17451, 16039, 13613, 78596, 32866, 40410, 26391, 17738, 11426, 5571, 2134, 623, 110, 23, 0]}, {"data": [11.2, 11.4, 12.0, 12.7, 12.7, 12.6, 12.4, 12.3, 12.9, 12.5, 13.0, 12.8, 12.4, 11.0, 8.7, 7.5, 5.4, 2.3, 0.0, 0.0], "label": "Operation: Floodgate", "rawCounts": [11070, 3157, 6190, 5443, 12466, 16614, 15791, 13965, 80149, 33240, 44177, 27328, 17445, 9679, 3605, 1135, 221, 16, 0, 0]}, {"data": [11.9, 12.3, 12.5, 12.4, 12.3, 12.1, 12.1, 11.7, 12.2, 11.8, 12.1, 12.2, 12.3, 12.8, 13.3, 12.8, 12.3, 11.7, 5.7, 0.0], "label": "The Dawnbreaker", "rawCounts": [11794, 3418, 6448, 5303, 12052, 15953, 15377, 13265, 75784, 31357, 41147, 26071, 17369, 11278, 5485, 1949, 508, 82, 5, 0]}, {"data": [13.5, 13.3, 13.3, 12.8, 14.0, 13.1, 12.3, 11.8, 12.4, 10.7, 11.9, 11.6, 11.4, 11.8, 12.2, 13.0, 13.6, 14.2, 6.8, 0.0], "label": "Ara-Kara, City of Echoes", "rawCounts": [13376, 3705, 6886, 5465, 13663, 17153, 15714, 13409, 77287, 28443, 40208, 24618, 16106, 10366, 5049, 1971, 560, 100, 6, 0]}];
 
     new Chart(ctx, {
       type: 'bar',

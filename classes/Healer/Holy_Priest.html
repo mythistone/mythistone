@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Holy Priest Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Holy Priest, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:30:20.">
+    content="Discover the most popular Mythic+ build for Holy Priest, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:23:19.">
   <link rel="canonical" href="https://mythistone.com/classes/Healer/Holy_Priest">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Healer/Holy_Priest">
   <meta property="og:title" content="Holy Priest Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Holy Priest Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Holy Priest Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Holy icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Holy Priest Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Holy Priest—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Holy Priest—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:30:20"
+  "dateModified": "23/09/2025, 20:23:19"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Healer">Healer</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Healer">Healer</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Priest-text">Holy Priest </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="120.6 K seen in 2.3 M total runs">Overall
-                  Played: 5.14%</h4>
+                  title="120.6 K seen in 2.4 M total runs">Overall
+                  Played: 4.97%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612620.075556>Last Update:</span>
+                    data-timestamp=1758658999.919189>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612620.075556>Last Update</span>
+                    data-timestamp=1758658999.919189>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-intellect py-1 px-2">INTELLECT</div>
 
             
-            <div class="h5 mb-0">119.8 K</div>
+            <div class="h5 mb-0">119.9 K</div>
             
           </div>
         </div>
@@ -1305,7 +1345,7 @@
               title="min: 2.4 K, max: 32.4 K, avg: 16.3 K"
               tabindex="0" role="button"
               aria-label="min 2.4 K, max 32.4 K, avg: 16.3 K">
-              24.61%
+              24.66%
             </div>
             
           </div>
@@ -1339,10 +1379,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 31.1 K, avg: 14.4 K"
+              title="min: 0, max: 31.1 K, avg: 14.5 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 31.1 K, avg: 14.4 K">
-              25.84%
+              aria-label="min 0, max 31.1 K, avg: 14.5 K">
+              25.89%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 34 K, avg: 11.9 K"
               tabindex="0" role="button"
               aria-label="min 0, max 34 K, avg: 11.9 K">
-              23.41%
+              23.39%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">665.1 K</div>
+            <div class="h5 mb-0">666.1 K</div>
             
           </div>
         </div>
@@ -1516,7 +1556,7 @@
               title="min: 0, max: 8.2 K, avg: 2.4 K"
               tabindex="0" role="button"
               aria-label="min 0, max 8.2 K, avg: 2.4 K">
-              5.68%
+              5.69%
             </div>
             
           </div>
@@ -1550,9 +1590,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 5.6 K, avg: 678"
+              title="min: 0, max: 5.6 K, avg: 680"
               tabindex="0" role="button"
-              aria-label="min 0, max 5.6 K, avg: 678">
+              aria-label="min 0, max 5.6 K, avg: 680">
               1.25%
             </div>
             
@@ -1586,7 +1626,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">538</div>
+            <div class="h5 mb-0">539</div>
             
           </div>
         </div>
@@ -2643,8 +2683,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185842?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&gems=213458:213458"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&gems=213458:213458"
+      href="https://www.wowhead.com/item=185842?bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=257&gems=213458:213458"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=257&gems=213458:213458"
       >
       <img src="/data/icons/inv_misc_silverjadenecklace.png" />
     </a>
@@ -2652,8 +2692,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185842?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&gems=213458:213458 "
-      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&gems=213458:213458"
+      href="https://www.wowhead.com/item=185842?bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=257&gems=213458:213458 "
+      data-wowhead="bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=257&gems=213458:213458"
       data-wh-rename-link="true" >
       <p class="mb-1">Ornately Engraved Amplifier</p>
     </a>
@@ -5052,15 +5092,15 @@
 
 <div  class="row align-items-center border
             
-              border-quality-2
+            border-quality-4
             
             my-2 mx-2
             ">
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243500?bonus=&spec=257"
-      data-wowhead="bonus=&spec=257"
+      href="https://www.wowhead.com/item=243500?bonus=3220:6652:10255:12239:12289&spec=257&ench=7364"
+      data-wowhead="bonus=3220:6652:10255:12239:12289&spec=257&ench=7364"
       >
       <img src="/data/icons/inv_chest_cloth_outdoorethereal_c_01.png" />
     </a>
@@ -5068,14 +5108,30 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243500?bonus=&spec=257"
-      data-wowhead="bonus=&spec=257"
+      href="https://www.wowhead.com/item=243500?bonus=3220:6652:10255:12239:12289&spec=257&ench=7364"
+      data-wowhead="bonus=3220:6652:10255:12239:12289&spec=257&ench=7364"
       data-wh-rename-link="true" >
       <p class="mb-1">Wastelander Magi&#39;s Vestments</p>
     </a>
     <div class="d-flex align-items-center gap-1 flex-nowrap">
       
       
+      
+      <a target="_blank"
+        href="https://www.wowhead.com/item=223692&spec=257" >
+        <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
+          
+          <!-- Base icon -->
+          <img src="/data/icons/inv_misc_enchantedscroll.png" alt=""
+            class="position-absolute top-0 start-0 border border-quality-3 "
+            style="width:100%; height:100%; object-fit:contain;">
+          
+          <!-- Overlay icon -->
+          <img src="/data/icons/crafting-quality-3.png" alt=""
+            class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
+          
+        </div>
+      </a>
       
       
     </div>
@@ -5427,8 +5483,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237534?bonus=1514:6652:10255:10355:12239:12353:12921&spec=257&ench=7391"
-      data-wowhead="bonus=1514:6652:10255:10355:12239:12353:12921&spec=257&ench=7391"
+      href="https://www.wowhead.com/item=237534?bonus=1520:6652:10255:10355:12239:12355:12921&spec=257&ench=7391"
+      data-wowhead="bonus=1520:6652:10255:10355:12239:12355:12921&spec=257&ench=7391"
       >
       <img src="/data/icons/inv_bracer_cloth_raidmageethereal_d_01.png" />
     </a>
@@ -5436,8 +5492,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237534?bonus=1514:6652:10255:10355:12239:12353:12921&spec=257&ench=7391"
-      data-wowhead="bonus=1514:6652:10255:10355:12239:12353:12921&spec=257&ench=7391"
+      href="https://www.wowhead.com/item=237534?bonus=1520:6652:10255:10355:12239:12355:12921&spec=257&ench=7391"
+      data-wowhead="bonus=1520:6652:10255:10355:12239:12355:12921&spec=257&ench=7391"
       data-wh-rename-link="true" >
       <p class="mb-1">Singed Sievecuffs</p>
     </a>
@@ -7209,8 +7265,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=234495?bonus=1553:6652:10255:10383:10390:12239:12353&spec=257&ench=7534"
-      data-wowhead="bonus=1553:6652:10255:10383:10390:12239:12353&spec=257&ench=7534"
+      href="https://www.wowhead.com/item=234495?bonus=1559:6652:10255:10383:10390:12239:12355&spec=257&ench=7534"
+      data-wowhead="bonus=1559:6652:10255:10383:10390:12239:12355&spec=257&ench=7534"
       >
       <img src="/data/icons/inv_cloth_outdoorundermine_c_01_pant.png" />
     </a>
@@ -7218,8 +7274,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=234495?bonus=1553:6652:10255:10383:10390:12239:12353&spec=257&ench=7534"
-      data-wowhead="bonus=1553:6652:10255:10383:10390:12239:12353&spec=257&ench=7534"
+      href="https://www.wowhead.com/item=234495?bonus=1559:6652:10255:10383:10390:12239:12355&spec=257&ench=7534"
+      data-wowhead="bonus=1559:6652:10255:10383:10390:12239:12355&spec=257&ench=7534"
       data-wh-rename-link="true" >
       <p class="mb-1">Razorchoke Slacks</p>
     </a>
@@ -8271,8 +8327,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237966?bonus=6652:9931:10255:12239:12355&spec=257&ench=7424"
-      data-wowhead="bonus=6652:9931:10255:12239:12355&spec=257&ench=7424"
+      href="https://www.wowhead.com/item=237966?bonus=6652:9925:10255:12239:12353&spec=257&ench=7424"
+      data-wowhead="bonus=6652:9925:10255:12239:12353&spec=257&ench=7424"
       >
       <img src="/data/icons/inv_boot_cloth_outdoorethereal_c_01.png" />
     </a>
@@ -8280,8 +8336,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237966?bonus=6652:9931:10255:12239:12355&spec=257&ench=7424"
-      data-wowhead="bonus=6652:9931:10255:12239:12355&spec=257&ench=7424"
+      href="https://www.wowhead.com/item=237966?bonus=6652:9925:10255:12239:12353&spec=257&ench=7424"
+      data-wowhead="bonus=6652:9925:10255:12239:12353&spec=257&ench=7424"
       data-wh-rename-link="true" >
       <p class="mb-1">Void-Scarred Seer&#39;s Slippers</p>
     </a>
@@ -8415,8 +8471,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185813?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213479:213479"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213479:213479"
+      href="https://www.wowhead.com/item=185813?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213458:213458"
+      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213458:213458"
       onclick="event.preventDefault();" >
       <img src="/data/icons/inv_jewelcrafting_80_maxlvlring_blue.png" />
     </a>
@@ -8424,8 +8480,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185813?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213479:213479 "
-      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213479:213479"
+      href="https://www.wowhead.com/item=185813?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213458:213458 "
+      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=257&ench=7334&gems=213458:213458"
       data-wh-rename-link="true" onclick="event.preventDefault();" >
       <p class="mb-1">Signet of Collapsing Stars</p>
     </a>
@@ -8452,12 +8508,12 @@
       
       <div class="d-flex align-items-center gap-1 flex-nowrap">
         
-        <a target="_blank" href="https://www.wowhead.com/item=213479&spec=257" onclick="event.preventDefault();" >
+        <a target="_blank" href="https://www.wowhead.com/item=213458&spec=257" onclick="event.preventDefault();" >
           <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
             
 
             <!-- Base icon -->
-            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color1_2.png" alt=""
+            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color4_1.png" alt=""
               class="position-absolute top-0 start-0 border border-quality-3 "
               style="width:100%; height:100%; object-fit:contain;">
 
@@ -8470,12 +8526,12 @@
 
         </a>
         
-        <a target="_blank" href="https://www.wowhead.com/item=213479&spec=257" onclick="event.preventDefault();" >
+        <a target="_blank" href="https://www.wowhead.com/item=213458&spec=257" onclick="event.preventDefault();" >
           <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
             
 
             <!-- Base icon -->
-            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color1_2.png" alt=""
+            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color4_1.png" alt=""
               class="position-absolute top-0 start-0 border border-quality-3 "
               style="width:100%; height:100%; object-fit:contain;">
 
@@ -10403,8 +10459,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222568?bonus=8790:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
-      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
+      href="https://www.wowhead.com/item=222568?bonus=8791:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
+      data-wowhead="bonus=8791:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
       onclick="event.preventDefault();" >
       <img src="/data/icons/inv_staff_2h_arathoroutdoor_d_01.png" />
     </a>
@@ -10412,8 +10468,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222568?bonus=8790:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
-      data-wowhead="bonus=8790:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
+      href="https://www.wowhead.com/item=222568?bonus=8791:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
+      data-wowhead="bonus=8791:8902:8960:9627:9633:10421:11300:12050:12053&spec=257"
       data-wh-rename-link="true" onclick="event.preventDefault();" >
       <p class="mb-1">Vagabond&#39;s Bounding Baton</p>
     </a>
@@ -11267,8 +11323,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237742?bonus=1520:6652:10255:10355:12355&spec=257"
-      data-wowhead="bonus=1520:6652:10255:10355:12355&spec=257"
+      href="https://www.wowhead.com/item=237742?bonus=1511:6652:10255:10355:12352&spec=257"
+      data-wowhead="bonus=1511:6652:10255:10355:12352&spec=257"
       >
       <img src="/data/icons/inv_offhand_1h_etherealraid_d_02.png" />
     </a>
@@ -11276,8 +11332,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237742?bonus=1520:6652:10255:10355:12355&spec=257"
-      data-wowhead="bonus=1520:6652:10255:10355:12355&spec=257"
+      href="https://www.wowhead.com/item=237742?bonus=1511:6652:10255:10355:12352&spec=257"
+      data-wowhead="bonus=1511:6652:10255:10355:12352&spec=257"
       data-wh-rename-link="true" >
       <p class="mb-1">Fractillus&#39; Last Breath</p>
     </a>
@@ -18495,7 +18551,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="40370 out of 159327 gems" class="mb-0">
+                                  title="41570 out of 164397 gems" class="mb-0">
                                    25 % </p>
                               </div>
                             </div>
@@ -18556,7 +18612,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="16674 out of 159327 gems" class="mb-0">
+                                  title="17106 out of 164397 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18617,7 +18673,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="15835 out of 159327 gems" class="mb-0">
+                                  title="16384 out of 164397 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18655,7 +18711,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="15416 out of 159327 gems" class="mb-0">
+                                  title="15919 out of 164397 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18716,7 +18772,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="13480 out of 159327 gems" class="mb-0">
+                                  title="13843 out of 164397 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18770,7 +18826,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="13141 out of 159327 gems" class="mb-0">
+                                  title="13612 out of 164397 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18831,7 +18887,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="13048 out of 159327 gems" class="mb-0">
+                                  title="13523 out of 164397 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18892,7 +18948,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="12245 out of 159327 gems" class="mb-0">
+                                  title="12596 out of 164397 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18953,7 +19009,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="10099 out of 159327 gems" class="mb-0">
+                                  title="10493 out of 164397 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -19014,7 +19070,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="9019 out of 159327 gems" class="mb-0">
+                                  title="9351 out of 164397 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -20110,14 +20166,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -20164,7 +20218,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-danger">
-                          -1.4%
+                          -1.15%
                         </small>
                       </a>
                     </div>
@@ -20176,7 +20230,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-success">
-                          1.4%
+                          1.15%
                         </small>
                       </a>
                     </div>
@@ -20351,7 +20405,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.54%
+                                +1.27%
                               </span>
                             </a>
                             
@@ -20373,7 +20427,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-success">
-                                  +1.54%
+                                  +1.27%
                                 </span>
                               </a>
                               
@@ -20387,7 +20441,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-success">
-                                  +1.54%
+                                  +1.27%
                                 </span>
                               </a>
                               
@@ -20416,7 +20470,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.54%
+                                -1.27%
                               </span>
                             </a>
                             
@@ -20436,7 +20490,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-danger">
-                                  -1.54%
+                                  -1.27%
                                 </span>
                               </a>
                               
@@ -20449,7 +20503,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-danger">
-                                  -1.54%
+                                  -1.27%
                                 </span>
                               </a>
                               
@@ -20488,7 +20542,7 @@
                                 Prismatic Echoes
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.3%
+                                +1.57%
                               </span>
                             </a>
                             
@@ -20504,13 +20558,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391186?spec=257"
+                                href="https://www.wowhead.com/spell=414553?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_priest_bindingprayers.png" alt=""
+                                <img src="/data/icons/ability_mage_studentofthemind.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Say Your Prayers</span>
+                                <span class="ms-2">Epiphany</span>
                                 <span class="ms-auto text-success">
-                                  +1.8%
+                                  +1.48%
                                 </span>
                               </a>
                               
@@ -20518,13 +20572,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=414553?spec=257"
+                                href="https://www.wowhead.com/spell=391186?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_mage_studentofthemind.png" alt=""
+                                <img src="/data/icons/ability_priest_bindingprayers.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Epiphany</span>
+                                <span class="ms-2">Say Your Prayers</span>
                                 <span class="ms-auto text-success">
-                                  +1.76%
+                                  +1.44%
                                 </span>
                               </a>
                               
@@ -20553,7 +20607,7 @@
                                 Light in the Darkness
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.94%
+                                -1.52%
                               </span>
                             </a>
                             
@@ -20567,26 +20621,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=390992?spec=257"
+                                href="https://www.wowhead.com/spell=391339?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_greaterheal.png" alt=""
+                                <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Lightweaver</span>
+                                <span class="ms-2">Empowered Renew</span>
                                 <span class="ms-auto text-danger">
-                                  -1.53%
+                                  -1.3%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1215265?spec=257"
+                                href="https://www.wowhead.com/spell=390992?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_priest_spiritoftheredeemer.png" alt=""
+                                <img src="/data/icons/spell_holy_greaterheal.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Dispersing Light</span>
+                                <span class="ms-2">Lightweaver</span>
                                 <span class="ms-auto text-danger">
-                                  -1.5%
+                                  -1.24%
                                 </span>
                               </a>
                               
@@ -20635,7 +20689,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-success">
-                          1.6%
+                          1.36%
                         </small>
                       </a>
                     </div>
@@ -20647,7 +20701,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-danger">
-                          -1.6%
+                          -1.36%
                         </small>
                       </a>
                     </div>
@@ -20822,7 +20876,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.76%
+                                +1.51%
                               </span>
                             </a>
                             
@@ -20844,7 +20898,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-success">
-                                  +1.76%
+                                  +1.51%
                                 </span>
                               </a>
                               
@@ -20858,7 +20912,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-success">
-                                  +1.76%
+                                  +1.51%
                                 </span>
                               </a>
                               
@@ -20887,7 +20941,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.76%
+                                -1.51%
                               </span>
                             </a>
                             
@@ -20907,7 +20961,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-danger">
-                                  -1.76%
+                                  -1.51%
                                 </span>
                               </a>
                               
@@ -20920,7 +20974,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-danger">
-                                  -1.76%
+                                  -1.51%
                                 </span>
                               </a>
                               
@@ -20949,17 +21003,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=88625?spec=257"
+                              href="https://www.wowhead.com/spell=372307?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-391-Spec" aria-expanded="false"
                               aria-controls="gainCol-391-Spec">
-                              <img src="/data/icons/spell_holy_chastise.png" alt=""
+                              <img src="/data/icons/ability_paladin_sacredcleansing.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Holy Word: Chastise">
-                                Holy Word: Chastise
+                              <span class="flex-grow-1 text-truncate" title="Burning Vehemence">
+                                Burning Vehemence
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.97%
+                                +3.25%
                               </span>
                             </a>
                             
@@ -20975,13 +21029,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=372307?spec=257"
+                                href="https://www.wowhead.com/spell=372616?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_sacredcleansing.png" alt=""
+                                <img src="/data/icons/ability_priest_empyrealblaze.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Burning Vehemence</span>
+                                <span class="ms-2">Empyreal Blaze</span>
                                 <span class="ms-auto text-success">
-                                  +2.8%
+                                  +3.02%
                                 </span>
                               </a>
                               
@@ -20989,13 +21043,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=372616?spec=257"
+                                href="https://www.wowhead.com/spell=88625?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_priest_empyrealblaze.png" alt=""
+                                <img src="/data/icons/spell_holy_chastise.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Empyreal Blaze</span>
+                                <span class="ms-2">Holy Word: Chastise</span>
                                 <span class="ms-auto text-success">
-                                  +2.66%
+                                  +2.9%
                                 </span>
                               </a>
                               
@@ -21024,7 +21078,7 @@
                                 Lasting Words
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -3.45%
+                                -3.26%
                               </span>
                             </a>
                             
@@ -21044,20 +21098,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Prismatic Echoes</span>
                                 <span class="ms-auto text-danger">
-                                  -2.68%
+                                  -2.9%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391387?spec=257"
+                                href="https://www.wowhead.com/spell=391186?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/inv_staff_2h_artifactheartofkure_d_06.png" alt=""
+                                <img src="/data/icons/ability_priest_bindingprayers.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Answered Prayers</span>
+                                <span class="ms-2">Say Your Prayers</span>
                                 <span class="ms-auto text-danger">
-                                  -2.31%
+                                  -2.47%
                                 </span>
                               </a>
                               
@@ -21106,7 +21160,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-danger">
-                          -2.1%
+                          -1.69%
                         </small>
                       </a>
                     </div>
@@ -21118,7 +21172,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-success">
-                          2.1%
+                          1.69%
                         </small>
                       </a>
                     </div>
@@ -21293,7 +21347,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.31%
+                                +1.86%
                               </span>
                             </a>
                             
@@ -21315,7 +21369,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-success">
-                                  +2.31%
+                                  +1.86%
                                 </span>
                               </a>
                               
@@ -21329,7 +21383,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-success">
-                                  +2.31%
+                                  +1.86%
                                 </span>
                               </a>
                               
@@ -21358,7 +21412,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.31%
+                                -1.86%
                               </span>
                             </a>
                             
@@ -21378,7 +21432,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-danger">
-                                  -2.31%
+                                  -1.86%
                                 </span>
                               </a>
                               
@@ -21391,7 +21445,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-danger">
-                                  -2.31%
+                                  -1.86%
                                 </span>
                               </a>
                               
@@ -21420,17 +21474,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=391186?spec=257"
+                              href="https://www.wowhead.com/spell=391233?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-392-Spec" aria-expanded="false"
                               aria-controls="gainCol-392-Spec">
-                              <img src="/data/icons/ability_priest_bindingprayers.png" alt=""
+                              <img src="/data/icons/spell_holy_prayerofspirit.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Say Your Prayers">
-                                Say Your Prayers
+                              <span class="flex-grow-1 text-truncate" title="Divine Service">
+                                Divine Service
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.11%
+                                +2.21%
                               </span>
                             </a>
                             
@@ -21446,13 +21500,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391233?spec=257"
+                                href="https://www.wowhead.com/spell=391186?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_prayerofspirit.png" alt=""
+                                <img src="/data/icons/ability_priest_bindingprayers.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Divine Service</span>
+                                <span class="ms-2">Say Your Prayers</span>
                                 <span class="ms-auto text-success">
-                                  +2.09%
+                                  +1.94%
                                 </span>
                               </a>
                               
@@ -21460,13 +21514,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391381?spec=257"
+                                href="https://www.wowhead.com/spell=471504?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_pvp_defenderoftheweak.png" alt=""
+                                <img src="/data/icons/spell_holy_renew.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Desperate Times</span>
+                                <span class="ms-2">Lasting Words</span>
                                 <span class="ms-auto text-success">
-                                  +1.97%
+                                  +1.92%
                                 </span>
                               </a>
                               
@@ -21485,17 +21539,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=88625?spec=257"
+                              href="https://www.wowhead.com/spell=471668?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-392-Spec" aria-expanded="false"
                               aria-controls="lossCol-392-Spec">
-                              <img src="/data/icons/spell_holy_chastise.png" alt=""
+                              <img src="/data/icons/spell_holy_divineprovidence.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Holy Word: Chastise">
-                                Holy Word: Chastise
+                              <span class="flex-grow-1 text-truncate" title="Light in the Darkness">
+                                Light in the Darkness
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.99%
+                                -2.24%
                               </span>
                             </a>
                             
@@ -21509,13 +21563,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=471668?spec=257"
+                                href="https://www.wowhead.com/spell=88625?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_divineprovidence.png" alt=""
+                                <img src="/data/icons/spell_holy_chastise.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Light in the Darkness</span>
+                                <span class="ms-2">Holy Word: Chastise</span>
                                 <span class="ms-auto text-danger">
-                                  -1.93%
+                                  -2.0%
                                 </span>
                               </a>
                               
@@ -21528,7 +21582,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Light of the Naaru</span>
                                 <span class="ms-auto text-danger">
-                                  -1.75%
+                                  -1.87%
                                 </span>
                               </a>
                               
@@ -21577,7 +21631,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-success">
-                          1.38%
+                          1.17%
                         </small>
                       </a>
                     </div>
@@ -21589,7 +21643,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-danger">
-                          -1.38%
+                          -1.17%
                         </small>
                       </a>
                     </div>
@@ -21764,7 +21818,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.51%
+                                +1.27%
                               </span>
                             </a>
                             
@@ -21786,7 +21840,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-success">
-                                  +1.51%
+                                  +1.27%
                                 </span>
                               </a>
                               
@@ -21800,7 +21854,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-success">
-                                  +1.51%
+                                  +1.27%
                                 </span>
                               </a>
                               
@@ -21829,7 +21883,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.51%
+                                -1.27%
                               </span>
                             </a>
                             
@@ -21849,7 +21903,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-danger">
-                                  -1.51%
+                                  -1.27%
                                 </span>
                               </a>
                               
@@ -21862,7 +21916,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-danger">
-                                  -1.51%
+                                  -1.27%
                                 </span>
                               </a>
                               
@@ -21891,17 +21945,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=238136?spec=257"
+                              href="https://www.wowhead.com/spell=391339?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-499-Spec" aria-expanded="false"
                               aria-controls="gainCol-499-Spec">
-                              <img src="/data/icons/inv_ability_holyfire_nova.png" alt=""
+                              <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Cosmic Ripple">
-                                Cosmic Ripple
+                              <span class="flex-grow-1 text-truncate" title="Empowered Renew">
+                                Empowered Renew
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.3%
+                                +1.14%
                               </span>
                             </a>
                             
@@ -21917,13 +21971,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391339?spec=257"
+                                href="https://www.wowhead.com/spell=238136?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
+                                <img src="/data/icons/inv_ability_holyfire_nova.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Empowered Renew</span>
+                                <span class="ms-2">Cosmic Ripple</span>
                                 <span class="ms-auto text-success">
-                                  +0.98%
+                                  +1.11%
                                 </span>
                               </a>
                               
@@ -21931,13 +21985,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=372835?spec=257"
+                                href="https://www.wowhead.com/spell=372309?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_summonlightwell.png" alt=""
+                                <img src="/data/icons/spell_holy_holybolt.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Lightwell</span>
+                                <span class="ms-2">Resonant Words</span>
                                 <span class="ms-auto text-success">
-                                  +0.77%
+                                  +0.82%
                                 </span>
                               </a>
                               
@@ -21966,7 +22020,7 @@
                                 Divinity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.3%
+                                -1.38%
                               </span>
                             </a>
                             
@@ -21986,7 +22040,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Censure</span>
                                 <span class="ms-auto text-danger">
-                                  -1.16%
+                                  -1.05%
                                 </span>
                               </a>
                               
@@ -21999,7 +22053,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Prayerful Litany</span>
                                 <span class="ms-auto text-danger">
-                                  -1.11%
+                                  -0.81%
                                 </span>
                               </a>
                               
@@ -22048,7 +22102,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-danger">
-                          -1.79%
+                          -2.14%
                         </small>
                       </a>
                     </div>
@@ -22060,7 +22114,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-success">
-                          1.79%
+                          2.14%
                         </small>
                       </a>
                     </div>
@@ -22235,7 +22289,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.97%
+                                +2.35%
                               </span>
                             </a>
                             
@@ -22257,7 +22311,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-success">
-                                  +1.97%
+                                  +2.35%
                                 </span>
                               </a>
                               
@@ -22271,7 +22325,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-success">
-                                  +1.97%
+                                  +2.35%
                                 </span>
                               </a>
                               
@@ -22300,7 +22354,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.97%
+                                -2.35%
                               </span>
                             </a>
                             
@@ -22320,7 +22374,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-danger">
-                                  -1.97%
+                                  -2.35%
                                 </span>
                               </a>
                               
@@ -22333,7 +22387,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-danger">
-                                  -1.97%
+                                  -2.35%
                                 </span>
                               </a>
                               
@@ -22372,7 +22426,7 @@
                                 Seraphic Crescendo
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.46%
+                                +2.55%
                               </span>
                             </a>
                             
@@ -22394,7 +22448,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Service</span>
                                 <span class="ms-auto text-success">
-                                  +1.58%
+                                  +1.87%
                                 </span>
                               </a>
                               
@@ -22402,13 +22456,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=64901?spec=257"
+                                href="https://www.wowhead.com/spell=391387?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_symbolofhope.png" alt=""
+                                <img src="/data/icons/inv_staff_2h_artifactheartofkure_d_06.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Symbol of Hope</span>
+                                <span class="ms-2">Answered Prayers</span>
                                 <span class="ms-auto text-success">
-                                  +1.35%
+                                  +1.76%
                                 </span>
                               </a>
                               
@@ -22437,7 +22491,7 @@
                                 Crisis Management
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.77%
+                                -1.96%
                               </span>
                             </a>
                             
@@ -22451,26 +22505,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391381?spec=257"
-                                target="_blank">
-                                <img src="/data/icons/ability_pvp_defenderoftheweak.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Desperate Times</span>
-                                <span class="ms-auto text-danger">
-                                  -1.52%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=196707?spec=257"
                                 target="_blank">
                                 <img src="/data/icons/inv_enchant_essencemagiclarge.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Afterlife</span>
                                 <span class="ms-auto text-danger">
-                                  -1.33%
+                                  -1.39%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=391381?spec=257"
+                                target="_blank">
+                                <img src="/data/icons/ability_pvp_defenderoftheweak.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Desperate Times</span>
+                                <span class="ms-auto text-danger">
+                                  -1.32%
                                 </span>
                               </a>
                               
@@ -22519,7 +22573,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-danger">
-                          -0.21%
+                          -0.16%
                         </small>
                       </a>
                     </div>
@@ -22531,7 +22585,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-success">
-                          0.21%
+                          0.16%
                         </small>
                       </a>
                     </div>
@@ -22706,7 +22760,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.22%
+                                +0.17%
                               </span>
                             </a>
                             
@@ -22728,7 +22782,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-success">
-                                  +0.22%
+                                  +0.17%
                                 </span>
                               </a>
                               
@@ -22742,7 +22796,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-success">
-                                  +0.22%
+                                  +0.17%
                                 </span>
                               </a>
                               
@@ -22771,7 +22825,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.22%
+                                -0.17%
                               </span>
                             </a>
                             
@@ -22791,7 +22845,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-danger">
-                                  -0.22%
+                                  -0.17%
                                 </span>
                               </a>
                               
@@ -22804,7 +22858,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-danger">
-                                  -0.22%
+                                  -0.17%
                                 </span>
                               </a>
                               
@@ -22843,7 +22897,7 @@
                                 Lightweaver
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.86%
+                                +1.72%
                               </span>
                             </a>
                             
@@ -22859,13 +22913,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1215265?spec=257"
+                                href="https://www.wowhead.com/spell=391209?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_priest_spiritoftheredeemer.png" alt=""
+                                <img src="/data/icons/spell_holy_prayerofhealing02.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Dispersing Light</span>
+                                <span class="ms-2">Prayerful Litany</span>
                                 <span class="ms-auto text-success">
-                                  +1.71%
+                                  +1.45%
                                 </span>
                               </a>
                               
@@ -22873,13 +22927,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391209?spec=257"
+                                href="https://www.wowhead.com/spell=1215265?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_prayerofhealing02.png" alt=""
+                                <img src="/data/icons/ability_priest_spiritoftheredeemer.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Prayerful Litany</span>
+                                <span class="ms-2">Dispersing Light</span>
                                 <span class="ms-auto text-success">
-                                  +1.64%
+                                  +1.44%
                                 </span>
                               </a>
                               
@@ -22908,7 +22962,7 @@
                                 Divine Service
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.25%
+                                -2.12%
                               </span>
                             </a>
                             
@@ -22922,26 +22976,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391387?spec=257"
-                                target="_blank">
-                                <img src="/data/icons/inv_staff_2h_artifactheartofkure_d_06.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Answered Prayers</span>
-                                <span class="ms-auto text-danger">
-                                  -1.76%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=471504?spec=257"
                                 target="_blank">
                                 <img src="/data/icons/spell_holy_renew.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Lasting Words</span>
                                 <span class="ms-auto text-danger">
-                                  -1.67%
+                                  -1.7%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=391387?spec=257"
+                                target="_blank">
+                                <img src="/data/icons/inv_staff_2h_artifactheartofkure_d_06.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Answered Prayers</span>
+                                <span class="ms-auto text-danger">
+                                  -1.64%
                                 </span>
                               </a>
                               
@@ -22990,7 +23044,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
                         <small class="text-success">
-                          2.19%
+                          1.82%
                         </small>
                       </a>
                     </div>
@@ -23002,7 +23056,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
                         <small class="text-danger">
-                          -2.19%
+                          -1.82%
                         </small>
                       </a>
                     </div>
@@ -23177,7 +23231,7 @@
                                 Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.42%
+                                +2.01%
                               </span>
                             </a>
                             
@@ -23199,7 +23253,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-success">
-                                  +2.42%
+                                  +2.01%
                                 </span>
                               </a>
                               
@@ -23213,7 +23267,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-success">
-                                  +2.42%
+                                  +2.01%
                                 </span>
                               </a>
                               
@@ -23242,7 +23296,7 @@
                                 Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.42%
+                                -2.01%
                               </span>
                             </a>
                             
@@ -23262,7 +23316,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-danger">
-                                  -2.42%
+                                  -2.01%
                                 </span>
                               </a>
                               
@@ -23275,7 +23329,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-danger">
-                                  -2.42%
+                                  -2.01%
                                 </span>
                               </a>
                               
@@ -23314,7 +23368,7 @@
                                 Light of the Naaru
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.68%
+                                +1.72%
                               </span>
                             </a>
                             
@@ -23336,7 +23390,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Holy Word: Chastise</span>
                                 <span class="ms-auto text-success">
-                                  +1.22%
+                                  +0.96%
                                 </span>
                               </a>
                               
@@ -23344,13 +23398,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=372309?spec=257"
+                                href="https://www.wowhead.com/spell=471668?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_holybolt.png" alt=""
+                                <img src="/data/icons/spell_holy_divineprovidence.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Resonant Words</span>
+                                <span class="ms-2">Light in the Darkness</span>
                                 <span class="ms-auto text-success">
-                                  +1.03%
+                                  +0.66%
                                 </span>
                               </a>
                               
@@ -23379,7 +23433,7 @@
                                 Lightwell
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.68%
+                                -1.47%
                               </span>
                             </a>
                             
@@ -23393,26 +23447,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=419110?spec=257"
+                                href="https://www.wowhead.com/spell=64901?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_divinehymn.png" alt=""
+                                <img src="/data/icons/spell_holy_symbolofhope.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Seraphic Crescendo</span>
+                                <span class="ms-2">Symbol of Hope</span>
                                 <span class="ms-auto text-danger">
-                                  -1.19%
+                                  -0.94%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391233?spec=257"
+                                href="https://www.wowhead.com/spell=419110?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_prayerofspirit.png" alt=""
+                                <img src="/data/icons/spell_holy_divinehymn.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Divine Service</span>
+                                <span class="ms-2">Seraphic Crescendo</span>
                                 <span class="ms-auto text-danger">
-                                  -1.08%
+                                  -0.82%
                                 </span>
                               </a>
                               
@@ -23460,8 +23514,8 @@
                         <img src="/data/icons/talents-heroclass-priest-archon.png" alt="Archon"
                           style="width:32px; height:32px;" /><br />
                         <small>Archon</small><br />
-                        <small class="text-danger">
-                          -0.13%
+                        <small class="text-success">
+                          0.37%
                         </small>
                       </a>
                     </div>
@@ -23472,8 +23526,8 @@
                         <img src="/data/icons/talents-heroclass-priest-oracle.png" alt="Oracle"
                           style="width:32px; height:32px;" /><br />
                         <small>Oracle</small><br />
-                        <small class="text-success">
-                          0.13%
+                        <small class="text-danger">
+                          -0.37%
                         </small>
                       </a>
                     </div>
@@ -23638,17 +23692,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=440742?spec=257"
+                              href="https://www.wowhead.com/spell=453844?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-542-Hero" aria-expanded="false"
                               aria-controls="gainCol-542-Hero">
-                              <img src="/data/icons/spell_holy_impholyconcentration.png" alt=""
+                              <img src="/data/icons/spell_holy_powerinfusion.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Twinsight">
-                                Twinsight
+                              <span class="flex-grow-1 text-truncate" title="Concentrated Infusion">
+                                Concentrated Infusion
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.14%
+                                +0.4%
                               </span>
                             </a>
                             
@@ -23664,13 +23718,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=440671?spec=257"
+                                href="https://www.wowhead.com/spell=453917?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_pvp_innerrenewal.png" alt=""
+                                <img src="/data/icons/inv_ability_holyfire_buff.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Preemptive Care</span>
+                                <span class="ms-2">Perfected Form</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.4%
                                 </span>
                               </a>
                               
@@ -23678,13 +23732,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=440670?spec=257"
+                                href="https://www.wowhead.com/spell=449874?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_priest_angelicfeather.png" alt=""
+                                <img src="/data/icons/spell_holy_circleofrenewal.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Divine Feathers</span>
+                                <span class="ms-2">Energy Compression</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.4%
                                 </span>
                               </a>
                               
@@ -23703,17 +23757,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=453844?spec=257"
+                              href="https://www.wowhead.com/spell=440742?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-542-Hero" aria-expanded="false"
                               aria-controls="lossCol-542-Hero">
-                              <img src="/data/icons/spell_holy_powerinfusion.png" alt=""
+                              <img src="/data/icons/spell_holy_impholyconcentration.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Concentrated Infusion">
-                                Concentrated Infusion
+                              <span class="flex-grow-1 text-truncate" title="Twinsight">
+                                Twinsight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.14%
+                                -0.4%
                               </span>
                             </a>
                             
@@ -23727,26 +23781,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=453917?spec=257"
+                                href="https://www.wowhead.com/spell=440671?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_holyfire_buff.png" alt=""
+                                <img src="/data/icons/ability_pvp_innerrenewal.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Perfected Form</span>
+                                <span class="ms-2">Preemptive Care</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.4%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=449874?spec=257"
+                                href="https://www.wowhead.com/spell=440670?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_circleofrenewal.png" alt=""
+                                <img src="/data/icons/ability_priest_angelicfeather.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Energy Compression</span>
+                                <span class="ms-2">Divine Feathers</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.4%
                                 </span>
                               </a>
                               
@@ -23775,17 +23829,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=471504?spec=257"
+                              href="https://www.wowhead.com/spell=391339?spec=257"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-542-Spec" aria-expanded="false"
                               aria-controls="gainCol-542-Spec">
-                              <img src="/data/icons/spell_holy_renew.png" alt=""
+                              <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Lasting Words">
-                                Lasting Words
+                              <span class="flex-grow-1 text-truncate" title="Empowered Renew">
+                                Empowered Renew
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.84%
+                                +1.43%
                               </span>
                             </a>
                             
@@ -23801,13 +23855,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=391339?spec=257"
+                                href="https://www.wowhead.com/spell=471504?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
+                                <img src="/data/icons/spell_holy_renew.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Empowered Renew</span>
+                                <span class="ms-2">Lasting Words</span>
                                 <span class="ms-auto text-success">
-                                  +1.77%
+                                  +1.42%
                                 </span>
                               </a>
                               
@@ -23821,7 +23875,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Cosmic Ripple</span>
                                 <span class="ms-auto text-success">
-                                  +1.55%
+                                  +1.29%
                                 </span>
                               </a>
                               
@@ -23850,7 +23904,7 @@
                                 Lightweaver
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.99%
+                                -2.59%
                               </span>
                             </a>
                             
@@ -23870,20 +23924,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dispersing Light</span>
                                 <span class="ms-auto text-danger">
-                                  -2.6%
+                                  -2.09%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=372309?spec=257"
+                                href="https://www.wowhead.com/spell=193155?spec=257"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_holybolt.png" alt=""
+                                <img src="/data/icons/spell_arcane_mindmastery.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Resonant Words</span>
+                                <span class="ms-2">Enlightenment</span>
                                 <span class="ms-auto text-danger">
-                                  -2.01%
+                                  -1.53%
                                 </span>
                               </a>
                               
@@ -24273,7 +24327,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -24499,6 +24554,9 @@
 
       const raw = [
         
+    25161
+      , 
+    
     55098
       , 
     
@@ -24506,9 +24564,6 @@
       , 
     
     3149
-      , 
-    
-    25161
       
     
 ];
@@ -24766,6 +24821,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

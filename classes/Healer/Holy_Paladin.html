@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Holy Paladin Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Holy Paladin, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:12:59.">
+    content="Discover the most popular Mythic+ build for Holy Paladin, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:07:32.">
   <link rel="canonical" href="https://mythistone.com/classes/Healer/Holy_Paladin">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Healer/Holy_Paladin">
   <meta property="og:title" content="Holy Paladin Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Holy Paladin Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Holy Paladin Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Holy icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Holy Paladin Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Holy Paladin—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Holy Paladin—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:12:59"
+  "dateModified": "23/09/2025, 20:07:32"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Healer">Healer</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Healer">Healer</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Paladin-text">Holy Paladin </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="204.7 K seen in 2.3 M total runs">Overall
-                  Played: 8.73%</h4>
+                  title="204.7 K seen in 2.4 M total runs">Overall
+                  Played: 8.45%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611579.687483>Last Update:</span>
+                    data-timestamp=1758658052.213109>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611579.687483>Last Update</span>
+                    data-timestamp=1758658052.213109>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-intellect py-1 px-2">INTELLECT</div>
 
             
-            <div class="h5 mb-0">122 K</div>
+            <div class="h5 mb-0">122.1 K</div>
             
           </div>
         </div>
@@ -1305,7 +1345,7 @@
               title="min: 159, max: 36 K, avg: 21.2 K"
               tabindex="0" role="button"
               aria-label="min 159, max 36 K, avg: 21.2 K">
-              34.57%
+              34.56%
             </div>
             
           </div>
@@ -1342,7 +1382,7 @@
               title="min: 0, max: 29.3 K, avg: 12.3 K"
               tabindex="0" role="button"
               aria-label="min 0, max 29.3 K, avg: 12.3 K">
-              26.97%
+              26.98%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 29.2 K, avg: 10.2 K"
               tabindex="0" role="button"
               aria-label="min 0, max 29.2 K, avg: 10.2 K">
-              39.14%
+              39.13%
             </div>
             
           </div>
@@ -1416,7 +1456,7 @@
               title="min: 0, max: 26.9 K, avg: 7.5 K"
               tabindex="0" role="button"
               aria-label="min 0, max 26.9 K, avg: 7.5 K">
-              9.61%
+              9.64%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">712.5 K</div>
+            <div class="h5 mb-0">713.4 K</div>
             
           </div>
         </div>
@@ -1516,7 +1556,7 @@
               title="min: 0, max: 9.8 K, avg: 2.3 K"
               tabindex="0" role="button"
               aria-label="min 0, max 9.8 K, avg: 2.3 K">
-              2.22%
+              2.23%
             </div>
             
           </div>
@@ -1550,9 +1590,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 6.4 K, avg: 768"
+              title="min: 0, max: 6.4 K, avg: 767"
               tabindex="0" role="button"
-              aria-label="min 0, max 6.4 K, avg: 768">
+              aria-label="min 0, max 6.4 K, avg: 767">
               1.41%
             </div>
             
@@ -1586,7 +1626,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">482</div>
+            <div class="h5 mb-0">483</div>
             
           </div>
         </div>
@@ -3347,8 +3387,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185803?bonus=6652:10016:10255:10383:10390:12239:12353&spec=65"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353&spec=65"
+      href="https://www.wowhead.com/item=185803?bonus=6652:10022:10255:10383:10390:12239:12355&spec=65"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:12239:12355&spec=65"
       >
       <img src="/data/icons/inv_plate_oribosdungeon_c_01_shoulder.png" />
     </a>
@@ -3356,8 +3396,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185803?bonus=6652:10016:10255:10383:10390:12239:12353&spec=65"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353&spec=65"
+      href="https://www.wowhead.com/item=185803?bonus=6652:10022:10255:10383:10390:12239:12355&spec=65"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:12239:12355&spec=65"
       data-wh-rename-link="true" >
       <p class="mb-1">Stoneflesh Spaulders</p>
     </a>
@@ -4533,8 +4573,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221161?bonus=3196:6652:10255:10383:10390:12239:12353&spec=65&ench=7364"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12239:12353&spec=65&ench=7364"
+      href="https://www.wowhead.com/item=221161?bonus=3202:6652:10255:10383:10390:12239:12355&spec=65&ench=7364"
+      data-wowhead="bonus=3202:6652:10255:10383:10390:12239:12355&spec=65&ench=7364"
       >
       <img src="/data/icons/inv_chest_plate_earthendungeon_c_01.png" />
     </a>
@@ -4542,8 +4582,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221161?bonus=3196:6652:10255:10383:10390:12239:12353&spec=65&ench=7364"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12239:12353&spec=65&ench=7364"
+      href="https://www.wowhead.com/item=221161?bonus=3202:6652:10255:10383:10390:12239:12355&spec=65&ench=7364"
+      data-wowhead="bonus=3202:6652:10255:10383:10390:12239:12355&spec=65&ench=7364"
       data-wh-rename-link="true" >
       <p class="mb-1">Experimental Goresilk Chestguard</p>
     </a>
@@ -18239,7 +18279,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="64930 out of 321799 gems" class="mb-0">
+                                  title="66980 out of 332585 gems" class="mb-0">
                                    20 % </p>
                               </div>
                             </div>
@@ -18300,7 +18340,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="48116 out of 321799 gems" class="mb-0">
+                                  title="49598 out of 332585 gems" class="mb-0">
                                    15 % </p>
                               </div>
                             </div>
@@ -18361,7 +18401,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="34738 out of 321799 gems" class="mb-0">
+                                  title="35882 out of 332585 gems" class="mb-0">
                                    11 % </p>
                               </div>
                             </div>
@@ -18399,7 +18439,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="34139 out of 321799 gems" class="mb-0">
+                                  title="35258 out of 332585 gems" class="mb-0">
                                    11 % </p>
                               </div>
                             </div>
@@ -18460,7 +18500,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="31612 out of 321799 gems" class="mb-0">
+                                  title="32604 out of 332585 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18514,7 +18554,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="27421 out of 321799 gems" class="mb-0">
+                                  title="28426 out of 332585 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -18575,8 +18615,8 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="27335 out of 321799 gems" class="mb-0">
-                                   8 % </p>
+                                  title="28338 out of 332585 gems" class="mb-0">
+                                   9 % </p>
                               </div>
                             </div>
                             
@@ -18636,7 +18676,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="20695 out of 321799 gems" class="mb-0">
+                                  title="21449 out of 332585 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -18697,7 +18737,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="17157 out of 321799 gems" class="mb-0">
+                                  title="17868 out of 332585 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18709,10 +18749,10 @@
                               <!-- Gem icon & link -->
                               <div class="col-auto">
                                 <a target="_blank"
-                                  href="https://www.wowhead.com/item=213743&spec=65">
+                                  href="https://www.wowhead.com/item=213461&spec=65">
                                   <div class="position-relative" style="width:24px; height:24px; display:inline-block;">
-                                    <img src="/data/icons/item_cutmetagemb.png" alt=""
-                                      class="position-absolute top-0 start-0 border border-quality-4 "
+                                    <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color4_2.png" alt=""
+                                      class="position-absolute top-0 start-0 border border-quality-3 "
                                       style="width:100%; height:100%; object-fit:contain;">
                                   </div>
                                 </a>
@@ -18720,20 +18760,27 @@
                               <!-- Gem Name -->
                               <div class="col">
                                 <a target="_blank"
-                                  href="https://www.wowhead.com/item=213743&spec=65">
-                                  <p class="mb-1">Culminating Blasphemite</p>
+                                  href="https://www.wowhead.com/item=213461&spec=65">
+                                  <p class="mb-1">Versatile Ruby</p>
                                 </a>
                               </div>
                               <!-- Gem Stats -->
                               <div class="col-md-3 d-none d-md-block">
                                 
                                 <a target="_blank"
-                                  href="https://www.wowhead.com/item=213743&spec=65">
+                                  href="https://www.wowhead.com/item=213461&spec=65">
                                   
-                                  <span class="badge stat-stragiint">
-                                    +181
+                                  <span class="badge stat-crit">
+                                    +147
                                     
-                                    Mainstat
+                                    crit
+                                    
+                                  </span>
+                                  
+                                  <span class="badge stat-vers">
+                                    +49
+                                    
+                                    vers
                                     
                                   </span>
                                   
@@ -18743,15 +18790,15 @@
                               <!-- Gem Price -->
                               <div class="col-md-2 d-none d-md-block text-start">
                                 
-                                <a target="_blank" href="https://undermine.exchange/#eu-blackmoore/213743">
-                                  <span class="buyout-abbrev">5659 <img src="/data/icons/gold_coin.png" alt="Gold" style="width:16px;vertical-align:middle;"></span>
+                                <a target="_blank" href="https://undermine.exchange/#eu-blackmoore/213461">
+                                  <span class="buyout-abbrev">2300 <img src="/data/icons/gold_coin.png" alt="Gold" style="width:16px;vertical-align:middle;"></span>
                                 </a>
                                 
                               </div>
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="15656 out of 321799 gems" class="mb-0">
+                                  title="16182 out of 332585 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -19897,14 +19944,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -19951,7 +19996,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-danger">
-                          -0.1%
+                          -0.09%
                         </small>
                       </a>
                     </div>
@@ -19963,7 +20008,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.1%
+                          0.09%
                         </small>
                       </a>
                     </div>
@@ -20138,7 +20183,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.12%
+                                +0.1%
                               </span>
                             </a>
                             
@@ -20160,7 +20205,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.12%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -20174,7 +20219,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.12%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -20203,7 +20248,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.12%
+                                -0.1%
                               </span>
                             </a>
                             
@@ -20223,7 +20268,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.12%
+                                  -0.1%
                                 </span>
                               </a>
                               
@@ -20236,7 +20281,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-danger">
-                                  -0.12%
+                                  -0.1%
                                 </span>
                               </a>
                               
@@ -20275,7 +20320,7 @@
                                 Unending Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.16%
+                                +1.09%
                               </span>
                             </a>
                             
@@ -20297,7 +20342,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Truth Prevails</span>
                                 <span class="ms-auto text-success">
-                                  +0.85%
+                                  +0.7%
                                 </span>
                               </a>
                               
@@ -20305,13 +20350,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=461244?spec=65"
+                                href="https://www.wowhead.com/spell=448040?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_holyguidance.png" alt=""
+                                <img src="/data/icons/ability_paladin_sheathoflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Overflowing Light</span>
+                                <span class="ms-2">Bestow Light</span>
                                 <span class="ms-auto text-success">
-                                  +0.65%
+                                  +0.44%
                                 </span>
                               </a>
                               
@@ -20330,17 +20375,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=461246?spec=65"
+                              href="https://www.wowhead.com/spell=414113?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-378-Spec" aria-expanded="false"
                               aria-controls="lossCol-378-Spec">
-                              <img src="/data/icons/ability_paladin_holyavenger.png" alt=""
+                              <img src="/data/icons/ability_priest_holybolts01.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Glorious Dawn">
-                                Glorious Dawn
+                              <span class="flex-grow-1 text-truncate" title="Righteous Judgment">
+                                Righteous Judgment
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.11%
+                                -0.97%
                               </span>
                             </a>
                             
@@ -20354,26 +20399,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=414113?spec=65"
+                                href="https://www.wowhead.com/spell=461246?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_priest_holybolts01.png" alt=""
+                                <img src="/data/icons/ability_paladin_holyavenger.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Righteous Judgment</span>
+                                <span class="ms-2">Glorious Dawn</span>
                                 <span class="ms-auto text-danger">
-                                  -1.1%
+                                  -0.84%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=414443?spec=65"
+                                href="https://www.wowhead.com/spell=414720?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_holynova.png" alt=""
+                                <img src="/data/icons/spell_holy_revivechampion.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Shining Righteousness</span>
+                                <span class="ms-2">Tirion&#39;s Devotion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.62%
+                                  -0.55%
                                 </span>
                               </a>
                               
@@ -20422,7 +20467,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-success">
-                          0.24%
+                          0.38%
                         </small>
                       </a>
                     </div>
@@ -20434,7 +20479,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-danger">
-                          -0.24%
+                          -0.38%
                         </small>
                       </a>
                     </div>
@@ -20609,7 +20654,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.26%
+                                +0.41%
                               </span>
                             </a>
                             
@@ -20631,7 +20676,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-success">
-                                  +0.26%
+                                  +0.41%
                                 </span>
                               </a>
                               
@@ -20645,7 +20690,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-success">
-                                  +0.26%
+                                  +0.41%
                                 </span>
                               </a>
                               
@@ -20674,7 +20719,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.26%
+                                -0.41%
                               </span>
                             </a>
                             
@@ -20694,7 +20739,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.41%
                                 </span>
                               </a>
                               
@@ -20707,7 +20752,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.41%
                                 </span>
                               </a>
                               
@@ -20746,7 +20791,7 @@
                                 Shining Righteousness
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.73%
+                                +1.48%
                               </span>
                             </a>
                             
@@ -20762,13 +20807,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=461246?spec=65"
+                                href="https://www.wowhead.com/spell=196926?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_holyavenger.png" alt=""
+                                <img src="/data/icons/ability_paladin_swiftretribution.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Glorious Dawn</span>
+                                <span class="ms-2">Crusader&#39;s Might</span>
                                 <span class="ms-auto text-success">
-                                  +1.29%
+                                  +1.06%
                                 </span>
                               </a>
                               
@@ -20776,13 +20821,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=447985?spec=65"
+                                href="https://www.wowhead.com/spell=461246?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_lightofthemartyr.png" alt=""
+                                <img src="/data/icons/ability_paladin_holyavenger.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Light of the Martyr</span>
+                                <span class="ms-2">Glorious Dawn</span>
                                 <span class="ms-auto text-success">
-                                  +1.24%
+                                  +1.0%
                                 </span>
                               </a>
                               
@@ -20811,7 +20856,7 @@
                                 Truth Prevails
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.81%
+                                -1.4%
                               </span>
                             </a>
                             
@@ -20831,7 +20876,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Revelations</span>
                                 <span class="ms-auto text-danger">
-                                  -1.47%
+                                  -1.2%
                                 </span>
                               </a>
                               
@@ -20844,7 +20889,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Overflowing Light</span>
                                 <span class="ms-auto text-danger">
-                                  -0.93%
+                                  -0.99%
                                 </span>
                               </a>
                               
@@ -20893,7 +20938,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-success">
-                          0.33%
+                          0.21%
                         </small>
                       </a>
                     </div>
@@ -20905,7 +20950,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-danger">
-                          -0.33%
+                          -0.21%
                         </small>
                       </a>
                     </div>
@@ -21080,7 +21125,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.37%
+                                +0.24%
                               </span>
                             </a>
                             
@@ -21102,7 +21147,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.24%
                                 </span>
                               </a>
                               
@@ -21116,7 +21161,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.24%
                                 </span>
                               </a>
                               
@@ -21145,7 +21190,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.37%
+                                -0.24%
                               </span>
                             </a>
                             
@@ -21165,7 +21210,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.24%
                                 </span>
                               </a>
                               
@@ -21178,7 +21223,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.24%
                                 </span>
                               </a>
                               
@@ -21217,7 +21262,7 @@
                                 Relentless Inquisitor
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.27%
+                                +1.23%
                               </span>
                             </a>
                             
@@ -21233,13 +21278,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=461273?spec=65"
+                                href="https://www.wowhead.com/spell=387808?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_artofwar.png" alt=""
+                                <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Truth Prevails</span>
+                                <span class="ms-2">Divine Revelations</span>
                                 <span class="ms-auto text-success">
-                                  +0.9%
+                                  +0.63%
                                 </span>
                               </a>
                               
@@ -21247,13 +21292,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=183415?spec=65"
+                                href="https://www.wowhead.com/spell=196926?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_blessedlife.png" alt=""
+                                <img src="/data/icons/ability_paladin_swiftretribution.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Merciful Auras</span>
+                                <span class="ms-2">Crusader&#39;s Might</span>
                                 <span class="ms-auto text-success">
-                                  +0.55%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -21282,7 +21327,7 @@
                                 Glorious Dawn
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.69%
+                                -0.98%
                               </span>
                             </a>
                             
@@ -21302,20 +21347,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Veneration</span>
                                 <span class="ms-auto text-danger">
-                                  -0.62%
+                                  -0.89%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=231642?spec=65"
+                                href="https://www.wowhead.com/spell=448040?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
+                                <img src="/data/icons/ability_paladin_sheathoflight.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Tower of Radiance</span>
+                                <span class="ms-2">Bestow Light</span>
                                 <span class="ms-auto text-danger">
-                                  -0.36%
+                                  -0.44%
                                 </span>
                               </a>
                               
@@ -21364,7 +21409,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-danger">
-                          -0.14%
+                          -0.03%
                         </small>
                       </a>
                     </div>
@@ -21376,7 +21421,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.14%
+                          0.03%
                         </small>
                       </a>
                     </div>
@@ -21551,7 +21596,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.15%
+                                +0.03%
                               </span>
                             </a>
                             
@@ -21573,7 +21618,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.15%
+                                  +0.03%
                                 </span>
                               </a>
                               
@@ -21587,7 +21632,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.15%
+                                  +0.03%
                                 </span>
                               </a>
                               
@@ -21616,7 +21661,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.15%
+                                -0.03%
                               </span>
                             </a>
                             
@@ -21636,7 +21681,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.15%
+                                  -0.03%
                                 </span>
                               </a>
                               
@@ -21649,7 +21694,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-danger">
-                                  -0.15%
+                                  -0.03%
                                 </span>
                               </a>
                               
@@ -21678,17 +21723,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=461246?spec=65"
+                              href="https://www.wowhead.com/spell=461244?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-499-Spec" aria-expanded="false"
                               aria-controls="gainCol-499-Spec">
-                              <img src="/data/icons/ability_paladin_holyavenger.png" alt=""
+                              <img src="/data/icons/spell_holy_holyguidance.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Glorious Dawn">
-                                Glorious Dawn
+                              <span class="flex-grow-1 text-truncate" title="Overflowing Light">
+                                Overflowing Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.13%
+                                +0.81%
                               </span>
                             </a>
                             
@@ -21710,7 +21755,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Divine Favor</span>
                                 <span class="ms-auto text-success">
-                                  +0.96%
+                                  +0.62%
                                 </span>
                               </a>
                               
@@ -21724,7 +21769,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Righteous Judgment</span>
                                 <span class="ms-auto text-success">
-                                  +0.77%
+                                  +0.58%
                                 </span>
                               </a>
                               
@@ -21753,7 +21798,7 @@
                                 Divine Revelations
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.63%
+                                -1.48%
                               </span>
                             </a>
                             
@@ -21767,26 +21812,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=383388?spec=65"
-                                target="_blank">
-                                <img src="/data/icons/spell_holy_mindvision.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Relentless Inquisitor</span>
-                                <span class="ms-auto text-danger">
-                                  -1.3%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=414720?spec=65"
                                 target="_blank">
                                 <img src="/data/icons/spell_holy_revivechampion.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Tirion&#39;s Devotion</span>
                                 <span class="ms-auto text-danger">
-                                  -1.29%
+                                  -0.91%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=383388?spec=65"
+                                target="_blank">
+                                <img src="/data/icons/spell_holy_mindvision.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Relentless Inquisitor</span>
+                                <span class="ms-auto text-danger">
+                                  -0.88%
                                 </span>
                               </a>
                               
@@ -21834,8 +21879,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-lightsmith.png" alt="Lightsmith"
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
-                        <small class="text-success">
-                          0.11%
+                        <small class="text-danger">
+                          -0.12%
                         </small>
                       </a>
                     </div>
@@ -21846,8 +21891,8 @@
                         <img src="/data/icons/talents-heroclass-paladin-heraldofthesun.png" alt="Herald of the Sun"
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
-                        <small class="text-danger">
-                          -0.11%
+                        <small class="text-success">
+                          0.12%
                         </small>
                       </a>
                     </div>
@@ -22012,17 +22057,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=432802?spec=65"
+                              href="https://www.wowhead.com/spell=439760?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-503-Hero" aria-expanded="false"
                               aria-controls="gainCol-503-Hero">
-                              <img src="/data/icons/spell_holy_heroism.png" alt=""
+                              <img src="/data/icons/spell_holy_rune.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Solidarity">
-                                Solidarity
+                              <span class="flex-grow-1 text-truncate" title="Aurora">
+                                Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.11%
+                                +0.13%
                               </span>
                             </a>
                             
@@ -22038,13 +22083,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=432919?spec=65"
+                                href="https://www.wowhead.com/spell=445200?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_mace_47.png" alt=""
+                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Valiance</span>
+                                <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.11%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -22052,13 +22097,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=433011?spec=65"
+                                href="https://www.wowhead.com/spell=431413?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_lightsmithpaladin_sacredweapon.png" alt=""
+                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Blessing of the Forge</span>
+                                <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.11%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -22077,17 +22122,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=439760?spec=65"
+                              href="https://www.wowhead.com/spell=432802?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-503-Hero" aria-expanded="false"
                               aria-controls="lossCol-503-Hero">
-                              <img src="/data/icons/spell_holy_rune.png" alt=""
+                              <img src="/data/icons/spell_holy_heroism.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Aurora">
-                                Aurora
+                              <span class="flex-grow-1 text-truncate" title="Solidarity">
+                                Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.11%
+                                -0.13%
                               </span>
                             </a>
                             
@@ -22101,26 +22146,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=445200?spec=65"
+                                href="https://www.wowhead.com/spell=432919?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_holyfire_orb.png" alt=""
+                                <img src="/data/icons/inv_mace_47.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Blessing of An&#39;she</span>
+                                <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.11%
+                                  -0.13%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=431413?spec=65"
+                                href="https://www.wowhead.com/spell=433011?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_priest_burningwill.png" alt=""
+                                <img src="/data/icons/inv_ability_lightsmithpaladin_sacredweapon.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sun Sear</span>
+                                <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-danger">
-                                  -0.11%
+                                  -0.13%
                                 </span>
                               </a>
                               
@@ -22149,17 +22194,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=414720?spec=65"
+                              href="https://www.wowhead.com/spell=387808?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-503-Spec" aria-expanded="false"
                               aria-controls="gainCol-503-Spec">
-                              <img src="/data/icons/spell_holy_revivechampion.png" alt=""
+                              <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Tirion&#39;s Devotion">
-                                Tirion&#39;s Devotion
+                              <span class="flex-grow-1 text-truncate" title="Divine Revelations">
+                                Divine Revelations
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.43%
+                                +1.42%
                               </span>
                             </a>
                             
@@ -22175,13 +22220,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=461273?spec=65"
+                                href="https://www.wowhead.com/spell=414720?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_artofwar.png" alt=""
+                                <img src="/data/icons/spell_holy_revivechampion.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Truth Prevails</span>
+                                <span class="ms-2">Tirion&#39;s Devotion</span>
                                 <span class="ms-auto text-success">
-                                  +1.4%
+                                  +1.39%
                                 </span>
                               </a>
                               
@@ -22189,13 +22234,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387808?spec=65"
+                                href="https://www.wowhead.com/spell=461273?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
+                                <img src="/data/icons/ability_paladin_artofwar.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Divine Revelations</span>
+                                <span class="ms-2">Truth Prevails</span>
                                 <span class="ms-auto text-success">
-                                  +1.33%
+                                  +1.19%
                                 </span>
                               </a>
                               
@@ -22224,7 +22269,7 @@
                                 Bestow Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.37%
+                                -1.29%
                               </span>
                             </a>
                             
@@ -22244,20 +22289,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Light of the Martyr</span>
                                 <span class="ms-auto text-danger">
-                                  -1.36%
+                                  -1.27%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=461244?spec=65"
+                                href="https://www.wowhead.com/spell=196926?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_holyguidance.png" alt=""
+                                <img src="/data/icons/ability_paladin_swiftretribution.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Overflowing Light</span>
+                                <span class="ms-2">Crusader&#39;s Might</span>
                                 <span class="ms-auto text-danger">
-                                  -0.82%
+                                  -0.84%
                                 </span>
                               </a>
                               
@@ -22306,7 +22351,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-success">
-                          0.24%
+                          0.2%
                         </small>
                       </a>
                     </div>
@@ -22318,7 +22363,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-danger">
-                          -0.24%
+                          -0.2%
                         </small>
                       </a>
                     </div>
@@ -22493,7 +22538,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.26%
+                                +0.22%
                               </span>
                             </a>
                             
@@ -22515,7 +22560,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-success">
-                                  +0.26%
+                                  +0.22%
                                 </span>
                               </a>
                               
@@ -22529,7 +22574,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-success">
-                                  +0.26%
+                                  +0.22%
                                 </span>
                               </a>
                               
@@ -22558,7 +22603,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.26%
+                                -0.22%
                               </span>
                             </a>
                             
@@ -22578,7 +22623,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.22%
                                 </span>
                               </a>
                               
@@ -22591,7 +22636,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.22%
                                 </span>
                               </a>
                               
@@ -22620,17 +22665,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=414720?spec=65"
+                              href="https://www.wowhead.com/spell=448040?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-505-Spec" aria-expanded="false"
                               aria-controls="gainCol-505-Spec">
-                              <img src="/data/icons/spell_holy_revivechampion.png" alt=""
+                              <img src="/data/icons/ability_paladin_sheathoflight.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Tirion&#39;s Devotion">
-                                Tirion&#39;s Devotion
+                              <span class="flex-grow-1 text-truncate" title="Bestow Light">
+                                Bestow Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.59%
+                                +0.55%
                               </span>
                             </a>
                             
@@ -22646,13 +22691,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=231642?spec=65"
+                                href="https://www.wowhead.com/spell=461246?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
+                                <img src="/data/icons/ability_paladin_holyavenger.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Tower of Radiance</span>
+                                <span class="ms-2">Glorious Dawn</span>
                                 <span class="ms-auto text-success">
-                                  +0.59%
+                                  +0.52%
                                 </span>
                               </a>
                               
@@ -22660,13 +22705,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=414443?spec=65"
+                                href="https://www.wowhead.com/spell=231642?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_holynova.png" alt=""
+                                <img src="/data/icons/inv_helm_plate_raidpaladinmythic_q_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Shining Righteousness</span>
+                                <span class="ms-2">Tower of Radiance</span>
                                 <span class="ms-auto text-success">
-                                  +0.55%
+                                  +0.5%
                                 </span>
                               </a>
                               
@@ -22685,17 +22730,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=387998?spec=65"
+                              href="https://www.wowhead.com/spell=387808?spec=65"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-505-Spec" aria-expanded="false"
                               aria-controls="lossCol-505-Spec">
-                              <img src="/data/icons/spell_holy_holybolt.png" alt=""
+                              <img src="/data/icons/ability_paladin_infusionoflight.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Unending Light">
-                                Unending Light
+                              <span class="flex-grow-1 text-truncate" title="Divine Revelations">
+                                Divine Revelations
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.81%
+                                -0.64%
                               </span>
                             </a>
                             
@@ -22709,26 +22754,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1232616?spec=65"
+                                href="https://www.wowhead.com/spell=460422?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_helm_plate_raidpaladindragon_d_01.png" alt=""
+                                <img src="/data/icons/spell_holy_heal.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Pillars of Light</span>
+                                <span class="ms-2">Divine Favor</span>
                                 <span class="ms-auto text-danger">
-                                  -0.66%
+                                  -0.58%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=196926?spec=65"
+                                href="https://www.wowhead.com/spell=387998?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_swiftretribution.png" alt=""
+                                <img src="/data/icons/spell_holy_holybolt.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Crusader&#39;s Might</span>
+                                <span class="ms-2">Unending Light</span>
                                 <span class="ms-auto text-danger">
-                                  -0.59%
+                                  -0.58%
                                 </span>
                               </a>
                               
@@ -22777,7 +22822,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-danger">
-                          -0.19%
+                          -0.13%
                         </small>
                       </a>
                     </div>
@@ -22789,7 +22834,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.19%
+                          0.13%
                         </small>
                       </a>
                     </div>
@@ -22964,7 +23009,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.21%
+                                +0.14%
                               </span>
                             </a>
                             
@@ -22986,7 +23031,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.21%
+                                  +0.14%
                                 </span>
                               </a>
                               
@@ -23000,7 +23045,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.21%
+                                  +0.14%
                                 </span>
                               </a>
                               
@@ -23029,7 +23074,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.21%
+                                -0.14%
                               </span>
                             </a>
                             
@@ -23049,7 +23094,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.21%
+                                  -0.14%
                                 </span>
                               </a>
                               
@@ -23062,7 +23107,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-danger">
-                                  -0.21%
+                                  -0.14%
                                 </span>
                               </a>
                               
@@ -23101,7 +23146,7 @@
                                 Glorious Dawn
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.15%
+                                +0.95%
                               </span>
                             </a>
                             
@@ -23117,13 +23162,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=448040?spec=65"
+                                href="https://www.wowhead.com/spell=196926?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_sheathoflight.png" alt=""
+                                <img src="/data/icons/ability_paladin_swiftretribution.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Bestow Light</span>
+                                <span class="ms-2">Crusader&#39;s Might</span>
                                 <span class="ms-auto text-success">
-                                  +0.89%
+                                  +0.65%
                                 </span>
                               </a>
                               
@@ -23131,13 +23176,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=447985?spec=65"
+                                href="https://www.wowhead.com/spell=460422?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/ability_paladin_lightofthemartyr.png" alt=""
+                                <img src="/data/icons/spell_holy_heal.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Light of the Martyr</span>
+                                <span class="ms-2">Divine Favor</span>
                                 <span class="ms-auto text-success">
-                                  +0.88%
+                                  +0.58%
                                 </span>
                               </a>
                               
@@ -23166,7 +23211,7 @@
                                 Truth Prevails
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.04%
+                                -0.92%
                               </span>
                             </a>
                             
@@ -23186,7 +23231,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Moment of Compassion</span>
                                 <span class="ms-auto text-danger">
-                                  -1.04%
+                                  -0.78%
                                 </span>
                               </a>
                               
@@ -23199,7 +23244,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shining Righteousness</span>
                                 <span class="ms-auto text-danger">
-                                  -0.92%
+                                  -0.77%
                                 </span>
                               </a>
                               
@@ -23248,7 +23293,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Lightsmith</small><br />
                         <small class="text-danger">
-                          -0.42%
+                          -0.41%
                         </small>
                       </a>
                     </div>
@@ -23260,7 +23305,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Herald of the Sun</small><br />
                         <small class="text-success">
-                          0.42%
+                          0.41%
                         </small>
                       </a>
                     </div>
@@ -23435,7 +23480,7 @@
                                 Aurora
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.45%
+                                +0.44%
                               </span>
                             </a>
                             
@@ -23457,7 +23502,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of An&#39;she</span>
                                 <span class="ms-auto text-success">
-                                  +0.45%
+                                  +0.44%
                                 </span>
                               </a>
                               
@@ -23471,7 +23516,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sun Sear</span>
                                 <span class="ms-auto text-success">
-                                  +0.45%
+                                  +0.44%
                                 </span>
                               </a>
                               
@@ -23500,7 +23545,7 @@
                                 Solidarity
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.45%
+                                -0.44%
                               </span>
                             </a>
                             
@@ -23520,7 +23565,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Valiance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.44%
                                 </span>
                               </a>
                               
@@ -23533,7 +23578,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Blessing of the Forge</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.44%
                                 </span>
                               </a>
                               
@@ -23572,7 +23617,7 @@
                                 Divine Revelations
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.19%
+                                +0.82%
                               </span>
                             </a>
                             
@@ -23588,13 +23633,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=414720?spec=65"
+                                href="https://www.wowhead.com/spell=1232616?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/spell_holy_revivechampion.png" alt=""
+                                <img src="/data/icons/inv_helm_plate_raidpaladindragon_d_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Tirion&#39;s Devotion</span>
+                                <span class="ms-2">Pillars of Light</span>
                                 <span class="ms-auto text-success">
-                                  +0.72%
+                                  +0.66%
                                 </span>
                               </a>
                               
@@ -23602,13 +23647,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1232616?spec=65"
+                                href="https://www.wowhead.com/spell=387998?spec=65"
                                 target="_blank">
-                                <img src="/data/icons/inv_helm_plate_raidpaladindragon_d_01.png" alt=""
+                                <img src="/data/icons/spell_holy_holybolt.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Pillars of Light</span>
+                                <span class="ms-2">Unending Light</span>
                                 <span class="ms-auto text-success">
-                                  +0.63%
+                                  +0.61%
                                 </span>
                               </a>
                               
@@ -23637,7 +23682,7 @@
                                 Bestow Light
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.61%
+                                -1.32%
                               </span>
                             </a>
                             
@@ -23657,7 +23702,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Light of the Martyr</span>
                                 <span class="ms-auto text-danger">
-                                  -1.38%
+                                  -1.09%
                                 </span>
                               </a>
                               
@@ -23670,7 +23715,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Dawn</span>
                                 <span class="ms-auto text-danger">
-                                  -0.92%
+                                  -0.95%
                                 </span>
                               </a>
                               
@@ -24840,7 +24885,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -25066,6 +25112,9 @@
 
       const raw = [
         
+    37232
+      , 
+    
     99526
       , 
     
@@ -25073,9 +25122,6 @@
       , 
     
     5119
-      , 
-    
-    37232
       
     
 ];
@@ -25333,6 +25379,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

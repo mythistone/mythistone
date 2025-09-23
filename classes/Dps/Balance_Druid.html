@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Balance Druid Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Balance Druid, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:17:10.">
+    content="Discover the most popular Mythic+ build for Balance Druid, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:11:26.">
   <link rel="canonical" href="https://mythistone.com/classes/Dps/Balance_Druid">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Dps/Balance_Druid">
   <meta property="og:title" content="Balance Druid Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Balance Druid Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Balance Druid Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Balance icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Balance Druid Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Balance Druid—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Balance Druid—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:17:10"
+  "dateModified": "23/09/2025, 20:11:26"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Dps">Dps</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Druid-text">Balance Druid </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="272.8 K seen in 2.3 M total runs">Overall
-                  Played: 11.63%</h4>
+                  title="272.8 K seen in 2.4 M total runs">Overall
+                  Played: 11.26%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611830.213779>Last Update:</span>
+                    data-timestamp=1758658286.795812>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611830.213779>Last Update</span>
+                    data-timestamp=1758658286.795812>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-intellect py-1 px-2">INTELLECT</div>
 
             
-            <div class="h5 mb-0">119.9 K</div>
+            <div class="h5 mb-0">120 K</div>
             
           </div>
         </div>
@@ -1305,7 +1345,7 @@
               title="min: 0, max: 34.4 K, avg: 22.7 K"
               tabindex="0" role="button"
               aria-label="min 0, max 34.4 K, avg: 22.7 K">
-              21.01%
+              21.03%
             </div>
             
           </div>
@@ -1342,7 +1382,7 @@
               title="min: 0, max: 40.5 K, avg: 19.2 K"
               tabindex="0" role="button"
               aria-label="min 0, max 40.5 K, avg: 19.2 K">
-              29.08%
+              29.11%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 27.6 K, avg: 4.9 K"
               tabindex="0" role="button"
               aria-label="min 0, max 27.6 K, avg: 4.9 K">
-              6.26%
+              6.27%
             </div>
             
           </div>
@@ -1416,7 +1456,7 @@
               title="min: 0, max: 23.7 K, avg: 4.7 K"
               tabindex="0" role="button"
               aria-label="min 0, max 23.7 K, avg: 4.7 K">
-              11.83%
+              11.84%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">699.9 K</div>
+            <div class="h5 mb-0">700.8 K</div>
             
           </div>
         </div>
@@ -1550,9 +1590,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 7.8 K, avg: 898"
+              title="min: 0, max: 7.8 K, avg: 901"
               tabindex="0" role="button"
-              aria-label="min 0, max 7.8 K, avg: 898">
+              aria-label="min 0, max 7.8 K, avg: 901">
               0.88%
             </div>
             
@@ -10955,8 +10995,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=232805?bonus=1533:6652:9418:10255:10356:12376&spec=102"
-      data-wowhead="bonus=1533:6652:9418:10255:10356:12376&spec=102"
+      href="https://www.wowhead.com/item=232805?bonus=1520:6652:9418:10255:10355:12372&spec=102"
+      data-wowhead="bonus=1520:6652:9418:10255:10355:12372&spec=102"
       >
       <img src="/data/icons/inv_mace_2h_goblinraid_d_02.png" />
     </a>
@@ -10964,8 +11004,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=232805?bonus=1533:6652:9418:10255:10356:12376&spec=102"
-      data-wowhead="bonus=1533:6652:9418:10255:10356:12376&spec=102"
+      href="https://www.wowhead.com/item=232805?bonus=1520:6652:9418:10255:10355:12372&spec=102"
+      data-wowhead="bonus=1520:6652:9418:10255:10355:12372&spec=102"
       data-wh-rename-link="true" >
       <p class="mb-1">Best-in-Slots</p>
     </a>
@@ -18445,7 +18485,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="229543 out of 625588 gems" class="mb-0">
+                                  title="236624 out of 646082 gems" class="mb-0">
                                    37 % </p>
                               </div>
                             </div>
@@ -18506,7 +18546,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="100413 out of 625588 gems" class="mb-0">
+                                  title="103494 out of 646082 gems" class="mb-0">
                                    16 % </p>
                               </div>
                             </div>
@@ -18560,7 +18600,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="64183 out of 625588 gems" class="mb-0">
+                                  title="66339 out of 646082 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18598,7 +18638,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="63926 out of 625588 gems" class="mb-0">
+                                  title="66151 out of 646082 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18659,7 +18699,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="44493 out of 625588 gems" class="mb-0">
+                                  title="46081 out of 646082 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -18720,7 +18760,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="33721 out of 625588 gems" class="mb-0">
+                                  title="35023 out of 646082 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18781,7 +18821,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="32191 out of 625588 gems" class="mb-0">
+                                  title="33421 out of 646082 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18842,7 +18882,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="25071 out of 625588 gems" class="mb-0">
+                                  title="25829 out of 646082 gems" class="mb-0">
                                    4 % </p>
                               </div>
                             </div>
@@ -18880,7 +18920,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="17758 out of 625588 gems" class="mb-0">
+                                  title="18304 out of 646082 gems" class="mb-0">
                                    3 % </p>
                               </div>
                             </div>
@@ -18941,7 +18981,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="14289 out of 625588 gems" class="mb-0">
+                                  title="14816 out of 646082 gems" class="mb-0">
                                    2 % </p>
                               </div>
                             </div>
@@ -20087,14 +20127,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -20141,7 +20179,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-success">
-                          0.16%
+                          0.19%
                         </small>
                       </a>
                     </div>
@@ -20153,7 +20191,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-danger">
-                          -0.16%
+                          -0.19%
                         </small>
                       </a>
                     </div>
@@ -20328,7 +20366,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.18%
+                                +0.21%
                               </span>
                             </a>
                             
@@ -20350,7 +20388,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.18%
+                                  +0.21%
                                 </span>
                               </a>
                               
@@ -20364,7 +20402,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-success">
-                                  +0.18%
+                                  +0.21%
                                 </span>
                               </a>
                               
@@ -20393,7 +20431,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.18%
+                                -0.21%
                               </span>
                             </a>
                             
@@ -20413,7 +20451,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.18%
+                                  -0.21%
                                 </span>
                               </a>
                               
@@ -20426,7 +20464,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.18%
+                                  -0.21%
                                 </span>
                               </a>
                               
@@ -20465,7 +20503,7 @@
                                 Touch the Cosmos
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.32%
+                                +0.38%
                               </span>
                             </a>
                             
@@ -20481,13 +20519,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=394046?spec=102"
+                                href="https://www.wowhead.com/spell=205636?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/inv_mount_spectralwolf.png" alt=""
+                                <img src="/data/icons/ability_druid_forceofnature.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Power of Goldrinn</span>
+                                <span class="ms-2">Force of Nature</span>
                                 <span class="ms-auto text-success">
-                                  +0.2%
+                                  +0.17%
                                 </span>
                               </a>
                               
@@ -20495,13 +20533,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=205636?spec=102"
+                                href="https://www.wowhead.com/spell=469004?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_forceofnature.png" alt=""
+                                <img src="/data/icons/ability_druid_starfall.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Force of Nature</span>
+                                <span class="ms-2">Hail of Stars</span>
                                 <span class="ms-auto text-success">
-                                  +0.18%
+                                  +0.14%
                                 </span>
                               </a>
                               
@@ -20520,17 +20558,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=468960?spec=102"
+                              href="https://www.wowhead.com/spell=394121?spec=102"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-378-Spec" aria-expanded="false"
                               aria-controls="lossCol-378-Spec">
-                              <img src="/data/icons/spell_nature_starfall.png" alt=""
+                              <img src="/data/icons/artifactability_balancedruid_fullmoon.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Astronomical Impact">
-                                Astronomical Impact
+                              <span class="flex-grow-1 text-truncate" title="Radiant Moonlight">
+                                Radiant Moonlight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.4%
+                                -0.29%
                               </span>
                             </a>
                             
@@ -20544,13 +20582,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=394121?spec=102"
+                                href="https://www.wowhead.com/spell=468960?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/artifactability_balancedruid_fullmoon.png" alt=""
+                                <img src="/data/icons/spell_nature_starfall.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Radiant Moonlight</span>
+                                <span class="ms-2">Astronomical Impact</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.28%
                                 </span>
                               </a>
                               
@@ -20563,7 +20601,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Soul of the Forest</span>
                                 <span class="ms-auto text-danger">
-                                  -0.22%
+                                  -0.24%
                                 </span>
                               </a>
                               
@@ -20612,7 +20650,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-success">
-                          0.06%
+                          0.02%
                         </small>
                       </a>
                     </div>
@@ -20624,7 +20662,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-danger">
-                          -0.06%
+                          -0.02%
                         </small>
                       </a>
                     </div>
@@ -20799,7 +20837,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.06%
+                                +0.01%
                               </span>
                             </a>
                             
@@ -20821,7 +20859,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.01%
                                 </span>
                               </a>
                               
@@ -20835,7 +20873,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.01%
                                 </span>
                               </a>
                               
@@ -20864,7 +20902,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.06%
+                                -0.01%
                               </span>
                             </a>
                             
@@ -20884,7 +20922,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -20897,7 +20935,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -20936,7 +20974,7 @@
                                 Stellar Amplification
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.66%
+                                +0.46%
                               </span>
                             </a>
                             
@@ -20952,13 +20990,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=394065?spec=102"
+                                href="https://www.wowhead.com/spell=468978?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/inv_faeriedragon2_orange.png" alt=""
+                                <img src="/data/icons/spell_priest_divinestar_shadow2.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Denizen of the Dream</span>
+                                <span class="ms-2">Crashing Star</span>
                                 <span class="ms-auto text-success">
-                                  +0.43%
+                                  +0.29%
                                 </span>
                               </a>
                               
@@ -20966,13 +21004,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=394046?spec=102"
+                                href="https://www.wowhead.com/spell=394065?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/inv_mount_spectralwolf.png" alt=""
+                                <img src="/data/icons/inv_faeriedragon2_orange.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Power of Goldrinn</span>
+                                <span class="ms-2">Denizen of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.36%
+                                  +0.27%
                                 </span>
                               </a>
                               
@@ -21001,7 +21039,7 @@
                                 Umbral Inspiration
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.51%
+                                -0.42%
                               </span>
                             </a>
                             
@@ -21021,20 +21059,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Touch the Cosmos</span>
                                 <span class="ms-auto text-danger">
-                                  -0.35%
+                                  -0.37%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=468936?spec=102"
+                                href="https://www.wowhead.com/spell=327541?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/druid_ability_wildmushroom_b.png" alt=""
+                                <img src="/data/icons/ability_druid_starfall.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sunseeker Mushroom</span>
+                                <span class="ms-2">Aetherial Kindling</span>
                                 <span class="ms-auto text-danger">
-                                  -0.29%
+                                  -0.24%
                                 </span>
                               </a>
                               
@@ -21083,7 +21121,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-success">
-                          0.31%
+                          0.3%
                         </small>
                       </a>
                     </div>
@@ -21095,7 +21133,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-danger">
-                          -0.31%
+                          -0.3%
                         </small>
                       </a>
                     </div>
@@ -21270,7 +21308,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.34%
+                                +0.33%
                               </span>
                             </a>
                             
@@ -21292,7 +21330,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.34%
+                                  +0.33%
                                 </span>
                               </a>
                               
@@ -21306,7 +21344,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-success">
-                                  +0.34%
+                                  +0.33%
                                 </span>
                               </a>
                               
@@ -21335,7 +21373,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.34%
+                                -0.33%
                               </span>
                             </a>
                             
@@ -21355,7 +21393,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.34%
+                                  -0.33%
                                 </span>
                               </a>
                               
@@ -21368,7 +21406,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.34%
+                                  -0.33%
                                 </span>
                               </a>
                               
@@ -21407,7 +21445,7 @@
                                 Crashing Star
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.5%
+                                +0.51%
                               </span>
                             </a>
                             
@@ -21429,7 +21467,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of Goldrinn</span>
                                 <span class="ms-auto text-success">
-                                  +0.5%
+                                  +0.51%
                                 </span>
                               </a>
                               
@@ -21443,7 +21481,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Astronomical Impact</span>
                                 <span class="ms-auto text-success">
-                                  +0.49%
+                                  +0.37%
                                 </span>
                               </a>
                               
@@ -21462,17 +21500,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=394094?spec=102"
+                              href="https://www.wowhead.com/spell=394121?spec=102"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-392-Spec" aria-expanded="false"
                               aria-controls="lossCol-392-Spec">
-                              <img src="/data/icons/spell_druid_equinox.png" alt=""
+                              <img src="/data/icons/artifactability_balancedruid_fullmoon.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Sundered Firmament">
-                                Sundered Firmament
+                              <span class="flex-grow-1 text-truncate" title="Radiant Moonlight">
+                                Radiant Moonlight
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.44%
+                                -0.45%
                               </span>
                             </a>
                             
@@ -21486,11 +21524,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=202770?spec=102"
+                                href="https://www.wowhead.com/spell=394094?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_dreamstate.png" alt=""
+                                <img src="/data/icons/spell_druid_equinox.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Fury of Elune</span>
+                                <span class="ms-2">Sundered Firmament</span>
                                 <span class="ms-auto text-danger">
                                   -0.43%
                                 </span>
@@ -21499,13 +21537,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=394121?spec=102"
+                                href="https://www.wowhead.com/spell=202770?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/artifactability_balancedruid_fullmoon.png" alt=""
+                                <img src="/data/icons/ability_druid_dreamstate.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Radiant Moonlight</span>
+                                <span class="ms-2">Fury of Elune</span>
                                 <span class="ms-auto text-danger">
-                                  -0.42%
+                                  -0.39%
                                 </span>
                               </a>
                               
@@ -21554,7 +21592,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-success">
-                          0.4%
+                          0.32%
                         </small>
                       </a>
                     </div>
@@ -21566,7 +21604,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-danger">
-                          -0.4%
+                          -0.32%
                         </small>
                       </a>
                     </div>
@@ -21741,7 +21779,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.44%
+                                +0.35%
                               </span>
                             </a>
                             
@@ -21763,7 +21801,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.44%
+                                  +0.35%
                                 </span>
                               </a>
                               
@@ -21777,7 +21815,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-success">
-                                  +0.44%
+                                  +0.35%
                                 </span>
                               </a>
                               
@@ -21806,7 +21844,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.44%
+                                -0.35%
                               </span>
                             </a>
                             
@@ -21826,7 +21864,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.44%
+                                  -0.35%
                                 </span>
                               </a>
                               
@@ -21839,7 +21877,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.44%
+                                  -0.35%
                                 </span>
                               </a>
                               
@@ -21878,7 +21916,7 @@
                                 Astronomical Impact
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.61%
+                                +0.5%
                               </span>
                             </a>
                             
@@ -21900,7 +21938,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of Goldrinn</span>
                                 <span class="ms-auto text-success">
-                                  +0.42%
+                                  +0.44%
                                 </span>
                               </a>
                               
@@ -21908,13 +21946,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=202430?spec=102"
+                                href="https://www.wowhead.com/spell=394065?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_balanceofpower.png" alt=""
+                                <img src="/data/icons/inv_faeriedragon2_orange.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Nature&#39;s Balance</span>
+                                <span class="ms-2">Denizen of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.35%
+                                  +0.38%
                                 </span>
                               </a>
                               
@@ -21943,7 +21981,7 @@
                                 Umbral Inspiration
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.6%
+                                -0.45%
                               </span>
                             </a>
                             
@@ -21963,7 +22001,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sundered Firmament</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.27%
                                 </span>
                               </a>
                               
@@ -21976,7 +22014,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Aetherial Kindling</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.26%
                                 </span>
                               </a>
                               
@@ -22025,7 +22063,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-danger">
-                          -0.15%
+                          -0.49%
                         </small>
                       </a>
                     </div>
@@ -22037,7 +22075,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-success">
-                          0.15%
+                          0.49%
                         </small>
                       </a>
                     </div>
@@ -22212,7 +22250,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.16%
+                                +0.53%
                               </span>
                             </a>
                             
@@ -22234,7 +22272,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-success">
-                                  +0.16%
+                                  +0.53%
                                 </span>
                               </a>
                               
@@ -22248,7 +22286,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-success">
-                                  +0.16%
+                                  +0.53%
                                 </span>
                               </a>
                               
@@ -22277,7 +22315,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.16%
+                                -0.53%
                               </span>
                             </a>
                             
@@ -22297,7 +22335,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-danger">
-                                  -0.16%
+                                  -0.53%
                                 </span>
                               </a>
                               
@@ -22310,7 +22348,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-danger">
-                                  -0.16%
+                                  -0.53%
                                 </span>
                               </a>
                               
@@ -22349,7 +22387,7 @@
                                 Umbral Inspiration
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.79%
+                                +0.92%
                               </span>
                             </a>
                             
@@ -22371,7 +22409,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Twin Moons</span>
                                 <span class="ms-auto text-success">
-                                  +0.43%
+                                  +0.52%
                                 </span>
                               </a>
                               
@@ -22379,13 +22417,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=450356?spec=102"
+                                href="https://www.wowhead.com/spell=327541?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/ability_bossgorefiend_touchofdoom.png" alt=""
+                                <img src="/data/icons/ability_druid_starfall.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Touch the Cosmos</span>
+                                <span class="ms-2">Aetherial Kindling</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.5%
                                 </span>
                               </a>
                               
@@ -22414,7 +22452,7 @@
                                 Stellar Amplification
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.66%
+                                -0.89%
                               </span>
                             </a>
                             
@@ -22434,7 +22472,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of Goldrinn</span>
                                 <span class="ms-auto text-danger">
-                                  -0.65%
+                                  -0.86%
                                 </span>
                               </a>
                               
@@ -22447,7 +22485,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Crashing Star</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.56%
                                 </span>
                               </a>
                               
@@ -22496,7 +22534,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-success">
-                          0.07%
+                          0.11%
                         </small>
                       </a>
                     </div>
@@ -22508,7 +22546,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-danger">
-                          -0.07%
+                          -0.11%
                         </small>
                       </a>
                     </div>
@@ -22683,7 +22721,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.08%
+                                +0.11%
                               </span>
                             </a>
                             
@@ -22705,7 +22743,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.08%
+                                  +0.11%
                                 </span>
                               </a>
                               
@@ -22719,7 +22757,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-success">
-                                  +0.08%
+                                  +0.11%
                                 </span>
                               </a>
                               
@@ -22748,7 +22786,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.08%
+                                -0.11%
                               </span>
                             </a>
                             
@@ -22768,7 +22806,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.08%
+                                  -0.11%
                                 </span>
                               </a>
                               
@@ -22781,7 +22819,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.08%
+                                  -0.11%
                                 </span>
                               </a>
                               
@@ -22810,17 +22848,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=394046?spec=102"
+                              href="https://www.wowhead.com/spell=450356?spec=102"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-505-Spec" aria-expanded="false"
                               aria-controls="gainCol-505-Spec">
-                              <img src="/data/icons/inv_mount_spectralwolf.png" alt=""
+                              <img src="/data/icons/ability_bossgorefiend_touchofdoom.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Power of Goldrinn">
-                                Power of Goldrinn
+                              <span class="flex-grow-1 text-truncate" title="Touch the Cosmos">
+                                Touch the Cosmos
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.34%
+                                +0.32%
                               </span>
                             </a>
                             
@@ -22836,13 +22874,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=394065?spec=102"
+                                href="https://www.wowhead.com/spell=394046?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/inv_faeriedragon2_orange.png" alt=""
+                                <img src="/data/icons/inv_mount_spectralwolf.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Denizen of the Dream</span>
+                                <span class="ms-2">Power of Goldrinn</span>
                                 <span class="ms-auto text-success">
-                                  +0.31%
+                                  +0.3%
                                 </span>
                               </a>
                               
@@ -22850,13 +22888,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=450356?spec=102"
+                                href="https://www.wowhead.com/spell=327541?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/ability_bossgorefiend_touchofdoom.png" alt=""
+                                <img src="/data/icons/ability_druid_starfall.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Touch the Cosmos</span>
+                                <span class="ms-2">Aetherial Kindling</span>
                                 <span class="ms-auto text-success">
-                                  +0.3%
+                                  +0.29%
                                 </span>
                               </a>
                               
@@ -22885,7 +22923,7 @@
                                 Sundered Firmament
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.48%
+                                -0.46%
                               </span>
                             </a>
                             
@@ -22905,20 +22943,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sunseeker Mushroom</span>
                                 <span class="ms-auto text-danger">
-                                  -0.29%
+                                  -0.26%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=393940?spec=102"
+                                href="https://www.wowhead.com/spell=468960?spec=102"
                                 target="_blank">
-                                <img src="/data/icons/spell_arcane_invocation.png" alt=""
+                                <img src="/data/icons/spell_nature_starfall.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Starweaver</span>
+                                <span class="ms-2">Astronomical Impact</span>
                                 <span class="ms-auto text-danger">
-                                  -0.28%
+                                  -0.25%
                                 </span>
                               </a>
                               
@@ -22967,7 +23005,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-danger">
-                          -1.21%
+                          -1.01%
                         </small>
                       </a>
                     </div>
@@ -22979,7 +23017,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-success">
-                          1.21%
+                          1.01%
                         </small>
                       </a>
                     </div>
@@ -23154,7 +23192,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.32%
+                                +1.1%
                               </span>
                             </a>
                             
@@ -23176,7 +23214,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-success">
-                                  +1.32%
+                                  +1.1%
                                 </span>
                               </a>
                               
@@ -23190,7 +23228,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-success">
-                                  +1.32%
+                                  +1.1%
                                 </span>
                               </a>
                               
@@ -23219,7 +23257,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.32%
+                                -1.1%
                               </span>
                             </a>
                             
@@ -23239,7 +23277,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-danger">
-                                  -1.32%
+                                  -1.1%
                                 </span>
                               </a>
                               
@@ -23252,7 +23290,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-danger">
-                                  -1.32%
+                                  -1.1%
                                 </span>
                               </a>
                               
@@ -23291,7 +23329,7 @@
                                 Sundered Firmament
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.35%
+                                +1.19%
                               </span>
                             </a>
                             
@@ -23313,7 +23351,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Radiant Moonlight</span>
                                 <span class="ms-auto text-success">
-                                  +1.26%
+                                  +1.08%
                                 </span>
                               </a>
                               
@@ -23327,7 +23365,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of Elune</span>
                                 <span class="ms-auto text-success">
-                                  +1.18%
+                                  +1.03%
                                 </span>
                               </a>
                               
@@ -23356,7 +23394,7 @@
                                 Denizen of the Dream
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.31%
+                                -1.13%
                               </span>
                             </a>
                             
@@ -23376,7 +23414,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Crashing Star</span>
                                 <span class="ms-auto text-danger">
-                                  -1.2%
+                                  -1.01%
                                 </span>
                               </a>
                               
@@ -23389,7 +23427,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of Goldrinn</span>
                                 <span class="ms-auto text-danger">
-                                  -1.16%
+                                  -0.94%
                                 </span>
                               </a>
                               
@@ -23438,7 +23476,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Keeper of the Grove</small><br />
                         <small class="text-success">
-                          0.33%
+                          0.49%
                         </small>
                       </a>
                     </div>
@@ -23450,7 +23488,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Elune&#39;s Chosen</small><br />
                         <small class="text-danger">
-                          -0.33%
+                          -0.49%
                         </small>
                       </a>
                     </div>
@@ -23625,7 +23663,7 @@
                                 Bounteous Bloom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.37%
+                                +0.54%
                               </span>
                             </a>
                             
@@ -23647,7 +23685,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Power of the Dream</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -23661,7 +23699,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Protective Growth</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -23690,7 +23728,7 @@
                                 The Light of Elune
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.37%
+                                -0.54%
                               </span>
                             </a>
                             
@@ -23710,7 +23748,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Affinity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.54%
                                 </span>
                               </a>
                               
@@ -23723,7 +23761,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Eternal Moon</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.54%
                                 </span>
                               </a>
                               
@@ -23784,7 +23822,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Nature&#39;s Balance</span>
                                 <span class="ms-auto text-success">
-                                  +0.65%
+                                  +0.73%
                                 </span>
                               </a>
                               
@@ -23798,7 +23836,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Astronomical Impact</span>
                                 <span class="ms-auto text-success">
-                                  +0.45%
+                                  +0.68%
                                 </span>
                               </a>
                               
@@ -23827,7 +23865,7 @@
                                 Aetherial Kindling
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.65%
+                                -0.78%
                               </span>
                             </a>
                             
@@ -23847,7 +23885,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Umbral Inspiration</span>
                                 <span class="ms-auto text-danger">
-                                  -0.55%
+                                  -0.72%
                                 </span>
                               </a>
                               
@@ -23860,7 +23898,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Twin Moons</span>
                                 <span class="ms-auto text-danger">
-                                  -0.45%
+                                  -0.52%
                                 </span>
                               </a>
                               
@@ -25030,7 +25068,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -25256,6 +25295,9 @@
 
       const raw = [
         
+    46791
+      , 
+    
     137321
       , 
     
@@ -25263,9 +25305,6 @@
       , 
     
     7080
-      , 
-    
-    46791
       
     
 ];
@@ -25523,6 +25562,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

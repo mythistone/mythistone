@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Unholy Death Knight Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Unholy Death Knight, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:21:13.">
+    content="Discover the most popular Mythic+ build for Unholy Death Knight, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:15:12.">
   <link rel="canonical" href="https://mythistone.com/classes/Dps/Unholy_Death Knight">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Dps/Unholy_Death Knight">
   <meta property="og:title" content="Unholy Death Knight Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Unholy Death Knight Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Unholy Death Knight Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Unholy icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Unholy Death Knight Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Unholy Death Knight—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Unholy Death Knight—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:21:13"
+  "dateModified": "23/09/2025, 20:15:12"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Dps">Dps</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-DeathKnight-text">Unholy Death Knight </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="114 K seen in 2.3 M total runs">Overall
-                  Played: 4.86%</h4>
+                  title="114 K seen in 2.4 M total runs">Overall
+                  Played: 4.71%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612073.658725>Last Update:</span>
+                    data-timestamp=1758658512.549427>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612073.658725>Last Update</span>
+                    data-timestamp=1758658512.549427>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1305,7 +1345,7 @@
               title="min: 73, max: 44.2 K, avg: 19.7 K"
               tabindex="0" role="button"
               aria-label="min 73, max 44.2 K, avg: 19.7 K">
-              32.26%
+              32.27%
             </div>
             
           </div>
@@ -1342,7 +1382,7 @@
               title="min: 113, max: 31.8 K, avg: 18.3 K"
               tabindex="0" role="button"
               aria-label="min 113, max 31.8 K, avg: 18.3 K">
-              62.07%
+              62.13%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 28 K, avg: 11 K"
               tabindex="0" role="button"
               aria-label="min 0, max 28 K, avg: 11 K">
-              20.89%
+              20.93%
             </div>
             
           </div>
@@ -1413,10 +1453,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 25.5 K, avg: 2 K"
+              title="min: 0, max: 27.7 K, avg: 2 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 25.5 K, avg: 2 K">
-              2.54%
+              aria-label="min 0, max 27.7 K, avg: 2 K">
+              2.52%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">764.2 K</div>
+            <div class="h5 mb-0">765 K</div>
             
           </div>
         </div>
@@ -1586,7 +1626,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">659</div>
+            <div class="h5 mb-0">657</div>
             
           </div>
         </div>
@@ -1863,8 +1903,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=246283?bonus=6652:10016:10255:10383:10390:12239:12353:12365&spec=252&ench=7933&gems=213491"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353:12365&spec=252&ench=7933&gems=213491"
+      href="https://www.wowhead.com/item=246283?bonus=6652:10022:10255:10383:10390:12239:12355:12921&spec=252&ench=7933"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:12239:12355:12921&spec=252&ench=7933"
       >
       <img src="/data/icons/inv_plate_oribosdungeon_c_01_helm.png" />
     </a>
@@ -1872,8 +1912,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=246283?bonus=6652:10016:10255:10383:10390:12239:12353:12365&spec=252&ench=7933&gems=213491 "
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353:12365&spec=252&ench=7933&gems=213491"
+      href="https://www.wowhead.com/item=246283?bonus=6652:10022:10255:10383:10390:12239:12355:12921&spec=252&ench=7933"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:12239:12355:12921&spec=252&ench=7933"
       data-wh-rename-link="true" >
       <p class="mb-1">Crown of Absolute Command</p>
     </a>
@@ -1893,28 +1933,6 @@
         </div>
       </a>
       
-      
-      <div class="d-flex align-items-center gap-1 flex-nowrap">
-        
-        <a target="_blank" href="https://www.wowhead.com/item=213491&spec=252" >
-          <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
-            
-
-            <!-- Base icon -->
-            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color2_2.png" alt=""
-              class="position-absolute top-0 start-0 border border-quality-3 "
-              style="width:100%; height:100%; object-fit:contain;">
-
-            
-            <!-- Overlay icon -->
-            <img src="/data/icons/crafting-quality-3.png" alt=""
-              class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
-            
-          </div>
-
-        </a>
-        
-      </div>
       
     </div>
     <div>
@@ -3911,8 +3929,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222817?bonus=&spec=252"
-      data-wowhead="bonus=&spec=252"
+      href="https://www.wowhead.com/item=222817?bonus=8793:8902:8960:9627:9633:10222:10421:11144:11303&spec=252&ench=7403"
+      data-wowhead="bonus=8793:8902:8960:9627:9633:10222:10421:11144:11303&spec=252&ench=7403"
       >
       <img src="/data/icons/inv_cloth_outdoorarathor_d_01_cape.png" />
     </a>
@@ -3920,14 +3938,66 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=222817?bonus=&spec=252"
-      data-wowhead="bonus=&spec=252"
+      href="https://www.wowhead.com/item=222817?bonus=8793:8902:8960:9627:9633:10222:10421:11144:11303&spec=252&ench=7403"
+      data-wowhead="bonus=8793:8902:8960:9627:9633:10222:10421:11144:11303&spec=252&ench=7403"
       data-wh-rename-link="true" >
       <p class="mb-1">Consecrated Cloak</p>
     </a>
     <div class="d-flex align-items-center gap-1 flex-nowrap">
       
+      <!-- embellishment icon -->
+      <a target="_blank" href="https://www.wowhead.com/item=222870&spec=252" >
+        <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
+          <!-- Base icon -->
+          
+          <img src="/data/icons/inv_10_tailoring_tailoringconsumable_color2.png" alt=""
+            class="position-absolute top-0 start-0 border border-quality-3 "
+            style="width:100%; height:100%; object-fit:contain;">
+
+          
+          <!-- Overlay icon -->
+          <img src="/data/icons/crafting-quality-3.png" alt=""
+            class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
+          
+        </div>
+
+      </a>
       
+      
+      <a target="_blank" href="https://www.wowhead.com/item=222584&spec=252" >
+        
+
+        <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
+          <!-- Base icon -->
+          <img src="/data/icons/inv_10_inscription2_repcontracts_scroll_02_uprez_color2.png" alt=""
+            class="position-absolute top-0 start-0 border border-quality-2 "
+            style="width:100%; height:100%; object-fit:contain;">
+
+          
+          <!-- Overlay icon -->
+          <img src="/data/icons/crafting-quality-3.png" alt=""
+            class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
+          
+        </div>
+
+      </a>
+      
+      
+      <a target="_blank"
+        href="https://www.wowhead.com/item=223731&spec=252" >
+        <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
+          
+          <!-- Base icon -->
+          <img src="/data/icons/inv_misc_enchantedscroll.png" alt=""
+            class="position-absolute top-0 start-0 border border-quality-3 "
+            style="width:100%; height:100%; object-fit:contain;">
+          
+          <!-- Overlay icon -->
+          <img src="/data/icons/crafting-quality-3.png" alt=""
+            class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
+          
+        </div>
+      </a>
       
       
     </div>
@@ -17645,7 +17715,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="61302 out of 274420 gems" class="mb-0">
+                                  title="62476 out of 281233 gems" class="mb-0">
                                    22 % </p>
                               </div>
                             </div>
@@ -17706,7 +17776,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="44234 out of 274420 gems" class="mb-0">
+                                  title="45803 out of 281233 gems" class="mb-0">
                                    16 % </p>
                               </div>
                             </div>
@@ -17767,7 +17837,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="41741 out of 274420 gems" class="mb-0">
+                                  title="42661 out of 281233 gems" class="mb-0">
                                    15 % </p>
                               </div>
                             </div>
@@ -17828,7 +17898,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="40497 out of 274420 gems" class="mb-0">
+                                  title="41521 out of 281233 gems" class="mb-0">
                                    15 % </p>
                               </div>
                             </div>
@@ -17882,7 +17952,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="25310 out of 274420 gems" class="mb-0">
+                                  title="25993 out of 281233 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -17920,7 +17990,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="15470 out of 274420 gems" class="mb-0">
+                                  title="15842 out of 281233 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -17981,7 +18051,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="13380 out of 274420 gems" class="mb-0">
+                                  title="13627 out of 281233 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18019,7 +18089,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="13232 out of 274420 gems" class="mb-0">
+                                  title="13617 out of 281233 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18080,7 +18150,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="10149 out of 274420 gems" class="mb-0">
+                                  title="10385 out of 281233 gems" class="mb-0">
                                    4 % </p>
                               </div>
                             </div>
@@ -18118,7 +18188,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="9105 out of 274420 gems" class="mb-0">
+                                  title="9308 out of 281233 gems" class="mb-0">
                                    3 % </p>
                               </div>
                             </div>
@@ -19264,14 +19334,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -19318,7 +19386,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-success">
-                          0.41%
+                          0.54%
                         </small>
                       </a>
                     </div>
@@ -19330,7 +19398,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-danger">
-                          -0.41%
+                          -0.54%
                         </small>
                       </a>
                     </div>
@@ -19505,7 +19573,7 @@
                                 Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.46%
+                                +0.6%
                               </span>
                             </a>
                             
@@ -19527,7 +19595,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-success">
-                                  +0.46%
+                                  +0.6%
                                 </span>
                               </a>
                               
@@ -19541,7 +19609,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-success">
-                                  +0.46%
+                                  +0.6%
                                 </span>
                               </a>
                               
@@ -19570,7 +19638,7 @@
                                 Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.46%
+                                -0.6%
                               </span>
                             </a>
                             
@@ -19590,7 +19658,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-danger">
-                                  -0.46%
+                                  -0.6%
                                 </span>
                               </a>
                               
@@ -19603,7 +19671,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-danger">
-                                  -0.46%
+                                  -0.6%
                                 </span>
                               </a>
                               
@@ -19642,7 +19710,7 @@
                                 Rotten Touch
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.74%
+                                +1.7%
                               </span>
                             </a>
                             
@@ -19664,7 +19732,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Morbidity</span>
                                 <span class="ms-auto text-success">
-                                  +0.72%
+                                  +0.93%
                                 </span>
                               </a>
                               
@@ -19678,7 +19746,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Superstrain</span>
                                 <span class="ms-auto text-success">
-                                  +0.67%
+                                  +0.89%
                                 </span>
                               </a>
                               
@@ -19707,7 +19775,7 @@
                                 Commander of the Dead
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.82%
+                                -1.03%
                               </span>
                             </a>
                             
@@ -19721,26 +19789,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455135?spec=252"
+                                href="https://www.wowhead.com/spell=377440?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_warlock_coil2.png" alt=""
+                                <img src="/data/icons/ability_deathknight_decomposingaura.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Menacing Magus</span>
+                                <span class="ms-2">Unholy Aura</span>
                                 <span class="ms-auto text-danger">
-                                  -0.7%
+                                  -0.88%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207264?spec=252"
+                                href="https://www.wowhead.com/spell=455135?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_infectedwound.png" alt=""
+                                <img src="/data/icons/ability_warlock_coil2.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Bursting Sores</span>
+                                <span class="ms-2">Menacing Magus</span>
                                 <span class="ms-auto text-danger">
-                                  -0.69%
+                                  -0.85%
                                 </span>
                               </a>
                               
@@ -19789,7 +19857,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-danger">
-                          -1.3%
+                          -1.19%
                         </small>
                       </a>
                     </div>
@@ -19801,7 +19869,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-success">
-                          1.3%
+                          1.19%
                         </small>
                       </a>
                     </div>
@@ -19976,7 +20044,7 @@
                                 Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.42%
+                                +1.3%
                               </span>
                             </a>
                             
@@ -19998,7 +20066,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-success">
-                                  +1.42%
+                                  +1.3%
                                 </span>
                               </a>
                               
@@ -20012,7 +20080,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-success">
-                                  +1.42%
+                                  +1.3%
                                 </span>
                               </a>
                               
@@ -20041,7 +20109,7 @@
                                 Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.42%
+                                -1.3%
                               </span>
                             </a>
                             
@@ -20061,7 +20129,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-danger">
-                                  -1.42%
+                                  -1.3%
                                 </span>
                               </a>
                               
@@ -20074,7 +20142,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-danger">
-                                  -1.42%
+                                  -1.3%
                                 </span>
                               </a>
                               
@@ -20113,7 +20181,7 @@
                                 Clawing Shadows
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.28%
+                                +1.19%
                               </span>
                             </a>
                             
@@ -20135,7 +20203,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Magus of the Dead</span>
                                 <span class="ms-auto text-success">
-                                  +0.91%
+                                  +0.76%
                                 </span>
                               </a>
                               
@@ -20149,7 +20217,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Summon Gargoyle</span>
                                 <span class="ms-auto text-success">
-                                  +0.68%
+                                  +0.59%
                                 </span>
                               </a>
                               
@@ -20178,7 +20246,7 @@
                                 Ghoulish Frenzy
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.84%
+                                -0.91%
                               </span>
                             </a>
                             
@@ -20198,7 +20266,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Festering Scythe</span>
                                 <span class="ms-auto text-danger">
-                                  -0.8%
+                                  -0.79%
                                 </span>
                               </a>
                               
@@ -20211,7 +20279,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ebon Fever</span>
                                 <span class="ms-auto text-danger">
-                                  -0.4%
+                                  -0.35%
                                 </span>
                               </a>
                               
@@ -20260,7 +20328,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-danger">
-                          -0.01%
+                          -0.07%
                         </small>
                       </a>
                     </div>
@@ -20272,7 +20340,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-success">
-                          0.01%
+                          0.07%
                         </small>
                       </a>
                     </div>
@@ -20437,17 +20505,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=434143?spec=252"
+                              href="https://www.wowhead.com/spell=444074?spec=252"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-392-Hero" aria-expanded="false"
                               aria-controls="gainCol-392-Hero">
-                              <img src="/data/icons/ability_warrior_bloodbath.png" alt=""
+                              <img src="/data/icons/achievement_dungeon_nexusraid_10man.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Infliction of Sorrow">
-                                Infliction of Sorrow
+                              <span class="flex-grow-1 text-truncate" title="Horsemen&#39;s Aid">
+                                Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.02%
+                                +0.05%
                               </span>
                             </a>
                             
@@ -20463,13 +20531,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=434151?spec=252"
+                                href="https://www.wowhead.com/spell=444040?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_warlock_improveddemonictactics.png" alt=""
+                                <img src="/data/icons/inv_ability_rideroftheapocalypsedeathknight_apocalypsenow.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Incite Terror</span>
+                                <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-success">
-                                  +0.02%
+                                  +0.05%
                                 </span>
                               </a>
                               
@@ -20477,13 +20545,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=434157?spec=252"
+                                href="https://www.wowhead.com/spell=444069?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/inv_ragnaros_heart.png" alt=""
+                                <img src="/data/icons/inv_plate_raiddeathknightmythic_o_01helm.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Visceral Strength</span>
+                                <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-success">
-                                  +0.02%
+                                  +0.05%
                                 </span>
                               </a>
                               
@@ -20502,17 +20570,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=444074?spec=252"
+                              href="https://www.wowhead.com/spell=434143?spec=252"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-392-Hero" aria-expanded="false"
                               aria-controls="lossCol-392-Hero">
-                              <img src="/data/icons/achievement_dungeon_nexusraid_10man.png" alt=""
+                              <img src="/data/icons/ability_warrior_bloodbath.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Horsemen&#39;s Aid">
-                                Horsemen&#39;s Aid
+                              <span class="flex-grow-1 text-truncate" title="Infliction of Sorrow">
+                                Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.02%
+                                -0.05%
                               </span>
                             </a>
                             
@@ -20526,26 +20594,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=444040?spec=252"
+                                href="https://www.wowhead.com/spell=434151?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_rideroftheapocalypsedeathknight_apocalypsenow.png" alt=""
+                                <img src="/data/icons/ability_warlock_improveddemonictactics.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Apocalypse Now</span>
+                                <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-danger">
-                                  -0.02%
+                                  -0.05%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=444069?spec=252"
+                                href="https://www.wowhead.com/spell=434157?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/inv_plate_raiddeathknightmythic_o_01helm.png" alt=""
+                                <img src="/data/icons/inv_ragnaros_heart.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Fury of the Horsemen</span>
+                                <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-danger">
-                                  -0.02%
+                                  -0.05%
                                 </span>
                               </a>
                               
@@ -20584,7 +20652,7 @@
                                 Coil of Devastation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.62%
+                                +1.84%
                               </span>
                             </a>
                             
@@ -20606,7 +20674,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">All Will Serve</span>
                                 <span class="ms-auto text-success">
-                                  +1.08%
+                                  +1.24%
                                 </span>
                               </a>
                               
@@ -20614,13 +20682,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=390259?spec=252"
+                                href="https://www.wowhead.com/spell=390275?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_shadow_fumble.png" alt=""
+                                <img src="/data/icons/ability_deathwing_grasping_tendrilsgreen.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Commander of the Dead</span>
+                                <span class="ms-2">Rotten Touch</span>
                                 <span class="ms-auto text-success">
-                                  +0.7%
+                                  +0.86%
                                 </span>
                               </a>
                               
@@ -20649,7 +20717,7 @@
                                 Menacing Magus
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.37%
+                                -1.56%
                               </span>
                             </a>
                             
@@ -20669,7 +20737,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Bursting Sores</span>
                                 <span class="ms-auto text-danger">
-                                  -1.07%
+                                  -1.26%
                                 </span>
                               </a>
                               
@@ -20682,7 +20750,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Festering Scythe</span>
                                 <span class="ms-auto text-danger">
-                                  -0.92%
+                                  -1.06%
                                 </span>
                               </a>
                               
@@ -20731,7 +20799,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-danger">
-                          -0.53%
+                          -0.52%
                         </small>
                       </a>
                     </div>
@@ -20743,7 +20811,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-success">
-                          0.53%
+                          0.52%
                         </small>
                       </a>
                     </div>
@@ -21055,7 +21123,7 @@
                                 Menacing Magus
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.85%
+                                +1.29%
                               </span>
                             </a>
                             
@@ -21071,13 +21139,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207311?spec=252"
+                                href="https://www.wowhead.com/spell=207264?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/warlock_curse_shadow.png" alt=""
+                                <img src="/data/icons/ability_druid_infectedwound.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Clawing Shadows</span>
+                                <span class="ms-2">Bursting Sores</span>
                                 <span class="ms-auto text-success">
-                                  +0.6%
+                                  +0.86%
                                 </span>
                               </a>
                               
@@ -21085,13 +21153,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207264?spec=252"
+                                href="https://www.wowhead.com/spell=455397?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_infectedwound.png" alt=""
+                                <img src="/data/icons/inv_polearm_2h_mawnecromancerboss_d_01_darkblue.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Bursting Sores</span>
+                                <span class="ms-2">Festering Scythe</span>
                                 <span class="ms-auto text-success">
-                                  +0.49%
+                                  +0.8%
                                 </span>
                               </a>
                               
@@ -21120,7 +21188,7 @@
                                 Rotten Touch
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.02%
+                                -1.46%
                               </span>
                             </a>
                             
@@ -21140,7 +21208,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">All Will Serve</span>
                                 <span class="ms-auto text-danger">
-                                  -0.89%
+                                  -1.18%
                                 </span>
                               </a>
                               
@@ -21153,7 +21221,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Coil of Devastation</span>
                                 <span class="ms-auto text-danger">
-                                  -0.49%
+                                  -0.87%
                                 </span>
                               </a>
                               
@@ -21202,7 +21270,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-success">
-                          0.23%
+                          0.17%
                         </small>
                       </a>
                     </div>
@@ -21214,7 +21282,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-danger">
-                          -0.23%
+                          -0.17%
                         </small>
                       </a>
                     </div>
@@ -21389,7 +21457,7 @@
                                 Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.23%
+                                +0.17%
                               </span>
                             </a>
                             
@@ -21411,7 +21479,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-success">
-                                  +0.23%
+                                  +0.17%
                                 </span>
                               </a>
                               
@@ -21425,7 +21493,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-success">
-                                  +0.23%
+                                  +0.17%
                                 </span>
                               </a>
                               
@@ -21454,7 +21522,7 @@
                                 Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.23%
+                                -0.17%
                               </span>
                             </a>
                             
@@ -21474,7 +21542,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-danger">
-                                  -0.23%
+                                  -0.17%
                                 </span>
                               </a>
                               
@@ -21487,7 +21555,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-danger">
-                                  -0.23%
+                                  -0.17%
                                 </span>
                               </a>
                               
@@ -21526,7 +21594,7 @@
                                 Menacing Magus
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.38%
+                                +0.99%
                               </span>
                             </a>
                             
@@ -21542,13 +21610,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207264?spec=252"
+                                href="https://www.wowhead.com/spell=455397?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_infectedwound.png" alt=""
+                                <img src="/data/icons/inv_polearm_2h_mawnecromancerboss_d_01_darkblue.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Bursting Sores</span>
+                                <span class="ms-2">Festering Scythe</span>
                                 <span class="ms-auto text-success">
-                                  +0.51%
+                                  +0.44%
                                 </span>
                               </a>
                               
@@ -21556,13 +21624,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=377440?spec=252"
+                                href="https://www.wowhead.com/spell=390166?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_deathknight_decomposingaura.png" alt=""
+                                <img src="/data/icons/spell_shadow_blackplague.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Unholy Aura</span>
+                                <span class="ms-2">Plague Mastery</span>
                                 <span class="ms-auto text-success">
-                                  +0.5%
+                                  +0.4%
                                 </span>
                               </a>
                               
@@ -21605,26 +21673,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=377592?spec=252"
+                                href="https://www.wowhead.com/spell=316867?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_necro_deathlyecho.png" alt=""
+                                <img src="/data/icons/spell_deathknight_festering_strike.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Morbidity</span>
+                                <span class="ms-2">Improved Festering Strike</span>
                                 <span class="ms-auto text-danger">
-                                  -0.57%
+                                  -0.47%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=390283?spec=252"
+                                href="https://www.wowhead.com/spell=390275?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_deathknight_explode_ghoul.png" alt=""
+                                <img src="/data/icons/ability_deathwing_grasping_tendrilsgreen.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Superstrain</span>
+                                <span class="ms-2">Rotten Touch</span>
                                 <span class="ms-auto text-danger">
-                                  -0.57%
+                                  -0.36%
                                 </span>
                               </a>
                               
@@ -21860,7 +21928,7 @@
                                 Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.6%
+                                +0.61%
                               </span>
                             </a>
                             
@@ -21882,7 +21950,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-success">
-                                  +0.6%
+                                  +0.61%
                                 </span>
                               </a>
                               
@@ -21896,7 +21964,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-success">
-                                  +0.6%
+                                  +0.61%
                                 </span>
                               </a>
                               
@@ -21925,7 +21993,7 @@
                                 Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.6%
+                                -0.61%
                               </span>
                             </a>
                             
@@ -21945,7 +22013,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-danger">
-                                  -0.6%
+                                  -0.61%
                                 </span>
                               </a>
                               
@@ -21958,7 +22026,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-danger">
-                                  -0.6%
+                                  -0.61%
                                 </span>
                               </a>
                               
@@ -22013,13 +22081,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207264?spec=252"
+                                href="https://www.wowhead.com/spell=390259?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_druid_infectedwound.png" alt=""
+                                <img src="/data/icons/spell_shadow_fumble.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Bursting Sores</span>
+                                <span class="ms-2">Commander of the Dead</span>
                                 <span class="ms-auto text-success">
-                                  +0.48%
+                                  +0.49%
                                 </span>
                               </a>
                               
@@ -22062,7 +22130,7 @@
                                 Ghoulish Frenzy
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.4%
+                                -0.57%
                               </span>
                             </a>
                             
@@ -22076,26 +22144,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=207269?spec=252"
+                                href="https://www.wowhead.com/spell=377592?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_shadow_creepingplague.png" alt=""
+                                <img src="/data/icons/spell_necro_deathlyecho.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Ebon Fever</span>
+                                <span class="ms-2">Morbidity</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.42%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=194916?spec=252"
+                                href="https://www.wowhead.com/spell=390283?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_fiegndead.png" alt=""
+                                <img src="/data/icons/spell_deathknight_explode_ghoul.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">All Will Serve</span>
+                                <span class="ms-2">Superstrain</span>
                                 <span class="ms-auto text-danger">
-                                  -0.35%
+                                  -0.42%
                                 </span>
                               </a>
                               
@@ -22144,7 +22212,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-success">
-                          0.99%
+                          0.95%
                         </small>
                       </a>
                     </div>
@@ -22156,7 +22224,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-danger">
-                          -0.99%
+                          -0.95%
                         </small>
                       </a>
                     </div>
@@ -22331,7 +22399,7 @@
                                 Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.11%
+                                +1.05%
                               </span>
                             </a>
                             
@@ -22353,7 +22421,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-success">
-                                  +1.11%
+                                  +1.05%
                                 </span>
                               </a>
                               
@@ -22367,7 +22435,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-success">
-                                  +1.11%
+                                  +1.05%
                                 </span>
                               </a>
                               
@@ -22396,7 +22464,7 @@
                                 Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.11%
+                                -1.05%
                               </span>
                             </a>
                             
@@ -22416,7 +22484,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-danger">
-                                  -1.11%
+                                  -1.05%
                                 </span>
                               </a>
                               
@@ -22429,7 +22497,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-danger">
-                                  -1.11%
+                                  -1.05%
                                 </span>
                               </a>
                               
@@ -22468,7 +22536,7 @@
                                 Ghoulish Frenzy
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.6%
+                                +1.45%
                               </span>
                             </a>
                             
@@ -22484,13 +22552,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=390283?spec=252"
+                                href="https://www.wowhead.com/spell=455397?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_deathknight_explode_ghoul.png" alt=""
+                                <img src="/data/icons/inv_polearm_2h_mawnecromancerboss_d_01_darkblue.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Superstrain</span>
+                                <span class="ms-2">Festering Scythe</span>
                                 <span class="ms-auto text-success">
-                                  +0.47%
+                                  +0.31%
                                 </span>
                               </a>
                               
@@ -22498,13 +22566,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=377592?spec=252"
+                                href="https://www.wowhead.com/spell=390283?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_necro_deathlyecho.png" alt=""
+                                <img src="/data/icons/spell_deathknight_explode_ghoul.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Morbidity</span>
+                                <span class="ms-2">Superstrain</span>
                                 <span class="ms-auto text-success">
-                                  +0.47%
+                                  +0.19%
                                 </span>
                               </a>
                               
@@ -22533,7 +22601,7 @@
                                 Clawing Shadows
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.31%
+                                -1.26%
                               </span>
                             </a>
                             
@@ -22547,26 +22615,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=377440?spec=252"
+                                href="https://www.wowhead.com/spell=390275?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_deathknight_decomposingaura.png" alt=""
+                                <img src="/data/icons/ability_deathwing_grasping_tendrilsgreen.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Unholy Aura</span>
+                                <span class="ms-2">Rotten Touch</span>
                                 <span class="ms-auto text-danger">
-                                  -0.47%
+                                  -0.58%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=390259?spec=252"
+                                href="https://www.wowhead.com/spell=207272?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_shadow_fumble.png" alt=""
+                                <img src="/data/icons/spell_deathknight_thrash_ghoul.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Commander of the Dead</span>
+                                <span class="ms-2">Infected Claws</span>
                                 <span class="ms-auto text-danger">
-                                  -0.46%
+                                  -0.3%
                                 </span>
                               </a>
                               
@@ -22615,7 +22683,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>San&#39;layn</small><br />
                         <small class="text-success">
-                          0.35%
+                          0.25%
                         </small>
                       </a>
                     </div>
@@ -22627,7 +22695,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Rider of the Apocalypse</small><br />
                         <small class="text-danger">
-                          -0.35%
+                          -0.25%
                         </small>
                       </a>
                     </div>
@@ -22802,7 +22870,7 @@
                                 Infliction of Sorrow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.37%
+                                +0.27%
                               </span>
                             </a>
                             
@@ -22824,7 +22892,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Incite Terror</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.27%
                                 </span>
                               </a>
                               
@@ -22838,7 +22906,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Visceral Strength</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.27%
                                 </span>
                               </a>
                               
@@ -22867,7 +22935,7 @@
                                 Horsemen&#39;s Aid
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.37%
+                                -0.27%
                               </span>
                             </a>
                             
@@ -22887,7 +22955,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Apocalypse Now</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.27%
                                 </span>
                               </a>
                               
@@ -22900,7 +22968,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Fury of the Horsemen</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.27%
                                 </span>
                               </a>
                               
@@ -22939,7 +23007,7 @@
                                 Infected Claws
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.77%
+                                +0.78%
                               </span>
                             </a>
                             
@@ -22955,13 +23023,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=390283?spec=252"
+                                href="https://www.wowhead.com/spell=194916?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_deathknight_explode_ghoul.png" alt=""
+                                <img src="/data/icons/ability_fiegndead.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Superstrain</span>
+                                <span class="ms-2">All Will Serve</span>
                                 <span class="ms-auto text-success">
-                                  +0.51%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -22969,13 +23037,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=377592?spec=252"
+                                href="https://www.wowhead.com/spell=390283?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_necro_deathlyecho.png" alt=""
+                                <img src="/data/icons/spell_deathknight_explode_ghoul.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Morbidity</span>
+                                <span class="ms-2">Superstrain</span>
                                 <span class="ms-auto text-success">
-                                  +0.5%
+                                  +0.47%
                                 </span>
                               </a>
                               
@@ -22994,17 +23062,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=207311?spec=252"
+                              href="https://www.wowhead.com/spell=152280?spec=252"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-542-Spec" aria-expanded="false"
                               aria-controls="lossCol-542-Spec">
-                              <img src="/data/icons/warlock_curse_shadow.png" alt=""
+                              <img src="/data/icons/spell_deathknight_defile.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Clawing Shadows">
-                                Clawing Shadows
+                              <span class="flex-grow-1 text-truncate" title="Defile">
+                                Defile
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.71%
+                                -0.65%
                               </span>
                             </a>
                             
@@ -23018,26 +23086,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=377587?spec=252"
+                                href="https://www.wowhead.com/spell=207311?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/ability_warlock_baneofhavoc.png" alt=""
+                                <img src="/data/icons/warlock_curse_shadow.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Ghoulish Frenzy</span>
+                                <span class="ms-2">Clawing Shadows</span>
                                 <span class="ms-auto text-danger">
-                                  -0.68%
+                                  -0.63%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=152280?spec=252"
+                                href="https://www.wowhead.com/spell=390270?spec=252"
                                 target="_blank">
-                                <img src="/data/icons/spell_deathknight_defile.png" alt=""
+                                <img src="/data/icons/ability_malkorok_blightofyshaarj_green.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Defile</span>
+                                <span class="ms-2">Coil of Devastation</span>
                                 <span class="ms-auto text-danger">
-                                  -0.62%
+                                  -0.55%
                                 </span>
                               </a>
                               
@@ -24207,7 +24275,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -24433,6 +24502,9 @@
 
       const raw = [
         
+    22033
+      , 
+    
     59168
       , 
     
@@ -24440,9 +24512,6 @@
       , 
     
     2289
-      , 
-    
-    22033
       
     
 ];
@@ -24700,6 +24769,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Marksmanship Hunter Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Marksmanship Hunter, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:26:34.">
+    content="Discover the most popular Mythic+ build for Marksmanship Hunter, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:19:52.">
   <link rel="canonical" href="https://mythistone.com/classes/Dps/Marksmanship_Hunter">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Dps/Marksmanship_Hunter">
   <meta property="og:title" content="Marksmanship Hunter Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Marksmanship Hunter Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Marksmanship Hunter Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Marksmanship icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Marksmanship Hunter Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Marksmanship Hunter—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Marksmanship Hunter—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:26:34"
+  "dateModified": "23/09/2025, 20:19:52"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Dps">Dps</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Hunter-text">Marksmanship Hunter </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="356.6 K seen in 2.3 M total runs">Overall
-                  Played: 15.21%</h4>
+                  title="356.6 K seen in 2.4 M total runs">Overall
+                  Played: 14.71%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612394.566767>Last Update:</span>
+                    data-timestamp=1758658792.231392>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612394.566767>Last Update</span>
+                    data-timestamp=1758658792.231392>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-agility py-1 px-2">AGILITY</div>
 
             
-            <div class="h5 mb-0">94.7 K</div>
+            <div class="h5 mb-0">94.8 K</div>
             
           </div>
         </div>
@@ -1302,10 +1342,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 37.1 K, avg: 24.5 K"
+              title="min: 0, max: 37.1 K, avg: 24.6 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 37.1 K, avg: 24.5 K">
-              48.48%
+              aria-label="min 0, max 37.1 K, avg: 24.6 K">
+              48.53%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 31.8 K, avg: 11.1 K"
               tabindex="0" role="button"
               aria-label="min 0, max 31.8 K, avg: 11.1 K">
-              34.47%
+              34.44%
             </div>
             
           </div>
@@ -1416,7 +1456,7 @@
               title="min: 0, max: 30.5 K, avg: 3.4 K"
               tabindex="0" role="button"
               aria-label="min 0, max 30.5 K, avg: 3.4 K">
-              4.38%
+              4.40%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">669.1 K</div>
+            <div class="h5 mb-0">669.8 K</div>
             
           </div>
         </div>
@@ -1553,7 +1593,7 @@
               title="min: 0, max: 7 K, avg: 1.1 K"
               tabindex="0" role="button"
               aria-label="min 0, max 7 K, avg: 1.1 K">
-              1.04%
+              1.05%
             </div>
             
           </div>
@@ -1586,7 +1626,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">489</div>
+            <div class="h5 mb-0">490</div>
             
           </div>
         </div>
@@ -2345,8 +2385,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185842?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=254&gems=213458:213458"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=254&gems=213458:213458"
+      href="https://www.wowhead.com/item=185842?bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=254&gems=213458:213458"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=254&gems=213458:213458"
       onclick="event.preventDefault();" >
       <img src="/data/icons/inv_misc_silverjadenecklace.png" />
     </a>
@@ -2354,8 +2394,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185842?bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=254&gems=213458:213458 "
-      data-wowhead="bonus=6652:10016:10255:10383:10390:10396:10879:12353&spec=254&gems=213458:213458"
+      href="https://www.wowhead.com/item=185842?bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=254&gems=213458:213458 "
+      data-wowhead="bonus=6652:10022:10255:10383:10390:10396:10879:12355&spec=254&gems=213458:213458"
       data-wh-rename-link="true" onclick="event.preventDefault();" >
       <p class="mb-1">Ornately Engraved Amplifier</p>
     </a>
@@ -4771,8 +4811,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=242488?bonus=3215:6652:10255:10383:10390:12239:12361&spec=254&ench=7364"
-      data-wowhead="bonus=3215:6652:10255:10383:10390:12239:12361&spec=254&ench=7364"
+      href="https://www.wowhead.com/item=242488?bonus=3196:6652:10255:10383:10390:12239:12353&spec=254&ench=7364"
+      data-wowhead="bonus=3196:6652:10255:10383:10390:12239:12353&spec=254&ench=7364"
       >
       <img src="/data/icons/inv_chest_mail_outdoorethereal_c_01.png" />
     </a>
@@ -4780,8 +4820,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=242488?bonus=3215:6652:10255:10383:10390:12239:12361&spec=254&ench=7364"
-      data-wowhead="bonus=3215:6652:10255:10383:10390:12239:12361&spec=254&ench=7364"
+      href="https://www.wowhead.com/item=242488?bonus=3196:6652:10255:10383:10390:12239:12353&spec=254&ench=7364"
+      data-wowhead="bonus=3196:6652:10255:10383:10390:12239:12353&spec=254&ench=7364"
       data-wh-rename-link="true" >
       <p class="mb-1">Tunic of Sworn Revenge</p>
     </a>
@@ -6377,8 +6417,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=156085?bonus=7756:10255:10383:11409:12239:12353&spec=254"
-      data-wowhead="bonus=7756:10255:10383:11409:12239:12353&spec=254"
+      href="https://www.wowhead.com/item=156085?bonus=7756:8902:10255:10383:11409:12239:12353&spec=254"
+      data-wowhead="bonus=7756:8902:10255:10383:11409:12239:12353&spec=254"
       >
       <img src="/data/icons/inv_gauntlets_25.png" />
     </a>
@@ -6386,8 +6426,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=156085?bonus=7756:10255:10383:11409:12239:12353&spec=254"
-      data-wowhead="bonus=7756:10255:10383:11409:12239:12353&spec=254"
+      href="https://www.wowhead.com/item=156085?bonus=7756:8902:10255:10383:11409:12239:12353&spec=254"
+      data-wowhead="bonus=7756:8902:10255:10383:11409:12239:12353&spec=254"
       data-wh-rename-link="true" >
       <p class="mb-1">Valorous Scourgestalker Handguards</p>
     </a>
@@ -17665,7 +17705,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="298990 out of 882183 gems" class="mb-0">
+                                  title="305737 out of 902572 gems" class="mb-0">
                                    34 % </p>
                               </div>
                             </div>
@@ -17726,7 +17766,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="111601 out of 882183 gems" class="mb-0">
+                                  title="114463 out of 902572 gems" class="mb-0">
                                    13 % </p>
                               </div>
                             </div>
@@ -17764,7 +17804,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="96959 out of 882183 gems" class="mb-0">
+                                  title="99333 out of 902572 gems" class="mb-0">
                                    11 % </p>
                               </div>
                             </div>
@@ -17818,7 +17858,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="96500 out of 882183 gems" class="mb-0">
+                                  title="98904 out of 902572 gems" class="mb-0">
                                    11 % </p>
                               </div>
                             </div>
@@ -17879,7 +17919,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="86234 out of 882183 gems" class="mb-0">
+                                  title="88200 out of 902572 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -17940,7 +17980,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="74644 out of 882183 gems" class="mb-0">
+                                  title="75877 out of 902572 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18001,7 +18041,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="50995 out of 882183 gems" class="mb-0">
+                                  title="52403 out of 902572 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -18062,7 +18102,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="23467 out of 882183 gems" class="mb-0">
+                                  title="24003 out of 902572 gems" class="mb-0">
                                    3 % </p>
                               </div>
                             </div>
@@ -18116,7 +18156,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="21556 out of 882183 gems" class="mb-0">
+                                  title="21991 out of 902572 gems" class="mb-0">
                                    2 % </p>
                               </div>
                             </div>
@@ -18177,7 +18217,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="21237 out of 882183 gems" class="mb-0">
+                                  title="21661 out of 902572 gems" class="mb-0">
                                    2 % </p>
                               </div>
                             </div>
@@ -19380,7 +19420,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="9498 runs with this pet" class="mb-0">
+                                  title="9704 runs with this pet" class="mb-0">
                                   3%
                                 </p>
                               </div>
@@ -19409,7 +19449,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="7758 runs with this pet" class="mb-0">
+                                  title="7920 runs with this pet" class="mb-0">
                                   2%
                                 </p>
                               </div>
@@ -19438,7 +19478,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="6167 runs with this pet" class="mb-0">
+                                  title="6299 runs with this pet" class="mb-0">
                                   2%
                                 </p>
                               </div>
@@ -19467,7 +19507,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="5561 runs with this pet" class="mb-0">
+                                  title="5671 runs with this pet" class="mb-0">
                                   2%
                                 </p>
                               </div>
@@ -19496,7 +19536,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="4866 runs with this pet" class="mb-0">
+                                  title="4962 runs with this pet" class="mb-0">
                                   1%
                                 </p>
                               </div>
@@ -19525,7 +19565,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="4865 runs with this pet" class="mb-0">
+                                  title="4948 runs with this pet" class="mb-0">
                                   1%
                                 </p>
                               </div>
@@ -19554,7 +19594,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="4549 runs with this pet" class="mb-0">
+                                  title="4672 runs with this pet" class="mb-0">
                                   1%
                                 </p>
                               </div>
@@ -19583,7 +19623,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="4065 runs with this pet" class="mb-0">
+                                  title="4149 runs with this pet" class="mb-0">
                                   1%
                                 </p>
                               </div>
@@ -19612,7 +19652,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="3811 runs with this pet" class="mb-0">
+                                  title="3897 runs with this pet" class="mb-0">
                                   1%
                                 </p>
                               </div>
@@ -19641,7 +19681,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="3690 runs with this pet" class="mb-0">
+                                  title="3758 runs with this pet" class="mb-0">
                                   1%
                                 </p>
                               </div>
@@ -19690,14 +19730,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -19744,7 +19782,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-success">
-                          1.79%
+                          1.76%
                         </small>
                       </a>
                     </div>
@@ -19756,7 +19794,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-danger">
-                          -1.79%
+                          -1.76%
                         </small>
                       </a>
                     </div>
@@ -19931,7 +19969,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.99%
+                                +1.96%
                               </span>
                             </a>
                             
@@ -19953,7 +19991,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-success">
-                                  +1.99%
+                                  +1.96%
                                 </span>
                               </a>
                               
@@ -19967,7 +20005,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-success">
-                                  +1.99%
+                                  +1.96%
                                 </span>
                               </a>
                               
@@ -19996,7 +20034,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.99%
+                                -1.96%
                               </span>
                             </a>
                             
@@ -20016,7 +20054,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-danger">
-                                  -1.99%
+                                  -1.96%
                                 </span>
                               </a>
                               
@@ -20029,7 +20067,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-danger">
-                                  -1.99%
+                                  -1.96%
                                 </span>
                               </a>
                               
@@ -20068,7 +20106,7 @@
                                 Kill Zone
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.91%
+                                +1.85%
                               </span>
                             </a>
                             
@@ -20090,7 +20128,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Small Game Hunter</span>
                                 <span class="ms-auto text-success">
-                                  +1.81%
+                                  +1.69%
                                 </span>
                               </a>
                               
@@ -20104,7 +20142,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Volley</span>
                                 <span class="ms-auto text-success">
-                                  +1.58%
+                                  +1.53%
                                 </span>
                               </a>
                               
@@ -20133,7 +20171,7 @@
                                 Windrunner Quiver
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.99%
+                                -1.86%
                               </span>
                             </a>
                             
@@ -20153,7 +20191,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Improved Deathblow</span>
                                 <span class="ms-auto text-danger">
-                                  -1.95%
+                                  -1.83%
                                 </span>
                               </a>
                               
@@ -20166,7 +20204,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Unmatched Precision</span>
                                 <span class="ms-auto text-danger">
-                                  -1.95%
+                                  -1.82%
                                 </span>
                               </a>
                               
@@ -20215,7 +20253,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-danger">
-                          -2.1%
+                          -2.36%
                         </small>
                       </a>
                     </div>
@@ -20227,7 +20265,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-success">
-                          2.1%
+                          2.36%
                         </small>
                       </a>
                     </div>
@@ -20402,7 +20440,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.31%
+                                +2.6%
                               </span>
                             </a>
                             
@@ -20424,7 +20462,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-success">
-                                  +2.31%
+                                  +2.6%
                                 </span>
                               </a>
                               
@@ -20438,7 +20476,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-success">
-                                  +2.31%
+                                  +2.6%
                                 </span>
                               </a>
                               
@@ -20467,7 +20505,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.31%
+                                -2.6%
                               </span>
                             </a>
                             
@@ -20487,7 +20525,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-danger">
-                                  -2.31%
+                                  -2.6%
                                 </span>
                               </a>
                               
@@ -20500,7 +20538,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-danger">
-                                  -2.31%
+                                  -2.6%
                                 </span>
                               </a>
                               
@@ -20529,17 +20567,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=1232955?spec=254"
+                              href="https://www.wowhead.com/spell=473523?spec=254"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-391-Spec" aria-expanded="false"
                               aria-controls="gainCol-391-Spec">
-                              <img src="/data/icons/hunter_pvp_snipershot.png" alt=""
+                              <img src="/data/icons/inv_quiver_1h_hunter_c_01_green.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Unmatched Precision">
-                                Unmatched Precision
+                              <span class="flex-grow-1 text-truncate" title="Windrunner Quiver">
+                                Windrunner Quiver
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.36%
+                                +2.53%
                               </span>
                             </a>
                             
@@ -20555,13 +20593,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=473523?spec=254"
+                                href="https://www.wowhead.com/spell=471427?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/inv_quiver_1h_hunter_c_01_green.png" alt=""
+                                <img src="/data/icons/inv_ammo_bullet_05.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Windrunner Quiver</span>
+                                <span class="ms-2">Improved Streamline</span>
                                 <span class="ms-auto text-success">
-                                  +2.36%
+                                  +2.53%
                                 </span>
                               </a>
                               
@@ -20569,13 +20607,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=471427?spec=254"
+                                href="https://www.wowhead.com/spell=1232955?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/inv_ammo_bullet_05.png" alt=""
+                                <img src="/data/icons/hunter_pvp_snipershot.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Improved Streamline</span>
+                                <span class="ms-2">Unmatched Precision</span>
                                 <span class="ms-auto text-success">
-                                  +2.36%
+                                  +2.52%
                                 </span>
                               </a>
                               
@@ -20604,7 +20642,7 @@
                                 Volley
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.29%
+                                -2.43%
                               </span>
                             </a>
                             
@@ -20624,7 +20662,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Small Game Hunter</span>
                                 <span class="ms-auto text-danger">
-                                  -2.23%
+                                  -2.39%
                                 </span>
                               </a>
                               
@@ -20637,7 +20675,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Kill Zone</span>
                                 <span class="ms-auto text-danger">
-                                  -2.16%
+                                  -2.35%
                                 </span>
                               </a>
                               
@@ -20686,7 +20724,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-danger">
-                          -2.69%
+                          -2.36%
                         </small>
                       </a>
                     </div>
@@ -20698,7 +20736,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-success">
-                          2.69%
+                          2.36%
                         </small>
                       </a>
                     </div>
@@ -20873,7 +20911,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.96%
+                                +2.6%
                               </span>
                             </a>
                             
@@ -20895,7 +20933,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-success">
-                                  +2.96%
+                                  +2.6%
                                 </span>
                               </a>
                               
@@ -20909,7 +20947,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-success">
-                                  +2.96%
+                                  +2.6%
                                 </span>
                               </a>
                               
@@ -20938,7 +20976,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.96%
+                                -2.6%
                               </span>
                             </a>
                             
@@ -20958,7 +20996,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-danger">
-                                  -2.96%
+                                  -2.6%
                                 </span>
                               </a>
                               
@@ -20971,7 +21009,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-danger">
-                                  -2.96%
+                                  -2.6%
                                 </span>
                               </a>
                               
@@ -21010,7 +21048,7 @@
                                 Headshot
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.72%
+                                +2.44%
                               </span>
                             </a>
                             
@@ -21026,13 +21064,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384790?spec=254"
+                                href="https://www.wowhead.com/spell=378769?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/ability_hunter_razorwire.png" alt=""
+                                <img src="/data/icons/ability_hunter_runningshot.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Razor Fragments</span>
+                                <span class="ms-2">Improved Deathblow</span>
                                 <span class="ms-auto text-success">
-                                  +2.69%
+                                  +2.43%
                                 </span>
                               </a>
                               
@@ -21040,13 +21078,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=378769?spec=254"
+                                href="https://www.wowhead.com/spell=473523?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/ability_hunter_runningshot.png" alt=""
+                                <img src="/data/icons/inv_quiver_1h_hunter_c_01_green.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Improved Deathblow</span>
+                                <span class="ms-2">Windrunner Quiver</span>
                                 <span class="ms-auto text-success">
-                                  +2.68%
+                                  +2.43%
                                 </span>
                               </a>
                               
@@ -21075,7 +21113,7 @@
                                 Kill Zone
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.65%
+                                -2.4%
                               </span>
                             </a>
                             
@@ -21095,7 +21133,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Small Game Hunter</span>
                                 <span class="ms-auto text-danger">
-                                  -2.64%
+                                  -2.37%
                                 </span>
                               </a>
                               
@@ -21108,7 +21146,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Volley</span>
                                 <span class="ms-auto text-danger">
-                                  -2.41%
+                                  -2.19%
                                 </span>
                               </a>
                               
@@ -21157,7 +21195,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-success">
-                          3.78%
+                          3.99%
                         </small>
                       </a>
                     </div>
@@ -21169,7 +21207,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-danger">
-                          -3.78%
+                          -3.99%
                         </small>
                       </a>
                     </div>
@@ -21344,7 +21382,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +4.18%
+                                +4.41%
                               </span>
                             </a>
                             
@@ -21366,7 +21404,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-success">
-                                  +4.18%
+                                  +4.41%
                                 </span>
                               </a>
                               
@@ -21380,7 +21418,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-success">
-                                  +4.18%
+                                  +4.41%
                                 </span>
                               </a>
                               
@@ -21409,7 +21447,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -4.18%
+                                -4.41%
                               </span>
                             </a>
                             
@@ -21429,7 +21467,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-danger">
-                                  -4.18%
+                                  -4.41%
                                 </span>
                               </a>
                               
@@ -21442,7 +21480,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-danger">
-                                  -4.18%
+                                  -4.41%
                                 </span>
                               </a>
                               
@@ -21471,17 +21509,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=260243?spec=254"
+                              href="https://www.wowhead.com/spell=459921?spec=254"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-499-Spec" aria-expanded="false"
                               aria-controls="gainCol-499-Spec">
-                              <img src="/data/icons/ability_hunter_rapidkilling.png" alt=""
+                              <img src="/data/icons/spell_hunter_focusingshot.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Volley">
-                                Volley
+                              <span class="flex-grow-1 text-truncate" title="Kill Zone">
+                                Kill Zone
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.9%
+                                +4.0%
                               </span>
                             </a>
                             
@@ -21497,13 +21535,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=459921?spec=254"
+                                href="https://www.wowhead.com/spell=260243?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/spell_hunter_focusingshot.png" alt=""
+                                <img src="/data/icons/ability_hunter_rapidkilling.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Kill Zone</span>
+                                <span class="ms-2">Volley</span>
                                 <span class="ms-auto text-success">
-                                  +3.87%
+                                  +3.97%
                                 </span>
                               </a>
                               
@@ -21517,7 +21555,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Small Game Hunter</span>
                                 <span class="ms-auto text-success">
-                                  +3.72%
+                                  +3.88%
                                 </span>
                               </a>
                               
@@ -21546,7 +21584,7 @@
                                 Headshot
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -3.96%
+                                -4.14%
                               </span>
                             </a>
                             
@@ -21566,7 +21604,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Unmatched Precision</span>
                                 <span class="ms-auto text-danger">
-                                  -3.94%
+                                  -4.14%
                                 </span>
                               </a>
                               
@@ -21579,7 +21617,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Windrunner Quiver</span>
                                 <span class="ms-auto text-danger">
-                                  -3.92%
+                                  -4.11%
                                 </span>
                               </a>
                               
@@ -21628,7 +21666,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-success">
-                          1.64%
+                          1.57%
                         </small>
                       </a>
                     </div>
@@ -21640,7 +21678,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-danger">
-                          -1.64%
+                          -1.57%
                         </small>
                       </a>
                     </div>
@@ -21815,7 +21853,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.84%
+                                +1.76%
                               </span>
                             </a>
                             
@@ -21837,7 +21875,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-success">
-                                  +1.84%
+                                  +1.76%
                                 </span>
                               </a>
                               
@@ -21851,7 +21889,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-success">
-                                  +1.84%
+                                  +1.76%
                                 </span>
                               </a>
                               
@@ -21880,7 +21918,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.84%
+                                -1.76%
                               </span>
                             </a>
                             
@@ -21900,7 +21938,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-danger">
-                                  -1.84%
+                                  -1.76%
                                 </span>
                               </a>
                               
@@ -21913,7 +21951,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-danger">
-                                  -1.84%
+                                  -1.76%
                                 </span>
                               </a>
                               
@@ -21952,7 +21990,7 @@
                                 Small Game Hunter
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.67%
+                                +1.6%
                               </span>
                             </a>
                             
@@ -21974,7 +22012,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Kill Zone</span>
                                 <span class="ms-auto text-success">
-                                  +1.65%
+                                  +1.6%
                                 </span>
                               </a>
                               
@@ -21988,7 +22026,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Double Tap</span>
                                 <span class="ms-auto text-success">
-                                  +1.51%
+                                  +1.41%
                                 </span>
                               </a>
                               
@@ -22017,7 +22055,7 @@
                                 Unmatched Precision
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.84%
+                                -1.76%
                               </span>
                             </a>
                             
@@ -22037,7 +22075,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Razor Fragments</span>
                                 <span class="ms-auto text-danger">
-                                  -1.81%
+                                  -1.73%
                                 </span>
                               </a>
                               
@@ -22050,7 +22088,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Improved Deathblow</span>
                                 <span class="ms-auto text-danger">
-                                  -1.8%
+                                  -1.73%
                                 </span>
                               </a>
                               
@@ -22099,7 +22137,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-danger">
-                          -3.33%
+                          -3.34%
                         </small>
                       </a>
                     </div>
@@ -22111,7 +22149,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-success">
-                          3.33%
+                          3.34%
                         </small>
                       </a>
                     </div>
@@ -22286,7 +22324,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.7%
+                                +3.71%
                               </span>
                             </a>
                             
@@ -22308,7 +22346,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-success">
-                                  +3.7%
+                                  +3.71%
                                 </span>
                               </a>
                               
@@ -22322,7 +22360,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-success">
-                                  +3.7%
+                                  +3.71%
                                 </span>
                               </a>
                               
@@ -22351,7 +22389,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -3.7%
+                                -3.71%
                               </span>
                             </a>
                             
@@ -22371,7 +22409,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-danger">
-                                  -3.7%
+                                  -3.71%
                                 </span>
                               </a>
                               
@@ -22384,7 +22422,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-danger">
-                                  -3.7%
+                                  -3.71%
                                 </span>
                               </a>
                               
@@ -22423,7 +22461,7 @@
                                 Improved Deathblow
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.62%
+                                +3.58%
                               </span>
                             </a>
                             
@@ -22445,7 +22483,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Unmatched Precision</span>
                                 <span class="ms-auto text-success">
-                                  +3.6%
+                                  +3.57%
                                 </span>
                               </a>
                               
@@ -22459,7 +22497,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Razor Fragments</span>
                                 <span class="ms-auto text-success">
-                                  +3.53%
+                                  +3.5%
                                 </span>
                               </a>
                               
@@ -22488,7 +22526,7 @@
                                 Magnetic Gunpowder
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -3.54%
+                                -3.57%
                               </span>
                             </a>
                             
@@ -22508,7 +22546,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Kill Zone</span>
                                 <span class="ms-auto text-danger">
-                                  -3.41%
+                                  -3.38%
                                 </span>
                               </a>
                               
@@ -22521,7 +22559,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Precision Detonation</span>
                                 <span class="ms-auto text-danger">
-                                  -3.36%
+                                  -3.37%
                                 </span>
                               </a>
                               
@@ -22570,7 +22608,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-success">
-                          2.81%
+                          2.78%
                         </small>
                       </a>
                     </div>
@@ -22582,7 +22620,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-danger">
-                          -2.81%
+                          -2.78%
                         </small>
                       </a>
                     </div>
@@ -22757,7 +22795,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.1%
+                                +3.07%
                               </span>
                             </a>
                             
@@ -22779,7 +22817,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-success">
-                                  +3.1%
+                                  +3.07%
                                 </span>
                               </a>
                               
@@ -22793,7 +22831,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-success">
-                                  +3.1%
+                                  +3.07%
                                 </span>
                               </a>
                               
@@ -22822,7 +22860,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -3.1%
+                                -3.07%
                               </span>
                             </a>
                             
@@ -22842,7 +22880,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-danger">
-                                  -3.1%
+                                  -3.07%
                                 </span>
                               </a>
                               
@@ -22855,7 +22893,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-danger">
-                                  -3.1%
+                                  -3.07%
                                 </span>
                               </a>
                               
@@ -22894,7 +22932,7 @@
                                 Double Tap
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.08%
+                                +3.05%
                               </span>
                             </a>
                             
@@ -22916,7 +22954,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Precision Detonation</span>
                                 <span class="ms-auto text-success">
-                                  +3.06%
+                                  +3.03%
                                 </span>
                               </a>
                               
@@ -22930,7 +22968,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Magnetic Gunpowder</span>
                                 <span class="ms-auto text-success">
-                                  +3.01%
+                                  +3.0%
                                 </span>
                               </a>
                               
@@ -22959,7 +22997,7 @@
                                 Razor Fragments
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.94%
+                                -2.92%
                               </span>
                             </a>
                             
@@ -22979,20 +23017,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Improved Streamline</span>
                                 <span class="ms-auto text-danger">
-                                  -2.93%
+                                  -2.91%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1232955?spec=254"
+                                href="https://www.wowhead.com/spell=378769?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/hunter_pvp_snipershot.png" alt=""
+                                <img src="/data/icons/ability_hunter_runningshot.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Unmatched Precision</span>
+                                <span class="ms-2">Improved Deathblow</span>
                                 <span class="ms-auto text-danger">
-                                  -2.92%
+                                  -2.9%
                                 </span>
                               </a>
                               
@@ -23041,7 +23079,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sentinel</small><br />
                         <small class="text-danger">
-                          -1.3%
+                          -1.34%
                         </small>
                       </a>
                     </div>
@@ -23053,7 +23091,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Dark Ranger</small><br />
                         <small class="text-success">
-                          1.3%
+                          1.34%
                         </small>
                       </a>
                     </div>
@@ -23228,7 +23266,7 @@
                                 Banshee&#39;s Mark
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.44%
+                                +1.48%
                               </span>
                             </a>
                             
@@ -23250,7 +23288,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Smoke Screen</span>
                                 <span class="ms-auto text-success">
-                                  +1.44%
+                                  +1.48%
                                 </span>
                               </a>
                               
@@ -23264,7 +23302,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dark Chains</span>
                                 <span class="ms-auto text-success">
-                                  +1.44%
+                                  +1.48%
                                 </span>
                               </a>
                               
@@ -23293,7 +23331,7 @@
                                 Release and Reload
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.44%
+                                -1.48%
                               </span>
                             </a>
                             
@@ -23313,7 +23351,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Symphonic Arsenal</span>
                                 <span class="ms-auto text-danger">
-                                  -1.44%
+                                  -1.48%
                                 </span>
                               </a>
                               
@@ -23326,7 +23364,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sentinel Watch</span>
                                 <span class="ms-auto text-danger">
-                                  -1.44%
+                                  -1.48%
                                 </span>
                               </a>
                               
@@ -23381,13 +23419,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1232955?spec=254"
+                                href="https://www.wowhead.com/spell=471427?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/hunter_pvp_snipershot.png" alt=""
+                                <img src="/data/icons/inv_ammo_bullet_05.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Unmatched Precision</span>
+                                <span class="ms-2">Improved Streamline</span>
                                 <span class="ms-auto text-success">
-                                  +1.4%
+                                  +1.38%
                                 </span>
                               </a>
                               
@@ -23395,13 +23433,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=471427?spec=254"
+                                href="https://www.wowhead.com/spell=1232955?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/inv_ammo_bullet_05.png" alt=""
+                                <img src="/data/icons/hunter_pvp_snipershot.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Improved Streamline</span>
+                                <span class="ms-2">Unmatched Precision</span>
                                 <span class="ms-auto text-success">
-                                  +1.39%
+                                  +1.37%
                                 </span>
                               </a>
                               
@@ -23430,7 +23468,7 @@
                                 Double Tap
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.7%
+                                -1.69%
                               </span>
                             </a>
                             
@@ -23457,13 +23495,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=473520?spec=254"
+                                href="https://www.wowhead.com/spell=459921?spec=254"
                                 target="_blank">
-                                <img src="/data/icons/spell_sandexplosion.png" alt=""
+                                <img src="/data/icons/spell_hunter_focusingshot.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Shrapnel Shot</span>
+                                <span class="ms-2">Kill Zone</span>
                                 <span class="ms-auto text-danger">
-                                  -1.44%
+                                  -1.37%
                                 </span>
                               </a>
                               
@@ -24633,7 +24671,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -24859,6 +24898,9 @@
 
       const raw = [
         
+    64091
+      , 
+    
     181516
       , 
     
@@ -24866,9 +24908,6 @@
       , 
     
     7942
-      , 
-    
-    64091
       
     
 ];
@@ -25126,6 +25165,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

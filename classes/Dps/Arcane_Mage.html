@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Arcane Mage Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Arcane Mage, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:11:08.">
+    content="Discover the most popular Mythic+ build for Arcane Mage, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:05:46.">
   <link rel="canonical" href="https://mythistone.com/classes/Dps/Arcane_Mage">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Dps/Arcane_Mage">
   <meta property="og:title" content="Arcane Mage Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Arcane Mage Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Arcane Mage Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Arcane icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Arcane Mage Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Arcane Mage—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Arcane Mage—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:11:08"
+  "dateModified": "23/09/2025, 20:05:46"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Dps">Dps</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Mage-text">Arcane Mage </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="534.9 K seen in 2.3 M total runs">Overall
-                  Played: 22.82%</h4>
+                  title="534.9 K seen in 2.4 M total runs">Overall
+                  Played: 22.08%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611468.388541>Last Update:</span>
+                    data-timestamp=1758657946.158829>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758611468.388541>Last Update</span>
+                    data-timestamp=1758657946.158829>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-intellect py-1 px-2">INTELLECT</div>
 
             
-            <div class="h5 mb-0">118.9 K</div>
+            <div class="h5 mb-0">119 K</div>
             
           </div>
         </div>
@@ -1305,7 +1345,7 @@
               title="min: 147, max: 39.2 K, avg: 19.4 K"
               tabindex="0" role="button"
               aria-label="min 147, max 39.2 K, avg: 19.4 K">
-              32.12%
+              32.14%
             </div>
             
           </div>
@@ -1342,7 +1382,7 @@
               title="min: 0, max: 32.3 K, avg: 15.6 K"
               tabindex="0" role="button"
               aria-label="min 0, max 32.3 K, avg: 15.6 K">
-              19.94%
+              20.00%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 29.7 K, avg: 11.2 K"
               tabindex="0" role="button"
               aria-label="min 0, max 29.7 K, avg: 11.2 K">
-              31.31%
+              31.32%
             </div>
             
           </div>
@@ -1413,10 +1453,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 23.1 K, avg: 6.2 K"
+              title="min: 0, max: 25 K, avg: 6.2 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 23.1 K, avg: 6.2 K">
-              15.97%
+              aria-label="min 0, max 25 K, avg: 6.2 K">
+              15.96%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">673.2 K</div>
+            <div class="h5 mb-0">674.1 K</div>
             
           </div>
         </div>
@@ -1550,9 +1590,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 7 K, avg: 570"
+              title="min: 0, max: 7 K, avg: 569"
               tabindex="0" role="button"
-              aria-label="min 0, max 7 K, avg: 570">
+              aria-label="min 0, max 7 K, avg: 569">
               0.74%
             </div>
             
@@ -1586,7 +1626,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">442</div>
+            <div class="h5 mb-0">443</div>
             
           </div>
         </div>
@@ -3111,8 +3151,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=228841?bonus=1514:6652:10255:10355:10396:10879:11990&spec=62&gems=213470:213470"
-      data-wowhead="bonus=1514:6652:10255:10355:10396:10879:11990&spec=62&gems=213470:213470"
+      href="https://www.wowhead.com/item=228841?bonus=1533:6652:10255:10356:10396:10879:12376&spec=62&gems=213470:213470"
+      data-wowhead="bonus=1533:6652:10255:10356:10396:10879:12376&spec=62&gems=213470:213470"
       >
       <img src="/data/icons/inv_111_necklace_gallywix.png" />
     </a>
@@ -3120,8 +3160,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=228841?bonus=1514:6652:10255:10355:10396:10879:11990&spec=62&gems=213470:213470 "
-      data-wowhead="bonus=1514:6652:10255:10355:10396:10879:11990&spec=62&gems=213470:213470"
+      href="https://www.wowhead.com/item=228841?bonus=1533:6652:10255:10356:10396:10879:12376&spec=62&gems=213470:213470 "
+      data-wowhead="bonus=1533:6652:10255:10356:10396:10879:12376&spec=62&gems=213470:213470"
       data-wh-rename-link="true" >
       <p class="mb-1">Semi-Charmed Amulet</p>
     </a>
@@ -4871,8 +4911,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185782?bonus=6652:10016:10255:10383:10390:12239:12353&spec=62&ench=7364"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353&spec=62&ench=7364"
+      href="https://www.wowhead.com/item=185782?bonus=6652:10035:10255:10383:10390:12239:12361&spec=62&ench=7364"
+      data-wowhead="bonus=6652:10035:10255:10383:10390:12239:12361&spec=62&ench=7364"
       >
       <img src="/data/icons/inv_robe_cloth_oribosdungeon_c_01.png" />
     </a>
@@ -4880,8 +4920,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185782?bonus=6652:10016:10255:10383:10390:12239:12353&spec=62&ench=7364"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353&spec=62&ench=7364"
+      href="https://www.wowhead.com/item=185782?bonus=6652:10035:10255:10383:10390:12239:12361&spec=62&ench=7364"
+      data-wowhead="bonus=6652:10035:10255:10383:10390:12239:12361&spec=62&ench=7364"
       data-wh-rename-link="true" >
       <p class="mb-1">Robes of Midnight Bargains</p>
     </a>
@@ -6557,8 +6597,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237967?bonus=6652:9925:10255:12239:12353&spec=62"
-      data-wowhead="bonus=6652:9925:10255:12239:12353&spec=62"
+      href="https://www.wowhead.com/item=237967?bonus=6652:9925:10255:12239:12297&spec=62"
+      data-wowhead="bonus=6652:9925:10255:12239:12297&spec=62"
       >
       <img src="/data/icons/inv_glove_cloth_outdoorethereal_c_01.png" />
     </a>
@@ -6566,8 +6606,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237967?bonus=6652:9925:10255:12239:12353&spec=62"
-      data-wowhead="bonus=6652:9925:10255:12239:12353&spec=62"
+      href="https://www.wowhead.com/item=237967?bonus=6652:9925:10255:12239:12297&spec=62"
+      data-wowhead="bonus=6652:9925:10255:12239:12297&spec=62"
       data-wh-rename-link="true" >
       <p class="mb-1">Void-Scarred Seer&#39;s Gloves</p>
     </a>
@@ -6883,8 +6923,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221158?bonus=3196:6652:10255:10383:10390:12239:12353:12921&spec=62"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12239:12353:12921&spec=62"
+      href="https://www.wowhead.com/item=221158?bonus=3215:6652:10255:10383:10390:12239:12361:12921&spec=62"
+      data-wowhead="bonus=3215:6652:10255:10383:10390:12239:12361:12921&spec=62"
       >
       <img src="/data/icons/inv_belt_cloth_earthendungeon_c_01.png" />
     </a>
@@ -6892,8 +6932,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=221158?bonus=3196:6652:10255:10383:10390:12239:12353:12921&spec=62"
-      data-wowhead="bonus=3196:6652:10255:10383:10390:12239:12353:12921&spec=62"
+      href="https://www.wowhead.com/item=221158?bonus=3215:6652:10255:10383:10390:12239:12361:12921&spec=62"
+      data-wowhead="bonus=3215:6652:10255:10383:10390:12239:12361:12921&spec=62"
       data-wh-rename-link="true" >
       <p class="mb-1">Burrower&#39;s Cinch</p>
     </a>
@@ -11607,8 +11647,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243548?bonus=3220:6652:10255:12289&spec=62"
-      data-wowhead="bonus=3220:6652:10255:12289&spec=62"
+      href="https://www.wowhead.com/item=243548?bonus=3197:6652:10255:12282&spec=62"
+      data-wowhead="bonus=3197:6652:10255:12282&spec=62"
       >
       <img src="/data/icons/inv_offhand_1h_outdoorethereal_c_01.png" />
     </a>
@@ -11616,8 +11656,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=243548?bonus=3220:6652:10255:12289&spec=62"
-      data-wowhead="bonus=3220:6652:10255:12289&spec=62"
+      href="https://www.wowhead.com/item=243548?bonus=3197:6652:10255:12282&spec=62"
+      data-wowhead="bonus=3197:6652:10255:12282&spec=62"
       data-wh-rename-link="true" >
       <p class="mb-1">Wastelander&#39;s Gilded Censer</p>
     </a>
@@ -18673,7 +18713,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="270981 out of 1270141 gems" class="mb-0">
+                                  title="280978 out of 1315944 gems" class="mb-0">
                                    21 % </p>
                               </div>
                             </div>
@@ -18734,7 +18774,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="216214 out of 1270141 gems" class="mb-0">
+                                  title="223807 out of 1315944 gems" class="mb-0">
                                    17 % </p>
                               </div>
                             </div>
@@ -18788,7 +18828,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="159971 out of 1270141 gems" class="mb-0">
+                                  title="165940 out of 1315944 gems" class="mb-0">
                                    13 % </p>
                               </div>
                             </div>
@@ -18849,7 +18889,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="109464 out of 1270141 gems" class="mb-0">
+                                  title="112641 out of 1315944 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -18910,7 +18950,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="93893 out of 1270141 gems" class="mb-0">
+                                  title="97286 out of 1315944 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -18971,7 +19011,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="89885 out of 1270141 gems" class="mb-0">
+                                  title="93438 out of 1315944 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -19009,7 +19049,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="88732 out of 1270141 gems" class="mb-0">
+                                  title="91762 out of 1315944 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -19070,7 +19110,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="87570 out of 1270141 gems" class="mb-0">
+                                  title="91138 out of 1315944 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -19131,7 +19171,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="79116 out of 1270141 gems" class="mb-0">
+                                  title="81714 out of 1315944 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -19169,7 +19209,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="74315 out of 1270141 gems" class="mb-0">
+                                  title="77240 out of 1315944 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -20315,14 +20355,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -20556,7 +20594,7 @@
                                 Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.03%
+                                +0.04%
                               </span>
                             </a>
                             
@@ -20578,7 +20616,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-success">
-                                  +0.03%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -20592,7 +20630,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-success">
-                                  +0.03%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -20621,7 +20659,7 @@
                                 Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.03%
+                                -0.04%
                               </span>
                             </a>
                             
@@ -20641,7 +20679,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-danger">
-                                  -0.03%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -20654,7 +20692,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-danger">
-                                  -0.03%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -20693,7 +20731,7 @@
                                 Energized Familiar
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.47%
+                                +0.41%
                               </span>
                             </a>
                             
@@ -20715,7 +20753,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Time Loop</span>
                                 <span class="ms-auto text-success">
-                                  +0.28%
+                                  +0.23%
                                 </span>
                               </a>
                               
@@ -20723,11 +20761,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=342231?spec=62"
+                                href="https://www.wowhead.com/spell=454016?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/ability_socererking_arcanewrath.png" alt=""
+                                <img src="/data/icons/spell_shaman_spectraltransformation.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Arcane Echo</span>
+                                <span class="ms-2">Magi&#39;s Spark</span>
                                 <span class="ms-auto text-success">
                                   +0.21%
                                 </span>
@@ -20758,7 +20796,7 @@
                                 Aether Attunement
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.57%
+                                -0.51%
                               </span>
                             </a>
                             
@@ -20778,7 +20816,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Resonance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.46%
+                                  -0.39%
                                 </span>
                               </a>
                               
@@ -20791,7 +20829,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Charged Orb</span>
                                 <span class="ms-auto text-danger">
-                                  -0.09%
+                                  -0.06%
                                 </span>
                               </a>
                               
@@ -20840,7 +20878,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sunfury</small><br />
                         <small class="text-success">
-                          0.13%
+                          0.06%
                         </small>
                       </a>
                     </div>
@@ -20852,7 +20890,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Spellslinger</small><br />
                         <small class="text-danger">
-                          -0.13%
+                          -0.06%
                         </small>
                       </a>
                     </div>
@@ -21027,7 +21065,7 @@
                                 Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.14%
+                                +0.07%
                               </span>
                             </a>
                             
@@ -21049,7 +21087,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.07%
                                 </span>
                               </a>
                               
@@ -21063,7 +21101,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.07%
                                 </span>
                               </a>
                               
@@ -21092,7 +21130,7 @@
                                 Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.14%
+                                -0.07%
                               </span>
                             </a>
                             
@@ -21112,7 +21150,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.07%
                                 </span>
                               </a>
                               
@@ -21125,7 +21163,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.07%
                                 </span>
                               </a>
                               
@@ -21154,17 +21192,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=453600?spec=62"
+                              href="https://www.wowhead.com/spell=205028?spec=62"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-391-Spec" aria-expanded="false"
                               aria-controls="gainCol-391-Spec">
-                              <img src="/data/icons/inv_enchant_essencearcanelarge.png" alt=""
+                              <img src="/data/icons/spell_arcane_arcane01.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Aether Attunement">
-                                Aether Attunement
+                              <span class="flex-grow-1 text-truncate" title="Resonance">
+                                Resonance
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.31%
+                                +0.26%
                               </span>
                             </a>
                             
@@ -21180,13 +21218,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=205028?spec=62"
+                                href="https://www.wowhead.com/spell=453600?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_arcane_arcane01.png" alt=""
+                                <img src="/data/icons/inv_enchant_essencearcanelarge.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Resonance</span>
+                                <span class="ms-2">Aether Attunement</span>
                                 <span class="ms-auto text-success">
-                                  +0.28%
+                                  +0.19%
                                 </span>
                               </a>
                               
@@ -21200,7 +21238,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Arcane Debilitation</span>
                                 <span class="ms-auto text-success">
-                                  +0.11%
+                                  +0.06%
                                 </span>
                               </a>
                               
@@ -21219,17 +21257,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=454016?spec=62"
+                              href="https://www.wowhead.com/spell=452997?spec=62"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-391-Spec" aria-expanded="false"
                               aria-controls="lossCol-391-Spec">
-                              <img src="/data/icons/spell_shaman_spectraltransformation.png" alt=""
+                              <img src="/data/icons/spell_lightning_lightningbolt01.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Magi&#39;s Spark">
-                                Magi&#39;s Spark
+                              <span class="flex-grow-1 text-truncate" title="Energized Familiar">
+                                Energized Familiar
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.26%
+                                -0.2%
                               </span>
                             </a>
                             
@@ -21243,26 +21281,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=342231?spec=62"
+                                href="https://www.wowhead.com/spell=454016?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/ability_socererking_arcanewrath.png" alt=""
+                                <img src="/data/icons/spell_shaman_spectraltransformation.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Arcane Echo</span>
+                                <span class="ms-2">Magi&#39;s Spark</span>
                                 <span class="ms-auto text-danger">
-                                  -0.24%
+                                  -0.18%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=452997?spec=62"
+                                href="https://www.wowhead.com/spell=342231?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_lightning_lightningbolt01.png" alt=""
+                                <img src="/data/icons/ability_socererking_arcanewrath.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Energized Familiar</span>
+                                <span class="ms-2">Arcane Echo</span>
                                 <span class="ms-auto text-danger">
-                                  -0.24%
+                                  -0.17%
                                 </span>
                               </a>
                               
@@ -21311,7 +21349,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sunfury</small><br />
                         <small class="text-danger">
-                          -0.04%
+                          -0.07%
                         </small>
                       </a>
                     </div>
@@ -21323,7 +21361,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Spellslinger</small><br />
                         <small class="text-success">
-                          0.04%
+                          0.07%
                         </small>
                       </a>
                     </div>
@@ -21498,7 +21536,7 @@
                                 Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.05%
+                                +0.08%
                               </span>
                             </a>
                             
@@ -21520,7 +21558,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.08%
                                 </span>
                               </a>
                               
@@ -21534,7 +21572,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.08%
                                 </span>
                               </a>
                               
@@ -21563,7 +21601,7 @@
                                 Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.05%
+                                -0.08%
                               </span>
                             </a>
                             
@@ -21583,7 +21621,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.08%
                                 </span>
                               </a>
                               
@@ -21596,7 +21634,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.08%
                                 </span>
                               </a>
                               
@@ -21635,7 +21673,7 @@
                                 Time Loop
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.54%
+                                +0.6%
                               </span>
                             </a>
                             
@@ -21657,7 +21695,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Energized Familiar</span>
                                 <span class="ms-auto text-success">
-                                  +0.25%
+                                  +0.26%
                                 </span>
                               </a>
                               
@@ -21671,7 +21709,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Charged Orb</span>
                                 <span class="ms-auto text-success">
-                                  +0.24%
+                                  +0.21%
                                 </span>
                               </a>
                               
@@ -21700,7 +21738,7 @@
                                 Aether Attunement
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.45%
+                                -0.5%
                               </span>
                             </a>
                             
@@ -21720,7 +21758,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Resonance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.27%
+                                  -0.3%
                                 </span>
                               </a>
                               
@@ -21733,7 +21771,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Illuminated Thoughts</span>
                                 <span class="ms-auto text-danger">
-                                  -0.15%
+                                  -0.16%
                                 </span>
                               </a>
                               
@@ -21782,7 +21820,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sunfury</small><br />
                         <small class="text-danger">
-                          -0.05%
+                          -0.02%
                         </small>
                       </a>
                     </div>
@@ -21794,7 +21832,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Spellslinger</small><br />
                         <small class="text-success">
-                          0.05%
+                          0.02%
                         </small>
                       </a>
                     </div>
@@ -21969,7 +22007,7 @@
                                 Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.05%
+                                +0.02%
                               </span>
                             </a>
                             
@@ -21991,7 +22029,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.02%
                                 </span>
                               </a>
                               
@@ -22005,7 +22043,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.02%
                                 </span>
                               </a>
                               
@@ -22034,7 +22072,7 @@
                                 Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.05%
+                                -0.02%
                               </span>
                             </a>
                             
@@ -22054,7 +22092,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.02%
                                 </span>
                               </a>
                               
@@ -22067,7 +22105,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.02%
                                 </span>
                               </a>
                               
@@ -22106,7 +22144,7 @@
                                 Aether Attunement
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.34%
+                                +0.33%
                               </span>
                             </a>
                             
@@ -22128,7 +22166,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Resonance</span>
                                 <span class="ms-auto text-success">
-                                  +0.32%
+                                  +0.29%
                                 </span>
                               </a>
                               
@@ -22136,13 +22174,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384651?spec=62"
+                                href="https://www.wowhead.com/spell=1223800?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_mage_arcaneorb.png" alt=""
+                                <img src="/data/icons/inv_10_dungeonjewelry_dragon_trinket_1arcanemagical_blue.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Charged Orb</span>
+                                <span class="ms-2">Arcane Rebound</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.05%
                                 </span>
                               </a>
                               
@@ -22171,7 +22209,7 @@
                                 Energized Familiar
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.28%
+                                -0.25%
                               </span>
                             </a>
                             
@@ -22191,7 +22229,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Time Loop</span>
                                 <span class="ms-auto text-danger">
-                                  -0.28%
+                                  -0.24%
                                 </span>
                               </a>
                               
@@ -22440,7 +22478,7 @@
                                 Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.11%
+                                +0.12%
                               </span>
                             </a>
                             
@@ -22462,7 +22500,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-success">
-                                  +0.11%
+                                  +0.12%
                                 </span>
                               </a>
                               
@@ -22476,7 +22514,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-success">
-                                  +0.11%
+                                  +0.12%
                                 </span>
                               </a>
                               
@@ -22505,7 +22543,7 @@
                                 Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.11%
+                                -0.12%
                               </span>
                             </a>
                             
@@ -22525,7 +22563,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-danger">
-                                  -0.11%
+                                  -0.12%
                                 </span>
                               </a>
                               
@@ -22538,7 +22576,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-danger">
-                                  -0.11%
+                                  -0.12%
                                 </span>
                               </a>
                               
@@ -22577,7 +22615,7 @@
                                 Aether Attunement
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.48%
+                                +0.54%
                               </span>
                             </a>
                             
@@ -22599,7 +22637,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Resonance</span>
                                 <span class="ms-auto text-success">
-                                  +0.45%
+                                  +0.46%
                                 </span>
                               </a>
                               
@@ -22632,17 +22670,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=452997?spec=62"
+                              href="https://www.wowhead.com/spell=452924?spec=62"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-503-Spec" aria-expanded="false"
                               aria-controls="lossCol-503-Spec">
-                              <img src="/data/icons/spell_lightning_lightningbolt01.png" alt=""
+                              <img src="/data/icons/spell_mage_altertime_active.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Energized Familiar">
-                                Energized Familiar
+                              <span class="flex-grow-1 text-truncate" title="Time Loop">
+                                Time Loop
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.45%
+                                -0.49%
                               </span>
                             </a>
                             
@@ -22656,24 +22694,24 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=452924?spec=62"
+                                href="https://www.wowhead.com/spell=452997?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_mage_altertime_active.png" alt=""
+                                <img src="/data/icons/spell_lightning_lightningbolt01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Time Loop</span>
+                                <span class="ms-2">Energized Familiar</span>
                                 <span class="ms-auto text-danger">
-                                  -0.41%
+                                  -0.46%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=342231?spec=62"
+                                href="https://www.wowhead.com/spell=454016?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/ability_socererking_arcanewrath.png" alt=""
+                                <img src="/data/icons/spell_shaman_spectraltransformation.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Arcane Echo</span>
+                                <span class="ms-2">Magi&#39;s Spark</span>
                                 <span class="ms-auto text-danger">
                                   -0.17%
                                 </span>
@@ -23048,7 +23086,7 @@
                                 Eureka
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.2%
+                                +0.18%
                               </span>
                             </a>
                             
@@ -23070,7 +23108,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Aether Attunement</span>
                                 <span class="ms-auto text-success">
-                                  +0.12%
+                                  +0.11%
                                 </span>
                               </a>
                               
@@ -23078,13 +23116,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=1223800?spec=62"
+                                href="https://www.wowhead.com/spell=384060?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/inv_10_dungeonjewelry_dragon_trinket_1arcanemagical_blue.png" alt=""
+                                <img src="/data/icons/spell_arcane_focusedpower.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Arcane Rebound</span>
+                                <span class="ms-2">Illuminated Thoughts</span>
                                 <span class="ms-auto text-success">
-                                  +0.09%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -23113,7 +23151,7 @@
                                 Energy Reconstitution
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.3%
+                                -0.27%
                               </span>
                             </a>
                             
@@ -23133,7 +23171,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Resonance</span>
                                 <span class="ms-auto text-danger">
-                                  -0.14%
+                                  -0.12%
                                 </span>
                               </a>
                               
@@ -23146,7 +23184,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Time Loop</span>
                                 <span class="ms-auto text-danger">
-                                  -0.13%
+                                  -0.12%
                                 </span>
                               </a>
                               
@@ -23195,7 +23233,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Sunfury</small><br />
                         <small class="text-danger">
-                          -0.04%
+                          -0.02%
                         </small>
                       </a>
                     </div>
@@ -23207,7 +23245,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Spellslinger</small><br />
                         <small class="text-success">
-                          0.04%
+                          0.02%
                         </small>
                       </a>
                     </div>
@@ -23382,7 +23420,7 @@
                                 Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.05%
+                                +0.02%
                               </span>
                             </a>
                             
@@ -23404,7 +23442,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.02%
                                 </span>
                               </a>
                               
@@ -23418,7 +23456,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.02%
                                 </span>
                               </a>
                               
@@ -23447,7 +23485,7 @@
                                 Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.05%
+                                -0.02%
                               </span>
                             </a>
                             
@@ -23467,7 +23505,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.02%
                                 </span>
                               </a>
                               
@@ -23480,7 +23518,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.02%
                                 </span>
                               </a>
                               
@@ -23541,7 +23579,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Magi&#39;s Spark</span>
                                 <span class="ms-auto text-success">
-                                  +0.15%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -23549,13 +23587,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384651?spec=62"
+                                href="https://www.wowhead.com/spell=342231?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_mage_arcaneorb.png" alt=""
+                                <img src="/data/icons/ability_socererking_arcanewrath.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Charged Orb</span>
+                                <span class="ms-2">Arcane Echo</span>
                                 <span class="ms-auto text-success">
-                                  +0.14%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -23574,17 +23612,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=453600?spec=62"
+                              href="https://www.wowhead.com/spell=205028?spec=62"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-525-Spec" aria-expanded="false"
                               aria-controls="lossCol-525-Spec">
-                              <img src="/data/icons/inv_enchant_essencearcanelarge.png" alt=""
+                              <img src="/data/icons/spell_arcane_arcane01.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Aether Attunement">
-                                Aether Attunement
+                              <span class="flex-grow-1 text-truncate" title="Resonance">
+                                Resonance
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.21%
+                                -0.15%
                               </span>
                             </a>
                             
@@ -23598,13 +23636,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=205028?spec=62"
+                                href="https://www.wowhead.com/spell=453600?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_arcane_arcane01.png" alt=""
+                                <img src="/data/icons/inv_enchant_essencearcanelarge.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Resonance</span>
+                                <span class="ms-2">Aether Attunement</span>
                                 <span class="ms-auto text-danger">
-                                  -0.16%
+                                  -0.11%
                                 </span>
                               </a>
                               
@@ -23617,7 +23655,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Consortium&#39;s Bauble</span>
                                 <span class="ms-auto text-danger">
-                                  -0.13%
+                                  -0.1%
                                 </span>
                               </a>
                               
@@ -23665,8 +23703,8 @@
                         <img src="/data/icons/talents-heroclass-mage-sunfury.png" alt="Sunfury"
                           style="width:32px; height:32px;" /><br />
                         <small>Sunfury</small><br />
-                        <small class="text-danger">
-                          -0.04%
+                        <small class="text-success">
+                          0.0%
                         </small>
                       </a>
                     </div>
@@ -23677,8 +23715,8 @@
                         <img src="/data/icons/talents-heroclass-mage-spellslinger.png" alt="Spellslinger"
                           style="width:32px; height:32px;" /><br />
                         <small>Spellslinger</small><br />
-                        <small class="text-success">
-                          0.04%
+                        <small class="text-danger">
+                          -0.0%
                         </small>
                       </a>
                     </div>
@@ -23843,17 +23881,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=443742?spec=62"
+                              href="https://www.wowhead.com/spell=449382?spec=62"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-542-Hero" aria-expanded="false"
                               aria-controls="gainCol-542-Hero">
-                              <img src="/data/icons/ability_mage_burstofcold.png" alt=""
+                              <img src="/data/icons/inv_10_inscription2_book3_color1.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Splinterstorm">
-                                Splinterstorm
+                              <span class="flex-grow-1 text-truncate" title="Codex of the Sunstriders">
+                                Codex of the Sunstriders
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.05%
+                                +0.0%
                               </span>
                             </a>
                             
@@ -23869,13 +23907,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=444986?spec=62"
+                                href="https://www.wowhead.com/spell=451035?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/70_inscription_vantus_rune_azure.png" alt=""
+                                <img src="/data/icons/inv_ragnaros_heart.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Spellfrost Teachings</span>
+                                <span class="ms-2">Burden of Power</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.0%
                                 </span>
                               </a>
                               
@@ -23883,13 +23921,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=444719?spec=62"
+                                href="https://www.wowhead.com/spell=449394?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_mage_overpowered.png" alt=""
+                                <img src="/data/icons/spell_burningsoul.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Force of Will</span>
+                                <span class="ms-2">Glorious Incandescence</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.0%
                                 </span>
                               </a>
                               
@@ -23908,17 +23946,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=449382?spec=62"
+                              href="https://www.wowhead.com/spell=443742?spec=62"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-542-Hero" aria-expanded="false"
                               aria-controls="lossCol-542-Hero">
-                              <img src="/data/icons/inv_10_inscription2_book3_color1.png" alt=""
+                              <img src="/data/icons/ability_mage_burstofcold.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Codex of the Sunstriders">
-                                Codex of the Sunstriders
+                              <span class="flex-grow-1 text-truncate" title="Splinterstorm">
+                                Splinterstorm
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.05%
+                                -0.0%
                               </span>
                             </a>
                             
@@ -23932,26 +23970,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=451035?spec=62"
+                                href="https://www.wowhead.com/spell=444986?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/inv_ragnaros_heart.png" alt=""
+                                <img src="/data/icons/70_inscription_vantus_rune_azure.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Burden of Power</span>
+                                <span class="ms-2">Spellfrost Teachings</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.0%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=449394?spec=62"
+                                href="https://www.wowhead.com/spell=444719?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_burningsoul.png" alt=""
+                                <img src="/data/icons/spell_mage_overpowered.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Glorious Incandescence</span>
+                                <span class="ms-2">Force of Will</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.0%
                                 </span>
                               </a>
                               
@@ -23990,7 +24028,7 @@
                                 Illuminated Thoughts
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.08%
+                                +0.1%
                               </span>
                             </a>
                             
@@ -24006,13 +24044,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=452198?spec=62"
+                                href="https://www.wowhead.com/spell=453598?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_mage_presenceofmind.png" alt=""
+                                <img src="/data/icons/spell_arcane_studentofmagic.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Eureka</span>
+                                <span class="ms-2">Arcane Debilitation</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.05%
                                 </span>
                               </a>
                               
@@ -24020,11 +24058,11 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=205028?spec=62"
+                                href="https://www.wowhead.com/spell=452198?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_arcane_arcane01.png" alt=""
+                                <img src="/data/icons/spell_mage_presenceofmind.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Resonance</span>
+                                <span class="ms-2">Eureka</span>
                                 <span class="ms-auto text-success">
                                   +0.05%
                                 </span>
@@ -24055,7 +24093,7 @@
                                 Energy Reconstitution
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.13%
+                                -0.09%
                               </span>
                             </a>
                             
@@ -24069,24 +24107,24 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=452187?spec=62"
+                                href="https://www.wowhead.com/spell=384651?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/inv_enchant_essencecosmiclesser.png" alt=""
+                                <img src="/data/icons/spell_mage_arcaneorb.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Leysight</span>
+                                <span class="ms-2">Charged Orb</span>
                                 <span class="ms-auto text-danger">
-                                  -0.1%
+                                  -0.08%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=452196?spec=62"
+                                href="https://www.wowhead.com/spell=452187?spec=62"
                                 target="_blank">
-                                <img src="/data/icons/spell_shadow_manafeed.png" alt=""
+                                <img src="/data/icons/inv_enchant_essencecosmiclesser.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Leydrinker</span>
+                                <span class="ms-2">Leysight</span>
                                 <span class="ms-auto text-danger">
                                   -0.08%
                                 </span>
@@ -25258,7 +25296,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -25484,6 +25523,9 @@
 
       const raw = [
         
+    82787
+      , 
+    
     287310
       , 
     
@@ -25491,9 +25533,6 @@
       , 
     
     12517
-      , 
-    
-    82787
       
     
 ];
@@ -25751,6 +25790,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

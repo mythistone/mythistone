@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Demonology Warlock Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Demonology Warlock, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:35:56.">
+    content="Discover the most popular Mythic+ build for Demonology Warlock, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:28:42.">
   <link rel="canonical" href="https://mythistone.com/classes/Dps/Demonology_Warlock">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Dps/Demonology_Warlock">
   <meta property="og:title" content="Demonology Warlock Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Demonology Warlock Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Demonology Warlock Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Demonology icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Demonology Warlock Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Demonology Warlock—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Demonology Warlock—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:35:56"
+  "dateModified": "23/09/2025, 20:28:42"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Dps">Dps</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Warlock-text">Demonology Warlock </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="251.6 K seen in 2.3 M total runs">Overall
-                  Played: 10.73%</h4>
+                  title="251.6 K seen in 2.4 M total runs">Overall
+                  Played: 10.38%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612956.601174>Last Update:</span>
+                    data-timestamp=1758659322.095483>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612956.601174>Last Update</span>
+                    data-timestamp=1758659322.095483>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-intellect py-1 px-2">INTELLECT</div>
 
             
-            <div class="h5 mb-0">120.2 K</div>
+            <div class="h5 mb-0">120.3 K</div>
             
           </div>
         </div>
@@ -1339,10 +1379,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 31.7 K, avg: 17.2 K"
+              title="min: 0, max: 31.7 K, avg: 17.3 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 31.7 K, avg: 17.2 K">
-              30.01%
+              aria-label="min 0, max 31.7 K, avg: 17.3 K">
+              30.08%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 27 K, avg: 10.7 K"
               tabindex="0" role="button"
               aria-label="min 0, max 27 K, avg: 10.7 K">
-              41.05%
+              41.03%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">733.8 K</div>
+            <div class="h5 mb-0">734.6 K</div>
             
           </div>
         </div>
@@ -1513,10 +1553,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 6.7 K, avg: 1.5 K"
+              title="min: 0, max: 6.8 K, avg: 1.5 K"
               tabindex="0" role="button"
-              aria-label="min 0, max 6.7 K, avg: 1.5 K">
-              2.70%
+              aria-label="min 0, max 6.8 K, avg: 1.5 K">
+              2.71%
             </div>
             
           </div>
@@ -1550,9 +1590,9 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 8.6 K, avg: 687"
+              title="min: 0, max: 8.6 K, avg: 688"
               tabindex="0" role="button"
-              aria-label="min 0, max 8.6 K, avg: 687">
+              aria-label="min 0, max 8.6 K, avg: 688">
               0.67%
             </div>
             
@@ -1586,7 +1626,7 @@
             <div class="badge stat-speed py-1 px-2">speed</div>
 
             
-            <div class="h5 mb-0">587</div>
+            <div class="h5 mb-0">586</div>
             
           </div>
         </div>
@@ -2049,8 +2089,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237968?bonus=6652:9931:10255:12239:12355:12921&spec=266&ench=7933"
-      data-wowhead="bonus=6652:9931:10255:12239:12355:12921&spec=266&ench=7933"
+      href="https://www.wowhead.com/item=237968?bonus=6652:9925:10255:12239:12297:12365&spec=266&ench=7933&gems=213485"
+      data-wowhead="bonus=6652:9925:10255:12239:12297:12365&spec=266&ench=7933&gems=213485"
       >
       <img src="/data/icons/inv_helm_cloth_outdoorethereal_c_01.png" />
     </a>
@@ -2058,8 +2098,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237968?bonus=6652:9931:10255:12239:12355:12921&spec=266&ench=7933"
-      data-wowhead="bonus=6652:9931:10255:12239:12355:12921&spec=266&ench=7933"
+      href="https://www.wowhead.com/item=237968?bonus=6652:9925:10255:12239:12297:12365&spec=266&ench=7933&gems=213485 "
+      data-wowhead="bonus=6652:9925:10255:12239:12297:12365&spec=266&ench=7933&gems=213485"
       data-wh-rename-link="true" >
       <p class="mb-1">Void-Scarred Seer&#39;s Crown</p>
     </a>
@@ -2079,6 +2119,28 @@
         </div>
       </a>
       
+      
+      <div class="d-flex align-items-center gap-1 flex-nowrap">
+        
+        <a target="_blank" href="https://www.wowhead.com/item=213485&spec=266" >
+          <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
+            
+
+            <!-- Base icon -->
+            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color1_1.png" alt=""
+              class="position-absolute top-0 start-0 border border-quality-3 "
+              style="width:100%; height:100%; object-fit:contain;">
+
+            
+            <!-- Overlay icon -->
+            <img src="/data/icons/crafting-quality-3.png" alt=""
+              class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
+            
+          </div>
+
+        </a>
+        
+      </div>
       
     </div>
     <div>
@@ -7265,8 +7327,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185799?bonus=6652:10016:10255:10383:10390:12239:12353&spec=266&ench=7534"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353&spec=266&ench=7534"
+      href="https://www.wowhead.com/item=185799?bonus=6652:10022:10255:10383:10390:12239:12355&spec=266&ench=7534"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:12239:12355&spec=266&ench=7534"
       >
       <img src="/data/icons/inv_pant_cloth_oribosdungeon_c_01.png" />
     </a>
@@ -7274,8 +7336,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=185799?bonus=6652:10016:10255:10383:10390:12239:12353&spec=266&ench=7534"
-      data-wowhead="bonus=6652:10016:10255:10383:10390:12239:12353&spec=266&ench=7534"
+      href="https://www.wowhead.com/item=185799?bonus=6652:10022:10255:10383:10390:12239:12355&spec=266&ench=7534"
+      data-wowhead="bonus=6652:10022:10255:10383:10390:12239:12355&spec=266&ench=7534"
       data-wh-rename-link="true" >
       <p class="mb-1">Hyperlight Leggings</p>
     </a>
@@ -18309,7 +18371,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="80846 out of 534701 gems" class="mb-0">
+                                  title="82634 out of 546437 gems" class="mb-0">
                                    15 % </p>
                               </div>
                             </div>
@@ -18370,7 +18432,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="76685 out of 534701 gems" class="mb-0">
+                                  title="78320 out of 546437 gems" class="mb-0">
                                    14 % </p>
                               </div>
                             </div>
@@ -18424,7 +18486,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="64309 out of 534701 gems" class="mb-0">
+                                  title="65808 out of 546437 gems" class="mb-0">
                                    12 % </p>
                               </div>
                             </div>
@@ -18485,7 +18547,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="63461 out of 534701 gems" class="mb-0">
+                                  title="64681 out of 546437 gems" class="mb-0">
                                    12 % </p>
                               </div>
                             </div>
@@ -18546,7 +18608,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="55223 out of 534701 gems" class="mb-0">
+                                  title="56461 out of 546437 gems" class="mb-0">
                                    10 % </p>
                               </div>
                             </div>
@@ -18607,7 +18669,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="46183 out of 534701 gems" class="mb-0">
+                                  title="47312 out of 546437 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -18668,7 +18730,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="41220 out of 534701 gems" class="mb-0">
+                                  title="42119 out of 546437 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18706,7 +18768,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="40283 out of 534701 gems" class="mb-0">
+                                  title="41113 out of 546437 gems" class="mb-0">
                                    8 % </p>
                               </div>
                             </div>
@@ -18767,7 +18829,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="35513 out of 534701 gems" class="mb-0">
+                                  title="36202 out of 546437 gems" class="mb-0">
                                    7 % </p>
                               </div>
                             </div>
@@ -18828,7 +18890,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="30978 out of 534701 gems" class="mb-0">
+                                  title="31787 out of 546437 gems" class="mb-0">
                                    6 % </p>
                               </div>
                             </div>
@@ -20018,14 +20080,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -20072,7 +20132,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-success">
-                          0.03%
+                          0.01%
                         </small>
                       </a>
                     </div>
@@ -20084,7 +20144,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-danger">
-                          -0.03%
+                          -0.01%
                         </small>
                       </a>
                     </div>
@@ -20259,7 +20319,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.04%
+                                +0.01%
                               </span>
                             </a>
                             
@@ -20281,7 +20341,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-success">
-                                  +0.04%
+                                  +0.01%
                                 </span>
                               </a>
                               
@@ -20295,7 +20355,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-success">
-                                  +0.04%
+                                  +0.01%
                                 </span>
                               </a>
                               
@@ -20324,7 +20384,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.04%
+                                -0.01%
                               </span>
                             </a>
                             
@@ -20344,7 +20404,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-danger">
-                                  -0.04%
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -20357,7 +20417,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.04%
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -20396,7 +20456,7 @@
                                 Pact of the Ered&#39;ruin
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.5%
+                                +1.22%
                               </span>
                             </a>
                             
@@ -20418,7 +20478,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shadow Invocation</span>
                                 <span class="ms-auto text-success">
-                                  +0.9%
+                                  +0.82%
                                 </span>
                               </a>
                               
@@ -20426,13 +20486,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455587?spec=266"
+                                href="https://www.wowhead.com/spell=387541?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/spell_shadow_unstableafllictions.png" alt=""
+                                <img src="/data/icons/inv_archaeology_70_impgenerator.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Impending Doom</span>
+                                <span class="ms-2">Pact of the Imp Mother</span>
                                 <span class="ms-auto text-success">
-                                  +0.87%
+                                  +0.76%
                                 </span>
                               </a>
                               
@@ -20461,7 +20521,7 @@
                                 Annihilan Training
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.25%
+                                -1.08%
                               </span>
                             </a>
                             
@@ -20481,20 +20541,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Improved Demonic Tactics</span>
                                 <span class="ms-auto text-danger">
-                                  -0.87%
+                                  -0.63%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=267214?spec=266"
+                                href="https://www.wowhead.com/spell=453908?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/ability_creature_disease_05.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_bladedance.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sacrificed Souls</span>
+                                <span class="ms-2">Demonic Brutality</span>
                                 <span class="ms-auto text-danger">
-                                  -0.64%
+                                  -0.57%
                                 </span>
                               </a>
                               
@@ -20543,7 +20603,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-danger">
-                          -0.06%
+                          -0.03%
                         </small>
                       </a>
                     </div>
@@ -20555,7 +20615,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-success">
-                          0.06%
+                          0.03%
                         </small>
                       </a>
                     </div>
@@ -20730,7 +20790,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.07%
+                                +0.03%
                               </span>
                             </a>
                             
@@ -20752,7 +20812,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-success">
-                                  +0.07%
+                                  +0.03%
                                 </span>
                               </a>
                               
@@ -20766,7 +20826,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-success">
-                                  +0.07%
+                                  +0.03%
                                 </span>
                               </a>
                               
@@ -20795,7 +20855,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.07%
+                                -0.03%
                               </span>
                             </a>
                             
@@ -20815,7 +20875,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-danger">
-                                  -0.07%
+                                  -0.03%
                                 </span>
                               </a>
                               
@@ -20828,7 +20888,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-danger">
-                                  -0.07%
+                                  -0.03%
                                 </span>
                               </a>
                               
@@ -20867,7 +20927,7 @@
                                 Annihilan Training
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.79%
+                                +0.62%
                               </span>
                             </a>
                             
@@ -20883,13 +20943,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=111898?spec=266"
+                                href="https://www.wowhead.com/spell=405670?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/spell_shadow_demonicpact.png" alt=""
+                                <img src="/data/icons/ability_creature_felfrenzy.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Grimoire: Felguard</span>
+                                <span class="ms-2">Immutable Hatred</span>
                                 <span class="ms-auto text-success">
-                                  +0.23%
+                                  +0.55%
                                 </span>
                               </a>
                               
@@ -20897,13 +20957,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387541?spec=266"
+                                href="https://www.wowhead.com/spell=453908?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/inv_archaeology_70_impgenerator.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_bladedance.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Pact of the Imp Mother</span>
+                                <span class="ms-2">Demonic Brutality</span>
                                 <span class="ms-auto text-success">
-                                  +0.22%
+                                  +0.39%
                                 </span>
                               </a>
                               
@@ -20932,7 +20992,7 @@
                                 Shadow Invocation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.58%
+                                -1.77%
                               </span>
                             </a>
                             
@@ -20952,7 +21012,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Flametouched</span>
                                 <span class="ms-auto text-danger">
-                                  -0.18%
+                                  -0.31%
                                 </span>
                               </a>
                               
@@ -20965,7 +21025,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sacrificed Souls</span>
                                 <span class="ms-auto text-danger">
-                                  -0.13%
+                                  -0.2%
                                 </span>
                               </a>
                               
@@ -21014,7 +21074,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-danger">
-                          -0.06%
+                          -0.07%
                         </small>
                       </a>
                     </div>
@@ -21026,7 +21086,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-success">
-                          0.06%
+                          0.07%
                         </small>
                       </a>
                     </div>
@@ -21201,7 +21261,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.06%
+                                +0.08%
                               </span>
                             </a>
                             
@@ -21223,7 +21283,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.08%
                                 </span>
                               </a>
                               
@@ -21237,7 +21297,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.08%
                                 </span>
                               </a>
                               
@@ -21266,7 +21326,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.06%
+                                -0.08%
                               </span>
                             </a>
                             
@@ -21286,7 +21346,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.08%
                                 </span>
                               </a>
                               
@@ -21299,7 +21359,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.08%
                                 </span>
                               </a>
                               
@@ -21338,7 +21398,7 @@
                                 Demonic Brutality
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.1%
+                                +1.0%
                               </span>
                             </a>
                             
@@ -21360,7 +21420,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Antoran Armaments</span>
                                 <span class="ms-auto text-success">
-                                  +0.89%
+                                  +0.84%
                                 </span>
                               </a>
                               
@@ -21368,13 +21428,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387541?spec=266"
+                                href="https://www.wowhead.com/spell=453800?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/inv_archaeology_70_impgenerator.png" alt=""
+                                <img src="/data/icons/ability_warlock_ancientgrimoire.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Pact of the Imp Mother</span>
+                                <span class="ms-2">Improved Demonic Tactics</span>
                                 <span class="ms-auto text-success">
-                                  +0.82%
+                                  +0.71%
                                 </span>
                               </a>
                               
@@ -21403,7 +21463,7 @@
                                 Impending Doom
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.88%
+                                -0.82%
                               </span>
                             </a>
                             
@@ -21423,7 +21483,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Flametouched</span>
                                 <span class="ms-auto text-danger">
-                                  -0.85%
+                                  -0.79%
                                 </span>
                               </a>
                               
@@ -21436,7 +21496,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Doom</span>
                                 <span class="ms-auto text-danger">
-                                  -0.78%
+                                  -0.76%
                                 </span>
                               </a>
                               
@@ -21485,7 +21545,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-danger">
-                          -0.02%
+                          -0.01%
                         </small>
                       </a>
                     </div>
@@ -21497,7 +21557,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-success">
-                          0.02%
+                          0.01%
                         </small>
                       </a>
                     </div>
@@ -21672,7 +21732,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.02%
+                                +0.01%
                               </span>
                             </a>
                             
@@ -21694,7 +21754,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-success">
-                                  +0.02%
+                                  +0.01%
                                 </span>
                               </a>
                               
@@ -21708,7 +21768,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-success">
-                                  +0.02%
+                                  +0.01%
                                 </span>
                               </a>
                               
@@ -21737,7 +21797,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.02%
+                                -0.01%
                               </span>
                             </a>
                             
@@ -21757,7 +21817,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-danger">
-                                  -0.02%
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -21770,7 +21830,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-danger">
-                                  -0.02%
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -21809,7 +21869,7 @@
                                 Shadow Invocation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.03%
+                                +1.08%
                               </span>
                             </a>
                             
@@ -21831,7 +21891,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Flametouched</span>
                                 <span class="ms-auto text-success">
-                                  +0.64%
+                                  +0.51%
                                 </span>
                               </a>
                               
@@ -21845,7 +21905,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dread Calling</span>
                                 <span class="ms-auto text-success">
-                                  +0.44%
+                                  +0.41%
                                 </span>
                               </a>
                               
@@ -21894,7 +21954,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pact of the Imp Mother</span>
                                 <span class="ms-auto text-danger">
-                                  -0.82%
+                                  -0.77%
                                 </span>
                               </a>
                               
@@ -21907,7 +21967,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Antoran Armaments</span>
                                 <span class="ms-auto text-danger">
-                                  -0.56%
+                                  -0.45%
                                 </span>
                               </a>
                               
@@ -21956,7 +22016,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-danger">
-                          -0.09%
+                          -0.1%
                         </small>
                       </a>
                     </div>
@@ -21968,7 +22028,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-success">
-                          0.09%
+                          0.1%
                         </small>
                       </a>
                     </div>
@@ -22143,7 +22203,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.1%
+                                +0.11%
                               </span>
                             </a>
                             
@@ -22165,7 +22225,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-success">
-                                  +0.1%
+                                  +0.11%
                                 </span>
                               </a>
                               
@@ -22179,7 +22239,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-success">
-                                  +0.1%
+                                  +0.11%
                                 </span>
                               </a>
                               
@@ -22208,7 +22268,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.1%
+                                -0.11%
                               </span>
                             </a>
                             
@@ -22228,7 +22288,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-danger">
-                                  -0.1%
+                                  -0.11%
                                 </span>
                               </a>
                               
@@ -22241,7 +22301,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-danger">
-                                  -0.1%
+                                  -0.11%
                                 </span>
                               </a>
                               
@@ -22280,7 +22340,7 @@
                                 Immutable Hatred
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +2.43%
+                                +2.51%
                               </span>
                             </a>
                             
@@ -22302,7 +22362,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Brutality</span>
                                 <span class="ms-auto text-success">
-                                  +1.59%
+                                  +1.66%
                                 </span>
                               </a>
                               
@@ -22316,7 +22376,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Antoran Armaments</span>
                                 <span class="ms-auto text-success">
-                                  +1.08%
+                                  +1.09%
                                 </span>
                               </a>
                               
@@ -22345,7 +22405,7 @@
                                 Shadow Invocation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.87%
+                                -2.1%
                               </span>
                             </a>
                             
@@ -22365,7 +22425,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Houndmaster&#39;s Gambit</span>
                                 <span class="ms-auto text-danger">
-                                  -1.66%
+                                  -1.92%
                                 </span>
                               </a>
                               
@@ -22378,7 +22438,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dread Calling</span>
                                 <span class="ms-auto text-danger">
-                                  -1.21%
+                                  -1.26%
                                 </span>
                               </a>
                               
@@ -22427,7 +22487,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-success">
-                          0.05%
+                          0.03%
                         </small>
                       </a>
                     </div>
@@ -22439,7 +22499,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-danger">
-                          -0.05%
+                          -0.03%
                         </small>
                       </a>
                     </div>
@@ -22614,7 +22674,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.06%
+                                +0.04%
                               </span>
                             </a>
                             
@@ -22636,7 +22696,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -22650,7 +22710,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -22679,7 +22739,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.06%
+                                -0.04%
                               </span>
                             </a>
                             
@@ -22699,7 +22759,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -22712,7 +22772,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -22741,17 +22801,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=455572?spec=266"
+                              href="https://www.wowhead.com/spell=422054?spec=266"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-505-Spec" aria-expanded="false"
                               aria-controls="gainCol-505-Spec">
-                              <img src="/data/icons/achievement_boss_hellfire_fellord.png" alt=""
+                              <img src="/data/icons/ability_bossfelorcs_necromancer_purple.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="The Houndmaster&#39;s Gambit">
-                                The Houndmaster&#39;s Gambit
+                              <span class="flex-grow-1 text-truncate" title="Shadow Invocation">
+                                Shadow Invocation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.79%
+                                +0.76%
                               </span>
                             </a>
                             
@@ -22767,13 +22827,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=422054?spec=266"
+                                href="https://www.wowhead.com/spell=387391?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/ability_bossfelorcs_necromancer_purple.png" alt=""
+                                <img src="/data/icons/achievement_boss_argus_hound.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Shadow Invocation</span>
+                                <span class="ms-2">Dread Calling</span>
                                 <span class="ms-auto text-success">
-                                  +0.7%
+                                  +0.66%
                                 </span>
                               </a>
                               
@@ -22781,13 +22841,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387391?spec=266"
+                                href="https://www.wowhead.com/spell=455572?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/achievement_boss_argus_hound.png" alt=""
+                                <img src="/data/icons/achievement_boss_hellfire_fellord.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Dread Calling</span>
+                                <span class="ms-2">The Houndmaster&#39;s Gambit</span>
                                 <span class="ms-auto text-success">
-                                  +0.69%
+                                  +0.61%
                                 </span>
                               </a>
                               
@@ -22816,7 +22876,7 @@
                                 Pact of the Imp Mother
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.95%
+                                -0.92%
                               </span>
                             </a>
                             
@@ -22836,7 +22896,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Brutality</span>
                                 <span class="ms-auto text-danger">
-                                  -0.79%
+                                  -0.64%
                                 </span>
                               </a>
                               
@@ -22849,7 +22909,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Antoran Armaments</span>
                                 <span class="ms-auto text-danger">
-                                  -0.66%
+                                  -0.64%
                                 </span>
                               </a>
                               
@@ -22898,7 +22958,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-success">
-                          0.06%
+                          0.04%
                         </small>
                       </a>
                     </div>
@@ -22910,7 +22970,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-danger">
-                          -0.06%
+                          -0.04%
                         </small>
                       </a>
                     </div>
@@ -23085,7 +23145,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.06%
+                                +0.04%
                               </span>
                             </a>
                             
@@ -23107,7 +23167,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -23121,7 +23181,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.04%
                                 </span>
                               </a>
                               
@@ -23150,7 +23210,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.06%
+                                -0.04%
                               </span>
                             </a>
                             
@@ -23170,7 +23230,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -23183,7 +23243,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.04%
                                 </span>
                               </a>
                               
@@ -23222,7 +23282,7 @@
                                 Shadow Invocation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.28%
+                                +3.47%
                               </span>
                             </a>
                             
@@ -23244,7 +23304,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Houndmaster&#39;s Gambit</span>
                                 <span class="ms-auto text-success">
-                                  +2.04%
+                                  +2.34%
                                 </span>
                               </a>
                               
@@ -23258,7 +23318,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Flametouched</span>
                                 <span class="ms-auto text-success">
-                                  +1.67%
+                                  +1.78%
                                 </span>
                               </a>
                               
@@ -23287,7 +23347,7 @@
                                 Immutable Hatred
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.44%
+                                -2.74%
                               </span>
                             </a>
                             
@@ -23307,20 +23367,20 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Demonic Brutality</span>
                                 <span class="ms-auto text-danger">
-                                  -2.15%
+                                  -2.49%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=387541?spec=266"
+                                href="https://www.wowhead.com/spell=387494?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/inv_archaeology_70_impgenerator.png" alt=""
+                                <img src="/data/icons/inv_axe_1h_felfireraid_d_01.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Pact of the Imp Mother</span>
+                                <span class="ms-2">Antoran Armaments</span>
                                 <span class="ms-auto text-danger">
-                                  -1.51%
+                                  -1.56%
                                 </span>
                               </a>
                               
@@ -23369,7 +23429,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Soul Harvester</small><br />
                         <small class="text-success">
-                          0.07%
+                          0.12%
                         </small>
                       </a>
                     </div>
@@ -23381,7 +23441,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Diabolist</small><br />
                         <small class="text-danger">
-                          -0.07%
+                          -0.12%
                         </small>
                       </a>
                     </div>
@@ -23556,7 +23616,7 @@
                                 Wicked Reaping
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.08%
+                                +0.13%
                               </span>
                             </a>
                             
@@ -23578,7 +23638,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Shared Fate</span>
                                 <span class="ms-auto text-success">
-                                  +0.08%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -23592,7 +23652,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Eternal Servitude</span>
                                 <span class="ms-auto text-success">
-                                  +0.08%
+                                  +0.13%
                                 </span>
                               </a>
                               
@@ -23621,7 +23681,7 @@
                                 Secrets of the Coven
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.08%
+                                -0.13%
                               </span>
                             </a>
                             
@@ -23641,7 +23701,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Ruination</span>
                                 <span class="ms-auto text-danger">
-                                  -0.08%
+                                  -0.13%
                                 </span>
                               </a>
                               
@@ -23654,7 +23714,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Abyssal Dominion</span>
                                 <span class="ms-auto text-danger">
-                                  -0.08%
+                                  -0.13%
                                 </span>
                               </a>
                               
@@ -23683,17 +23743,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=453908?spec=266"
+                              href="https://www.wowhead.com/spell=267214?spec=266"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-542-Spec" aria-expanded="false"
                               aria-controls="gainCol-542-Spec">
-                              <img src="/data/icons/ability_demonhunter_bladedance.png" alt=""
+                              <img src="/data/icons/ability_creature_disease_05.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Demonic Brutality">
-                                Demonic Brutality
+                              <span class="flex-grow-1 text-truncate" title="Sacrificed Souls">
+                                Sacrificed Souls
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.97%
+                                +0.76%
                               </span>
                             </a>
                             
@@ -23709,13 +23769,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=267214?spec=266"
+                                href="https://www.wowhead.com/spell=453908?spec=266"
                                 target="_blank">
-                                <img src="/data/icons/ability_creature_disease_05.png" alt=""
+                                <img src="/data/icons/ability_demonhunter_bladedance.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Sacrificed Souls</span>
+                                <span class="ms-2">Demonic Brutality</span>
                                 <span class="ms-auto text-success">
-                                  +0.87%
+                                  +0.75%
                                 </span>
                               </a>
                               
@@ -23729,7 +23789,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imp-erator</span>
                                 <span class="ms-auto text-success">
-                                  +0.63%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -23758,7 +23818,7 @@
                                 Shadow Invocation
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.32%
+                                -1.2%
                               </span>
                             </a>
                             
@@ -23778,7 +23838,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">The Houndmaster&#39;s Gambit</span>
                                 <span class="ms-auto text-danger">
-                                  -1.15%
+                                  -0.94%
                                 </span>
                               </a>
                               
@@ -23791,7 +23851,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Dread Calling</span>
                                 <span class="ms-auto text-danger">
-                                  -0.66%
+                                  -0.49%
                                 </span>
                               </a>
                               
@@ -24961,7 +25021,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -25187,6 +25248,9 @@
 
       const raw = [
         
+    45951
+      , 
+    
     122138
       , 
     
@@ -25194,9 +25258,6 @@
       , 
     
     6542
-      , 
-    
-    45951
       
     
 ];
@@ -25454,6 +25515,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 

@@ -42,6 +42,7 @@
 <!-- CSS Files -->
 <link id="pagestyle" href="/assets/css/material-dashboard.css" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css" />
+<link rel="stylesheet" href="/assets/css/search.css" />
 <!-- bootstrap Icons-->
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
@@ -55,7 +56,7 @@
   <!-- Primary SEO -->
   <title>Enhancement Shaman Mythic+ Build & Gear Guide | MythiStone</title>
   <meta name="description"
-    content="Discover the most popular Mythic+ build for Enhancement Shaman, with top talents, gear, enchants, gems, Embelishments & more—based on 2.3 M runs. Updated 23/09/2025, 07:33:54.">
+    content="Discover the most popular Mythic+ build for Enhancement Shaman, with top talents, gear, enchants, gems, Embelishments & more—based on 2.4 M runs. Updated 23/09/2025, 20:26:46.">
   <link rel="canonical" href="https://mythistone.com/classes/Dps/Enhancement_Shaman">
 
   <!-- Robots -->
@@ -67,7 +68,7 @@
   <meta property="og:url" content="https://mythistone.com/classes/Dps/Enhancement_Shaman">
   <meta property="og:title" content="Enhancement Shaman Mythic+ Build & Gear Guide">
   <meta property="og:description"
-    content="See the top talents, gear, enchants and socket setup for Enhancement Shaman Mythic+ players, sourced from 2.3 M runs.">
+    content="See the top talents, gear, enchants and socket setup for Enhancement Shaman Mythic+ players, sourced from 2.4 M runs.">
   <meta property="og:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
   <meta property="og:image:alt" content="Enhancement icon">
   <meta property="og:locale" content="en_US">
@@ -78,7 +79,7 @@
   <meta name="twitter:creator" content="@MythiStone">
   <meta name="twitter:title" content="Enhancement Shaman Mythic+ Build & Gear Guide">
   <meta name="twitter:description"
-    content="Break down the best Mythic+ build for Enhancement Shaman—talents, gear, enchants, gems—based on real data from 2.3 M runs.">
+    content="Break down the best Mythic+ build for Enhancement Shaman—talents, gear, enchants, gems—based on real data from 2.4 M runs.">
   <meta name="twitter:image" content="https://mythistone.com/assets/img/favicon/favicon-96x96.png">
 
   <!-- Mobile / Theme -->
@@ -363,7 +364,7 @@
     "url": "https://mythistone.com"
   },
   "datePublished": "01/07/2025",
-  "dateModified": "23/09/2025, 07:33:54"
+  "dateModified": "23/09/2025, 20:26:46"
 }
   </script>
   <link id="pagestyle" href="/assets/css/stat-colors.css" rel="stylesheet" />
@@ -959,11 +960,11 @@
       <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes">Classes</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="">Classes</a></li>
         
         
         
-        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/Classes/Dps">Dps</a></li>
+        <li class="breadcrumb-item text-sm "><a class="opacity-5 text-body-emphasis" href="/pages/search?q=Dps">Dps</a></li>
         
         
         
@@ -974,10 +975,33 @@
     </nav>
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-        <div class="input-group input-group-outline">
-          <label class="form-label">Type here...</label>
-          <input type="text" class="form-control">
+        <!-- paste into navbar (replaces the current input-group) -->
+        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+          <div class="position-relative w-100">
+            <form id="site-search-form" role="search" class="mb-0" onsubmit="return false;">
+              <div class="input-group input-group-outline">
+                <label class="form-label visually-hidden" for="site-search-input">Search site</label>
+                <input id="site-search-input" type="search" class="form-control text-body-emphasis"
+                  placeholder="Search pages, classes, guides..." aria-label="Search site" autocomplete="off" />
+                <button id="site-search-clear" class="btn btn-link px-2 d-none" aria-label="Clear search" type="button">
+                  <i class="material-symbols-rounded">close</i>
+                </button>
+              </div>
+            </form>
+
+            <!-- Dropdown / results panel -->
+            <div id="site-search-results" class="dropdown-menu dropdown-menu-end p-2 mt-2 shadow-sm"
+              style="width: 480px; max-width:calc(100vw - 40px); display:none;" role="listbox"
+              aria-label="Search results">
+              <div id="site-search-results-inner" class="list-group list-group-flush"></div>
+              <div id="site-search-noresults" class="px-3 py-2 text-muted small d-none">No results.</div>
+              <div class="px-3 py-2 text-end">
+                <a href="/pages/search" id="site-search-all-results" class="small">View all results</a>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
       <ul class="navbar-nav d-flex align-items-center  justify-content-end">
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -1001,6 +1025,22 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-warning alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">Since patch 11.2, the Blizzard Armory is returning some incorrect data. As a result, some stat priorities may be shown incorrectly.</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <h3> <span class="class-Shaman-text">Enhancement Shaman </span> Mythic + build</h6>
@@ -1025,8 +1065,8 @@
               </div>
               <div class="card-body">
                 <h4 class="mb-0 px-2" data-bs-toggle="tooltip" data-bs-placement="top"
-                  title="104.6 K seen in 2.3 M total runs">Overall
-                  Played: 4.46%</h4>
+                  title="104.6 K seen in 2.4 M total runs">Overall
+                  Played: 4.31%</h4>
                 <div class="px-2" style="height: 4rem;">
                   <span>Key Upgrades:</span>
                   <canvas id="runsBarChart"></canvas>
@@ -1036,7 +1076,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612834.817045>Last Update:</span>
+                    data-timestamp=1758659206.864258>Last Update:</span>
                 </p>
               </div>
             </div>
@@ -1093,7 +1133,7 @@
               <div class="card-footer p-2 ps-3">
                 <p class="mb-0 text-sm">
                   <span class="timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1758612834.817045>Last Update</span>
+                    data-timestamp=1758659206.864258>Last Update</span>
                 </p>
               </div>
             </div>
@@ -1223,7 +1263,7 @@
             scrolling="no"></iframe>
         </div>
         
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center my-2">
           <div class="col-md-auto">
             <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal"
               data-bs-target="#routeModal">
@@ -1269,7 +1309,7 @@
             <div class="badge stat-agility py-1 px-2">AGILITY</div>
 
             
-            <div class="h5 mb-0">95.3 K</div>
+            <div class="h5 mb-0">95.4 K</div>
             
           </div>
         </div>
@@ -1302,10 +1342,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 3 K, max: 34.9 K, avg: 21.5 K"
+              title="min: 3 K, max: 34.9 K, avg: 21.6 K"
               tabindex="0" role="button"
-              aria-label="min 3 K, max 34.9 K, avg: 21.5 K">
-              32.30%
+              aria-label="min 3 K, max 34.9 K, avg: 21.6 K">
+              32.33%
             </div>
             
           </div>
@@ -1342,7 +1382,7 @@
               title="min: 1.5 K, max: 30.7 K, avg: 19.4 K"
               tabindex="0" role="button"
               aria-label="min 1.5 K, max 30.7 K, avg: 19.4 K">
-              71.51%
+              71.57%
             </div>
             
           </div>
@@ -1379,7 +1419,7 @@
               title="min: 0, max: 26.7 K, avg: 5.6 K"
               tabindex="0" role="button"
               aria-label="min 0, max 26.7 K, avg: 5.6 K">
-              17.75%
+              17.76%
             </div>
             
           </div>
@@ -1416,7 +1456,7 @@
               title="min: 0, max: 27.7 K, avg: 3.3 K"
               tabindex="0" role="button"
               aria-label="min 0, max 27.7 K, avg: 3.3 K">
-              4.26%
+              4.25%
             </div>
             
           </div>
@@ -1479,7 +1519,7 @@
             <div class="badge stat-stamina py-1 px-2">stamina</div>
 
             
-            <div class="h5 mb-0">665.1 K</div>
+            <div class="h5 mb-0">665.9 K</div>
             
           </div>
         </div>
@@ -1550,10 +1590,10 @@
 
             
             <div class="h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top"
-              title="min: 0, max: 6.6 K, avg: 729"
+              title="min: 0, max: 6.6 K, avg: 730"
               tabindex="0" role="button"
-              aria-label="min 0, max 6.6 K, avg: 729">
-              0.71%
+              aria-label="min 0, max 6.6 K, avg: 730">
+              0.72%
             </div>
             
           </div>
@@ -2129,8 +2169,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237984?bonus=6652:9925:10255:12239:12297:12365&spec=263&ench=7933&gems=213494"
-      data-wowhead="bonus=6652:9925:10255:12239:12297:12365&spec=263&ench=7933&gems=213494"
+      href="https://www.wowhead.com/item=237984?bonus=6652:9925:10255:12239:12297:12921&spec=263&ench=7933"
+      data-wowhead="bonus=6652:9925:10255:12239:12297:12921&spec=263&ench=7933"
       >
       <img src="/data/icons/inv_helm_mail_outdoorethereal_c_01.png" />
     </a>
@@ -2138,8 +2178,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237984?bonus=6652:9925:10255:12239:12297:12365&spec=263&ench=7933&gems=213494 "
-      data-wowhead="bonus=6652:9925:10255:12239:12297:12365&spec=263&ench=7933&gems=213494"
+      href="https://www.wowhead.com/item=237984?bonus=6652:9925:10255:12239:12297:12921&spec=263&ench=7933"
+      data-wowhead="bonus=6652:9925:10255:12239:12297:12921&spec=263&ench=7933"
       data-wh-rename-link="true" >
       <p class="mb-1">Void-Scarred Striker&#39;s Cowl</p>
     </a>
@@ -2159,28 +2199,6 @@
         </div>
       </a>
       
-      
-      <div class="d-flex align-items-center gap-1 flex-nowrap">
-        
-        <a target="_blank" href="https://www.wowhead.com/item=213494&spec=263" >
-          <div class="position-relative" style="width:16px; height:16px; display:inline-block;">
-            
-
-            <!-- Base icon -->
-            <img src="/data/icons/inv_jewelcrafting_cut_standart_gem_hybrid_color2_3.png" alt=""
-              class="position-absolute top-0 start-0 border border-quality-3 "
-              style="width:100%; height:100%; object-fit:contain;">
-
-            
-            <!-- Overlay icon -->
-            <img src="/data/icons/crafting-quality-3.png" alt=""
-              class="position-absolute top-0 start-0" style="width:100%; height:100%; object-fit:contain; z-index:1;">
-            
-          </div>
-
-        </a>
-        
-      </div>
       
     </div>
     <div>
@@ -3529,8 +3547,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=178821?bonus=6652:10010:10255:10383:10390:12239:12352&spec=263"
-      data-wowhead="bonus=6652:10010:10255:10383:10390:12239:12352&spec=263"
+      href="https://www.wowhead.com/item=178821?bonus=6652:10013:10255:10383:10390:12239:12353&spec=263"
+      data-wowhead="bonus=6652:10013:10255:10383:10390:12239:12353&spec=263"
       >
       <img src="/data/icons/inv_shoulder_mail_oribosdungeon_c_01.png" />
     </a>
@@ -3538,8 +3556,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=178821?bonus=6652:10010:10255:10383:10390:12239:12352&spec=263"
-      data-wowhead="bonus=6652:10010:10255:10383:10390:12239:12352&spec=263"
+      href="https://www.wowhead.com/item=178821?bonus=6652:10013:10255:10383:10390:12239:12353&spec=263"
+      data-wowhead="bonus=6652:10013:10255:10383:10390:12239:12353&spec=263"
       data-wh-rename-link="true" >
       <p class="mb-1">Mantle of Ephemeral Visages</p>
     </a>
@@ -3629,8 +3647,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237537?bonus=1514:6652:10255:10355:12239:12353&spec=263"
-      data-wowhead="bonus=1514:6652:10255:10355:12239:12353&spec=263"
+      href="https://www.wowhead.com/item=237537?bonus=1501:6652:10255:10354:12239:12293&spec=263"
+      data-wowhead="bonus=1501:6652:10255:10354:12239:12293&spec=263"
       >
       <img src="/data/icons/inv_shoulder_mail_raidshamanethereal_d_01.png" />
     </a>
@@ -3638,8 +3656,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237537?bonus=1514:6652:10255:10355:12239:12353&spec=263"
-      data-wowhead="bonus=1514:6652:10255:10355:12239:12353&spec=263"
+      href="https://www.wowhead.com/item=237537?bonus=1501:6652:10255:10354:12239:12293&spec=263"
+      data-wowhead="bonus=1501:6652:10255:10354:12239:12293&spec=263"
       data-wh-rename-link="true" >
       <p class="mb-1">Claws of Failed Resistance</p>
     </a>
@@ -3679,8 +3697,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237986?bonus=6652:9881:10255:12239:12291&spec=263"
-      data-wowhead="bonus=6652:9881:10255:12239:12291&spec=263"
+      href="https://www.wowhead.com/item=237986?bonus=6652:9925:10255:12239:12297&spec=263"
+      data-wowhead="bonus=6652:9925:10255:12239:12297&spec=263"
       >
       <img src="/data/icons/inv_shoulder_mail_outdoorethereal_c_01.png" />
     </a>
@@ -3688,8 +3706,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237986?bonus=6652:9881:10255:12239:12291&spec=263"
-      data-wowhead="bonus=6652:9881:10255:12239:12291&spec=263"
+      href="https://www.wowhead.com/item=237986?bonus=6652:9925:10255:12239:12297&spec=263"
+      data-wowhead="bonus=6652:9925:10255:12239:12297&spec=263"
       data-wh-rename-link="true" >
       <p class="mb-1">Void-Scarred Striker&#39;s Pauldrons</p>
     </a>
@@ -5279,8 +5297,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237523?bonus=1514:6652:10255:10355:12239:12353:12921&spec=263&ench=7385"
-      data-wowhead="bonus=1514:6652:10255:10355:12239:12353:12921&spec=263&ench=7385"
+      href="https://www.wowhead.com/item=237523?bonus=1517:6652:10255:10356:12239:12356:12921&spec=263&ench=7385"
+      data-wowhead="bonus=1517:6652:10255:10356:12239:12356:12921&spec=263&ench=7385"
       >
       <img src="/data/icons/inv_bracer_mail_raidevokerethereal_d_01.png" />
     </a>
@@ -5288,8 +5306,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=237523?bonus=1514:6652:10255:10355:12239:12353:12921&spec=263&ench=7385"
-      data-wowhead="bonus=1514:6652:10255:10355:12239:12353:12921&spec=263&ench=7385"
+      href="https://www.wowhead.com/item=237523?bonus=1517:6652:10255:10356:12239:12356:12921&spec=263&ench=7385"
+      data-wowhead="bonus=1517:6652:10255:10356:12239:12356:12921&spec=263&ench=7385"
       data-wh-rename-link="true" >
       <p class="mb-1">Arcanotech Wrist-Matrix</p>
     </a>
@@ -5345,8 +5363,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=211028?bonus=3283:6652:10255:12239:12297:12921&spec=263&ench=7385"
-      data-wowhead="bonus=3283:6652:10255:12239:12297:12921&spec=263&ench=7385"
+      href="https://www.wowhead.com/item=211028?bonus=3283:6652:10255:12239:12353:12921&spec=263&ench=7385"
+      data-wowhead="bonus=3283:6652:10255:12239:12353:12921&spec=263&ench=7385"
       >
       <img src="/data/icons/inv_bracer_mail_undergroundquest_b_01.png" />
     </a>
@@ -5354,8 +5372,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=211028?bonus=3283:6652:10255:12239:12297:12921&spec=263&ench=7385"
-      data-wowhead="bonus=3283:6652:10255:12239:12297:12921&spec=263&ench=7385"
+      href="https://www.wowhead.com/item=211028?bonus=3283:6652:10255:12239:12353:12921&spec=263&ench=7385"
+      data-wowhead="bonus=3283:6652:10255:12239:12353:12921&spec=263&ench=7385"
       data-wh-rename-link="true" >
       <p class="mb-1">Torchbearer&#39;s Bracers</p>
     </a>
@@ -6249,8 +6267,8 @@
   <!-- Item icon & link -->
   <div class="col-auto px-0">
     <a target="_blank"
-      href="https://www.wowhead.com/item=228867?bonus=1520:6652:10255:10355:11967:12372&spec=263"
-      data-wowhead="bonus=1520:6652:10255:10355:11967:12372&spec=263"
+      href="https://www.wowhead.com/item=228867?bonus=1533:6652:10255:10356:11998:12376&spec=263"
+      data-wowhead="bonus=1533:6652:10255:10356:11998:12376&spec=263"
       >
       <img src="/data/icons/inv_glove_mail_raidhuntergoblin_d_01.png" />
     </a>
@@ -6258,8 +6276,8 @@
   <!-- Name & secondary icons -->
   <div class="col">
     <a target="_blank"
-      href="https://www.wowhead.com/item=228867?bonus=1520:6652:10255:10355:11967:12372&spec=263"
-      data-wowhead="bonus=1520:6652:10255:10355:11967:12372&spec=263"
+      href="https://www.wowhead.com/item=228867?bonus=1533:6652:10255:10356:11998:12376&spec=263"
+      data-wowhead="bonus=1533:6652:10255:10356:11998:12376&spec=263"
       data-wh-rename-link="true" >
       <p class="mb-1">Gravi-Gunk Handlers</p>
     </a>
@@ -18182,7 +18200,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="67302 out of 219381 gems" class="mb-0">
+                                  title="69051 out of 225230 gems" class="mb-0">
                                    31 % </p>
                               </div>
                             </div>
@@ -18243,7 +18261,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="55068 out of 219381 gems" class="mb-0">
+                                  title="56569 out of 225230 gems" class="mb-0">
                                    25 % </p>
                               </div>
                             </div>
@@ -18297,7 +18315,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="23556 out of 219381 gems" class="mb-0">
+                                  title="24194 out of 225230 gems" class="mb-0">
                                    11 % </p>
                               </div>
                             </div>
@@ -18335,7 +18353,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="19390 out of 219381 gems" class="mb-0">
+                                  title="19877 out of 225230 gems" class="mb-0">
                                    9 % </p>
                               </div>
                             </div>
@@ -18396,7 +18414,45 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="10999 out of 219381 gems" class="mb-0">
+                                  title="11263 out of 225230 gems" class="mb-0">
+                                   5 % </p>
+                              </div>
+                            </div>
+                            
+                            
+                            
+                            
+                            <div class="row align-items-center mb-2">
+                              <!-- Gem icon & link -->
+                              <div class="col-auto">
+                                <a target="_blank"
+                                  href="https://www.wowhead.com/item=238046&spec=263">
+                                  <div class="position-relative" style="width:24px; height:24px; display:inline-block;">
+                                    <img src="/data/icons/inv_112_etherealwraps_empowered_original.png" alt=""
+                                      class="position-absolute top-0 start-0 border border-quality-4 "
+                                      style="width:100%; height:100%; object-fit:contain;">
+                                  </div>
+                                </a>
+                              </div>
+                              <!-- Gem Name -->
+                              <div class="col">
+                                <a target="_blank"
+                                  href="https://www.wowhead.com/item=238046&spec=263">
+                                  <p class="mb-1">Pure Energizing Fiber</p>
+                                </a>
+                              </div>
+                              <!-- Gem Stats -->
+                              <div class="col-md-3 d-none d-md-block">
+                                
+                              </div>
+                              <!-- Gem Price -->
+                              <div class="col-md-2 d-none d-md-block text-start">
+                                
+                              </div>
+                              <!-- Popularity % -->
+                              <div class="col-md-2 text-end">
+                                <p data-bs-toggle="tooltip" data-bs-placement="top"
+                                  title="10587 out of 225230 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18457,45 +18513,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="10268 out of 219381 gems" class="mb-0">
-                                   5 % </p>
-                              </div>
-                            </div>
-                            
-                            
-                            
-                            
-                            <div class="row align-items-center mb-2">
-                              <!-- Gem icon & link -->
-                              <div class="col-auto">
-                                <a target="_blank"
-                                  href="https://www.wowhead.com/item=238046&spec=263">
-                                  <div class="position-relative" style="width:24px; height:24px; display:inline-block;">
-                                    <img src="/data/icons/inv_112_etherealwraps_empowered_original.png" alt=""
-                                      class="position-absolute top-0 start-0 border border-quality-4 "
-                                      style="width:100%; height:100%; object-fit:contain;">
-                                  </div>
-                                </a>
-                              </div>
-                              <!-- Gem Name -->
-                              <div class="col">
-                                <a target="_blank"
-                                  href="https://www.wowhead.com/item=238046&spec=263">
-                                  <p class="mb-1">Pure Energizing Fiber</p>
-                                </a>
-                              </div>
-                              <!-- Gem Stats -->
-                              <div class="col-md-3 d-none d-md-block">
-                                
-                              </div>
-                              <!-- Gem Price -->
-                              <div class="col-md-2 d-none d-md-block text-start">
-                                
-                              </div>
-                              <!-- Popularity % -->
-                              <div class="col-md-2 text-end">
-                                <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="10262 out of 219381 gems" class="mb-0">
+                                  title="10516 out of 225230 gems" class="mb-0">
                                    5 % </p>
                               </div>
                             </div>
@@ -18556,7 +18574,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="8458 out of 219381 gems" class="mb-0">
+                                  title="8718 out of 225230 gems" class="mb-0">
                                    4 % </p>
                               </div>
                             </div>
@@ -18617,7 +18635,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="7499 out of 219381 gems" class="mb-0">
+                                  title="7703 out of 225230 gems" class="mb-0">
                                    3 % </p>
                               </div>
                             </div>
@@ -18678,7 +18696,7 @@
                               <!-- Popularity % -->
                               <div class="col-md-2 text-end">
                                 <p data-bs-toggle="tooltip" data-bs-placement="top"
-                                  title="6579 out of 219381 gems" class="mb-0">
+                                  title="6752 out of 225230 gems" class="mb-0">
                                    3 % </p>
                               </div>
                             </div>
@@ -19824,14 +19842,12 @@
             <!-- right: links -->
             <div class="col-12 col-lg-4 order-3 order-lg-3">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                    <li class="nav-item"><a href="/" class="nav-link text-muted" target="_blank">MythiStone</a></li>
+                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted">MythiStone</a></li>
                     <li class="nav-item"><a href="/pages/privacy" class="nav-link text-muted"
                             target="_blank">Privacy</a></li>
                     <li class="nav-item"><a href="/pages/impressum" class="nav-link text-muted"
                             target="_blank">Impressum</a></li>
-                    <li class="nav-item"><a href="/pages/about" class="nav-link text-muted" target="_blank">About Us</a>
-                    </li>
-                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" target="_blank">Blog</a></li>
+                    <li class="nav-item"><a href="/pages/blog" class="nav-link text-muted" >Blog</a></li>
                 </ul>
             </div>
         </div>
@@ -19878,7 +19894,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-success">
-                          0.15%
+                          0.09%
                         </small>
                       </a>
                     </div>
@@ -19890,7 +19906,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-danger">
-                          -0.15%
+                          -0.09%
                         </small>
                       </a>
                     </div>
@@ -20065,7 +20081,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.16%
+                                +0.1%
                               </span>
                             </a>
                             
@@ -20087,7 +20103,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-success">
-                                  +0.16%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -20101,7 +20117,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-success">
-                                  +0.16%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -20120,17 +20136,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=467778?spec=263"
+                              href="https://www.wowhead.com/spell=455129?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-378-Hero" aria-expanded="false"
                               aria-controls="lossCol-378-Hero">
-                              <img src="/data/icons/spell_shaman_staticshock.png" alt=""
+                              <img src="/data/icons/spell_nature_stormreach.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Lightning Conduit">
-                                Lightning Conduit
+                              <span class="flex-grow-1 text-truncate" title="Awakening Storms">
+                                Awakening Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.16%
+                                -0.1%
                               </span>
                             </a>
                             
@@ -20144,26 +20160,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
-                                target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
-                                <span class="ms-auto text-danger">
-                                  -0.16%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=455123?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Conductive Energy</span>
                                 <span class="ms-auto text-danger">
-                                  -0.16%
+                                  -0.1%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=455088?spec=263"
+                                target="_blank">
+                                <img src="/data/icons/spell_nature_unrelentingstorm.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Storm Swell</span>
+                                <span class="ms-auto text-danger">
+                                  -0.1%
                                 </span>
                               </a>
                               
@@ -20202,7 +20218,7 @@
                                 Sundering
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.87%
+                                +1.63%
                               </span>
                             </a>
                             
@@ -20218,13 +20234,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=382042?spec=263"
+                                href="https://www.wowhead.com/spell=334046?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
+                                <img src="/data/icons/spell_shaman_shockinglava.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Splintered Elements</span>
+                                <span class="ms-2">Lashing Flames</span>
                                 <span class="ms-auto text-success">
-                                  +0.29%
+                                  +0.34%
                                 </span>
                               </a>
                               
@@ -20232,13 +20248,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=375982?spec=263"
+                                href="https://www.wowhead.com/spell=334195?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
+                                <img src="/data/icons/spell_frost_icestorm.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Primordial Wave</span>
+                                <span class="ms-2">Hailstorm</span>
                                 <span class="ms-auto text-success">
-                                  +0.26%
+                                  +0.24%
                                 </span>
                               </a>
                               
@@ -20281,26 +20297,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=382888?spec=263"
+                                href="https://www.wowhead.com/spell=1218047?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/ability_ghoulfrenzy.png" alt=""
+                                <img src="/data/icons/ability_shaman_ascendance.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Flurry</span>
+                                <span class="ms-2">Primordial Storm</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.33%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384363?spec=263"
+                                href="https://www.wowhead.com/spell=382888?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/warrior_talent_icon_stormbolt.png" alt=""
+                                <img src="/data/icons/ability_ghoulfrenzy.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Converging Storms</span>
+                                <span class="ms-2">Flurry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.26%
+                                  -0.3%
                                 </span>
                               </a>
                               
@@ -20349,7 +20365,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-success">
-                          0.06%
+                          0.07%
                         </small>
                       </a>
                     </div>
@@ -20361,7 +20377,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-danger">
-                          -0.06%
+                          -0.07%
                         </small>
                       </a>
                     </div>
@@ -20536,7 +20552,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.07%
+                                +0.08%
                               </span>
                             </a>
                             
@@ -20558,7 +20574,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-success">
-                                  +0.07%
+                                  +0.08%
                                 </span>
                               </a>
                               
@@ -20572,7 +20588,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-success">
-                                  +0.07%
+                                  +0.08%
                                 </span>
                               </a>
                               
@@ -20591,17 +20607,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=467778?spec=263"
+                              href="https://www.wowhead.com/spell=455129?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-391-Hero" aria-expanded="false"
                               aria-controls="lossCol-391-Hero">
-                              <img src="/data/icons/spell_shaman_staticshock.png" alt=""
+                              <img src="/data/icons/spell_nature_stormreach.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Lightning Conduit">
-                                Lightning Conduit
+                              <span class="flex-grow-1 text-truncate" title="Awakening Storms">
+                                Awakening Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.07%
+                                -0.09%
                               </span>
                             </a>
                             
@@ -20615,26 +20631,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
-                                target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
-                                <span class="ms-auto text-danger">
-                                  -0.07%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=455123?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Conductive Energy</span>
                                 <span class="ms-auto text-danger">
-                                  -0.07%
+                                  -0.09%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=455088?spec=263"
+                                target="_blank">
+                                <img src="/data/icons/spell_nature_unrelentingstorm.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Storm Swell</span>
+                                <span class="ms-auto text-danger">
+                                  -0.09%
                                 </span>
                               </a>
                               
@@ -20663,17 +20679,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=1218047?spec=263"
+                              href="https://www.wowhead.com/spell=375982?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-391-Spec" aria-expanded="false"
                               aria-controls="gainCol-391-Spec">
-                              <img src="/data/icons/ability_shaman_ascendance.png" alt=""
+                              <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Primordial Storm">
-                                Primordial Storm
+                              <span class="flex-grow-1 text-truncate" title="Primordial Wave">
+                                Primordial Wave
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.31%
+                                +1.23%
                               </span>
                             </a>
                             
@@ -20689,13 +20705,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=375982?spec=263"
+                                href="https://www.wowhead.com/spell=1218047?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
+                                <img src="/data/icons/ability_shaman_ascendance.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Primordial Wave</span>
+                                <span class="ms-2">Primordial Storm</span>
                                 <span class="ms-auto text-success">
-                                  +1.22%
+                                  +1.21%
                                 </span>
                               </a>
                               
@@ -20709,7 +20725,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Splintered Elements</span>
                                 <span class="ms-auto text-success">
-                                  +1.13%
+                                  +1.15%
                                 </span>
                               </a>
                               
@@ -20728,17 +20744,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=51533?spec=263"
+                              href="https://www.wowhead.com/spell=384447?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-391-Spec" aria-expanded="false"
                               aria-controls="lossCol-391-Spec">
-                              <img src="/data/icons/spell_shaman_feralspirit.png" alt=""
+                              <img src="/data/icons/inv_misc_bone_09.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Feral Spirit">
-                                Feral Spirit
+                              <span class="flex-grow-1 text-truncate" title="Witch Doctor&#39;s Ancestry">
+                                Witch Doctor&#39;s Ancestry
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.14%
+                                -1.15%
                               </span>
                             </a>
                             
@@ -20752,26 +20768,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384447?spec=263"
+                                href="https://www.wowhead.com/spell=51533?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_misc_bone_09.png" alt=""
+                                <img src="/data/icons/spell_shaman_feralspirit.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Witch Doctor&#39;s Ancestry</span>
+                                <span class="ms-2">Feral Spirit</span>
                                 <span class="ms-auto text-danger">
-                                  -1.11%
+                                  -1.1%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=334046?spec=263"
+                                href="https://www.wowhead.com/spell=384363?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_shaman_shockinglava.png" alt=""
+                                <img src="/data/icons/warrior_talent_icon_stormbolt.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Lashing Flames</span>
+                                <span class="ms-2">Converging Storms</span>
                                 <span class="ms-auto text-danger">
-                                  -1.02%
+                                  -1.08%
                                 </span>
                               </a>
                               
@@ -20820,7 +20836,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-danger">
-                          -0.27%
+                          -0.13%
                         </small>
                       </a>
                     </div>
@@ -20832,7 +20848,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-success">
-                          0.27%
+                          0.13%
                         </small>
                       </a>
                     </div>
@@ -21007,7 +21023,7 @@
                                 Lightning Conduit
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.29%
+                                +0.14%
                               </span>
                             </a>
                             
@@ -21023,13 +21039,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
+                                href="https://www.wowhead.com/spell=454919?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
+                                <img src="/data/icons/spell_nature_callstorm.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
+                                <span class="ms-2">Voltaic Surge</span>
                                 <span class="ms-auto text-success">
-                                  +0.29%
+                                  +0.14%
                                 </span>
                               </a>
                               
@@ -21037,13 +21053,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455123?spec=263"
+                                href="https://www.wowhead.com/spell=454027?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
+                                <img src="/data/icons/spell_nature_lightningshield.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Conductive Energy</span>
+                                <span class="ms-2">Nature&#39;s Protection</span>
                                 <span class="ms-auto text-success">
-                                  +0.29%
+                                  +0.14%
                                 </span>
                               </a>
                               
@@ -21072,7 +21088,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.29%
+                                -0.14%
                               </span>
                             </a>
                             
@@ -21092,7 +21108,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-danger">
-                                  -0.29%
+                                  -0.14%
                                 </span>
                               </a>
                               
@@ -21105,7 +21121,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-danger">
-                                  -0.29%
+                                  -0.14%
                                 </span>
                               </a>
                               
@@ -21144,7 +21160,7 @@
                                 Ice Strike
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.15%
+                                +2.72%
                               </span>
                             </a>
                             
@@ -21160,13 +21176,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=334046?spec=263"
+                                href="https://www.wowhead.com/spell=384447?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_shaman_shockinglava.png" alt=""
+                                <img src="/data/icons/inv_misc_bone_09.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Lashing Flames</span>
+                                <span class="ms-2">Witch Doctor&#39;s Ancestry</span>
                                 <span class="ms-auto text-success">
-                                  +0.43%
+                                  +0.68%
                                 </span>
                               </a>
                               
@@ -21174,13 +21190,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384447?spec=263"
+                                href="https://www.wowhead.com/spell=51533?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_misc_bone_09.png" alt=""
+                                <img src="/data/icons/spell_shaman_feralspirit.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Witch Doctor&#39;s Ancestry</span>
+                                <span class="ms-2">Feral Spirit</span>
                                 <span class="ms-auto text-success">
-                                  +0.39%
+                                  +0.66%
                                 </span>
                               </a>
                               
@@ -21209,7 +21225,7 @@
                                 Converging Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -2.24%
+                                -2.01%
                               </span>
                             </a>
                             
@@ -21223,26 +21239,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=382042?spec=263"
-                                target="_blank">
-                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Splintered Elements</span>
-                                <span class="ms-auto text-danger">
-                                  -0.78%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=375982?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Primordial Wave</span>
                                 <span class="ms-auto text-danger">
-                                  -0.78%
+                                  -0.85%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=382042?spec=263"
+                                target="_blank">
+                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Splintered Elements</span>
+                                <span class="ms-auto text-danger">
+                                  -0.85%
                                 </span>
                               </a>
                               
@@ -21291,7 +21307,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-success">
-                          0.06%
+                          0.08%
                         </small>
                       </a>
                     </div>
@@ -21303,7 +21319,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-danger">
-                          -0.06%
+                          -0.08%
                         </small>
                       </a>
                     </div>
@@ -21478,7 +21494,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.06%
+                                +0.09%
                               </span>
                             </a>
                             
@@ -21500,7 +21516,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.09%
                                 </span>
                               </a>
                               
@@ -21514,7 +21530,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-success">
-                                  +0.06%
+                                  +0.09%
                                 </span>
                               </a>
                               
@@ -21533,17 +21549,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=467778?spec=263"
+                              href="https://www.wowhead.com/spell=455129?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-499-Hero" aria-expanded="false"
                               aria-controls="lossCol-499-Hero">
-                              <img src="/data/icons/spell_shaman_staticshock.png" alt=""
+                              <img src="/data/icons/spell_nature_stormreach.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Lightning Conduit">
-                                Lightning Conduit
+                              <span class="flex-grow-1 text-truncate" title="Awakening Storms">
+                                Awakening Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.06%
+                                -0.09%
                               </span>
                             </a>
                             
@@ -21557,26 +21573,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
-                                target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
-                                <span class="ms-auto text-danger">
-                                  -0.06%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=455123?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Conductive Energy</span>
                                 <span class="ms-auto text-danger">
-                                  -0.06%
+                                  -0.09%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=455088?spec=263"
+                                target="_blank">
+                                <img src="/data/icons/spell_nature_unrelentingstorm.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Storm Swell</span>
+                                <span class="ms-auto text-danger">
+                                  -0.09%
                                 </span>
                               </a>
                               
@@ -21615,7 +21631,7 @@
                                 Converging Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.14%
+                                +1.37%
                               </span>
                             </a>
                             
@@ -21631,13 +21647,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=334195?spec=263"
+                                href="https://www.wowhead.com/spell=384447?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_frost_icestorm.png" alt=""
+                                <img src="/data/icons/inv_misc_bone_09.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Hailstorm</span>
+                                <span class="ms-2">Witch Doctor&#39;s Ancestry</span>
                                 <span class="ms-auto text-success">
-                                  +0.45%
+                                  +0.57%
                                 </span>
                               </a>
                               
@@ -21645,13 +21661,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=262624?spec=263"
+                                href="https://www.wowhead.com/spell=51533?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/spell_shaman_feralspirit.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Elemental Spirits</span>
+                                <span class="ms-2">Feral Spirit</span>
                                 <span class="ms-auto text-success">
-                                  +0.26%
+                                  +0.54%
                                 </span>
                               </a>
                               
@@ -21680,7 +21696,7 @@
                                 Sundering
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.66%
+                                -0.63%
                               </span>
                             </a>
                             
@@ -21694,26 +21710,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384444?spec=263"
+                                href="https://www.wowhead.com/spell=187874?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_shaman_ancestralawakening.png" alt=""
+                                <img src="/data/icons/spell_shaman_crashlightning.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Thorim&#39;s Invocation</span>
+                                <span class="ms-2">Crash Lightning</span>
                                 <span class="ms-auto text-danger">
-                                  -0.29%
+                                  -0.4%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384411?spec=263"
+                                href="https://www.wowhead.com/spell=375982?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_callstorm.png" alt=""
+                                <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Static Accumulation</span>
+                                <span class="ms-2">Primordial Wave</span>
                                 <span class="ms-auto text-danger">
-                                  -0.29%
+                                  -0.35%
                                 </span>
                               </a>
                               
@@ -21762,7 +21778,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-success">
-                          0.23%
+                          0.24%
                         </small>
                       </a>
                     </div>
@@ -21774,7 +21790,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-danger">
-                          -0.23%
+                          -0.24%
                         </small>
                       </a>
                     </div>
@@ -21949,7 +21965,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.24%
+                                +0.27%
                               </span>
                             </a>
                             
@@ -21971,7 +21987,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-success">
-                                  +0.24%
+                                  +0.27%
                                 </span>
                               </a>
                               
@@ -21985,7 +22001,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-success">
-                                  +0.24%
+                                  +0.27%
                                 </span>
                               </a>
                               
@@ -22014,7 +22030,7 @@
                                 Lightning Conduit
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.24%
+                                -0.31%
                               </span>
                             </a>
                             
@@ -22028,26 +22044,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
+                                href="https://www.wowhead.com/spell=454919?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
+                                <img src="/data/icons/spell_nature_callstorm.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
+                                <span class="ms-2">Voltaic Surge</span>
                                 <span class="ms-auto text-danger">
-                                  -0.24%
+                                  -0.31%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455123?spec=263"
+                                href="https://www.wowhead.com/spell=454027?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
+                                <img src="/data/icons/spell_nature_lightningshield.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Conductive Energy</span>
+                                <span class="ms-2">Nature&#39;s Protection</span>
                                 <span class="ms-auto text-danger">
-                                  -0.24%
+                                  -0.31%
                                 </span>
                               </a>
                               
@@ -22086,7 +22102,7 @@
                                 Converging Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +3.52%
+                                +3.57%
                               </span>
                             </a>
                             
@@ -22108,7 +22124,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Sundering</span>
                                 <span class="ms-auto text-success">
-                                  +0.71%
+                                  +1.08%
                                 </span>
                               </a>
                               
@@ -22122,7 +22138,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Molten Thunder</span>
                                 <span class="ms-auto text-success">
-                                  +0.56%
+                                  +0.59%
                                 </span>
                               </a>
                               
@@ -22151,7 +22167,7 @@
                                 Ice Strike
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -4.2%
+                                -4.67%
                               </span>
                             </a>
                             
@@ -22171,7 +22187,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Stormflurry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.33%
+                                  -0.35%
                                 </span>
                               </a>
                               
@@ -22184,7 +22200,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Primordial Wave</span>
                                 <span class="ms-auto text-danger">
-                                  -0.32%
+                                  -0.34%
                                 </span>
                               </a>
                               
@@ -22233,7 +22249,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-danger">
-                          -0.05%
+                          -0.08%
                         </small>
                       </a>
                     </div>
@@ -22245,7 +22261,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-success">
-                          0.05%
+                          0.08%
                         </small>
                       </a>
                     </div>
@@ -22420,7 +22436,7 @@
                                 Lightning Conduit
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.05%
+                                +0.1%
                               </span>
                             </a>
                             
@@ -22436,13 +22452,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
+                                href="https://www.wowhead.com/spell=454919?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
+                                <img src="/data/icons/spell_nature_callstorm.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
+                                <span class="ms-2">Voltaic Surge</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -22450,13 +22466,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455123?spec=263"
+                                href="https://www.wowhead.com/spell=454027?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
+                                <img src="/data/icons/spell_nature_lightningshield.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Conductive Energy</span>
+                                <span class="ms-2">Nature&#39;s Protection</span>
                                 <span class="ms-auto text-success">
-                                  +0.05%
+                                  +0.1%
                                 </span>
                               </a>
                               
@@ -22485,7 +22501,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.05%
+                                -0.09%
                               </span>
                             </a>
                             
@@ -22505,7 +22521,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.09%
                                 </span>
                               </a>
                               
@@ -22518,7 +22534,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-danger">
-                                  -0.05%
+                                  -0.09%
                                 </span>
                               </a>
                               
@@ -22547,17 +22563,17 @@
                             
                             
                             <a class="accordion-button collapsed border-success d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=466467?spec=263"
+                              href="https://www.wowhead.com/spell=375982?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#gainCol-505-Spec" aria-expanded="false"
                               aria-controls="gainCol-505-Spec">
-                              <img src="/data/icons/spell_frost_frostbolt.png" alt=""
+                              <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Ice Strike">
-                                Ice Strike
+                              <span class="flex-grow-1 text-truncate" title="Primordial Wave">
+                                Primordial Wave
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.89%
+                                +0.95%
                               </span>
                             </a>
                             
@@ -22579,7 +22595,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Primordial Storm</span>
                                 <span class="ms-auto text-success">
-                                  +0.64%
+                                  +0.93%
                                 </span>
                               </a>
                               
@@ -22587,13 +22603,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=375982?spec=263"
+                                href="https://www.wowhead.com/spell=382042?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
+                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Primordial Wave</span>
+                                <span class="ms-2">Splintered Elements</span>
                                 <span class="ms-auto text-success">
-                                  +0.53%
+                                  +0.87%
                                 </span>
                               </a>
                               
@@ -22622,7 +22638,7 @@
                                 Sundering
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.7%
+                                -1.79%
                               </span>
                             </a>
                             
@@ -22642,7 +22658,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Feral Spirit</span>
                                 <span class="ms-auto text-danger">
-                                  -0.56%
+                                  -0.91%
                                 </span>
                               </a>
                               
@@ -22655,7 +22671,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Witch Doctor&#39;s Ancestry</span>
                                 <span class="ms-auto text-danger">
-                                  -0.54%
+                                  -0.88%
                                 </span>
                               </a>
                               
@@ -22703,8 +22719,8 @@
                         <img src="/data/icons/talents-heroclass-shaman-totemic.png" alt="Totemic"
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
-                        <small class="text-success">
-                          0.11%
+                        <small class="text-danger">
+                          -0.0%
                         </small>
                       </a>
                     </div>
@@ -22715,8 +22731,8 @@
                         <img src="/data/icons/talents-heroclass-shaman-stormbringer.png" alt="Stormbringer"
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
-                        <small class="text-danger">
-                          -0.11%
+                        <small class="text-success">
+                          0.0%
                         </small>
                       </a>
                     </div>
@@ -22891,7 +22907,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.12%
+                                +0.0%
                               </span>
                             </a>
                             
@@ -22913,7 +22929,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-success">
-                                  +0.12%
+                                  +0.0%
                                 </span>
                               </a>
                               
@@ -22927,7 +22943,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-success">
-                                  +0.12%
+                                  +0.0%
                                 </span>
                               </a>
                               
@@ -22946,17 +22962,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=467778?spec=263"
+                              href="https://www.wowhead.com/spell=455129?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-525-Hero" aria-expanded="false"
                               aria-controls="lossCol-525-Hero">
-                              <img src="/data/icons/spell_shaman_staticshock.png" alt=""
+                              <img src="/data/icons/spell_nature_stormreach.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Lightning Conduit">
-                                Lightning Conduit
+                              <span class="flex-grow-1 text-truncate" title="Awakening Storms">
+                                Awakening Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.12%
+                                -0.01%
                               </span>
                             </a>
                             
@@ -22970,26 +22986,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
-                                target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
-                                <span class="ms-auto text-danger">
-                                  -0.12%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=455123?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Conductive Energy</span>
                                 <span class="ms-auto text-danger">
-                                  -0.12%
+                                  -0.01%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=455088?spec=263"
+                                target="_blank">
+                                <img src="/data/icons/spell_nature_unrelentingstorm.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Storm Swell</span>
+                                <span class="ms-auto text-danger">
+                                  -0.01%
                                 </span>
                               </a>
                               
@@ -23028,7 +23044,7 @@
                                 Sundering
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.08%
+                                +1.1%
                               </span>
                             </a>
                             
@@ -23044,13 +23060,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=334308?spec=263"
+                                href="https://www.wowhead.com/spell=466467?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_chainlightning.png" alt=""
+                                <img src="/data/icons/spell_frost_frostbolt.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Crashing Storms</span>
+                                <span class="ms-2">Ice Strike</span>
                                 <span class="ms-auto text-success">
-                                  +0.35%
+                                  +0.22%
                                 </span>
                               </a>
                               
@@ -23058,13 +23074,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=382042?spec=263"
+                                href="https://www.wowhead.com/spell=334308?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
+                                <img src="/data/icons/spell_nature_chainlightning.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Splintered Elements</span>
+                                <span class="ms-2">Crashing Storms</span>
                                 <span class="ms-auto text-success">
-                                  +0.34%
+                                  +0.2%
                                 </span>
                               </a>
                               
@@ -23093,7 +23109,7 @@
                                 Converging Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.91%
+                                -0.95%
                               </span>
                             </a>
                             
@@ -23107,26 +23123,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=334046?spec=263"
-                                target="_blank">
-                                <img src="/data/icons/spell_shaman_shockinglava.png" alt=""
-                                  style="width:24px;height:24px;" />
-                                <span class="ms-2">Lashing Flames</span>
-                                <span class="ms-auto text-danger">
-                                  -0.43%
-                                </span>
-                              </a>
-                              
-                              
-                              
-                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
                                 href="https://www.wowhead.com/spell=384450?spec=263"
                                 target="_blank">
                                 <img src="/data/icons/ability_thunderking_thunderstruck.png" alt=""
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Legacy of the Frost Witch</span>
                                 <span class="ms-auto text-danger">
-                                  -0.28%
+                                  -0.24%
+                                </span>
+                              </a>
+                              
+                              
+                              
+                              <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
+                                href="https://www.wowhead.com/spell=334046?spec=263"
+                                target="_blank">
+                                <img src="/data/icons/spell_shaman_shockinglava.png" alt=""
+                                  style="width:24px;height:24px;" />
+                                <span class="ms-2">Lashing Flames</span>
+                                <span class="ms-auto text-danger">
+                                  -0.22%
                                 </span>
                               </a>
                               
@@ -23175,7 +23191,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Totemic</small><br />
                         <small class="text-danger">
-                          -0.33%
+                          -0.29%
                         </small>
                       </a>
                     </div>
@@ -23187,7 +23203,7 @@
                           style="width:32px; height:32px;" /><br />
                         <small>Stormbringer</small><br />
                         <small class="text-success">
-                          0.33%
+                          0.29%
                         </small>
                       </a>
                     </div>
@@ -23362,7 +23378,7 @@
                                 Lightning Conduit
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +0.37%
+                                +0.33%
                               </span>
                             </a>
                             
@@ -23378,13 +23394,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455129?spec=263"
+                                href="https://www.wowhead.com/spell=454919?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_stormreach.png" alt=""
+                                <img src="/data/icons/spell_nature_callstorm.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Awakening Storms</span>
+                                <span class="ms-2">Voltaic Surge</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.33%
                                 </span>
                               </a>
                               
@@ -23392,13 +23408,13 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=455123?spec=263"
+                                href="https://www.wowhead.com/spell=454027?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/inv_rod_enchantedcobalt.png" alt=""
+                                <img src="/data/icons/spell_nature_lightningshield.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Conductive Energy</span>
+                                <span class="ms-2">Nature&#39;s Protection</span>
                                 <span class="ms-auto text-success">
-                                  +0.37%
+                                  +0.33%
                                 </span>
                               </a>
                               
@@ -23427,7 +23443,7 @@
                                 Oversized Totems
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -0.37%
+                                -0.32%
                               </span>
                             </a>
                             
@@ -23447,7 +23463,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Pulse Capacitor</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.32%
                                 </span>
                               </a>
                               
@@ -23460,7 +23476,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Imbuement Mastery</span>
                                 <span class="ms-auto text-danger">
-                                  -0.37%
+                                  -0.32%
                                 </span>
                               </a>
                               
@@ -23499,7 +23515,7 @@
                                 Ice Strike
                               </span>
                               <span class="flex-shrink-0 mx-3 text-success">
-                                +1.95%
+                                +1.6%
                               </span>
                             </a>
                             
@@ -23521,7 +23537,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Witch Doctor&#39;s Ancestry</span>
                                 <span class="ms-auto text-success">
-                                  +1.01%
+                                  +0.56%
                                 </span>
                               </a>
                               
@@ -23535,7 +23551,7 @@
                                   style="width:24px;height:24px;" />
                                 <span class="ms-2">Feral Spirit</span>
                                 <span class="ms-auto text-success">
-                                  +0.99%
+                                  +0.53%
                                 </span>
                               </a>
                               
@@ -23554,17 +23570,17 @@
                             
                             
                             <a class="accordion-button collapsed border-danger d-flex align-items-center overflow-hidden"
-                              href="https://www.wowhead.com/spell=375982?spec=263"
+                              href="https://www.wowhead.com/spell=384363?spec=263"
                               target="_blank" role="button" data-bs-toggle="collapse"
                               data-bs-target="#lossCol-542-Spec" aria-expanded="false"
                               aria-controls="lossCol-542-Spec">
-                              <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
+                              <img src="/data/icons/warrior_talent_icon_stormbolt.png" alt=""
                                 class="flex-shrink-0 me-2" style="width:24px; height:24px;" />
-                              <span class="flex-grow-1 text-truncate" title="Primordial Wave">
-                                Primordial Wave
+                              <span class="flex-grow-1 text-truncate" title="Converging Storms">
+                                Converging Storms
                               </span>
                               <span class="flex-shrink-0 mx-3 text-danger">
-                                -1.13%
+                                -0.86%
                               </span>
                             </a>
                             
@@ -23578,26 +23594,26 @@
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=382042?spec=263"
+                                href="https://www.wowhead.com/spell=375982?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
+                                <img src="/data/icons/inv_ability_shaman_primordialwave.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Splintered Elements</span>
+                                <span class="ms-2">Primordial Wave</span>
                                 <span class="ms-auto text-danger">
-                                  -1.12%
+                                  -0.7%
                                 </span>
                               </a>
                               
                               
                               
                               <a class="d-flex align-items-center mb-2 text-decoration-none text-reset"
-                                href="https://www.wowhead.com/spell=384363?spec=263"
+                                href="https://www.wowhead.com/spell=382042?spec=263"
                                 target="_blank">
-                                <img src="/data/icons/warrior_talent_icon_stormbolt.png" alt=""
+                                <img src="/data/icons/spell_nature_elementalprecision_1.png" alt=""
                                   style="width:24px;height:24px;" />
-                                <span class="ms-2">Converging Storms</span>
+                                <span class="ms-2">Splintered Elements</span>
                                 <span class="ms-auto text-danger">
-                                  -1.04%
+                                  -0.69%
                                 </span>
                               </a>
                               
@@ -24507,7 +24523,8 @@
 <script src="/assets/js/core/jquery.min.js"></script>
 <script src="/assets/js/core/bootstrap.min.js"></script>
 <script src="/assets/js/plugins/bootstrap-select.min.js"></script>
-
+<script src="/assets/js/plugins/fuse.js"></script>
+<script src="/assets/js/site-search.js"></script>
 <!-- Material Dashboard JS -->
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
@@ -24733,6 +24750,9 @@
 
       const raw = [
         
+    18315
+      , 
+    
     50604
       , 
     
@@ -24740,9 +24760,6 @@
       , 
     
     2898
-      , 
-    
-    18315
       
     
 ];
@@ -25000,6 +25017,34 @@
         });
       });
 
+    })();
+    (function () {
+      const copyBtn = document.getElementById('copyBtn');
+      const btnText = document.getElementById('btnText');
+      // Your predefined text:
+      const toCopy = btnText.getAttribute('data-loadout') || '';
+      const text = btnText.getAttribute('data-text')
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(toCopy);
+          // Show success state
+          btnText.textContent = 'Copied!';
+          copyBtn.classList.replace('btn-primary', 'btn-success');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-success', 'btn-primary');
+          }, 2000);
+        } catch (err) {
+          console.error('Copy failed', err);
+          btnText.textContent = 'Error';
+          copyBtn.classList.replace('btn-primary', 'btn-danger');
+          setTimeout(() => {
+            btnText.textContent = text;
+            copyBtn.classList.replace('btn-danger', 'btn-primary');
+          }, 2000);
+        }
+      });
     })();
   </script>
 
