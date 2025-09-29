@@ -699,6 +699,24 @@
     <!-- End Navbar -->
     <!-- Notifications -->
     
+
+<div class="container-fluid">
+    <div id="page-notification"
+        class="alert alert-info alert-dismissible text-white d-flex align-items-center mx-3 my-2"
+        role="alert">
+        <span class="material-symbols-rounded me-2" aria-hidden="true">announcement</span>
+        <div class="flex-fill">The Routes page has been updated and now allows for filtering of npcs and spells. Check it out!</div>
+
+        
+        <button type="button" class="btn-close ms-3" data-bs-dismiss="alert" aria-label="Close"><span
+                class="material-symbols-rounded me-2" aria-hidden="true">close</span></button>
+        
+    </div>
+</div>
+
+
+
+
     <!-- End Notifications -->
     <div class="container-fluid py-2">
       <section class="py-4">
@@ -882,8 +900,10 @@
         </div>
   </main>
   
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-end me-2 my-2 mt-6 d-none d-xl-block"
-       id="sidenav-right" role="complementary" aria-label="Right sidebar">
+
+<aside
+  class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-end me-2 my-2 mt-6 d-none d-xl-block"
+  id="sidenav-right" role="complementary" aria-label="Right sidebar">
   <div class="sidenav-header">
     Advertisements
   </div>
@@ -891,21 +911,250 @@
   <hr class="horizontal dark mt-0 mb-2">
 
   <div class="collapse navbar-collapse w-auto pb-5" id="sidenav-right-collapse">
-    <div class="card mb-3">
-      <div class="card-body text-center">
-        <h6 class="card-title mb-2">Sponsored</h6>
-        <div class="ratio ratio-3x5 mb-2">
-          <img src="/assets/img/placeholder-300x600.png" class="img-fluid rounded" alt="Ad placeholder">
+    <!-- Fallback static card if JS is disabled -->
+    <noscript>
+      <div class="card mb-3">
+        <div class="card-body text-center">
+          <h6 class="card-title mb-2">Sponsored</h6>
+          <div class="ratio ratio-3x5 mb-2">
+            <img src="/assets/img/rightside/WantThisSpace.png" class="img-fluid rounded" alt="Ad placeholder">
+          </div>
+          <p class="small text-muted mb-0">Want this space? <a href="mailto:sponsor@mythistone.com">Contact us</a></p>
         </div>
-        <p class="small text-muted mb-0">Want this space? <a href="mailto:sponsor@mythistone.com">Contact us</a></p>
       </div>
+    </noscript>
+
+    <!-- Rotating internal ads (Bootstrap Carousel) -->
+    <div id="rightsideCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000"
+      aria-label="Right sidebar carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1: CustomNames -->
+        <div class="carousel-item active">
+          <a href="https://www.curseforge.com/wow/addons/libcustomnames" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/CustomNamesHd.png">
+      
+      <img src="/assets/img/rightside/CustomNames.png" srcset="/assets/img/rightside/CustomNamesHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="CustomNames addon" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">CustomNames</h6>
+      <p class="small text-muted mb-0">Name-variation for addons. Perfect for nicknames & roleplay. <span class="d-block
+            mt-1"><small>CurseForge</small></span></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 2: Dungeon Aura Tools -->
+        <div class="carousel-item">
+          <a href="https://www.curseforge.com/wow/addons/dungeon-aura-tools" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/DungeonAuraToolsHd.png">
+      
+      <img src="/assets/img/rightside/DungeonAuraTools.png" srcset="/assets/img/rightside/DungeonAuraToolsHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="Dungeon Aura Tools" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">Dungeon Aura Tools</h6>
+      <p class="small text-muted mb-0">Auto-generate dungeon WeakAuras for boss/trash/affixes. <small>CurseForge</small></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 3: GroupFinderRio -->
+        <div class="carousel-item">
+          <a href="https://www.curseforge.com/wow/addons/groupfinderrio" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/GroupFinderRioHd.png">
+      
+      <img src="/assets/img/rightside/GroupFinderRio.png" srcset="/assets/img/rightside/GroupFinderRioHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="GroupFinderRio screenshot" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">GroupFinderRio</h6>
+      <p class="small text-muted mb-0">Show Rio scores in Group Finder & sort by rating. <small>CurseForge</small></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 4: WeakAuras Creator -->
+        <div class="carousel-item">
+          <a href="https://weakaurascreator.github.io/Create/" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/WACreatorHd.png">
+      
+      <img src="/assets/img/rightside/WACreator.png" srcset="/assets/img/rightside/WACreatorHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="WeakAuras Creator icon" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">WeakAuras Creator</h6>
+      <p class="small text-muted mb-0">Generate WeakAuras easily Online. <small>weakaurascreator.github.io</small></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 5: MInterruptTracker (Wago) -->
+        <div class="carousel-item">
+          <a href="https://wago.io/MInterruptTracker" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/InterruptTrackerHd.png">
+      
+      <img src="/assets/img/rightside/InterruptTracker.png" srcset="/assets/img/rightside/InterruptTrackerHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="M+ Interrupt Tracker" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">M+ Interrupt Tracker</h6>
+      <p class="small text-muted mb-0">Track Interrupt Cooldowns for the entire group. <small>wago.io</small></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 6: Raid Ability Timeline (Wago) -->
+        <div class="carousel-item">
+          <a href="https://wago.io/RaidAbilityTimeline" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/AbilityTimelineHd.png">
+      
+      <img src="/assets/img/rightside/AbilityTimeline.png" srcset="/assets/img/rightside/AbilityTimelineHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="Raid Ability Timeline" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">Raid Ability Timeline</h6>
+      <p class="small text-muted mb-0">Vertical timeline replacing bossmod timer bars. <small>wago.io</small></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 7: Current Season Dungeons (Wago) -->
+        <div class="carousel-item">
+          <a href="https://wago.io/Current-Dungeons" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/CurrentSeasonHd.png">
+      
+      <img src="/assets/img/rightside/CurrentSeason.png" srcset="/assets/img/rightside/CurrentSeasonHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="Current Season Dungeons WA" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">Current Season Dungeons</h6>
+      <p class="small text-muted mb-0">A WeakAura pack for the current Season's dungeons. <small>wago.io</small></p>
+    </div>
+  </div>
+</a>
+        </div>
+
+        <!-- Slide 8: Want This Space -->
+        <div class="carousel-item">
+          <a href="mailto:sponsor@mythistone.com" target="_blank" rel="noopener">
+  <div class="card mb-3">
+    <picture>
+      
+      <source media="(min-width:1200px)" srcset="/assets/img/rightside/WantThisSpaceHd.png">
+      
+      <img src="/assets/img/rightside/WantThisSpace.png" srcset="/assets/img/rightside/WantThisSpaceHD.png 2x"
+        class="card-img-top img-fluid rounded-top" alt="Want This Space" loading="lazy" style="object-fit:cover; width:100%;">
+    </picture>
+
+    <div class="card-body text-center">
+      <h6 class="card-title mb-1">Want This Space</h6>
+      <p class="small text-muted mb-0">Contact Us</p>
+    </div>
+  </div>
+</a>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#rightsideCarousel" data-bs-slide="prev"
+        aria-label="Previous ad">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#rightsideCarousel" data-bs-slide="next"
+        aria-label="Next ad">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
     </div>
 
-    <div class="text-center small text-muted px-3">
+    <div class="text-center small text-muted px-3 mt-2">
       Ads help keep Mythistone free. Thank you for your support!
     </div>
   </div>
 </aside>
+
+<style>
+  #sidenav-right .card {
+    border: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  }
+
+  #sidenav-right .carousel {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  @media (min-width:1200px) {
+    #sidenav-right .carousel {
+      max-width: 340px;
+    }
+  }
+
+  #sidenav-right .card-img-top {
+    height: auto;
+    display: block;
+  }
+
+  #sidenav-right .card-body {
+    padding: 0.75rem;
+  }
+</style>
+
+<!-- randomize first slide and pause on hover -->
+<script>
+  (function () {
+    const carouselEl = document.getElementById('rightsideCarousel');
+    if (!carouselEl || typeof bootstrap === 'undefined') return;
+
+    // randomize starting slide
+    const inner = carouselEl.querySelector('.carousel-inner');
+    const items = inner.querySelectorAll('.carousel-item');
+    const start = Math.floor(Math.random() * items.length);
+    items.forEach((it, i) => it.classList.toggle('active', i === start));
+
+    const carousel = new bootstrap.Carousel(carouselEl, { interval: 6000, pause: false });
+
+    // pause rotation on hover for accessibility
+    carouselEl.addEventListener('mouseenter', () => carousel.pause());
+    carouselEl.addEventListener('mouseleave', () => carousel.cycle());
+  })();
+</script>
   <div class="fixed-plugin">
   <div class="card shadow-lg">
     <div class="card-header pb-0 pt-3">
