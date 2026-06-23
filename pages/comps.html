@@ -77,6 +77,7 @@
     data-src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5589411805810733"
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/assets/css/comps.css">
+  <link rel="stylesheet" href="/assets/css/dataTables.min.css">
 </head>
 
 <body class="g-sidenav-show g-sidenav-show-right" data-bs-theme="dark">
@@ -878,6 +879,14 @@
 
 
 
+    <style>
+      .meta-comp { background: rgba(255, 206, 74, 0.10) !important; border-left: 3px solid #ffce4a !important; }
+      .meta-badge { background: linear-gradient(310deg, #f5b50e, #f7d774); color: #3a2d00; font-weight: 700; }
+      .meta-badge .material-symbols-rounded { font-size: 0.9rem; line-height: 1; }
+      /* keep DataTables' sort icons aligned with the centered numeric headers */
+      #hidden-gems-table thead th.dt-orderable-asc, #hidden-gems-table thead th.dt-orderable-desc { cursor: pointer; }
+    </style>
+    
     <div class="container-fluid py-2">
       <div class="row">
         <div class="ms-3 mb-4">
@@ -1330,6 +1339,7 @@
                 
                 
                 
+                
                 <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
                   data-comp-c="268,105,252,1473,1480" data-comp-dungeon="all" data-comp-useTop="false">
                   <div class="d-flex align-items-center">
@@ -1361,7 +1371,8 @@
                 
                 
                 
-                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
+                
+                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center meta-comp"
                   data-comp-c="104,270,252,1473,1480" data-comp-dungeon="all" data-comp-useTop="false">
                   <div class="d-flex align-items-center">
                     
@@ -1381,7 +1392,7 @@
                     <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1" title="Devourer">
                     
                     <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">12377 runs</div>
+                      <div class="text-sm font-weight-bolder">12377 runs<span class="badge meta-badge ms-2" title="Current meta comp: the strongest composition in the highest keys"><i class="material-symbols-rounded align-middle">workspace_premium</i> META</span></div>
                       <div class="text-xs text-secondary">Max: 24 &nbsp; Success %: 91.0%</div>
                     </div>
                   </div>
@@ -1389,6 +1400,7 @@
                     <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('104,270,252,1473,1480', false, 'all')">Details</button>
                   </div>
                 </div>
+                
                 
                 
                 
@@ -1423,6 +1435,7 @@
                 
                 
                 
+                
                 <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
                   data-comp-c="268,105,252,266,1473" data-comp-dungeon="all" data-comp-useTop="false">
                   <div class="d-flex align-items-center">
@@ -1454,6 +1467,7 @@
                 
                 
                 
+                
                 <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
                   data-comp-c="268,105,64,252,1480" data-comp-dungeon="all" data-comp-useTop="false">
                   <div class="d-flex align-items-center">
@@ -1482,6 +1496,7 @@
                     <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,252,1480', false, 'all')">Details</button>
                   </div>
                 </div>
+                
                 
                 
                 
@@ -1533,187 +1548,193 @@
                 
                 
                 
-                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
-                  data-comp-c="268,105,64,266,1480" data-comp-dungeon="all" data-comp-useTop="true">
+                
+                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center meta-comp"
+                  data-comp-c="104,270,252,1473,1480" data-comp-dungeon="all" data-comp-useTop="true">
                   <div class="d-flex align-items-center">
                     
                     
-                    <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
+                    <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1" title="Guardian">
                     
                     
-                    <img src="/data/icons/136041.jpg" class="avatar avatar-sm me-1" title="Restoration">
-                    
-                    
-                    <img src="/data/icons/135846.jpg" class="avatar avatar-sm me-1" title="Frost">
-                    
-                    
-                    <img src="/data/icons/136172.jpg" class="avatar avatar-sm me-1" title="Demonology">
-                    
-                    
-                    <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1" title="Devourer">
-                    
-                    <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">3189 top-key runs</div>
-                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 92.0%</div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,266,1480', true, 'all')">Details</button>
-                  </div>
-                </div>
-                
-                
-                
-                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
-                  data-comp-c="268,105,64,252,1480" data-comp-dungeon="all" data-comp-useTop="true">
-                  <div class="d-flex align-items-center">
-                    
-                    
-                    <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
-                    
-                    
-                    <img src="/data/icons/136041.jpg" class="avatar avatar-sm me-1" title="Restoration">
-                    
-                    
-                    <img src="/data/icons/135846.jpg" class="avatar avatar-sm me-1" title="Frost">
+                    <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1" title="Mistweaver">
                     
                     
                     <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1" title="Unholy">
                     
                     
-                    <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1" title="Devourer">
-                    
-                    <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">2639 top-key runs</div>
-                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 93.0%</div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,252,1480', true, 'all')">Details</button>
-                  </div>
-                </div>
-                
-                
-                
-                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
-                  data-comp-c="268,105,64,70,1480" data-comp-dungeon="all" data-comp-useTop="true">
-                  <div class="d-flex align-items-center">
-                    
-                    
-                    <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
-                    
-                    
-                    <img src="/data/icons/136041.jpg" class="avatar avatar-sm me-1" title="Restoration">
-                    
-                    
-                    <img src="/data/icons/135846.jpg" class="avatar avatar-sm me-1" title="Frost">
-                    
-                    
-                    <img src="/data/icons/135873.jpg" class="avatar avatar-sm me-1" title="Retribution">
+                    <img src="/data/icons/5198700.jpg" class="avatar avatar-sm me-1" title="Augmentation">
                     
                     
                     <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1" title="Devourer">
                     
                     <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">2753 top-key runs</div>
-                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 93.0%</div>
+                      <div class="text-sm font-weight-bolder">472 top-key runs<span class="badge meta-badge ms-2" title="Current meta comp: the strongest composition in the highest keys"><i class="material-symbols-rounded align-middle">workspace_premium</i> META</span></div>
+                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 98.0%</div>
                     </div>
                   </div>
                   <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,70,1480', true, 'all')">Details</button>
+                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('104,270,252,1473,1480', true, 'all')">Details</button>
                   </div>
                 </div>
                 
                 
                 
+                
                 <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
-                  data-comp-c="268,105,64,70,266" data-comp-dungeon="all" data-comp-useTop="true">
+                  data-comp-c="268,264,70,71,252" data-comp-dungeon="all" data-comp-useTop="true">
                   <div class="d-flex align-items-center">
                     
                     
                     <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
                     
                     
-                    <img src="/data/icons/136041.jpg" class="avatar avatar-sm me-1" title="Restoration">
-                    
-                    
-                    <img src="/data/icons/135846.jpg" class="avatar avatar-sm me-1" title="Frost">
+                    <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1" title="Restoration">
                     
                     
                     <img src="/data/icons/135873.jpg" class="avatar avatar-sm me-1" title="Retribution">
                     
                     
-                    <img src="/data/icons/136172.jpg" class="avatar avatar-sm me-1" title="Demonology">
-                    
-                    <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">2862 top-key runs</div>
-                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 92.0%</div>
-                    </div>
-                  </div>
-                  <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,70,266', true, 'all')">Details</button>
-                  </div>
-                </div>
-                
-                
-                
-                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
-                  data-comp-c="268,105,64,252,266" data-comp-dungeon="all" data-comp-useTop="true">
-                  <div class="d-flex align-items-center">
-                    
-                    
-                    <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
-                    
-                    
-                    <img src="/data/icons/136041.jpg" class="avatar avatar-sm me-1" title="Restoration">
-                    
-                    
-                    <img src="/data/icons/135846.jpg" class="avatar avatar-sm me-1" title="Frost">
+                    <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1" title="Arms">
                     
                     
                     <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1" title="Unholy">
                     
-                    
-                    <img src="/data/icons/136172.jpg" class="avatar avatar-sm me-1" title="Demonology">
-                    
                     <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">2327 top-key runs</div>
-                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 91.0%</div>
+                      <div class="text-sm font-weight-bolder">491 top-key runs</div>
+                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 97.0%</div>
                     </div>
                   </div>
                   <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,252,266', true, 'all')">Details</button>
+                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,264,70,71,252', true, 'all')">Details</button>
                   </div>
                 </div>
                 
                 
                 
+                
                 <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
-                  data-comp-c="268,105,64,70,252" data-comp-dungeon="all" data-comp-useTop="true">
+                  data-comp-c="268,264,70,71,103" data-comp-dungeon="all" data-comp-useTop="true">
                   <div class="d-flex align-items-center">
                     
                     
                     <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
                     
                     
-                    <img src="/data/icons/136041.jpg" class="avatar avatar-sm me-1" title="Restoration">
-                    
-                    
-                    <img src="/data/icons/135846.jpg" class="avatar avatar-sm me-1" title="Frost">
+                    <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1" title="Restoration">
                     
                     
                     <img src="/data/icons/135873.jpg" class="avatar avatar-sm me-1" title="Retribution">
                     
                     
-                    <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1" title="Unholy">
+                    <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1" title="Arms">
+                    
+                    
+                    <img src="/data/icons/132115.jpg" class="avatar avatar-sm me-1" title="Feral">
                     
                     <div class="ms-3">
-                      <div class="text-sm font-weight-bolder">2217 top-key runs</div>
-                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 92.0%</div>
+                      <div class="text-sm font-weight-bolder">159 top-key runs</div>
+                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 97.0%</div>
                     </div>
                   </div>
                   <div class="d-flex align-items-center">
-                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,105,64,70,252', true, 'all')">Details</button>
+                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,264,70,71,103', true, 'all')">Details</button>
+                  </div>
+                </div>
+                
+                
+                
+                
+                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
+                  data-comp-c="268,264,70,71,260" data-comp-dungeon="all" data-comp-useTop="true">
+                  <div class="d-flex align-items-center">
+                    
+                    
+                    <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
+                    
+                    
+                    <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1" title="Restoration">
+                    
+                    
+                    <img src="/data/icons/135873.jpg" class="avatar avatar-sm me-1" title="Retribution">
+                    
+                    
+                    <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1" title="Arms">
+                    
+                    
+                    <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1" title="Outlaw">
+                    
+                    <div class="ms-3">
+                      <div class="text-sm font-weight-bolder">124 top-key runs</div>
+                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 97.0%</div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,264,70,71,260', true, 'all')">Details</button>
+                  </div>
+                </div>
+                
+                
+                
+                
+                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
+                  data-comp-c="104,270,262,1473,1480" data-comp-dungeon="all" data-comp-useTop="true">
+                  <div class="d-flex align-items-center">
+                    
+                    
+                    <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1" title="Guardian">
+                    
+                    
+                    <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1" title="Mistweaver">
+                    
+                    
+                    <img src="/data/icons/136048.jpg" class="avatar avatar-sm me-1" title="Elemental">
+                    
+                    
+                    <img src="/data/icons/5198700.jpg" class="avatar avatar-sm me-1" title="Augmentation">
+                    
+                    
+                    <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1" title="Devourer">
+                    
+                    <div class="ms-3">
+                      <div class="text-sm font-weight-bolder">110 top-key runs</div>
+                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 95.0%</div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('104,270,262,1473,1480', true, 'all')">Details</button>
+                  </div>
+                </div>
+                
+                
+                
+                
+                <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center"
+                  data-comp-c="268,264,71,103,260" data-comp-dungeon="all" data-comp-useTop="true">
+                  <div class="d-flex align-items-center">
+                    
+                    
+                    <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1" title="Brewmaster">
+                    
+                    
+                    <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1" title="Restoration">
+                    
+                    
+                    <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1" title="Arms">
+                    
+                    
+                    <img src="/data/icons/132115.jpg" class="avatar avatar-sm me-1" title="Feral">
+                    
+                    
+                    <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1" title="Outlaw">
+                    
+                    <div class="ms-3">
+                      <div class="text-sm font-weight-bolder">78 top-key runs</div>
+                      <div class="text-xs text-secondary">Top Key Max: 12 &nbsp; Success %: 100.0%</div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <button class="btn btn-sm btn-white" onclick="showCompDetailsByC('268,264,71,103,260', true, 'all')">Details</button>
                   </div>
                 </div>
                 
@@ -1729,162 +1750,29 @@
           <div class="card h-100">
             <div class="card-header pb-0">
               <h6>Hidden Gems</h6>
-              <p class="text-sm">Comps with low overall popularity (< 1%) but incredible high-key success rates.</p>
+              <p class="text-sm">Niche comps, played far less than the meta, but with strong success in high keys.</p>
             </div>
             <div class="card-body px-0 pb-2">
               <div class="table-responsive" style="max-height: 435px; overflow-y: auto;">
-                <table class="table align-items-center mb-0">
+                <table id="hidden-gems-table" class="table align-items-center mb-0">
                   <thead class="sticky-top" style="z-index: 10; background-color: #1d1d1d;">
                     <tr>
                       <th class="text-uppercase text-white text-xxs font-weight-bolder opacity-7"
                         style="position: sticky; top: 0; background-color: #1d1d1d;">Comp</th>
                       <th class="text-center text-uppercase text-white text-xxs font-weight-bolder opacity-7"
-                        style="position: sticky; top: 0; background-color: #1d1d1d;">Runs</th>
+                        style="position: sticky; top: 0; background-color: #1d1d1d;" title="Highest key this comp has reached">Highest Key</th>
                       <th class="text-center text-uppercase text-white text-xxs font-weight-bolder opacity-7"
-                        style="position: sticky; top: 0; background-color: #1d1d1d;">Max Key</th>
+                        style="position: sticky; top: 0; background-color: #1d1d1d;" title="Share of this comp's runs that were timed">Success</th>
+                      <th class="text-center text-uppercase text-white text-xxs font-weight-bolder opacity-7"
+                        style="position: sticky; top: 0; background-color: #1d1d1d;">Runs</th>
                     </tr>
                   </thead>
                   <tbody>
                     
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          
-                          
-                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
-                            title="Guardian">
-                          
-                          
-                          <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1"
-                            title="Mistweaver">
-                          
-                          
-                          <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1"
-                            title="Unholy">
-                          
-                          
-                          <img src="/data/icons/5198700.jpg" class="avatar avatar-sm me-1"
-                            title="Augmentation">
-                          
-                          
-                          <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1"
-                            title="Devourer">
-                          
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">12377</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">24</span>
-                      </td>
-                    </tr>
                     
                     <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
-                          
-                          
-                          <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1"
-                            title="Brewmaster">
-                          
-                          
-                          <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1"
-                            title="Restoration">
-                          
-                          
-                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
-                            title="Arms">
-                          
-                          
-                          <img src="/data/icons/132115.jpg" class="avatar avatar-sm me-1"
-                            title="Feral">
-                          
-                          
-                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
-                            title="Outlaw">
-                          
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">1834</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">23</span>
-                      </td>
-                    </tr>
-                    
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          
-                          
-                          <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1"
-                            title="Brewmaster">
-                          
-                          
-                          <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1"
-                            title="Restoration">
-                          
-                          
-                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
-                            title="Arms">
-                          
-                          
-                          <img src="/data/icons/132115.jpg" class="avatar avatar-sm me-1"
-                            title="Feral">
-                          
-                          
-                          <img src="/data/icons/461113.jpg" class="avatar avatar-sm me-1"
-                            title="Survival">
-                          
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">711</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">23</span>
-                      </td>
-                    </tr>
-                    
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                          
-                          
-                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
-                            title="Guardian">
-                          
-                          
-                          <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1"
-                            title="Mistweaver">
-                          
-                          
-                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
-                            title="Arms">
-                          
-                          
-                          <img src="/data/icons/236179.jpg" class="avatar avatar-sm me-1"
-                            title="Marksmanship">
-                          
-                          
-                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
-                            title="Outlaw">
-                          
-                        </div>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">46</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">21</span>
-                      </td>
-                    </tr>
-                    
-                    <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1 align-items-center">
                           
                           
                           <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
@@ -1906,57 +1794,106 @@
                           <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
                             title="Outlaw">
                           
+                          
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">307</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm" data-order="23">
                         <span class="text-xs font-weight-bold">23</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="93">
+                        <span class="text-xs font-weight-bold text-success">93%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="307">
+                        <span class="text-xs font-weight-bold">307</span>
                       </td>
                     </tr>
                     
+                    
                     <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1 align-items-center">
                           
                           
-                          <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1"
-                            title="Brewmaster">
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
                           
                           
                           <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1"
                             title="Restoration">
                           
                           
-                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
-                            title="Arms">
+                          <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1"
+                            title="Unholy">
                           
                           
-                          <img src="/data/icons/132115.jpg" class="avatar avatar-sm me-1"
-                            title="Feral">
+                          <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1"
+                            title="Unholy">
                           
                           
-                          <img src="/data/icons/135773.jpg" class="avatar avatar-sm me-1"
-                            title="Frost">
+                          <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1"
+                            title="Devourer">
+                          
                           
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">48</span>
+                      <td class="align-middle text-center text-sm" data-order="22">
+                        <span class="text-xs font-weight-bold">22</span>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">20</span>
+                      <td class="align-middle text-center text-sm" data-order="92">
+                        <span class="text-xs font-weight-bold text-success">92%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="200">
+                        <span class="text-xs font-weight-bold">200</span>
                       </td>
                     </tr>
                     
+                    
                     <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1 align-items-center">
                           
                           
-                          <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1"
-                            title="Brewmaster">
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
+                          
+                          
+                          <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1"
+                            title="Mistweaver">
+                          
+                          
+                          <img src="/data/icons/132347.jpg" class="avatar avatar-sm me-1"
+                            title="Fury">
+                          
+                          
+                          <img src="/data/icons/236179.jpg" class="avatar avatar-sm me-1"
+                            title="Marksmanship">
+                          
+                          
+                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
+                            title="Outlaw">
+                          
+                          
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="22">
+                        <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="100">
+                        <span class="text-xs font-weight-bold text-success">100%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="58">
+                        <span class="text-xs font-weight-bold">58</span>
+                      </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1 align-items-center">
+                          
+                          
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
                           
                           
                           <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1"
@@ -1967,30 +1904,113 @@
                             title="Unholy">
                           
                           
+                          <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1"
+                            title="Unholy">
+                          
+                          
                           <img src="/data/icons/5198700.jpg" class="avatar avatar-sm me-1"
                             title="Augmentation">
                           
                           
-                          <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1"
-                            title="Devourer">
-                          
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">7104</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm" data-order="22">
                         <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="90">
+                        <span class="text-xs font-weight-bold text-success">90%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="206">
+                        <span class="text-xs font-weight-bold">206</span>
                       </td>
                     </tr>
                     
+                    
                     <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1 align-items-center">
                           
                           
-                          <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1"
-                            title="Brewmaster">
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
+                          
+                          
+                          <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1"
+                            title="Mistweaver">
+                          
+                          
+                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
+                            title="Arms">
+                          
+                          
+                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
+                            title="Outlaw">
+                          
+                          
+                          <img src="/data/icons/136048.jpg" class="avatar avatar-sm me-1"
+                            title="Elemental">
+                          
+                          
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="22">
+                        <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="95">
+                        <span class="text-xs font-weight-bold text-success">95%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="180">
+                        <span class="text-xs font-weight-bold">180</span>
+                      </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1 align-items-center">
+                          
+                          
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
+                          
+                          
+                          <img src="/data/icons/608952.jpg" class="avatar avatar-sm me-1"
+                            title="Mistweaver">
+                          
+                          
+                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
+                            title="Arms">
+                          
+                          
+                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
+                            title="Outlaw">
+                          
+                          
+                          <img src="/data/icons/237581.jpg" class="avatar avatar-sm me-1"
+                            title="Enhancement">
+                          
+                          
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="22">
+                        <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="92">
+                        <span class="text-xs font-weight-bold text-success">92%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="156">
+                        <span class="text-xs font-weight-bold">156</span>
+                      </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1 align-items-center">
+                          
+                          
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
                           
                           
                           <img src="/data/icons/136052.jpg" class="avatar avatar-sm me-1"
@@ -2005,22 +2025,27 @@
                             title="Arms">
                           
                           
-                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
-                            title="Outlaw">
+                          <img src="/data/icons/236270.jpg" class="avatar avatar-sm me-1"
+                            title="Assassination">
+                          
                           
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">1281</span>
+                      <td class="align-middle text-center text-sm" data-order="22">
+                        <span class="text-xs font-weight-bold">22</span>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">23</span>
+                      <td class="align-middle text-center text-sm" data-order="88">
+                        <span class="text-xs font-weight-bold text-warning">88%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="277">
+                        <span class="text-xs font-weight-bold">277</span>
                       </td>
                     </tr>
                     
+                    
                     <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1 align-items-center">
                           
                           
                           <img src="/data/icons/608951.jpg" class="avatar avatar-sm me-1"
@@ -2031,30 +2056,74 @@
                             title="Restoration">
                           
                           
-                          <img src="/data/icons/132347.jpg" class="avatar avatar-sm me-1"
-                            title="Fury">
+                          <img src="/data/icons/132355.jpg" class="avatar avatar-sm me-1"
+                            title="Arms">
                           
                           
-                          <img src="/data/icons/132115.jpg" class="avatar avatar-sm me-1"
-                            title="Feral">
+                          <img src="/data/icons/461113.jpg" class="avatar avatar-sm me-1"
+                            title="Survival">
                           
                           
                           <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
                             title="Outlaw">
                           
+                          
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">755</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm" data-order="22">
                         <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="90">
+                        <span class="text-xs font-weight-bold text-success">90%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="319">
+                        <span class="text-xs font-weight-bold">319</span>
                       </td>
                     </tr>
                     
+                    
                     <tr>
                       <td>
-                        <div class="d-flex px-2 py-1">
+                        <div class="d-flex px-2 py-1 align-items-center">
+                          
+                          
+                          <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
+                            title="Guardian">
+                          
+                          
+                          <img src="/data/icons/4511812.jpg" class="avatar avatar-sm me-1"
+                            title="Preservation">
+                          
+                          
+                          <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1"
+                            title="Unholy">
+                          
+                          
+                          <img src="/data/icons/136048.jpg" class="avatar avatar-sm me-1"
+                            title="Elemental">
+                          
+                          
+                          <img src="/data/icons/7455385.jpg" class="avatar avatar-sm me-1"
+                            title="Devourer">
+                          
+                          
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="22">
+                        <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="87">
+                        <span class="text-xs font-weight-bold text-warning">87%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="167">
+                        <span class="text-xs font-weight-bold">167</span>
+                      </td>
+                    </tr>
+                    
+                    
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1 align-items-center">
                           
                           
                           <img src="/data/icons/132276.jpg" class="avatar avatar-sm me-1"
@@ -2065,24 +2134,28 @@
                             title="Mistweaver">
                           
                           
-                          <img src="/data/icons/132347.jpg" class="avatar avatar-sm me-1"
-                            title="Fury">
+                          <img src="/data/icons/135775.jpg" class="avatar avatar-sm me-1"
+                            title="Unholy">
                           
                           
-                          <img src="/data/icons/236179.jpg" class="avatar avatar-sm me-1"
-                            title="Marksmanship">
+                          <img src="/data/icons/236270.jpg" class="avatar avatar-sm me-1"
+                            title="Assassination">
                           
                           
-                          <img src="/data/icons/236286.jpg" class="avatar avatar-sm me-1"
-                            title="Outlaw">
+                          <img src="/data/icons/5198700.jpg" class="avatar avatar-sm me-1"
+                            title="Augmentation">
+                          
                           
                         </div>
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">58</span>
-                      </td>
-                      <td class="align-middle text-center text-sm">
+                      <td class="align-middle text-center text-sm" data-order="22">
                         <span class="text-xs font-weight-bold">22</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="86">
+                        <span class="text-xs font-weight-bold text-warning">86%</span>
+                      </td>
+                      <td class="align-middle text-center text-sm" data-order="192">
+                        <span class="text-xs font-weight-bold">192</span>
                       </td>
                     </tr>
                     
@@ -2692,6 +2765,8 @@
 <script>
     sidebarColor(document.querySelector('#defaultColor'));
 </script>
+  <!-- DataTables (sortable Hidden Gems table) -->
+  <script src="/assets/js/plugins/dataTables.min.js"></script>
   <!-- Comp details modal -->
   <div class="modal fade" id="compDetailsModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -2729,6 +2804,19 @@
 
     const TOP_KEY_LEVELS = [10, 12];
     const synergyMatrix = {"104": {"105": 0.3030203805257104, "102": 0.5203590533626399, "103": 0.3946958011572047, "1480": 1.0794181810271524, "254": 0.7605213981009272, "260": 1.1557039455006222, "266": 0.9003381934520802, "268": 0.0005883017606748312, "269": 1.19899598093315, "252": 1.121429525366397, "257": 0.8756984611012487, "253": 1.0039145827936509, "270": 1.658013461740944, "264": 1.0627685205175532, "255": 1.146474425865483, "258": 0.9896698709808672, "261": 0.995491507935253, "581": 0.0007726941749804898, "251": 1.1466822779127952, "256": 1.0684178375597162, "262": 0.942934318542432, "1473": 1.1281803906488936, "577": 0.9903288438798101, "104": 0.0012771800266543041, "259": 1.01681018713997, "250": 0.0008425149957510097, "265": 1.1062154360886232, "1467": 0.8268971545348084, "263": 1.1738527579018874, "1468": 0.8007815852186664, "267": 0.9245405835472856, "62": 0.7077294121865975, "72": 1.1013600971345214, "63": 0.9065757036763934, "64": 0.7912900104360922, "65": 0.9518342838052137, "70": 0.9851842974248564, "71": 1.1053622754410117, "66": 0.0012459639976628843, "73": 0.000640008227271734}, "105": {"104": 0.3030203805257104, "102": 0.478808121933571, "103": 0.3539073301414973, "1480": 1.080974622603605, "254": 1.167978530115715, "260": 0.6304941307854449, "266": 1.0129650315848073, "268": 1.3705323544088837, "269": 0.8534173515578305, "581": 0.9478721468618025, "105": 0.00031188632491664664, "250": 0.8163723436056906, "262": 1.3648057640363245, "252": 0.9813995031462244, "253": 0.9892232173074057, "258": 1.0222627853246136, "1467": 1.0775907154679518, "577": 0.9530763671565646, "255": 0.910820846929492, "251": 0.7856556786016354, "261": 0.8712501084871067, "1473": 1.2858531224161933, "265": 0.8329861369434834, "263": 1.1299750981583205, "259": 0.8094563701440437, "270": 0.0003969414293458722, "267": 0.8948298394159667, "264": 0.00031473719343766816, "256": 0.0002496705530891248, "257": 0.0005164651471839959, "62": 1.2685235556982772, "66": 1.10444523281506, "70": 0.8566865908785908, "63": 1.036765552540318, "64": 1.2259470515513102, "72": 0.8098071689135946, "73": 0.9323782885341172, "71": 0.6665652654968809, "1468": 0.0002882341406544526, "65": 0.00020260125293203155}, "102": {"104": 0.5203590533626399, "105": 0.478808121933571, "102": 0.06261117487674867, "268": 0.9360567094041525, "270": 0.9412087129490043, "103": 0.18717737709293025, "1480": 0.6333470730321175, "254": 0.8570025319652972, "260": 0.5657137164066111, "266": 0.5622485216555413, "269": 0.7671047510073115, "252": 0.5239156407343858, "257": 1.485262008212132, "253": 0.8520091488310793, "264": 1.1129859993405848, "255": 0.7859214769159857, "258": 0.6697666175034752, "261": 0.7487840743001919, "581": 1.588434103841679, "250": 1.4066987805338131, "262": 0.8188420232430647, "1467": 1.004989821977585, "577": 0.9010247591260683, "256": 1.299257844668963, "263": 0.8517666361186012, "259": 0.6904108237968507, "1468": 1.5507322937330004, "251": 0.7230788576161207, "1473": 0.5663738732663354, "265": 0.6823418458641266, "267": 0.7441655761782566, "62": 1.040558406334944, "64": 1.0308954377621606, "66": 1.4249596794618187, "73": 1.3378663801906623, "65": 1.2581860224855752, "70": 0.6600017617339147, "72": 0.6225803761621646, "71": 0.49443217931137406, "63": 1.1336873840857276}, "268": {"270": 0.6883163431209682, "102": 0.9360567094041525, "104": 0.0005883017606748312, "105": 1.3705323544088837, "252": 1.0928463092458562, "253": 0.8477041986042143, "258": 0.8510240962409146, "1467": 0.7235217294111747, "1480": 1.0937791582203509, "577": 0.8676034113658272, "581": 0.0005705029219093679, "257": 0.8020847668178949, "254": 0.9370143276938893, "256": 0.8239578859092624, "262": 0.9660159159353636, "261": 0.9008304760742997, "264": 1.069248945713984, "1468": 0.9415925595160779, "263": 0.8069778684380995, "266": 1.0399159521407575, "269": 0.5447480458909923, "103": 1.301514324252136, "251": 0.7747752666475947, "255": 0.9189178901349111, "1473": 1.143151731342191, "259": 0.9930383743013751, "260": 1.0338675635939003, "265": 0.727527999176084, "267": 0.7702948311244259, "268": 0.00021532291561829909, "250": 0.0005307479955617191, "62": 0.952491751010374, "64": 0.9209167193816591, "65": 0.944607990159617, "63": 0.8174090172813772, "70": 0.9903407752667753, "72": 0.955112467936035, "71": 1.1244196407533225, "66": 0.0006525154433470063, "73": 0.0005986157446876834}, "270": {"268": 0.6883163431209682, "102": 0.9412087129490043, "104": 1.658013461740944, "253": 1.091689680371885, "258": 0.9644960478285455, "1480": 1.0558546129826434, "250": 1.0166983264129492, "254": 1.0415035689324887, "252": 1.0419223842170366, "581": 0.9491003972275243, "259": 0.8797047487024536, "261": 0.8456306111163171, "263": 1.3225063397493133, "266": 0.9356616680667321, "269": 0.5153143946097334, "577": 0.8236378558024701, "103": 0.7879046873748415, "251": 0.8912305433526848, "1473": 1.3772575253041681, "255": 1.1472256484273504, "105": 0.0003969414293458722, "260": 0.9060567037646045, "262": 1.2465404102017368, "265": 0.8945729381406331, "1467": 0.9212648344621577, "270": 0.0003052649629449109, "267": 0.834689236195899, "264": 0.0003367208283253065, "1468": 0.0005602732115805706, "256": 0.00027525127058725286, "257": 0.00037839183113635543, "62": 0.9335288625962705, "73": 1.0015127289571581, "63": 1.0104560780873952, "64": 0.9784330156052896, "66": 0.9555075435692489, "70": 0.7952416982849252, "71": 0.7949219887402937, "72": 0.8600955074233095, "65": 0.000225318465344807}, "103": {"104": 0.3946958011572047, "105": 0.3539073301414973, "102": 0.18717737709293025, "268": 1.301514324252136, "264": 1.726251541787318, "103": 0.042946373883934415, "1480": 0.4161010377752068, "253": 0.8709938663666658, "255": 1.0782314107749411, "266": 0.44561718657259486, "270": 0.7879046873748415, "251": 0.6417252092331581, "252": 0.4689244951652299, "256": 0.8642032498410129, "257": 0.9280640040281517, "254": 0.9550067287539893, "258": 0.5313515708247527, "269": 0.800284308009604, "261": 0.8926046592191961, "262": 0.7124670840191252, "1473": 0.4017827260714896, "577": 0.5089432784533486, "581": 0.951708185593362, "250": 0.9649059112531561, "1467": 0.7791739235235042, "1468": 1.262872866573954, "263": 0.7899568527333036, "259": 1.0397600765093837, "260": 2.231339519441816, "265": 0.518564271904808, "267": 0.5394839637536019, "62": 0.6498747319717659, "63": 0.7253412302056655, "64": 0.609679614469883, "73": 1.1775283721150032, "65": 0.86273084931159, "66": 0.9137866123801686, "70": 0.6953618791718942, "71": 2.1657602200909163, "72": 1.324790918650983}, "1480": {"104": 1.0794181810271524, "105": 1.080974622603605, "102": 0.6333470730321175, "252": 0.970109473782075, "270": 1.0558546129826434, "250": 0.9229119558175477, "268": 1.0937791582203509, "581": 0.5111446406153378, "256": 0.884528790370414, "264": 0.9980884686579049, "103": 0.4161010377752068, "257": 0.7830291143535045, "1468": 1.0175098045104178, "1473": 1.2561044728770832, "253": 0.5900425826606813, "254": 0.6227773011946813, "255": 0.6462679256696506, "260": 0.36077391161394157, "261": 0.47359933624731776, "262": 0.816948929737263, "263": 0.6668112324555195, "266": 0.7986939496221093, "269": 0.43027485960990774, "577": 0.12949448030767455, "1480": 0.02318251576822908, "251": 0.6334176660121257, "258": 0.6309992953217463, "259": 0.47453084679333557, "1467": 0.6516249086998693, "265": 0.6335887450056005, "267": 0.6302223510158276, "62": 0.8907699203093684, "73": 0.8085827559156614, "63": 0.8373828829550641, "64": 0.8750536180719434, "65": 0.9215659440579477, "66": 0.8862249778688259, "70": 0.6534864378361235, "72": 0.38733486279397117, "71": 0.37277309397062935}, "254": {"104": 0.7605213981009272, "105": 1.167978530115715, "102": 0.8570025319652972, "250": 1.2421631731505165, "270": 1.0415035689324887, "268": 0.9370143276938893, "257": 1.4565797933531823, "103": 0.9550067287539893, "581": 1.1939474444500031, "251": 0.9680753068769241, "252": 0.6864161772246903, "253": 0.14756497562400253, "1480": 0.6227773011946813, "258": 0.7491364532914593, "261": 1.1729118018265567, "577": 0.96494514717763, "256": 1.0431860125892722, "264": 0.6663235981108706, "255": 0.128579142887551, "260": 0.7326602928714196, "262": 0.49518610221126125, "269": 1.0519757170744675, "1468": 1.1156835425565828, "266": 0.6987656266267825, "259": 0.9124325013692192, "263": 0.5141958014232176, "267": 1.0002187042778505, "1473": 0.3217766168059452, "1467": 0.8889616435248844, "265": 1.0090627812716029, "254": 0.09999817701013028, "62": 0.670606425667555, "64": 0.5295445341945414, "66": 1.2447393772672988, "73": 1.3440708104594592, "65": 1.2393505456578238, "70": 0.860917233775956, "72": 1.3332468938845663, "71": 0.9553927635987549, "63": 0.5489591279477418}, "260": {"104": 1.1557039455006222, "105": 0.6304941307854449, "102": 0.5657137164066111, "581": 0.7103794698883922, "264": 1.6029511189366903, "103": 2.231339519441816, "1480": 0.36077391161394157, "263": 0.9870956791555513, "266": 0.4523161079602579, "577": 0.4477176497293148, "252": 0.5046676924218165, "270": 0.9060567037646045, "256": 0.6755874682604249, "253": 0.8881021938850782, "254": 0.7326602928714196, "1468": 0.997659350101397, "255": 1.201494833601044, "261": 0.08581559915295947, "262": 0.7488854956088715, "269": 0.8949039453401187, "250": 0.8657424617436562, "258": 0.4403488494986179, "268": 1.0338675635939003, "259": 0.107133541181041, "1467": 0.5574066285051428, "251": 0.6065470881897743, "257": 0.6436118782394956, "260": 0.05246456023839656, "265": 0.5444008443267646, "1473": 0.38191777742141636, "267": 0.5347017894301342, "62": 0.56202737818069, "64": 0.5347378761073641, "65": 0.7550038110849177, "66": 0.8007738296658623, "70": 0.6967969359123081, "71": 2.4563458963257445, "73": 0.9718235306885091, "72": 1.501452875084507, "63": 0.6036453245340068}, "266": {"104": 0.9003381934520802, "105": 1.0129650315848073, "102": 0.5622485216555413, "264": 1.0253468608208598, "268": 1.0399159521407575, "270": 0.9356616680667321, "103": 0.44561718657259486, "256": 1.0284002892941344, "257": 0.9529248951144885, "250": 0.9932971649777357, "581": 1.1327821452582243, "252": 0.7688648437288786, "253": 0.7549149942621495, "255": 0.7658938308074461, "260": 0.4523161079602579, "261": 0.5268378659116975, "262": 0.8192386651221212, "263": 0.7397217362211403, "1467": 0.722763831826126, "1473": 0.9639429295614249, "1480": 0.7986939496221093, "577": 0.7726787822219944, "251": 0.658187619037728, "1468": 1.04797132692498, "254": 0.6987656266267825, "266": 0.02771593363510525, "258": 0.6286765068690178, "259": 0.5967080031896732, "269": 0.5593531767647223, "265": 0.09211892443660938, "267": 0.10341398871167637, "62": 0.8933968681521773, "66": 1.0242863817512584, "63": 0.9105464086795944, "65": 1.0114174567480463, "64": 0.9683083965055109, "73": 0.9253355583863121, "70": 0.6991427113106518, "72": 0.5066208051918247, "71": 0.4570492202222036}, "269": {"104": 1.19899598093315, "105": 0.8534173515578305, "102": 0.7671047510073115, "250": 1.5269808584500604, "256": 1.1192430531185171, "268": 0.5447480458909923, "270": 0.5153143946097334, "103": 0.800284308009604, "581": 1.2608714696267647, "264": 1.2717821605836068, "257": 1.3381283210777621, "252": 0.47279157872803196, "255": 0.9668390527731883, "261": 0.7750557109353661, "262": 0.7309429339476335, "1480": 0.43027485960990774, "577": 0.6716405678697288, "253": 1.0500731669686405, "254": 1.0519757170744675, "263": 0.8643818095832759, "269": 0.09136215773942842, "258": 0.6918042531057562, "260": 0.8949039453401187, "265": 0.7551962669256773, "266": 0.5593531767647223, "1467": 1.093856550679378, "1473": 0.46010992785255583, "1468": 1.4511012841252244, "251": 0.7550218199692152, "259": 0.6983281006589779, "267": 0.8570394202205577, "62": 0.808521697498666, "66": 1.4633585876990884, "63": 0.7415042750448223, "64": 0.810491783970962, "65": 1.1747927968039253, "73": 1.7426647261483097, "70": 0.6853116848791762, "71": 0.949625479922406, "72": 1.0050219357767667}, "252": {"104": 1.121429525366397, "102": 0.5239156407343858, "1480": 0.970109473782075, "268": 1.0928463092458562, "105": 0.9813995031462244, "257": 0.7366273562883252, "581": 0.9055164337174171, "264": 1.1269547888407554, "270": 1.0419223842170366, "103": 0.4689244951652299, "256": 0.8694091224529982, "1473": 1.2374605885392516, "253": 0.720398395993163, "254": 0.6864161772246903, "258": 0.5950485022122386, "262": 0.7731387963505878, "265": 0.5831356455612146, "266": 0.7688648437288786, "269": 0.47279157872803196, "577": 0.6163093416040666, "252": 0.030768105156664928, "255": 0.7378573499067861, "1467": 0.6161404487825393, "267": 0.5251333540926665, "263": 0.6658820153865253, "259": 0.5738139507119988, "260": 0.5046676924218165, "261": 0.5203477126905924, "1468": 0.9576704559332796, "250": 0.5264209269544444, "251": 0.1218962949291163, "62": 0.6976765017680088, "65": 0.8481885291741422, "63": 0.7055945568598002, "64": 0.7478028643131475, "73": 0.9186950107515001, "66": 0.814306472810453, "70": 0.6499676113055242, "72": 0.5775288566912864, "71": 0.6794379922581963}, "257": {"104": 0.8756984611012487, "102": 1.485262008212132, "253": 1.3318003523554298, "250": 1.3674607382552855, "263": 1.4687647084797224, "268": 0.8020847668178949, "252": 0.7366273562883252, "254": 1.4565797933531823, "581": 1.3423837807192351, "255": 1.0392310057096088, "261": 1.019768981610066, "103": 0.9280640040281517, "1480": 0.7830291143535045, "266": 0.9529248951144885, "258": 0.5822556677676616, "262": 1.262626069985383, "1473": 0.7394840476764466, "269": 1.3381283210777621, "251": 1.136273350331395, "1467": 1.7473340451918264, "577": 1.18028911691921, "259": 0.8427769767233515, "267": 1.4961901879282664, "256": 0.0010963040120971499, "260": 0.6436118782394956, "265": 1.3940640994126752, "105": 0.0005164651471839959, "257": 0.000455350196570385, "270": 0.00037839183113635543, "62": 1.4337429807820166, "64": 1.4052750222879857, "72": 1.0050869038422112, "63": 1.5679870444649677, "73": 1.2910821110743271, "70": 1.0688889972614415, "66": 1.4423667239312365, "71": 0.6482954497779314, "65": 0.00044720642591096076, "264": 0.0002831331640358903, "1468": 0.0005027876679612399}, "253": {"104": 1.0039145827936509, "257": 1.3318003523554298, "102": 0.8520091488310793, "270": 1.091689680371885, "268": 0.8477041986042143, "105": 0.9892232173074057, "250": 1.2119156514665363, "264": 0.7560307357286864, "581": 1.0665731273686532, "103": 0.8709938663666658, "256": 1.1775669674211402, "1468": 0.8394581684143819, "252": 0.720398395993163, "1467": 0.6313142131252828, "1473": 0.3081129436386718, "1480": 0.5900425826606813, "253": 0.07987431068429209, "254": 0.14756497562400253, "255": 0.1602691948394953, "258": 0.7508850941967447, "262": 0.44009698986665724, "265": 0.9288983838902777, "266": 0.7549149942621495, "577": 0.9287488651995646, "251": 1.0058938974322194, "259": 0.903210109397713, "260": 0.8881021938850782, "261": 1.0101984129135788, "267": 0.9945889399164111, "269": 1.0500731669686405, "263": 0.5851408301100737, "62": 0.45601058554623963, "63": 0.455076460590674, "73": 1.2786092145049572, "64": 0.4612193769229728, "65": 1.234007368096663, "66": 1.2516576503293066, "71": 0.9892168941239808, "72": 1.2246418508496846, "70": 0.9482037926707011}, "264": {"104": 1.0627685205175532, "102": 1.1129859993405848, "255": 0.886284769947258, "261": 1.2093199814118683, "266": 1.0253468608208598, "581": 0.8208747478544186, "250": 0.8485993606294301, "253": 0.7560307357286864, "252": 1.1269547888407554, "268": 1.069248945713984, "258": 1.1314274805881317, "262": 0.26651524468144067, "1480": 0.9980884686579049, "577": 1.06246931174678, "103": 1.726251541787318, "1473": 0.6301707491262001, "269": 1.2717821605836068, "260": 1.6029511189366903, "263": 0.31928318762976904, "251": 1.1334281624641391, "254": 0.6663235981108706, "259": 1.3052708428145436, "1467": 0.6616257998661451, "265": 0.9834360596438111, "267": 0.9782214603192235, "105": 0.00031473719343766816, "256": 0.00027445582009272463, "264": 0.00016094598857859852, "270": 0.0003367208283253065, "1468": 0.00038243775135234087, "62": 0.5493975594869019, "66": 0.8664739007275808, "72": 1.2801734802441656, "63": 0.6017520284528409, "64": 0.5745922783971711, "70": 1.397063808868698, "73": 0.8814459653357735, "65": 0.0002901587024338423, "71": 1.651375916789406, "257": 0.0002831331640358903}, "255": {"104": 1.146474425865483, "264": 0.886284769947258, "102": 0.7859214769159857, "581": 0.9152461034741199, "257": 1.0392310057096088, "105": 0.910820846929492, "103": 1.0782314107749411, "268": 0.9189178901349111, "250": 1.0364052184043422, "270": 1.1472256484273504, "256": 1.0973248450888127, "1468": 0.8283559785712981, "253": 0.1602691948394953, "1473": 0.370859333173128, "1480": 0.6462679256696506, "258": 0.7957944956995295, "261": 0.8947668807953341, "263": 0.5367868755300135, "266": 0.7658938308074461, "269": 0.9668390527731883, "252": 0.7378573499067861, "254": 0.128579142887551, "577": 0.7307649038644028, "259": 0.9274104826868379, "262": 0.4628524045199566, "260": 1.201494833601044, "1467": 0.5183258984822938, "255": 0.046902326697157555, "267": 0.8262806650903168, "251": 0.9252971384434412, "265": 0.9007750359409208, "62": 0.4081173009585925, "66": 0.995031486076179, "63": 0.4358467222457487, "64": 0.4024082899483046, "65": 1.120685944193578, "73": 1.0841822680607263, "70": 0.8251174626646561, "71": 1.247076018357518, "72": 1.2006888498475135}, "258": {"104": 0.9896698709808672, "270": 0.9644960478285455, "102": 0.6697666175034752, "268": 0.8510240962409146, "105": 1.0222627853246136, "264": 1.1314274805881317, "256": 0.43141998515386687, "103": 0.5313515708247527, "250": 1.2932502420599306, "257": 0.5822556677676616, "1468": 1.413636630255216, "252": 0.5950485022122386, "253": 0.7508850941967447, "254": 0.7491364532914593, "255": 0.7957944956995295, "263": 0.8588839459048966, "1480": 0.6309992953217463, "262": 0.780245001175293, "261": 0.6004542877952393, "1467": 0.949388747142912, "1473": 0.7151322694934095, "266": 0.6286765068690178, "267": 0.7655714096093025, "269": 0.6918042531057562, "260": 0.4403488494986179, "581": 1.297796683856948, "251": 0.8299205948123409, "577": 0.7640627210983286, "259": 0.6376258900262319, "265": 0.7792667637020373, "258": 0.03508055156948138, "62": 0.9766767241303854, "65": 1.2809924435750948, "63": 1.0904209537686644, "73": 1.057803177940922, "64": 0.932967690046961, "66": 1.2338034831588662, "72": 0.51987879749986, "70": 0.6738911287797625, "71": 0.4425641396215426}, "261": {"104": 0.995491507935253, "264": 1.2093199814118683, "102": 0.7487840743001919, "268": 0.9008304760742997, "257": 1.019768981610066, "581": 1.09084828042181, "1468": 1.2244314735004518, "270": 0.8456306111163171, "103": 0.8926046592191961, "105": 0.8712501084871067, "250": 1.1249509038985965, "254": 1.1729118018265567, "255": 0.8947668807953341, "259": 0.07110016883155508, "1480": 0.47359933624731776, "262": 0.8422742718668534, "266": 0.5268378659116975, "269": 0.7750557109353661, "577": 0.6286430914188682, "252": 0.5203477126905924, "256": 0.8881307936795002, "253": 1.0101984129135788, "1473": 0.45066081456908985, "263": 0.9338696557971556, "258": 0.6004542877952393, "260": 0.08581559915295947, "261": 0.04578920965772087, "1467": 0.9931675049685523, "267": 0.9050686402628105, "265": 0.8402554627431301, "251": 0.7284119963569401, "62": 0.8738322445269099, "63": 0.880545419685597, "65": 1.0501534919068318, "64": 0.8564232222609849, "73": 1.2114118695091805, "66": 1.140465863045831, "70": 0.7016029042134785, "71": 1.0315393601786467, "72": 1.1162832955455924}, "581": {"104": 0.0007726941749804898, "264": 0.8208747478544186, "102": 1.588434103841679, "105": 0.9478721468618025, "268": 0.0005705029219093679, "577": 0.7532844425714564, "1480": 0.5111446406153378, "252": 0.9055164337174171, "270": 0.9491003972275243, "253": 1.0665731273686532, "257": 1.3423837807192351, "255": 0.9152461034741199, "256": 1.2030759974854321, "259": 0.9294199015783196, "261": 1.09084828042181, "103": 0.951708185593362, "254": 1.1939474444500031, "262": 1.0944822397302583, "269": 1.2608714696267647, "260": 0.7103794698883922, "263": 1.1414472370562654, "266": 1.1327821452582243, "1468": 1.1596543930260275, "251": 1.4516898077019662, "258": 1.297796683856948, "267": 1.4634077585195062, "1473": 0.7618945867458043, "1467": 1.6957754863054935, "265": 1.4422019585971546, "581": 0.000748551923584207, "250": 0.0009922355105377078, "62": 1.3747920019353919, "65": 1.3228721067085654, "70": 1.1401305104824135, "63": 1.5029853413314056, "64": 1.3389733521716154, "72": 0.967754481549416, "71": 0.7184975875865985, "66": 0.0012279158336333685, "73": 0.0006295140307861566}, "250": {"105": 0.8163723436056906, "102": 1.4066987805338131, "1480": 0.9229119558175477, "262": 1.0887037530823085, "264": 0.8485993606294301, "253": 1.2119156514665363, "270": 1.0166983264129492, "254": 1.2421631731505165, "256": 1.2815481039616132, "269": 1.5269808584500604, "257": 1.3674607382552855, "263": 1.1770710637795296, "103": 0.9649059112531561, "266": 0.9932971649777357, "255": 1.0364052184043422, "1473": 0.7331014309007757, "258": 1.2932502420599306, "261": 1.1249509038985965, "1468": 1.3629250885884094, "577": 1.2761189799351536, "104": 0.0008425149957510097, "251": 0.9337310493239726, "252": 0.5264209269544444, "1467": 1.5525244587950675, "259": 0.9989303034900513, "260": 0.8657424617436562, "265": 1.2569944848960128, "267": 1.2962153325114554, "268": 0.0005307479955617191, "250": 0.0006234939277374998, "581": 0.0009922355105377078, "62": 1.2579664715367609, "63": 1.3900683799477442, "65": 1.2472944899285263, "71": 0.9364183145155381, "64": 1.2328535009380566, "72": 1.1833193471633794, "70": 1.1089667973487827, "66": 0.0020817134340897574, "73": 0.0008276997180022776}, "262": {"250": 1.0887037530823085, "105": 1.3648057640363245, "102": 0.8188420232430647, "268": 0.9660159159353636, "256": 1.3234698181440085, "264": 0.26651524468144067, "104": 0.942934318542432, "103": 0.7124670840191252, "581": 1.0944822397302583, "257": 1.262626069985383, "252": 0.7731387963505878, "253": 0.44009698986665724, "261": 0.8422742718668534, "1480": 0.816948929737263, "263": 0.12013477652396867, "266": 0.8192386651221212, "269": 0.7309429339476335, "577": 0.891101656216652, "1468": 0.9670677639155821, "270": 1.2465404102017368, "254": 0.49518610221126125, "255": 0.4628524045199566, "258": 0.780245001175293, "259": 0.7844072250561963, "260": 0.7488854956088715, "1467": 0.48920371712589145, "1473": 0.37489935149139797, "265": 0.8309535024680171, "267": 0.8516879640123707, "251": 0.7975136063314038, "262": 0.030449410795462546, "62": 0.47918772445321184, "63": 0.4067013328417768, "64": 0.436416747860923, "65": 1.3441177604773944, "66": 1.1010307550950624, "73": 1.0648614720144973, "70": 0.8806631604725257, "71": 0.7637204597029817, "72": 0.7650907958569552}, "1467": {"268": 0.7235217294111747, "105": 1.0775907154679518, "102": 1.004989821977585, "103": 0.7791739235235042, "104": 0.8268971545348084, "253": 0.6313142131252828, "266": 0.722763831826126, "256": 1.2477910318355936, "252": 0.6161404487825393, "270": 0.9212648344621577, "257": 1.7473340451918264, "264": 0.6616257998661451, "255": 0.5183258984822938, "1480": 0.6516249086998693, "258": 0.949388747142912, "261": 0.9931675049685523, "262": 0.48920371712589145, "1473": 0.18901281451896698, "269": 1.093856550679378, "577": 1.0259356184552453, "250": 1.5525244587950675, "581": 1.6957754863054935, "254": 0.8889616435248844, "259": 0.6694579699710496, "260": 0.5574066285051428, "1468": 1.1274962405265696, "263": 0.6040998015327464, "267": 1.329536157651764, "265": 1.1301399169803388, "251": 1.2234939213091687, "1467": 0.3557033799648343, "62": 0.7982484868408369, "64": 0.6248715319969776, "65": 1.358703193729431, "66": 1.477155858578775, "70": 0.7531018110970548, "73": 1.3973153185181195, "71": 0.541004581533974, "72": 0.8004580373988984, "63": 0.6925392221180652}, "577": {"268": 0.8676034113658272, "105": 0.9530763671565646, "102": 0.9010247591260683, "581": 0.7532844425714564, "256": 1.0083424846073306, "264": 1.06246931174678, "270": 0.8236378558024701, "104": 0.9903288438798101, "103": 0.5089432784533486, "250": 1.2761189799351536, "252": 0.6163093416040666, "253": 0.9287488651995646, "254": 0.96494514717763, "260": 0.4477176497293148, "261": 0.6286430914188682, "262": 0.891101656216652, "263": 0.7825182098797545, "266": 0.7726787822219944, "269": 0.6716405678697288, "1480": 0.12949448030767455, "577": 0.10587814924441144, "257": 1.18028911691921, "255": 0.7307649038644028, "1468": 1.279226297894117, "265": 0.9779414699095205, "267": 0.9958211141450576, "259": 0.4879546216700847, "1467": 1.0259356184552453, "1473": 0.5754046255806896, "258": 0.7640627210983286, "251": 0.8697233025632533, "62": 1.0783832154525648, "63": 1.2162980715508003, "64": 1.0489259617233335, "65": 1.1358642719807452, "66": 1.3391040413243873, "73": 1.2474029598174055, "70": 0.7150886143732001, "71": 0.5209417577550303, "72": 0.6479230999826036}, "256": {"250": 1.2815481039616132, "102": 1.299257844668963, "1480": 0.884528790370414, "269": 1.1192430531185171, "268": 0.8239578859092624, "262": 1.3234698181440085, "577": 1.0083424846073306, "581": 1.2030759974854321, "104": 1.0684178375597162, "103": 0.8642032498410129, "253": 1.1775669674211402, "258": 0.43141998515386687, "266": 1.0284002892941344, "1473": 0.9885354836936238, "252": 0.8694091224529982, "255": 1.0973248450888127, "263": 1.3971056410945963, "251": 1.0817923707402644, "254": 1.0431860125892722, "1467": 1.2477910318355936, "267": 1.207772735780975, "259": 0.8454930762522683, "260": 0.6755874682604249, "261": 0.8881307936795002, "265": 1.227527234403429, "257": 0.0010963040120971499, "264": 0.00027445582009272463, "105": 0.0002496705530891248, "270": 0.00027525127058725286, "62": 1.294691384046042, "66": 1.2639601319253937, "63": 1.4667815659067578, "64": 1.277315132202833, "70": 0.977751396279808, "73": 1.0302664719410537, "72": 0.8651539148694395, "71": 0.6835814921794169, "256": 0.0003323773388943949, "65": 0.00010940903206377794, "1468": 0.00042639744177651155}, "263": {"250": 1.1770710637795296, "257": 1.4687647084797224, "102": 0.8517666361186012, "268": 0.8069778684380995, "270": 1.3225063397493133, "1468": 1.0673452042058198, "103": 0.7899568527333036, "256": 1.3971056410945963, "264": 0.31928318762976904, "581": 1.1414472370562654, "104": 1.1738527579018874, "105": 1.1299750981583205, "255": 0.5367868755300135, "258": 0.8588839459048966, "260": 0.9870956791555513, "262": 0.12013477652396867, "1480": 0.6668112324555195, "263": 0.03279105745758575, "266": 0.7397217362211403, "577": 0.7825182098797545, "252": 0.6658820153865253, "253": 0.5851408301100737, "261": 0.9338696557971556, "269": 0.8643818095832759, "267": 0.9308974387179028, "254": 0.5141958014232176, "265": 1.0145426873339383, "1473": 0.3529955402319569, "251": 1.0732295492501382, "259": 0.8475459660613321, "1467": 0.6040998015327464, "62": 0.41592165277750287, "63": 0.4305266641666068, "64": 0.3868346072725871, "65": 1.3523170067611736, "66": 1.1127140585664255, "70": 0.8879872354571535, "72": 1.0680207045540657, "73": 1.1895635915406646, "71": 1.0891941154221267}, "259": {"581": 0.9294199015783196, "270": 0.8797047487024536, "102": 0.6904108237968507, "268": 0.9930383743013751, "103": 1.0397600765093837, "104": 1.01681018713997, "105": 0.8094563701440437, "261": 0.07110016883155508, "264": 1.3052708428145436, "251": 0.6395627180292579, "252": 0.5738139507119988, "256": 0.8454930762522683, "253": 0.903210109397713, "257": 0.8427769767233515, "255": 0.9274104826868379, "1480": 0.47453084679333557, "267": 0.6532632476296274, "262": 0.7844072250561963, "1473": 0.6317377951373669, "266": 0.5967080031896732, "577": 0.4879546216700847, "250": 0.9989303034900513, "254": 0.9124325013692192, "260": 0.107133541181041, "1467": 0.6694579699710496, "1468": 1.1626018001903131, "265": 0.628209309344819, "269": 0.6983281006589779, "258": 0.6376258900262319, "263": 0.8475459660613321, "259": 0.026626468623931903, "62": 0.6785039971779346, "64": 0.715538155631845, "66": 0.9670652291949884, "73": 1.0930247618146636, "65": 0.9713008257494743, "70": 0.6803613685101109, "71": 1.2902940333454382, "72": 1.0212239741026747, "63": 0.7330874196851354}, "1468": {"268": 0.9415925595160779, "102": 1.5507322937330004, "261": 1.2244314735004518, "250": 1.3629250885884094, "103": 1.262872866573954, "258": 1.413636630255216, "263": 1.0673452042058198, "253": 0.8394581684143819, "255": 0.8283559785712981, "1473": 0.375222487183769, "1480": 1.0175098045104178, "581": 1.1596543930260275, "104": 0.8007815852186664, "252": 0.9576704559332796, "262": 0.9670677639155821, "265": 1.2721631058858, "266": 1.04797132692498, "254": 1.1156835425565828, "260": 0.997659350101397, "577": 1.279226297894117, "269": 1.4511012841252244, "1467": 1.1274962405265696, "259": 1.1626018001903131, "267": 1.2249262127651854, "251": 1.4552519230761525, "270": 0.0005602732115805706, "264": 0.00038243775135234087, "62": 0.9419427562168452, "63": 0.9186948599535176, "66": 1.1911865541153106, "64": 0.8150426764517673, "70": 1.1564905091882622, "71": 1.0188106827615562, "72": 1.2325787991582684, "73": 1.1679189916305786, "105": 0.0002882341406544526, "65": 0.00021708117210613828, "256": 0.00042639744177651155, "257": 0.0005027876679612399, "1468": 0.0001321233555750825}, "251": {"104": 1.1466822779127952, "270": 0.8912305433526848, "102": 0.7230788576161207, "103": 0.6417252092331581, "268": 0.7747752666475947, "105": 0.7856556786016354, "254": 0.9680753068769241, "256": 1.0817923707402644, "253": 1.0058938974322194, "264": 1.1334281624641391, "257": 1.136273350331395, "1473": 0.5894214198227422, "259": 0.6395627180292579, "1480": 0.6334176660121257, "266": 0.658187619037728, "250": 0.9337310493239726, "269": 0.7550218199692152, "581": 1.4516898077019662, "258": 0.8299205948123409, "262": 0.7975136063314038, "255": 0.9252971384434412, "577": 0.8697233025632533, "260": 0.6065470881897743, "252": 0.1218962949291163, "1468": 1.4552519230761525, "263": 1.0732295492501382, "267": 0.8614603448357464, "261": 0.7284119963569401, "1467": 1.2234939213091687, "265": 0.9261337037344415, "251": 0.1750536969437763, "62": 0.8748568326955961, "64": 0.8908268863436422, "65": 1.051499152481102, "66": 1.2556165277865345, "70": 0.6836841269352609, "73": 1.2921706084524593, "72": 0.7462249815888679, "71": 0.7735640324057815, "63": 0.9679871649309304}, "1473": {"104": 1.1281803906488936, "264": 0.6301707491262001, "102": 0.5663738732663354, "103": 0.4017827260714896, "270": 1.3772575253041681, "268": 1.143151731342191, "105": 1.2858531224161933, "250": 0.7331014309007757, "256": 0.9885354836936238, "257": 0.7394840476764466, "1468": 0.375222487183769, "1480": 1.2561044728770832, "252": 1.2374605885392516, "253": 0.3081129436386718, "255": 0.370859333173128, "266": 0.9639429295614249, "251": 0.5894214198227422, "261": 0.45066081456908985, "258": 0.7151322694934095, "259": 0.6317377951373669, "262": 0.37489935149139797, "1467": 0.18901281451896698, "269": 0.46010992785255583, "265": 0.5706451958396618, "577": 0.5754046255806896, "581": 0.7618945867458043, "254": 0.3217766168059452, "267": 0.48451363014370147, "263": 0.3529955402319569, "260": 0.38191777742141636, "1473": 0.00021954736751092374, "62": 0.35933141672486246, "64": 0.3574002808817135, "65": 0.9222559023249526, "73": 0.6905208244971524, "66": 0.6595463102724756, "70": 0.5850050062731398, "72": 0.39394721706192043, "71": 0.4131108744732246, "63": 0.3306498771283303}, "265": {"104": 1.1062154360886232, "105": 0.8329861369434834, "102": 0.6823418458641266, "252": 0.5831356455612146, "253": 0.9288983838902777, "270": 0.8945729381406331, "256": 1.227527234403429, "264": 0.9834360596438111, "1468": 1.2721631058858, "577": 0.9779414699095205, "261": 0.8402554627431301, "262": 0.8309535024680171, "1480": 0.6335887450056005, "269": 0.7551962669256773, "250": 1.2569944848960128, "1473": 0.5706451958396618, "266": 0.09211892443660938, "268": 0.727527999176084, "263": 1.0145426873339383, "581": 1.4422019585971546, "257": 1.3940640994126752, "254": 1.0090627812716029, "255": 0.9007750359409208, "259": 0.628209309344819, "260": 0.5444008443267646, "258": 0.7792667637020373, "1467": 1.1301399169803388, "103": 0.518564271904808, "251": 0.9261337037344415, "267": 0.2072373482884138, "265": 0.06565616009653659, "62": 1.2731039079309043, "64": 1.0930746232802295, "65": 1.1574782349024133, "73": 1.2183151797731642, "66": 1.3549615978552525, "70": 0.7246043775543833, "71": 0.49858006480835426, "72": 0.7078221161951993, "63": 1.1811961537407565}, "267": {"104": 0.9245405835472856, "256": 1.207772735780975, "102": 0.7441655761782566, "252": 0.5251333540926665, "253": 0.9945889399164111, "264": 0.9782214603192235, "257": 1.4961901879282664, "259": 0.6532632476296274, "263": 0.9308974387179028, "577": 0.9958211141450576, "258": 0.7655714096093025, "261": 0.9050686402628105, "250": 1.2962153325114554, "105": 0.8948298394159667, "262": 0.8516879640123707, "268": 0.7702948311244259, "581": 1.4634077585195062, "254": 1.0002187042778505, "255": 0.8262806650903168, "1473": 0.48451363014370147, "270": 0.834689236195899, "1468": 1.2249262127651854, "1480": 0.6302223510158276, "251": 0.8614603448357464, "266": 0.10341398871167637, "1467": 1.329536157651764, "269": 0.8570394202205577, "103": 0.5394839637536019, "265": 0.2072373482884138, "267": 0.16514026864349304, "260": 0.5347017894301342, "62": 1.2102475870756568, "65": 1.158148915117733, "63": 1.524668228600904, "64": 1.1512292787929608, "66": 1.4927083555711982, "70": 0.7355966302739113, "71": 0.4832883716361049, "73": 1.250036510526866, "72": 0.7215300109322306}, "62": {"104": 0.7077294121865975, "105": 1.2685235556982772, "102": 1.040558406334944, "268": 0.952491751010374, "257": 1.4337429807820166, "270": 0.9335288625962705, "103": 0.6498747319717659, "1480": 0.8907699203093684, "256": 1.294691384046042, "251": 0.8748568326955961, "264": 0.5493975594869019, "252": 0.6976765017680088, "265": 1.2731039079309043, "266": 0.8933968681521773, "577": 1.0783832154525648, "258": 0.9766767241303854, "261": 0.8738322445269099, "269": 0.808521697498666, "250": 1.2579664715367609, "1467": 0.7982484868408369, "254": 0.670606425667555, "581": 1.3747920019353919, "253": 0.45601058554623963, "259": 0.6785039971779346, "260": 0.56202737818069, "267": 1.2102475870756568, "1473": 0.35933141672486246, "1468": 0.9419427562168452, "255": 0.4081173009585925, "263": 0.41592165277750287, "262": 0.47918772445321184, "62": 0.06673371424131307, "64": 0.1091025615587577, "65": 1.36595760842026, "66": 1.3607636216257515, "72": 0.7371169958561741, "70": 0.8200419195630709, "73": 1.0916000202263954, "63": 0.23181161447031248, "71": 0.46749103267139663}, "64": {"268": 0.9209167193816591, "257": 1.4052750222879857, "62": 0.1091025615587577, "256": 1.277315132202833, "63": 0.10910018767622696, "264": 0.5745922783971711, "66": 1.305734706106203, "104": 0.7912900104360922, "1468": 0.8150426764517673, "102": 1.0308954377621606, "105": 1.2259470515513102, "250": 1.2328535009380566, "270": 0.9784330156052896, "581": 1.3389733521716154, "103": 0.609679614469883, "1480": 0.8750536180719434, "252": 0.7478028643131475, "255": 0.4024082899483046, "262": 0.436416747860923, "265": 1.0930746232802295, "266": 0.9683083965055109, "577": 1.0489259617233335, "251": 0.8908268863436422, "253": 0.4612193769229728, "254": 0.5295445341945414, "258": 0.932967690046961, "260": 0.5347378761073641, "263": 0.3868346072725871, "267": 1.1512292787929608, "261": 0.8564232222609849, "1473": 0.3574002808817135, "269": 0.810491783970962, "259": 0.715538155631845, "1467": 0.6248715319969776, "64": 0.0371407413763146, "65": 1.3496537819091214, "73": 1.1628471343352869, "71": 0.4997394243721631, "70": 0.8229188919849845, "72": 0.7055166695584945}, "65": {"268": 0.944607990159617, "62": 1.36595760842026, "258": 1.2809924435750948, "581": 1.3228721067085654, "267": 1.158148915117733, "250": 1.2472944899285263, "63": 1.3251242019399299, "252": 0.8481885291741422, "266": 1.0114174567480463, "261": 1.0501534919068318, "71": 0.7577464644501093, "104": 0.9518342838052137, "64": 1.3496537819091214, "1480": 0.9215659440579477, "251": 1.051499152481102, "255": 1.120685944193578, "265": 1.1574782349024133, "577": 1.1358642719807452, "1467": 1.358703193729431, "1473": 0.9222559023249526, "253": 1.234007368096663, "262": 1.3441177604773944, "263": 1.3523170067611736, "269": 1.1747927968039253, "66": 0.7789681435945865, "70": 0.5918941969865885, "73": 1.272974708135446, "72": 0.9811781138787522, "102": 1.2581860224855752, "254": 1.2393505456578238, "259": 0.9713008257494743, "103": 0.86273084931159, "260": 0.7550038110849177, "264": 0.0002901587024338423, "65": 0.00024005769623743162, "256": 0.00010940903206377794, "257": 0.00044720642591096076, "105": 0.00020260125293203155, "270": 0.000225318465344807, "1468": 0.00021708117210613828}, "66": {"105": 1.10444523281506, "62": 1.3607636216257515, "266": 1.0242863817512584, "256": 1.2639601319253937, "255": 0.995031486076179, "264": 0.8664739007275808, "72": 1.1901976408818586, "63": 1.3492113888603456, "64": 1.305734706106203, "1468": 1.1911865541153106, "269": 1.4633585876990884, "70": 0.7677218104633265, "257": 1.4423667239312365, "270": 0.9555075435692489, "65": 0.7789681435945865, "1480": 0.8862249778688259, "253": 1.2516576503293066, "577": 1.3391040413243873, "71": 0.8743667002894265, "102": 1.4249596794618187, "252": 0.814306472810453, "258": 1.2338034831588662, "261": 1.140465863045831, "262": 1.1010307550950624, "265": 1.3549615978552525, "267": 1.4927083555711982, "251": 1.2556165277865345, "254": 1.2447393772672988, "259": 0.9670652291949884, "103": 0.9137866123801686, "1467": 1.477155858578775, "1473": 0.6595463102724756, "260": 0.8007738296658623, "263": 1.1127140585664255, "66": 0.0015661034569475006, "268": 0.0006525154433470063, "250": 0.0020817134340897574, "104": 0.0012459639976628843, "73": 0.0020449611626759405, "581": 0.0012279158336333685}, "72": {"66": 1.1901976408818586, "264": 1.2801734802441656, "62": 0.7371169958561741, "104": 1.1013600971345214, "257": 1.0050869038422112, "63": 0.6974504138752582, "65": 0.9811781138787522, "64": 0.7055166695584945, "250": 1.1833193471633794, "268": 0.955112467936035, "581": 0.967754481549416, "105": 0.8098071689135946, "1468": 1.2325787991582684, "256": 0.8651539148694395, "270": 0.8600955074233095, "73": 0.5228378465089351, "70": 0.8418819844001865, "1480": 0.38733486279397117, "252": 0.5775288566912864, "253": 1.2246418508496846, "254": 1.3332468938845663, "258": 0.51987879749986, "266": 0.5066208051918247, "577": 0.6479230999826036, "71": 0.06631368246778067, "102": 0.6225803761621646, "103": 1.324790918650983, "1473": 0.39394721706192043, "255": 1.2006888498475135, "269": 1.0050219357767667, "261": 1.1162832955455924, "265": 0.7078221161951993, "259": 1.0212239741026747, "262": 0.7650907958569552, "263": 1.0680207045540657, "72": 0.03927725318526198, "260": 1.501452875084507, "251": 0.7462249815888679, "267": 0.7215300109322306, "1467": 0.8004580373988984}, "70": {"581": 1.1401305104824135, "105": 0.8566865908785908, "62": 0.8200419195630709, "66": 0.7677218104633265, "63": 0.8076536995958697, "256": 0.977751396279808, "268": 0.9903407752667753, "73": 1.2025643229046508, "257": 1.0688889972614415, "65": 0.5918941969865885, "64": 0.8229188919849845, "264": 1.397063808868698, "104": 0.9851842974248564, "270": 0.7952416982849252, "250": 1.1089667973487827, "1468": 1.1564905091882622, "102": 0.6600017617339147, "1473": 0.5850050062731398, "1480": 0.6534864378361235, "252": 0.6499676113055242, "254": 0.860917233775956, "261": 0.7016029042134785, "266": 0.6991427113106518, "269": 0.6853116848791762, "577": 0.7150886143732001, "70": 0.058140173894802805, "72": 0.8418819844001865, "103": 0.6953618791718942, "253": 0.9482037926707011, "263": 0.8879872354571535, "265": 0.7246043775543833, "1467": 0.7531018110970548, "251": 0.6836841269352609, "258": 0.6738911287797625, "259": 0.6803613685101109, "267": 0.7355966302739113, "255": 0.8251174626646561, "260": 0.6967969359123081, "262": 0.8806631604725257, "71": 0.9508474502525275}, "73": {"270": 1.0015127289571581, "62": 1.0916000202263954, "1480": 0.8085827559156614, "257": 1.2910821110743271, "63": 1.086534611203996, "70": 1.2025643229046508, "256": 1.0302664719410537, "253": 1.2786092145049572, "258": 1.057803177940922, "64": 1.1628471343352869, "65": 1.272974708135446, "252": 0.9186950107515001, "255": 1.0841822680607263, "261": 1.2114118695091805, "265": 1.2183151797731642, "266": 0.9253355583863121, "105": 0.9323782885341172, "264": 0.8814459653357735, "71": 0.38387180202524074, "72": 0.5228378465089351, "102": 1.3378663801906623, "103": 1.1775283721150032, "1473": 0.6905208244971524, "254": 1.3440708104594592, "269": 1.7426647261483097, "577": 1.2474029598174055, "259": 1.0930247618146636, "1468": 1.1679189916305786, "262": 1.0648614720144973, "251": 1.2921706084524593, "263": 1.1895635915406646, "267": 1.250036510526866, "260": 0.9718235306885091, "1467": 1.3973153185181195, "250": 0.0008276997180022776, "268": 0.0005986157446876834, "66": 0.0020449611626759405, "104": 0.000640008227271734, "581": 0.0006295140307861566, "73": 0.00022345846157712307}, "63": {"250": 1.3900683799477442, "1468": 0.9186948599535176, "62": 0.23181161447031248, "103": 0.7253412302056655, "268": 0.8174090172813772, "264": 0.6017520284528409, "104": 0.9065757036763934, "1480": 0.8373828829550641, "105": 1.036765552540318, "253": 0.455076460590674, "581": 1.5029853413314056, "263": 0.4305266641666068, "261": 0.880545419685597, "267": 1.524668228600904, "255": 0.4358467222457487, "256": 1.4667815659067578, "266": 0.9105464086795944, "257": 1.5679870444649677, "577": 1.2162980715508003, "262": 0.4067013328417768, "270": 1.0104560780873952, "64": 0.10910018767622696, "66": 1.3492113888603456, "65": 1.3251242019399299, "252": 0.7055945568598002, "258": 1.0904209537686644, "71": 0.5537790020035507, "269": 0.7415042750448223, "70": 0.8076536995958697, "72": 0.6974504138752582, "73": 1.086534611203996, "102": 1.1336873840857276, "259": 0.7330874196851354, "260": 0.6036453245340068, "1473": 0.3306498771283303, "265": 1.1811961537407565, "1467": 0.6925392221180652, "251": 0.9679871649309304, "254": 0.5489591279477418, "63": 0.06037801805674154}, "71": {"250": 0.9364183145155381, "65": 0.7577464644501093, "62": 0.46749103267139663, "63": 0.5537790020035507, "66": 0.8743667002894265, "64": 0.4997394243721631, "581": 0.7184975875865985, "1468": 1.0188106827615562, "73": 0.38387180202524074, "270": 0.7949219887402937, "253": 0.9892168941239808, "269": 0.949625479922406, "577": 0.5209417577550303, "268": 1.1244196407533225, "70": 0.9508474502525275, "103": 2.1657602200909163, "104": 1.1053622754410117, "255": 1.247076018357518, "258": 0.4425641396215426, "261": 1.0315393601786467, "266": 0.4570492202222036, "252": 0.6794379922581963, "259": 1.2902940333454382, "260": 2.4563458963257445, "265": 0.49858006480835426, "267": 0.4832883716361049, "1480": 0.37277309397062935, "72": 0.06631368246778067, "262": 0.7637204597029817, "105": 0.6665652654968809, "264": 1.651375916789406, "102": 0.49443217931137406, "256": 0.6835814921794169, "257": 0.6482954497779314, "263": 1.0891941154221267, "1473": 0.4131108744732246, "254": 0.9553927635987549, "251": 0.7735640324057815, "1467": 0.541004581533974, "71": 0.02290986792127475}};
+
+    // The "meta" comp (strongest in the highest keys) is highlighted everywhere.
+    const META_COMP_KEY = "104,270,252,1473,1480";
+    const META_COMP_SPECS = META_COMP_KEY ? META_COMP_KEY.split(',').map(Number) : [];
+    const META_BADGE = '<span class="badge meta-badge ms-2" title="Current meta comp: the strongest composition in the highest keys"><i class="material-symbols-rounded align-middle">workspace_premium</i> META</span>';
+    function isMetaComp(cArr) {
+      return Array.isArray(cArr) && META_COMP_KEY && cArr.join(',') === META_COMP_KEY;
+    }
+    // True when every selected spec is part of the meta comp, so adding more of
+    // its specs keeps the user on the path toward building the meta comp.
+    function onMetaPath(selected) {
+      return META_COMP_SPECS.length > 0 && Array.from(selected).every(s => META_COMP_SPECS.includes(Number(s)));
+    }
 
     function readUrlParams() {
       const sp = new URLSearchParams(window.location.search);
@@ -2889,9 +2977,9 @@
           }
 
           suggestionsContainer.innerHTML = `
-            <div class="card bg-dark border border-secondary mb-3 mt-2">
+            <div class="card bg-dark border border-secondary mb-3 mt-2${isMetaComp(comp.c) ? ' meta-comp' : ''}">
               <div class="card-body p-3">
-                <h6 class="text-white mb-3">Stats for Selected Comp</h6>
+                <h6 class="text-white mb-3">Stats for Selected Comp${isMetaComp(comp.c) ? META_BADGE : ''}</h6>
                 <div class="d-flex justify-content-between mb-2">
                   <span class="text-sm text-secondary">Max Key Timed:</span>
                   <span class="text-sm text-white font-weight-bold">${cMaxKey}</span>
@@ -2961,18 +3049,22 @@
         .sort((a, b) => b[1].w - a[1].w)
         .slice(0, 10);
 
+      // Suggestions that complete the meta comp (only when still on its path)
+      const metaPath = onMetaPath(selectedSpecs);
+
       let html = '<div class="w-100"><ul class="list-group mb-0">';
       sortedSuggestions.forEach(([specId, stats]) => {
         const specInfo = specLookup[specId] || { name: "Unknown", icon: "inv_misc_questionmark", specName: "Unknown", className: "Unknown", cleanClass: "Unknown", roleName: "Dps" };
         const total = stats.t + stats.d;
         const winRate = total > 0 ? Math.round((stats.t / total) * 100) : 0;
+        const isMetaSpec = metaPath && META_COMP_SPECS.includes(Number(specId));
 
         html += `
-          <li class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg cursor-pointer flex-column flex-md-row" onclick="addSuggestedSpec(${specId})">
+          <li class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg cursor-pointer flex-column flex-md-row${isMetaSpec ? ' meta-comp' : ''}" onclick="addSuggestedSpec(${specId})">
             <div class="d-flex align-items-center">
               <img src="/data/icons/${specInfo.icon}.jpg" class="avatar avatar-sm me-3 border-radius-sm text-white">
               <div class="d-flex flex-column">
-                <a href="/classes/${specInfo.roleName}/${specInfo.specName}_${specInfo.className}" onclick="event.stopPropagation();" class="mb-1 text-sm font-weight-bolder class-${specInfo.cleanClass}-text">${specInfo.name}</a>
+                <a href="/classes/${specInfo.roleName}/${specInfo.specName}_${specInfo.className}" onclick="event.stopPropagation();" class="mb-1 text-sm font-weight-bolder class-${specInfo.cleanClass}-text">${specInfo.name}${isMetaSpec ? META_BADGE : ''}</a>
                 <span class="text-xs text-secondary mt-1">
                   Runs: <span class="text-white pe-2">${total}</span>
                   Success %: <span class="${winRate >= 70 ? 'text-success' : 'text-warning'} pe-2">${winRate}%</span>
@@ -3059,13 +3151,14 @@
       }
       const winRate = runs > 0 ? Math.round((timed || 0) / runs * 100) : 0;
       const mk = comp.mk || 0;
+      const meta = isMetaComp(comp.c);
 
       return `
-        <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center">
+        <div class="list-group-item border-0 d-flex justify-content-between px-3 mb-2 border-radius-lg align-items-center${meta ? ' meta-comp' : ''}">
           <div class="d-flex align-items-center">
             ${specImgs}
             <div class="ms-3">
-              <div class="text-sm font-weight-bolder">${runs} runs</div>
+              <div class="text-sm font-weight-bolder">${runs} runs${meta ? META_BADGE : ''}</div>
               <div class="text-xs text-secondary">Max: ${mk} &nbsp; Success %: ${winRate}%</div>
             </div>
           </div>
@@ -3116,7 +3209,7 @@
       });
       html += `</div>`;
       html += `<div>`;
-      html += `<h6 class="mb-1">Overall</h6>`;
+      html += `<h6 class="mb-1">Overall${isMetaComp(comp.c) ? META_BADGE : ''}</h6>`;
       html += `<div class="text-sm">Runs: <strong>${runs}</strong> &nbsp; Success %: <strong>${successPct}%</strong> &nbsp; Max Key: <strong>${mk}</strong></div>`;
       if (bestDungeonName) html += `<div class="text-sm">Top Dungeon: <strong>${bestDungeonName}</strong> (${comp.bdr || 0} runs)</div>`;
       html += `</div></div>`;
@@ -3251,6 +3344,20 @@
       writeUrlParams();
       updateSuggestions();
       renderTopLists();
+    });
+
+    // --- Hidden Gems: DataTables (click headers to sort) ---
+    $(function () {
+      $('#hidden-gems-table').DataTable({
+        paging: false,
+        searching: false,
+        info: false,
+        order: [[1, 'desc']],            // default: Highest Key, descending
+        columnDefs: [
+          { targets: 0, orderable: false }  // Comp (icons) is not sortable
+        ],
+        language: { emptyTable: 'No hidden gems found.' }
+      });
     });
   </script>
 </body>
