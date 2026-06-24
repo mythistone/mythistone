@@ -44,6 +44,8 @@
 <link href="/assets/css/bootstrap-icons.css" rel="stylesheet" />
 <!-- Custom Scrollbars -->
 <link href="/assets/css/custom-scrollbars.css" rel="stylesheet" />
+<!-- Cross-page responsive / small-screen fixes -->
+<link href="/assets/css/responsive.css" rel="stylesheet" />
 <!-- Klaro cookie consent -->
 <script defer type="text/javascript" src="/assets/js/plugins/cookie-config.js"></script>
 <script defer type="text/javascript" src="/assets/js/plugins/klaro.js"></script>
@@ -59,7 +61,7 @@
 
   <!-- Primary SEO -->
   <meta name="description"
-    content="Interactive Mythic+ dashboard for World of Warcraft Midnight Season 1. Find spec popularity, keys per week, dungeon popularity, performance vs. popularity and more. Data updated 24/06/2026, 10:53:08.">
+    content="Interactive Mythic+ dashboard for World of Warcraft Midnight Season 1. Find spec popularity, keys per week, dungeon popularity, performance vs. popularity and more. Data updated 24/06/2026, 20:09:46.">
   <meta name="keywords"
     content="MythiStone, Mythic+, WoW, Dungeon popularity, spec popularity, keys per week, M+ dashboard, WoW stats, WoW meta Midnight Season 1">
 
@@ -77,7 +79,7 @@
   <meta property="og:url" content="https://mythistone.com/pages/dashboard">
   <meta property="og:title" content=" Mythic+ Dashboard: Spec & Dungeon Trends for Midnight Season 1 | MythiStone">
   <meta property="og:description"
-    content="Live Mythic+ dashboard for Midnight Season 1: spec popularity, dungeon trends, keys per week and performance scoring (updated 24/06/2026, 10:53:08).">
+    content="Live Mythic+ dashboard for Midnight Season 1: spec popularity, dungeon trends, keys per week and performance scoring (updated 24/06/2026, 20:09:46).">
   <meta property="og:image" content="https://mythistone.com/assets/img/previews/dungeon_popularity_across_keylevels.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -120,7 +122,7 @@
             {"@type": "ListItem", "position": 2, "name": "Dashboard", "item": "https://mythistone.com/pages/dashboard"}
           ]
         },
-        "dateModified": "24/06/2026, 10:53:08"
+        "dateModified": "24/06/2026, 20:09:46"
       },
       {
         "@type": "SiteNavigationElement",
@@ -389,7 +391,7 @@
     "url": "https://mythistone.com"
     },
     "datePublished": "01/07/2025",
-    "dateModified": "24/06/2026, 10:53:08"
+    "dateModified": "24/06/2026, 20:09:46"
   }
   </script>
 
@@ -1230,7 +1232,7 @@
               </div>
             </div>
             <div class="card-body p-2 pt-0">
-              <div class="chart" style="height: 150px;">
+              <div class="chart d-none d-lg-block" style="height: 150px;">
                 <canvas id="chart-key-throughput" class="chart-canvas"></canvas>
               </div>
             </div>
@@ -1238,7 +1240,7 @@
             <div class="card-footer p-2 ps-3">
               <div class="d-flex justify-content-between align-items-center">
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1782298388.657257>Last Update: </p>
+                  data-timestamp=1782331786.963741>Last Update: </p>
                 <a id="resetThroughputZoom" class="text-sm" style="cursor:pointer; display:none;">Reset Zoom</a>
               </div>
             </div>
@@ -1483,7 +1485,247 @@
         <div class="col-lg-12 col-md-6 mt-4 mb-4">
           <div class="card ">
             <div class="card-body">
-              <ul class="nav nav-tabs mb-3" id="specTabs" role="tablist">
+              <!-- Mobile: compact ranked table instead of the dense spec charts -->
+              <div class="d-lg-none">
+                <h6 class="mb-0">Spec popularity</h6>
+                <p class="text-sm mb-2">Most played specs across all key levels</p>
+                
+                
+                
+                <table class="dash-rank-table text-sm">
+                  <tbody>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">1</td>
+                      <td style="width:28px;"><img src="/data/icons/135873.jpg" class="dash-rank-icon" alt="Retribution"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(244,140,186);">Retribution</div>
+                        <div class="dash-rank-bar"><span style="width: 100.0%; background: rgb(244,140,186);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,836,536</div>
+                        <div class="text-xs text-secondary">6.5%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">2</td>
+                      <td style="width:28px;"><img src="/data/icons/135846.jpg" class="dash-rank-icon" alt="Frost"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(63,199,235);">Frost</div>
+                        <div class="dash-rank-bar"><span style="width: 87.9%; background: rgb(63,199,235);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,494,138</div>
+                        <div class="text-xs text-secondary">5.7%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">3</td>
+                      <td style="width:28px;"><img src="/data/icons/608951.jpg" class="dash-rank-icon" alt="Brewmaster"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(0,255,152);">Brewmaster</div>
+                        <div class="dash-rank-bar"><span style="width: 87.3%; background: rgb(0,255,152);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,475,811</div>
+                        <div class="text-xs text-secondary">5.7%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">4</td>
+                      <td style="width:28px;"><img src="/data/icons/135775.jpg" class="dash-rank-icon" alt="Unholy"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(196,30,58);">Unholy</div>
+                        <div class="dash-rank-bar"><span style="width: 85.3%; background: rgb(196,30,58);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,420,623</div>
+                        <div class="text-xs text-secondary">5.5%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">5</td>
+                      <td style="width:28px;"><img src="/data/icons/136172.jpg" class="dash-rank-icon" alt="Demonology"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(135,136,238);">Demonology</div>
+                        <div class="dash-rank-bar"><span style="width: 82.2%; background: rgb(135,136,238);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,331,387</div>
+                        <div class="text-xs text-secondary">5.3%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">6</td>
+                      <td style="width:28px;"><img src="/data/icons/7455385.jpg" class="dash-rank-icon" alt="Devourer"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(163,48,201);">Devourer</div>
+                        <div class="dash-rank-bar"><span style="width: 78.0%; background: rgb(163,48,201);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,212,463</div>
+                        <div class="text-xs text-secondary">5.0%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">7</td>
+                      <td style="width:28px;"><img src="/data/icons/136052.jpg" class="dash-rank-icon" alt="Restoration"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(0,112,221);">Restoration</div>
+                        <div class="dash-rank-bar"><span style="width: 75.6%; background: rgb(0,112,221);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,144,753</div>
+                        <div class="text-xs text-secondary">4.9%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">8</td>
+                      <td style="width:28px;"><img src="/data/icons/132276.jpg" class="dash-rank-icon" alt="Guardian"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(255,124,10);">Guardian</div>
+                        <div class="dash-rank-bar"><span style="width: 74.5%; background: rgb(255,124,10);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">2,112,206</div>
+                        <div class="text-xs text-secondary">4.8%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">9</td>
+                      <td style="width:28px;"><img src="/data/icons/461112.jpg" class="dash-rank-icon" alt="Beast Mastery"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(170,211,114);">Beast Mastery</div>
+                        <div class="dash-rank-bar"><span style="width: 70.1%; background: rgb(170,211,114);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,987,464</div>
+                        <div class="text-xs text-secondary">4.5%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">10</td>
+                      <td style="width:28px;"><img src="/data/icons/136041.jpg" class="dash-rank-icon" alt="Restoration"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(255,124,10);">Restoration</div>
+                        <div class="dash-rank-bar"><span style="width: 65.0%; background: rgb(255,124,10);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,844,601</div>
+                        <div class="text-xs text-secondary">4.2%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">11</td>
+                      <td style="width:28px;"><img src="/data/icons/608952.jpg" class="dash-rank-icon" alt="Mistweaver"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(0,255,152);">Mistweaver</div>
+                        <div class="dash-rank-bar"><span style="width: 61.1%; background: rgb(0,255,152);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,732,737</div>
+                        <div class="text-xs text-secondary">4.0%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">12</td>
+                      <td style="width:28px;"><img src="/data/icons/236264.jpg" class="dash-rank-icon" alt="Protection"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(244,140,186);">Protection</div>
+                        <div class="dash-rank-bar"><span style="width: 53.6%; background: rgb(244,140,186);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,519,997</div>
+                        <div class="text-xs text-secondary">3.5%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">13</td>
+                      <td style="width:28px;"><img src="/data/icons/5198700.jpg" class="dash-rank-icon" alt="Augmentation"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(51,147,127);">Augmentation</div>
+                        <div class="dash-rank-bar"><span style="width: 42.2%; background: rgb(51,147,127);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,197,661</div>
+                        <div class="text-xs text-secondary">2.7%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">14</td>
+                      <td style="width:28px;"><img src="/data/icons/136048.jpg" class="dash-rank-icon" alt="Elemental"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(0,112,221);">Elemental</div>
+                        <div class="dash-rank-bar"><span style="width: 41.6%; background: rgb(0,112,221);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,179,935</div>
+                        <div class="text-xs text-secondary">2.7%</div>
+                      </td>
+                    </tr>
+                    
+                    
+                    
+                    <tr>
+                      <td class="dash-rank-num">15</td>
+                      <td style="width:28px;"><img src="/data/icons/135920.jpg" class="dash-rank-icon" alt="Holy"></td>
+                      <td>
+                        <div class="dash-rank-name" style="color: rgb(244,140,186);">Holy</div>
+                        <div class="dash-rank-bar"><span style="width: 39.8%; background: rgb(244,140,186);"></span></div>
+                      </td>
+                      <td class="dash-rank-value">
+                        <div class="font-weight-bold">1,129,704</div>
+                        <div class="text-xs text-secondary">2.6%</div>
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- Desktop: tabbed charts -->
+              <div class="d-none d-lg-block">
+              <ul class="nav nav-tabs nav-fill mb-3" id="specTabs" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active" id="overall-tab" data-bs-toggle="tab" data-bs-target="#overall"
                     type="button" role="tab" aria-controls="overall" aria-selected="false">
@@ -1508,7 +1750,7 @@
                         <div class="card-body">
                           <h6 class="mb-0">Spec popularity</h6>
                           <p class="text-sm">Across all Keylevels</p>
-                          <div class="pe-2">
+                          <div class="pe-2 dash-dense-chart">
                             <div class="chart">
                               <canvas id="chart-overall" class="chart-canvas" height="100"></canvas>
                             </div>
@@ -1517,7 +1759,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1782298388.657257>Last Update: </p>
+                              data-timestamp=1782331786.963741>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1532,7 +1774,7 @@
                         <div class="card-body">
                           <h6 class="mb-0">Spec popularity</h6>
                           <p class="text-sm">By Keylevel</p>
-                          <div class="pe-2">
+                          <div class="pe-2 dash-dense-chart">
                             <div class="chart">
                               <canvas id="chart-keylevel" class="chart-canvas" height="80"></canvas>
                             </div>
@@ -1541,7 +1783,7 @@
                           <div class="d-flex">
                             <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                             <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                              data-timestamp=1782298388.657257>Last Update: </p>
+                              data-timestamp=1782331786.963741>Last Update: </p>
                           </div>
                         </div>
                       </div>
@@ -1551,6 +1793,7 @@
 
 
 
+              </div>
               </div>
             </div>
           </div>
@@ -1563,15 +1806,19 @@
               <h6 class="mb-0 "> Keys per Week</h6>
               <p class="text-sm "></p>
               <div class="pe-2">
-                <div class="chart">
+                <div class="chart d-none d-lg-block">
                   <canvas id="chart-keys-per-week" class="chart-canvas" height="170"></canvas>
                 </div>
+                <p class="text-sm text-secondary d-lg-none mb-0 py-3 text-center">
+                  <i class="material-symbols-rounded align-middle me-1">show_chart</i>
+                  The weekly key trend is best viewed on a larger screen.
+                </p>
               </div>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1782298388.657257>Last Update: </p>
+                  data-timestamp=1782331786.963741>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1583,15 +1830,129 @@
               <h6 class="mb-0 ">Most Popular Dungeons</h6>
               <p class="text-sm "></p>
               <div class="pe-2">
-                <div class="chart">
+                <div class="chart d-none d-lg-block">
                   <canvas id="chart-dungeon-popularity" class="chart-canvas" height="170"></canvas>
+                </div>
+                <!-- Mobile: ranked table -->
+                <div class="d-lg-none">
+                  
+                  
+                  <table class="dash-rank-table text-sm">
+                    <tbody>
+                      
+                      <tr>
+                        <td class="dash-rank-num">1</td>
+                        <td style="width:28px;"><img src="/data/icons/pit-of-saron-small.jpg" class="dash-rank-icon" alt="Pit of Saron"></td>
+                        <td>
+                          <div class="dash-rank-name">Pit of Saron</div>
+                          <div class="dash-rank-bar"><span style="width: 100.0%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,159,094</div>
+                          <div class="text-xs text-secondary">13.1%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">2</td>
+                        <td style="width:28px;"><img src="/data/icons/windrunner-spire-small.jpg" class="dash-rank-icon" alt="Windrunner Spire"></td>
+                        <td>
+                          <div class="dash-rank-name">Windrunner Spire</div>
+                          <div class="dash-rank-bar"><span style="width: 99.2%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,149,937</div>
+                          <div class="text-xs text-secondary">13.0%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">3</td>
+                        <td style="width:28px;"><img src="/data/icons/algethar-academy-small.jpg" class="dash-rank-icon" alt="Algeth&#39;ar Academy"></td>
+                        <td>
+                          <div class="dash-rank-name">Algeth&#39;ar Academy</div>
+                          <div class="dash-rank-bar"><span style="width: 97.9%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,134,400</div>
+                          <div class="text-xs text-secondary">12.8%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">4</td>
+                        <td style="width:28px;"><img src="/data/icons/nexus-point-xenas-small.jpg" class="dash-rank-icon" alt="Nexus-Point Xenas"></td>
+                        <td>
+                          <div class="dash-rank-name">Nexus-Point Xenas</div>
+                          <div class="dash-rank-bar"><span style="width: 96.5%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,118,110</div>
+                          <div class="text-xs text-secondary">12.6%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">5</td>
+                        <td style="width:28px;"><img src="/data/icons/skyreach-small.jpg" class="dash-rank-icon" alt="Skyreach"></td>
+                        <td>
+                          <div class="dash-rank-name">Skyreach</div>
+                          <div class="dash-rank-bar"><span style="width: 96.2%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,115,299</div>
+                          <div class="text-xs text-secondary">12.6%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">6</td>
+                        <td style="width:28px;"><img src="/data/icons/magisters-terrace-small.jpg" class="dash-rank-icon" alt="Magisters&#39; Terrace"></td>
+                        <td>
+                          <div class="dash-rank-name">Magisters&#39; Terrace</div>
+                          <div class="dash-rank-bar"><span style="width: 93.9%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,088,393</div>
+                          <div class="text-xs text-secondary">12.3%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">7</td>
+                        <td style="width:28px;"><img src="/data/icons/seat-of-the-triumvirate-small.jpg" class="dash-rank-icon" alt="Seat of the Triumvirate"></td>
+                        <td>
+                          <div class="dash-rank-name">Seat of the Triumvirate</div>
+                          <div class="dash-rank-bar"><span style="width: 93.1%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,078,611</div>
+                          <div class="text-xs text-secondary">12.2%</div>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">8</td>
+                        <td style="width:28px;"><img src="/data/icons/maisara-caverns-small.jpg" class="dash-rank-icon" alt="Maisara Caverns"></td>
+                        <td>
+                          <div class="dash-rank-name">Maisara Caverns</div>
+                          <div class="dash-rank-bar"><span style="width: 88.5%; background: var(--bs-primary, #e91e63);"></span></div>
+                        </td>
+                        <td class="dash-rank-value">
+                          <div class="font-weight-bold">1,025,310</div>
+                          <div class="text-xs text-secondary">11.6%</div>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1782298388.657257>Last Update: </p>
+                  data-timestamp=1782331786.963741>Last Update: </p>
                 </p>
               </div>
             </div>
@@ -1606,8 +1967,145 @@
               <h6 class="mb-0 ">Spec Popularity vs Performance</h6>
               <p class="text-sm "></p>
               <div class="pe-2">
-                <div class="chart">
+                <div class="chart d-none d-lg-block">
                   <canvas id="chart-popularity-vs-tier" class="chart-canvas" height="170"></canvas>
+                </div>
+                <!-- Mobile: ranked table sorted by performance score -->
+                <div class="d-lg-none">
+                  
+                  
+                  <table class="dash-rank-table text-sm">
+                    <thead>
+                      <tr class="text-xxs text-uppercase text-secondary">
+                        <th></th><th></th><th>Spec</th>
+                        <th class="text-end">Perf.</th>
+                        <th class="text-end">Runs</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      <tr>
+                        <td class="dash-rank-num">1</td>
+                        <td style="width:28px;"><img src="/data/icons/5198700.jpg" class="dash-rank-icon" alt="Augmentation"></td>
+                        <td><div class="dash-rank-name">Augmentation</div></td>
+                        <td class="dash-rank-value font-weight-bold">40.32</td>
+                        <td class="dash-rank-value text-secondary">1,197,661</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">2</td>
+                        <td style="width:28px;"><img src="/data/icons/132276.jpg" class="dash-rank-icon" alt="Guardian"></td>
+                        <td><div class="dash-rank-name">Guardian</div></td>
+                        <td class="dash-rank-value font-weight-bold">37.57</td>
+                        <td class="dash-rank-value text-secondary">2,112,206</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">3</td>
+                        <td style="width:28px;"><img src="/data/icons/608952.jpg" class="dash-rank-icon" alt="Mistweaver"></td>
+                        <td><div class="dash-rank-name">Mistweaver</div></td>
+                        <td class="dash-rank-value font-weight-bold">37.22</td>
+                        <td class="dash-rank-value text-secondary">1,732,737</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">4</td>
+                        <td style="width:28px;"><img src="/data/icons/135775.jpg" class="dash-rank-icon" alt="Unholy"></td>
+                        <td><div class="dash-rank-name">Unholy</div></td>
+                        <td class="dash-rank-value font-weight-bold">36.41</td>
+                        <td class="dash-rank-value text-secondary">2,420,623</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">5</td>
+                        <td style="width:28px;"><img src="/data/icons/7455385.jpg" class="dash-rank-icon" alt="Devourer"></td>
+                        <td><div class="dash-rank-name">Devourer</div></td>
+                        <td class="dash-rank-value font-weight-bold">34.28</td>
+                        <td class="dash-rank-value text-secondary">2,212,463</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">6</td>
+                        <td style="width:28px;"><img src="/data/icons/132355.jpg" class="dash-rank-icon" alt="Arms"></td>
+                        <td><div class="dash-rank-name">Arms</div></td>
+                        <td class="dash-rank-value font-weight-bold">33.71</td>
+                        <td class="dash-rank-value text-secondary">691,732</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">7</td>
+                        <td style="width:28px;"><img src="/data/icons/136052.jpg" class="dash-rank-icon" alt="Restoration"></td>
+                        <td><div class="dash-rank-name">Restoration</div></td>
+                        <td class="dash-rank-value font-weight-bold">32.71</td>
+                        <td class="dash-rank-value text-secondary">2,144,753</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">8</td>
+                        <td style="width:28px;"><img src="/data/icons/236286.jpg" class="dash-rank-icon" alt="Outlaw"></td>
+                        <td><div class="dash-rank-name">Outlaw</div></td>
+                        <td class="dash-rank-value font-weight-bold">31.67</td>
+                        <td class="dash-rank-value text-secondary">296,746</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">9</td>
+                        <td style="width:28px;"><img src="/data/icons/608951.jpg" class="dash-rank-icon" alt="Brewmaster"></td>
+                        <td><div class="dash-rank-name">Brewmaster</div></td>
+                        <td class="dash-rank-value font-weight-bold">30.40</td>
+                        <td class="dash-rank-value text-secondary">2,475,811</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">10</td>
+                        <td style="width:28px;"><img src="/data/icons/461113.jpg" class="dash-rank-icon" alt="Survival"></td>
+                        <td><div class="dash-rank-name">Survival</div></td>
+                        <td class="dash-rank-value font-weight-bold">30.31</td>
+                        <td class="dash-rank-value text-secondary">724,905</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">11</td>
+                        <td style="width:28px;"><img src="/data/icons/237581.jpg" class="dash-rank-icon" alt="Enhancement"></td>
+                        <td><div class="dash-rank-name">Enhancement</div></td>
+                        <td class="dash-rank-value font-weight-bold">27.61</td>
+                        <td class="dash-rank-value text-secondary">571,287</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">12</td>
+                        <td style="width:28px;"><img src="/data/icons/136172.jpg" class="dash-rank-icon" alt="Demonology"></td>
+                        <td><div class="dash-rank-name">Demonology</div></td>
+                        <td class="dash-rank-value font-weight-bold">27.58</td>
+                        <td class="dash-rank-value text-secondary">2,331,387</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">13</td>
+                        <td style="width:28px;"><img src="/data/icons/135873.jpg" class="dash-rank-icon" alt="Retribution"></td>
+                        <td><div class="dash-rank-name">Retribution</div></td>
+                        <td class="dash-rank-value font-weight-bold">27.49</td>
+                        <td class="dash-rank-value text-secondary">2,836,536</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">14</td>
+                        <td style="width:28px;"><img src="/data/icons/236270.jpg" class="dash-rank-icon" alt="Assassination"></td>
+                        <td><div class="dash-rank-name">Assassination</div></td>
+                        <td class="dash-rank-value font-weight-bold">27.37</td>
+                        <td class="dash-rank-value text-secondary">287,263</td>
+                      </tr>
+                      
+                      <tr>
+                        <td class="dash-rank-num">15</td>
+                        <td style="width:28px;"><img src="/data/icons/135940.jpg" class="dash-rank-icon" alt="Discipline"></td>
+                        <td><div class="dash-rank-name">Discipline</div></td>
+                        <td class="dash-rank-value font-weight-bold">26.85</td>
+                        <td class="dash-rank-value text-secondary">1,036,078</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <hr class="dark horizontal">
@@ -1615,7 +2113,7 @@
                 <div class="d-flex">
                   <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                   <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                    data-timestamp=1782298388.657257>Last Update: </p>
+                    data-timestamp=1782331786.963741>Last Update: </p>
                 </div>
                 <a class="mb-0 text-sm" style="cursor: pointer;" data-bs-toggle="modal"
                   data-bs-target="#performanceModal">See How It’s
@@ -1630,15 +2128,19 @@
               <h6 class="mb-0 ">Dungeon Popularity across Keylevels</h6>
               <p class="text-sm "></p>
               <div class="pe-2">
-                <div class="chart">
+                <div class="chart d-none d-lg-block">
                   <canvas id="chart-dungeon-popularity-vs-ease" class="chart-canvas" height="170"></canvas>
                 </div>
+                <p class="text-sm text-secondary d-lg-none mb-0 py-3 text-center">
+                  <i class="material-symbols-rounded align-middle me-1">bar_chart</i>
+                  The per-key-level breakdown is best viewed on a larger screen.
+                </p>
               </div>
               <hr class="dark horizontal">
               <div class="d-flex ">
                 <i class="material-symbols-rounded text-sm my-auto me-1">schedule</i>
                 <p class="mb-0 text-sm timestamp" data-bs-toggle="tooltip" data-bs-placement="top"
-                  data-timestamp=1782298388.657257>Last Update: </p>
+                  data-timestamp=1782331786.963741>Last Update: </p>
               </div>
             </div>
           </div>
@@ -2431,6 +2933,16 @@
         el.textContent = `${el.textContent} ${timeAgo(Number(timestamp))}`;
         el.setAttribute('title', new Date(Number(timestamp) * 1000).toLocaleString());
     });
+
+    // Move focus out of a modal before Bootstrap sets aria-hidden on it, otherwise
+    // browsers warn about hiding a focused element from assistive tech (e.g. when
+    // closing via the in-modal "Close" button). hide.bs.modal bubbles to document.
+    document.addEventListener('hide.bs.modal', function (e) {
+        const focused = e.target.querySelector(':focus');
+        if (focused && typeof focused.blur === 'function') {
+            focused.blur();
+        }
+    });
 </script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="/assets/js/material-dashboard.js"></script>
@@ -2911,7 +3423,7 @@
 
       // these come straight from your Python
       const periodLabels = ["Week:2 ", "Week:3 ", "Week:4 ", "Week:5 ", "Week:6 ", "Week:7 ", "Week:8 ", "Week:9 ", "Week:10 ", "Week:11 ", "Week:12 ", "Week:13 ", "Week:14 ", "Week:15 "];
-    const periodDatasets = [{'label': 'Total', 'data': [621987, 673966, 849672, 389595, 844841, 817365, 841383, 828483, 604124, 703118, 606943, 584980, 469623, 24574], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [80607, 81878, 103107, 49207, 99054, 89726, 92414, 83640, 52078, 68260, 60321, 57559, 48140, 2392], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [238346, 306104, 386576, 176263, 391595, 357623, 358224, 336413, 237174, 277237, 236609, 218255, 185539, 8392], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [247063, 256689, 309204, 141060, 299946, 294249, 307182, 303644, 222125, 263142, 234662, 236502, 187232, 10380], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [55971, 29295, 50785, 23065, 54246, 75767, 83563, 104786, 92747, 94479, 75351, 72664, 48712, 3410], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
+    const periodDatasets = [{'label': 'Total', 'data': [621987, 673966, 849672, 389595, 844841, 817365, 841383, 828483, 604124, 703118, 606943, 584980, 471530, 31167], 'tension': 0.3, 'borderColor': '#4A90E2', 'pointBackgroundColor': '#4A90E2', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': 'Depleted', 'data': [80607, 81878, 103107, 49207, 99054, 89726, 92414, 83640, 52078, 68260, 60321, 57559, 48485, 2935], 'tension': 0.3, 'borderColor': '#FF0000', 'pointBackgroundColor': '#FF0000', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+1', 'data': [238346, 306104, 386576, 176263, 391595, 357623, 358224, 336413, 237174, 277237, 236609, 218255, 186464, 10703], 'tension': 0.3, 'borderColor': '#1eff00', 'pointBackgroundColor': '#1eff00', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+2', 'data': [247063, 256689, 309204, 141060, 299946, 294249, 307182, 303644, 222125, 263142, 234662, 236502, 187782, 13163], 'tension': 0.3, 'borderColor': '#a335ee', 'pointBackgroundColor': '#a335ee', 'pointRadius': 4, 'pointHoverRadius': 6}, {'label': '+3', 'data': [55971, 29295, 50785, 23065, 54246, 75767, 83563, 104786, 92747, 94479, 75351, 72664, 48799, 4366], 'tension': 0.3, 'borderColor': '#ff8000', 'pointBackgroundColor': '#ff8000', 'pointRadius': 4, 'pointHoverRadius': 6}];
 
     new Chart(ctx_keys_per_week, {
       type: "line",
@@ -2974,8 +3486,8 @@
       const dungeonLabels = ["POS", "WS", "AA", "NPX", "SR", "MT", "SEAT", "MC"];
     const dungeonFullNames = ["Pit of Saron", "Windrunner Spire", "Algeth\u0027ar Academy", "Nexus-Point Xenas", "Skyreach", "Magisters\u0027 Terrace", "Seat of the Triumvirate", "Maisara Caverns"];
     const iconUrls = ["/data/icons/pit-of-saron-small.jpg", "/data/icons/windrunner-spire-small.jpg", "/data/icons/algethar-academy-small.jpg", "/data/icons/nexus-point-xenas-small.jpg", "/data/icons/skyreach-small.jpg", "/data/icons/magisters-terrace-small.jpg", "/data/icons/seat-of-the-triumvirate-small.jpg", "/data/icons/maisara-caverns-small.jpg"];
-    const totalCounts = [1157881, 1148850, 1133335, 1117106, 1114178, 1087333, 1077619, 1024352];
-    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [111897, 123721, 130987, 131248, 109767, 111736, 107545, 141482], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [484828, 452852, 504333, 484351, 433657, 461637, 413333, 479359], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [438584, 459129, 419427, 411054, 399038, 412941, 419768, 353139], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [122572, 113148, 78588, 90453, 171716, 101019, 136973, 50372], "label": "+3", "order": 0, "stack": "Stack 0"}];
+    const totalCounts = [1159094, 1149937, 1134400, 1118110, 1115299, 1088393, 1078611, 1025310];
+    const dungeonDatasets = [{"backgroundColor": "#FF0000", "data": [111998, 123853, 131102, 131358, 109868, 111849, 107636, 141607], "label": "Depleted", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#1eff00", "data": [485276, 453271, 504729, 484761, 434032, 462073, 413683, 479761], "label": "+1", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#a335ee", "data": [439101, 459536, 419883, 411451, 399469, 413320, 420173, 353480], "label": "+2", "order": 0, "stack": "Stack 0"}, {"backgroundColor": "#ff8000", "data": [122719, 113277, 78686, 90540, 171930, 101151, 137119, 50462], "label": "+3", "order": 0, "stack": "Stack 0"}];
 
     // Kick off loading each icon
     const iconPromises = iconUrls.map(src =>
@@ -3157,7 +3669,7 @@
 
       // ← injected server‑side
       const keyLevels = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
-    const datasets = [{"data": [11.9, 11.4, 11.7, 12.0, 11.8, 11.9, 12.3, 12.8, 12.3, 13.2, 13.3, 14.3, 14.0, 13.6, 14.1, 14.7, 15.4, 16.4, 17.5, 18.0, 18.4, 22.5, 24.2, 0.0], "label": "Pit of Saron", "rawCounts": [23606, 3558, 10991, 14026, 20615, 16997, 24346, 24578, 249432, 81702, 186482, 87093, 74229, 64308, 57161, 40150, 28401, 19654, 11560, 5081, 1667, 325, 22, 0]}, {"data": [13.4, 12.9, 12.6, 12.3, 12.1, 12.5, 12.8, 13.6, 12.8, 14.2, 13.3, 13.3, 12.8, 12.6, 12.5, 12.4, 12.4, 12.6, 12.4, 12.5, 11.9, 12.4, 7.7, 0.0], "label": "Windrunner Spire", "rawCounts": [26666, 4032, 11867, 14466, 21256, 17799, 25258, 26091, 258987, 87409, 187078, 80916, 68105, 59646, 50608, 33849, 23003, 15099, 8188, 3541, 1079, 179, 7, 0]}, {"data": [12.6, 13.1, 12.8, 12.5, 12.6, 13.0, 12.7, 12.8, 12.6, 12.7, 12.8, 12.9, 12.9, 12.9, 13.0, 12.8, 12.8, 12.3, 11.5, 10.0, 9.0, 5.6, 0.0, 0.0], "label": "Skyreach", "rawCounts": [25002, 4101, 12047, 14614, 22012, 18523, 25216, 24496, 254514, 78147, 180017, 78963, 68319, 60948, 52827, 34913, 23663, 14787, 7588, 2822, 811, 81, 0, 0]}, {"data": [13.0, 12.4, 12.3, 12.7, 12.2, 12.2, 12.3, 12.8, 12.8, 13.2, 13.3, 12.7, 12.7, 12.7, 12.3, 12.2, 11.7, 10.7, 9.5, 8.6, 7.8, 4.8, 0.0, 0.0], "label": "Algeth\u0027ar Academy", "rawCounts": [25927, 3872, 11564, 14899, 21415, 17443, 24390, 24613, 258533, 81221, 186020, 77642, 67622, 60059, 50042, 33222, 21590, 12826, 6246, 2426, 707, 69, 0, 0]}, {"data": [12.1, 11.8, 12.3, 12.5, 12.2, 12.3, 12.5, 12.4, 12.9, 13.4, 12.8, 12.3, 12.2, 12.0, 11.6, 11.4, 11.2, 11.1, 11.2, 12.0, 12.4, 12.7, 17.6, 0.0], "label": "Nexus-Point Xenas", "rawCounts": [24131, 3698, 11559, 14626, 21279, 17494, 24674, 23862, 260782, 82525, 180092, 75360, 64682, 56704, 47282, 31045, 20742, 13257, 7353, 3393, 1119, 183, 16, 0]}, {"data": [13.1, 13.2, 12.9, 12.9, 12.8, 12.8, 12.7, 12.3, 12.5, 11.5, 11.8, 11.8, 12.1, 12.3, 12.8, 13.0, 13.5, 14.2, 15.1, 15.9, 17.1, 18.4, 24.2, 0.0], "label": "Magisters\u0027 Terrace", "rawCounts": [26107, 4119, 12113, 15087, 22451, 18303, 25124, 23557, 252815, 70675, 164863, 72173, 64441, 57895, 52096, 35546, 24940, 17001, 9957, 4502, 1545, 265, 22, 0]}, {"data": [11.4, 12.2, 12.3, 12.2, 12.9, 12.9, 12.7, 12.7, 12.7, 12.8, 12.4, 12.3, 12.2, 12.2, 11.9, 11.4, 10.8, 9.8, 9.2, 8.5, 7.7, 5.9, 0.0, 0.0], "label": "Seat of the Triumvirate", "rawCounts": [22731, 3812, 11497, 14352, 22585, 18419, 25064, 24391, 256528, 78659, 174235, 75087, 64992, 57454, 48339, 30940, 19976, 11768, 6066, 2396, 698, 85, 0, 0]}, {"data": [12.5, 13.0, 13.0, 13.0, 13.4, 12.4, 12.1, 10.7, 11.4, 9.2, 10.3, 10.4, 11.1, 11.6, 11.8, 12.1, 12.2, 12.9, 13.6, 14.6, 15.7, 17.7, 26.4, 0.0], "label": "Maisara Caverns", "rawCounts": [24785, 4072, 12195, 15240, 23474, 17644, 23858, 20468, 230063, 56498, 143913, 63307, 58814, 54678, 48132, 32863, 22618, 15439, 8978, 4129, 1422, 256, 24, 0]}];
+    const datasets = [{"data": [11.9, 11.4, 11.7, 12.0, 11.8, 11.9, 12.3, 12.8, 12.3, 13.2, 13.3, 14.3, 14.0, 13.6, 14.1, 14.7, 15.4, 16.4, 17.5, 18.0, 18.5, 22.5, 23.9, 0.0], "label": "Pit of Saron", "rawCounts": [23635, 3563, 10999, 14041, 20632, 17017, 24371, 24600, 249726, 81759, 186696, 87144, 74280, 64364, 57220, 40197, 28432, 19697, 11599, 5097, 1679, 326, 22, 0]}, {"data": [13.4, 12.9, 12.6, 12.3, 12.1, 12.5, 12.8, 13.6, 12.8, 14.2, 13.3, 13.3, 12.8, 12.6, 12.5, 12.4, 12.4, 12.6, 12.4, 12.5, 11.9, 12.4, 7.6, 0.0], "label": "Windrunner Spire", "rawCounts": [26704, 4038, 11875, 14480, 21273, 17817, 25268, 26106, 259233, 87464, 187259, 80971, 68158, 59696, 50664, 33877, 23035, 15129, 8213, 3550, 1087, 180, 7, 0]}, {"data": [12.6, 13.1, 12.8, 12.5, 12.6, 13.0, 12.7, 12.8, 12.6, 12.7, 12.8, 12.9, 12.9, 12.9, 13.0, 12.8, 12.8, 12.3, 11.5, 10.0, 8.9, 5.7, 0.0, 0.0], "label": "Skyreach", "rawCounts": [25028, 4107, 12064, 14629, 22036, 18538, 25231, 24508, 254793, 78213, 180218, 79018, 68374, 60991, 52881, 34945, 23695, 14818, 7617, 2833, 812, 82, 0, 0]}, {"data": [13.0, 12.4, 12.3, 12.7, 12.2, 12.2, 12.3, 12.8, 12.8, 13.2, 13.3, 12.7, 12.7, 12.7, 12.3, 12.2, 11.7, 10.7, 9.5, 8.6, 7.8, 4.8, 0.0, 0.0], "label": "Algeth\u0027ar Academy", "rawCounts": [25952, 3883, 11573, 14914, 21430, 17457, 24419, 24629, 258806, 81269, 186227, 77693, 67666, 60115, 50098, 33240, 21613, 12844, 6256, 2436, 709, 69, 0, 0]}, {"data": [12.1, 11.8, 12.3, 12.5, 12.2, 12.3, 12.5, 12.4, 12.9, 13.4, 12.8, 12.3, 12.2, 12.0, 11.6, 11.4, 11.2, 11.1, 11.2, 12.0, 12.4, 12.7, 18.5, 0.0], "label": "Nexus-Point Xenas", "rawCounts": [24154, 3700, 11572, 14641, 21297, 17516, 24699, 23879, 261028, 82571, 180274, 75401, 64734, 56739, 47316, 31068, 20770, 13282, 7382, 3404, 1124, 184, 17, 0]}, {"data": [13.1, 13.2, 12.9, 12.9, 12.8, 12.8, 12.7, 12.3, 12.5, 11.5, 11.8, 11.8, 12.1, 12.3, 12.8, 13.0, 13.5, 14.2, 15.1, 15.9, 17.1, 18.5, 23.9, 0.0], "label": "Magisters\u0027 Terrace", "rawCounts": [26140, 4125, 12123, 15100, 22472, 18312, 25146, 23574, 253055, 70725, 165018, 72230, 64486, 57940, 52161, 35583, 24976, 17041, 9978, 4515, 1554, 268, 22, 0]}, {"data": [11.4, 12.2, 12.3, 12.2, 12.9, 12.9, 12.7, 12.7, 12.7, 12.8, 12.4, 12.3, 12.2, 12.2, 11.9, 11.4, 10.8, 9.8, 9.2, 8.5, 7.7, 5.9, 0.0, 0.0], "label": "Seat of the Triumvirate", "rawCounts": [22763, 3819, 11511, 14362, 22606, 18433, 25086, 24414, 256750, 78714, 174422, 75133, 65042, 57481, 48397, 30963, 19997, 11797, 6090, 2405, 705, 85, 0, 0]}, {"data": [12.5, 13.0, 13.0, 13.0, 13.4, 12.4, 12.1, 10.7, 11.4, 9.2, 10.3, 10.4, 11.1, 11.6, 11.8, 12.1, 12.2, 12.9, 13.6, 14.6, 15.7, 17.7, 26.1, 0.0], "label": "Maisara Caverns", "rawCounts": [24819, 4079, 12207, 15255, 23494, 17661, 23872, 20486, 230271, 56528, 144056, 63355, 58851, 54714, 48187, 32895, 22648, 15465, 9009, 4143, 1428, 256, 24, 0]}];
 
     new Chart(ctx, {
       type: 'bar',
@@ -3239,6 +3751,8 @@
       }));
 
       const resetBtn = document.getElementById("resetThroughputZoom");
+      // Disable chart pan/zoom on small screens so it doesn't hijack page scrolling.
+      const enableZoom = window.matchMedia('(min-width: 992px)').matches;
 
       const chart = new Chart(ctx, {
         type: "line",
@@ -3276,13 +3790,13 @@
               // zoom in (minRange ≈ keep at least ~2 weeks in view).
               limits: { x: { min: "original", max: "original", minRange: 1 } },
               pan: {
-                enabled: true,
+                enabled: enableZoom,
                 mode: "x",
                 onPan: () => { if (resetBtn) resetBtn.style.display = "inline-block"; }
               },
               zoom: {
-                wheel: { enabled: true },
-                pinch: { enabled: true },
+                wheel: { enabled: enableZoom },
+                pinch: { enabled: enableZoom },
                 mode: "x",
                 onZoom: () => { if (resetBtn) resetBtn.style.display = "inline-block"; }
               }
