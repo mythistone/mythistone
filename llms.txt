@@ -4,7 +4,7 @@
 Dominate Mythic+ Midnight Season 1: data-powered tierlists, per-spec guides, route-finder tools and more. Plan smarter, push higher, time your keys to perfection.
 
 ## Last Updated
-2026-06-24T21:01:00+00:00
+2026-06-25T11:17:04+00:00
 
 ## Usage Policy
 - ❌ **No AI Training**: Content may NOT be used for training AI/ML models
@@ -25,7 +25,7 @@ When quoting content from MythiStone, you must:
 
 ### Dashboard
 - URL: https://mythistone.com/pages/dashboard
-- Description: Interactive Mythic+ dashboard for World of Warcraft Midnight Season 1. Find spec popularity, keys per week, dungeon popularity, performance vs. popularity and more. Data updated 24/06/2026, 20:09:46.
+- Description: Interactive Mythic+ dashboard for World of Warcraft Midnight Season 1. Find spec popularity, keys per week, dungeon popularity, performance vs. popularity and more. Data updated 25/06/2026, 10:35:07.
 
 ### Routes
 - URL: https://mythistone.com/pages/routes
@@ -44,199 +44,199 @@ When quoting content from MythiStone, you must:
 ### Tank
 #### Blood Death Knight
 - URL: https://mythistone.com/classes/Tank/Blood_Death Knight
-- Description: Discover the most popular Mythic+ build for Blood Death Knight in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:23:13.
+- Description: Discover the most popular Mythic+ build for Blood Death Knight in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:48:36.
 
 #### Brewmaster Monk
 - URL: https://mythistone.com/classes/Tank/Brewmaster_Monk
-- Description: Discover the most popular Mythic+ build for Brewmaster Monk in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:34:59.
+- Description: Discover the most popular Mythic+ build for Brewmaster Monk in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:58:48.
 
 #### Guardian Druid
 - URL: https://mythistone.com/classes/Tank/Guardian_Druid
-- Description: Discover the most popular Mythic+ build for Guardian Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:22:01.
+- Description: Discover the most popular Mythic+ build for Guardian Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:47:26.
 
 #### Protection Paladin
 - URL: https://mythistone.com/classes/Tank/Protection_Paladin
-- Description: Discover the most popular Mythic+ build for Protection Paladin in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:17:54.
+- Description: Discover the most popular Mythic+ build for Protection Paladin in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:43:22.
 
 #### Protection Warrior
 - URL: https://mythistone.com/classes/Tank/Protection_Warrior
-- Description: Discover the most popular Mythic+ build for Protection Warrior in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:20:18.
+- Description: Discover the most popular Mythic+ build for Protection Warrior in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:45:41.
 
 #### Vengeance Demon Hunter
 - URL: https://mythistone.com/classes/Tank/Vengeance_Demon Hunter
-- Description: Discover the most popular Mythic+ build for Vengeance Demon Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:37:56.
+- Description: Discover the most popular Mythic+ build for Vengeance Demon Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 11:01:05.
 
 ### Dps
 #### Affliction Warlock
 - URL: https://mythistone.com/classes/Dps/Affliction_Warlock
-- Description: Discover the most popular Mythic+ build for Affliction Warlock in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:32:54.
+- Description: Discover the most popular Mythic+ build for Affliction Warlock in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:57:02.
 
 #### Arcane Mage
 - URL: https://mythistone.com/classes/Dps/Arcane_Mage
-- Description: Discover the most popular Mythic+ build for Arcane Mage in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:15:30.
+- Description: Discover the most popular Mythic+ build for Arcane Mage in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:41:02.
 
 #### Arms Warrior
 - URL: https://mythistone.com/classes/Dps/Arms_Warrior
-- Description: Discover the most popular Mythic+ build for Arms Warrior in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:19:07.
+- Description: Discover the most popular Mythic+ build for Arms Warrior in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:44:31.
 
 #### Assassination Rogue
 - URL: https://mythistone.com/classes/Dps/Assassination_Rogue
-- Description: Discover the most popular Mythic+ build for Assassination Rogue in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:28:20.
+- Description: Discover the most popular Mythic+ build for Assassination Rogue in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:53:44.
 
 #### Augmentation Evoker
 - URL: https://mythistone.com/classes/Dps/Augmentation_Evoker
-- Description: Discover the most popular Mythic+ build for Augmentation Evoker in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:40:29.
+- Description: Discover the most popular Mythic+ build for Augmentation Evoker in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 11:02:55.
 
 #### Balance Druid
 - URL: https://mythistone.com/classes/Dps/Balance_Druid
-- Description: Discover the most popular Mythic+ build for Balance Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:20:52.
+- Description: Discover the most popular Mythic+ build for Balance Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:46:17.
 
 #### Beast Mastery Hunter
 - URL: https://mythistone.com/classes/Dps/Beast Mastery_Hunter
-- Description: Discover the most popular Mythic+ build for Beast Mastery Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:24:55.
+- Description: Discover the most popular Mythic+ build for Beast Mastery Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:50:19.
 
 #### Demonology Warlock
 - URL: https://mythistone.com/classes/Dps/Demonology_Warlock
-- Description: Discover the most popular Mythic+ build for Demonology Warlock in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:33:35.
+- Description: Discover the most popular Mythic+ build for Demonology Warlock in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:57:39.
 
 #### Destruction Warlock
 - URL: https://mythistone.com/classes/Dps/Destruction_Warlock
-- Description: Discover the most popular Mythic+ build for Destruction Warlock in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:34:15.
+- Description: Discover the most popular Mythic+ build for Destruction Warlock in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:58:11.
 
 #### Devastation Evoker
 - URL: https://mythistone.com/classes/Dps/Devastation_Evoker
-- Description: Discover the most popular Mythic+ build for Devastation Evoker in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:38:54.
+- Description: Discover the most popular Mythic+ build for Devastation Evoker in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 11:01:48.
 
 #### Devourer Demon Hunter
 - URL: https://mythistone.com/classes/Dps/Devourer_Demon Hunter
-- Description: Discover the most popular Mythic+ build for Devourer Demon Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:41:17.
+- Description: Discover the most popular Mythic+ build for Devourer Demon Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 11:03:31.
 
 #### Elemental Shaman
 - URL: https://mythistone.com/classes/Dps/Elemental_Shaman
-- Description: Discover the most popular Mythic+ build for Elemental Shaman in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:30:02.
+- Description: Discover the most popular Mythic+ build for Elemental Shaman in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:55:22.
 
 #### Enhancement Shaman
 - URL: https://mythistone.com/classes/Dps/Enhancement_Shaman
-- Description: Discover the most popular Mythic+ build for Enhancement Shaman in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:31:24.
+- Description: Discover the most popular Mythic+ build for Enhancement Shaman in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:55:54.
 
 #### Feral Druid
 - URL: https://mythistone.com/classes/Dps/Feral_Druid
-- Description: Discover the most popular Mythic+ build for Feral Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:21:25.
+- Description: Discover the most popular Mythic+ build for Feral Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:46:50.
 
 #### Fire Mage
 - URL: https://mythistone.com/classes/Dps/Fire_Mage
-- Description: Discover the most popular Mythic+ build for Fire Mage in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:16:03.
+- Description: Discover the most popular Mythic+ build for Fire Mage in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:41:35.
 
 #### Frost Death Knight
 - URL: https://mythistone.com/classes/Dps/Frost_Death Knight
-- Description: Discover the most popular Mythic+ build for Frost Death Knight in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:23:43.
+- Description: Discover the most popular Mythic+ build for Frost Death Knight in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:49:06.
 
 #### Frost Mage
 - URL: https://mythistone.com/classes/Dps/Frost_Mage
-- Description: Discover the most popular Mythic+ build for Frost Mage in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:16:38.
+- Description: Discover the most popular Mythic+ build for Frost Mage in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:42:12.
 
 #### Fury Warrior
 - URL: https://mythistone.com/classes/Dps/Fury_Warrior
-- Description: Discover the most popular Mythic+ build for Fury Warrior in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:19:42.
+- Description: Discover the most popular Mythic+ build for Fury Warrior in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:45:06.
 
 #### Havoc Demon Hunter
 - URL: https://mythistone.com/classes/Dps/Havoc_Demon Hunter
-- Description: Discover the most popular Mythic+ build for Havoc Demon Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:37:14.
+- Description: Discover the most popular Mythic+ build for Havoc Demon Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 11:00:30.
 
 #### Marksmanship Hunter
 - URL: https://mythistone.com/classes/Dps/Marksmanship_Hunter
-- Description: Discover the most popular Mythic+ build for Marksmanship Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:25:30.
+- Description: Discover the most popular Mythic+ build for Marksmanship Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:50:54.
 
 #### Outlaw Rogue
 - URL: https://mythistone.com/classes/Dps/Outlaw_Rogue
-- Description: Discover the most popular Mythic+ build for Outlaw Rogue in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:28:53.
+- Description: Discover the most popular Mythic+ build for Outlaw Rogue in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:54:16.
 
 #### Retribution Paladin
 - URL: https://mythistone.com/classes/Dps/Retribution_Paladin
-- Description: Discover the most popular Mythic+ build for Retribution Paladin in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:18:32.
+- Description: Discover the most popular Mythic+ build for Retribution Paladin in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:43:58.
 
 #### Shadow Priest
 - URL: https://mythistone.com/classes/Dps/Shadow_Priest
-- Description: Discover the most popular Mythic+ build for Shadow Priest in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:27:50.
+- Description: Discover the most popular Mythic+ build for Shadow Priest in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:53:11.
 
 #### Subtlety Rogue
 - URL: https://mythistone.com/classes/Dps/Subtlety_Rogue
-- Description: Discover the most popular Mythic+ build for Subtlety Rogue in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:29:27.
+- Description: Discover the most popular Mythic+ build for Subtlety Rogue in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:54:49.
 
 #### Survival Hunter
 - URL: https://mythistone.com/classes/Dps/Survival_Hunter
-- Description: Discover the most popular Mythic+ build for Survival Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:26:04.
+- Description: Discover the most popular Mythic+ build for Survival Hunter in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:51:27.
 
 #### Unholy Death Knight
 - URL: https://mythistone.com/classes/Dps/Unholy_Death Knight
-- Description: Discover the most popular Mythic+ build for Unholy Death Knight in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:24:19.
+- Description: Discover the most popular Mythic+ build for Unholy Death Knight in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:49:43.
 
 #### Windwalker Monk
 - URL: https://mythistone.com/classes/Dps/Windwalker_Monk
-- Description: Discover the most popular Mythic+ build for Windwalker Monk in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:35:40.
+- Description: Discover the most popular Mythic+ build for Windwalker Monk in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:59:21.
 
 ### Healer
 #### Discipline Priest
 - URL: https://mythistone.com/classes/Healer/Discipline_Priest
-- Description: Discover the most popular Mythic+ build for Discipline Priest in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:26:37.
+- Description: Discover the most popular Mythic+ build for Discipline Priest in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:52:00.
 
 #### Holy Paladin
 - URL: https://mythistone.com/classes/Healer/Holy_Paladin
-- Description: Discover the most popular Mythic+ build for Holy Paladin in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:17:16.
+- Description: Discover the most popular Mythic+ build for Holy Paladin in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:42:46.
 
 #### Holy Priest
 - URL: https://mythistone.com/classes/Healer/Holy_Priest
-- Description: Discover the most popular Mythic+ build for Holy Priest in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:27:17.
+- Description: Discover the most popular Mythic+ build for Holy Priest in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:52:37.
 
 #### Mistweaver Monk
 - URL: https://mythistone.com/classes/Healer/Mistweaver_Monk
-- Description: Discover the most popular Mythic+ build for Mistweaver Monk in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:36:26.
+- Description: Discover the most popular Mythic+ build for Mistweaver Monk in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:59:56.
 
 #### Preservation Evoker
 - URL: https://mythistone.com/classes/Healer/Preservation_Evoker
-- Description: Discover the most popular Mythic+ build for Preservation Evoker in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:39:42.
+- Description: Discover the most popular Mythic+ build for Preservation Evoker in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 11:02:23.
 
 #### Restoration Druid
 - URL: https://mythistone.com/classes/Healer/Restoration_Druid
-- Description: Discover the most popular Mythic+ build for Restoration Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:22:37.
+- Description: Discover the most popular Mythic+ build for Restoration Druid in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:48:01.
 
 #### Restoration Shaman
 - URL: https://mythistone.com/classes/Healer/Restoration_Shaman
-- Description: Discover the most popular Mythic+ build for Restoration Shaman in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 24/06/2026, 20:32:10.
+- Description: Discover the most popular Mythic+ build for Restoration Shaman in Midnight Season 1, with top talents, gear, enchants, gems, Embelishments & more—based on 8.9 M runs. Updated 25/06/2026, 10:56:30.
 
 ## Dungeon Guides
 
 ### Algethar Academy
 - URL: https://mythistone.com/dungeons/algethar-academy
-- Description: Discover the most important Mythic+ information for Algeth'ar Academy in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:44:31.
+- Description: Discover the most important Mythic+ information for Algeth'ar Academy in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:06:10.
 
 ### Magisters Terrace
 - URL: https://mythistone.com/dungeons/magisters-terrace
-- Description: Discover the most important Mythic+ information for Magisters' Terrace in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:46:56.
+- Description: Discover the most important Mythic+ information for Magisters' Terrace in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:07:49.
 
 ### Maisara Caverns
 - URL: https://mythistone.com/dungeons/maisara-caverns
-- Description: Discover the most important Mythic+ information for Maisara Caverns in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:49:37.
+- Description: Discover the most important Mythic+ information for Maisara Caverns in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:09:28.
 
 ### Nexuspoint Xenas
 - URL: https://mythistone.com/dungeons/nexuspoint-xenas
-- Description: Discover the most important Mythic+ information for Nexus-Point Xenas in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:51:31.
+- Description: Discover the most important Mythic+ information for Nexus-Point Xenas in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:10:44.
 
 ### Pit Of Saron
 - URL: https://mythistone.com/dungeons/pit-of-saron
-- Description: Discover the most important Mythic+ information for Pit of Saron in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:53:39.
+- Description: Discover the most important Mythic+ information for Pit of Saron in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:11:42.
 
 ### Seat Of The Triumvirate
 - URL: https://mythistone.com/dungeons/seat-of-the-triumvirate
-- Description: Discover the most important Mythic+ information for Seat of the Triumvirate in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:55:08.
+- Description: Discover the most important Mythic+ information for Seat of the Triumvirate in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:13:11.
 
 ### Skyreach
 - URL: https://mythistone.com/dungeons/skyreach
-- Description: Discover the most important Mythic+ information for Skyreach in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:56:42.
+- Description: Discover the most important Mythic+ information for Skyreach in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:14:02.
 
 ### Windrunner Spire
 - URL: https://mythistone.com/dungeons/windrunner-spire
-- Description: Discover the most important Mythic+ information for Windrunner Spire in Midnight Season 1, with top specs & routes. Updated 24/06/2026, 20:58:35.
+- Description: Discover the most important Mythic+ information for Windrunner Spire in Midnight Season 1, with top specs & routes. Updated 25/06/2026, 11:15:04.
 
 ## Sitemap
 - URL: https://mythistone.com/sitemap.xml
